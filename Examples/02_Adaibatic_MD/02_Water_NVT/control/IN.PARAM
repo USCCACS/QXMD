@@ -1,0 +1,189 @@
+---(Input-parameter file for program package 'pwp')-------------------
+                              :
+*parallel                     :
+(QM-nodes)                    :
+  1  1  1                     : (npx, npy, npz)
+(MD-nodes)                    :
+  1  1  1                     : (md_npx, md_npy, md_npz)
+*end                          :
+                              :
+                              :
+*start(on/off)                :
+(how of it)                   :
+ .false.                       : (lstart) .true. = restart
+*end                          :
+                              :
+*PAW                          :
+(how of it)                   :
+ .true.                       : (lpaw)  .true.  = PAW method
+                              :         .false. = pseudopotential method
+(non-spherical symmetry)      :
+ .false.                      : (lpaw_sym) .true. = full      symmetry
+                              :           .false. = spherical symmetry
+                              :
+(onsite charge mixing)        :
+    0.5d0                     : (paw_mix)
+*end                          :
+                              :
+                              :
+                              :
+*approximation for Exc        :
+(approximation)               :
+       2                      : (jgga) = 1:LDA, 2:GGA(PBE), 3:GGA(RPBE),
+                              :          4:GGA(revPBE), 5:vdW-DF, 6:vdW-DF2
+                              :
+(DFT-D)                       : an empirical correction for the vdW interaction
+ .true.                       : (ldftd) .true. = on, .false. = off
+                              :
+*end                          :
+                              :
+                              :
+                              :
+*SCF iterations               :
+(global iterations)           :
+     100                      : (iscfmx) maximum No. of global iterations
+(tolerances)                  :
+      3.0d-08                 : (tolpot) tolerance for total energy
+      5.0d-08                 : (tolres) tolerance for average residual
+*end                          :
+                              :
+                              :
+*molecular dynamics           :
+(how of it)                   :
+   3                          : (ifmd)
+                              :   0:non, 1:optimization, 2:NVE, 3:NVT, 4:NPT
+(time step)                   :
+   50.0d0   1000               : (dtmd, nstop) time step, total step
+(temperature)                 : only for real dynamics (NVE-, NVT-, NPT-MD )
+   300.d0                     : (treq) temperature in [K]
+(check temperature)           :
+  .true.                     : (liscale) .true. = Do it !
+   25                         : (iscnum)  number of temperature check
+   20                         : (iscstp)  skip step
+                              :
+(optimization)                : only for structural optimization (ifmd == 1 )
+    2                         : (ioptmze)
+                              :  -1: do not optimize atomic coordinates
+                              :   0: Conjugate gradient
+                              :   1: Projected velocity Verlet
+                              :   2: Quasi-Newton method with BFGS formula
+                              :
+(stabilizer for quasi-Newton) : only for quasi-Newton method (ifmd==1 & ioptmze==2)
+   0.1d0                      : (gammamin)
+                              :
+(clear Hessian)               : only for quasi-Newton method (ifmd==1 & ioptmze==2)
+    0                         : (ibfgsclear) clear Hessian every ibfgsclear step
+                              :           if ibfgsclear == 0, Hessian is not cleared.
+                              :
+(atomic stress & energy)      : only for MD nodes
+ .true.                       : (latomic) .true. = output atomic stress & energy
+                              : Note that nskip_atomic = ioskip
+                              : When lstress = false, atomic stress is not output.
+                              :
+(tolerance)                   : tolerance for CG optimization (ifmd == 1 )
+  1.d-07                      : (tol_energy) energy/atom in [a.u.]
+  5.d-04                      : (tol_force ) max. force  in [a.u.]
+*end                          :
+------------------------------:---------------------------------------
+*supercell                    :
+(unit of length)              :
+(ang)                         : (bohr) or (ang)
+                              :
+(lengths & angles)            :
+7.00d0, 7.00d0, 5.0d0         :  lengths of cell vectors
+90.000,  90.000,  90.000  :  angles between cell vec. in [deg.]
+*end                          :
+                              :
+*planewaves                   :
+(unit of cutoff energy)       :
+(ry)                          : (ry) or (hr) or (ev)
+(for wavefunctions)           :
+  30.0                        : (ecut)
+(for electron density)        :
+ 250.0                        : (ecutdens)
+(for soft part of density)    :
+ 70.0                         : (ecutsoft)
+*end                          :
+                              :
+*electronic bands             :
+(occupied bands)              :
+      8                     : (noband)  No. of occupied bands
+(empty bands)                 :
+      2                     : (neband)  No. of empty bands
+                              :           total No.= noband + neband
+(broadening)                  :
+       3    500.d0            : (lfermi) = 1:nonmetallic, 2:Fermi, 3:Gaussian,
+                              :   lfermi(>3):Methfessel & Paxton, order=lfermi-3
+                              : (tfermi) = electronic temp.(K), if metallic
+*end                          :
+                              :
+------------------------------:---------------------------------------
+*atoms                        :
+(species)                     :
+  2                           : (ntype) No. of atomic species
+==============================:=======================================
+(atomic number)               :
+  8.0                         : (zatom)
+(pseudopotential)             :
+uspp                          : kbpp .or. uspp .or. vand
+(nonlocal potential)          :
+ .true. 1.5d0 1.25d0 0.8d0    : (lking) .true. = on, (rking, gkgmax, gkgexct)
+                              : smoothing parameters
+(local potential)             :
+ .false. 1.5d0 1.15d0 0.8d0   : (llking) .true. = on, (rlking, glkgmax, glkgexct)
+                              : smoothing parameters
+(partial core correction)     :
+ .true.   1.4d0               : (lpcc) .true. = on, (r_cut) in [a.u.]
+ .true. 1.1d0 1.15d0 0.8d0    : (lpking) .true. = on, (rpking, gpkgmax, gpkgexct)
+                              : smoothing parameters
+                              :
+(the number of atoms)         : No. of atoms in SUPERCELL, not in UNIT cell
+   0                          : (nhk) If zero, atomic positions are read from
+                              :       'CONFIGURATION_FILE'.
+                              :
+(unit of length)              : only for positions
+(ang)                        : (bohr) or (ang)
+                              :
+(position file)               : Ignored, if (nhk) > 0.
+'control/CONFIG'  :
+ 2                            : 1:scaled, 2:real coordinates
+ 1                            : (keyword)
+                              :
+(fix positions)               :
+ .false.                      : (lfixion) .true. = fix atomic position
+                              :           (velocities are set to zero)
+                              :
+(end)                         :
+==============================:=======================================
+(atomic number)               :
+  1.0                         : (zatom)
+(pseudopotential)             :
+uspp                          : kbpp .or. uspp .or. vand
+(nonlocal potential)          :
+ .true. 1.5d0 1.25d0 0.8d0    : (lking) .true. = on, (rking, gkgmax, gkgexct)
+                              : smoothing parameters
+(local potential)             :
+ .false. 1.5d0 1.15d0 0.8d0   : (llking) .true. = on, (rlking, glkgmax, glkgexct)
+                              : smoothing parameters
+(partial core correction)     :
+ .false.   1.4d0              : (lpcc) .true. = on, (r_cut) in [a.u.]
+ .true. 1.1d0 1.15d0 0.8d0    : (lpking) .true. = on, (rpking, gpkgmax, gpkgexct)
+                              : smoothing parameters
+                              :
+                              :
+(the number of atoms)         : No. of atoms in SUPERCELL, not in UNIT cell
+   0                          : (nhk) If zero, atomic positions are read from 
+                              :       'CONFIGURATION_FILE'.
+                              :
+(unit of length)              : only for positions
+(ang)                         : (bohr) or (ang)
+                              :
+(position file)               : Ignored, if (nhk) > 0.
+'control/CONFIG'  :
+ 2                            : 1:scaled, 2:real coordinates
+ 2                            : (keyword)
+(fix positions)               :
+ .false.                      : (lfixion) .true. = fix atomic position
+                              :           (velocities are set to zero)
+(end)                         :
+*end                          : end of setting *atoms

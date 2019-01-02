@@ -1,0 +1,368 @@
+---(Input-parameter file for program package 'pwp')-------------------
+                              :
+*parallel                     :
+(QM-nodes)                    :
+  4  4  4                     : (npx, npy, npz)
+(MD-nodes)                    :
+  1  1  1                     : (md_npx, md_npy, md_npz)
+*end                          :
+                              :
+*start(on/off)                :
+(how of it)                   :
+ .false.                      : (lstart) .true. = restart
+*end                          :
+                              :
+*PAW                          :
+(how of it)                   :
+ .true.                      : (lpaw)  .true.  = PAW method
+                              :         .false. = pseudopotential method
+(non-spherical symmetry)      :
+ .false.                      : (lpaw_sym) .true. = full      symmetry
+                              :           .false. = spherical symmetry
+*end                          :
+                              :
+*approximation for Exc        :
+(approximation)               :
+       2                      : (jgga) = 1:LDA, 2:GGA(PBE)
+*end                          :
+                              :
+                              :
+*SCF iterations               :
+(global iterations)           :
+    100                       : (iscfmx) maximum No. of global iterations
+(trial global iterations)     :
+      0                       : (itrial) No. of trial global iterations
+(tolerances)                  :
+      5.0d-09                 : (tolpot) tolerance for total energy
+      5.0d-09                 : (tolres) tolerance for average residual
+(charge mixing)               :
+   1                          : (imxchg) = 0:non, 1:Pulay
+   0.4,    0.64               : (aslh, bslh)
+(number of mixing)            :
+    20                        : (itratn)
+(HC products)                 :
+   .true.                     : (lhcunt) .true. = HC products by Unitary tr.
+*end                          :
+                              :
+                              :
+*Kohn-Sham equation           :
+(how of it)                   :
+      1                       : (ihldam) = 1:CG, 2:RMM-DIIS
+(tolerance)                   :
+      5.d-10                  : (toleig) tolerance for Kohn-Sham equation
+(iteration)                   :
+      4                       : (itermx) maximum No. of iterations
+(empty-band iteration)        :
+      4                       : (iteremx) maximum No. of iterations
+                              :           for empty bands
+*end                          :
+                              :
+                              :
+*Poisson equation             : only for clusters and slab geometries
+(multigrid level)             :
+  2                           : (multg)
+(tolerance)                   : tolerance energy in a.u. for one electron
+  1.d-11                      : (tolcg)
+(preconditioner)              :
+  0.4d0                       : (weigrd)
+(differentiation)             : order of numerical differentiation
+  6                           : (nd2v)
+(mesh for serial calculation) :
+ 14  14  14                   : (msrhmx, msrhmy, msrhmz)
+*end                          :
+                              :
+                              :
+*molecular dynamics           :
+(how of it)                   :
+   10                         : (ifmd) = 0:non, 1:CG, 2:NVE-MD, 3:NVT-MD
+(time step)                   :
+   50.d0  1000                : (dtmd, nstop) time step, total step
+(initial step number)         :
+   0                          : (nstep_ini)   ignored, if lstart == .true.
+(temperature)                 : only for real dynamics (NVE-MD, NVT-MD)
+   300.d0                     : (treq) temperature in [K]
+(check temperature)           :
+  .false.                      : (liscale) .true. = Do it !
+   25                         : (iscnum)  number of temperature check
+   20                         : (iscstp)  skip step
+                              :
+(thermostat parameters)       : only for NVT-MD (ifmd == 3 )
+     1                        : (nnos)   # of thermostats
+     1                        : (nresn)  MTS steps for heat bath
+     1                        : (nyosh)  Yoshida-Suzuki decomposition step
+   5000.d0                    : (tomega) in [a.u.] (a period of fluctuation)
+ Notes for (tomega)           :
+ The frequency for the thermostat will be given by
+      omega [a.u.] = 2*pi / tomega.
+ The tomega will be determined from the period of VAF.
+ If you are not aware of it, try a value,
+      100 * dtmd in [a.u.], as an initial guess.
+                              :
+(optimization)                : only for structural optimization (ifmd == 1 )
+    2                         : (ioptmze)
+                              :   0: Conjugate gradient
+                              :   1: Projected velocity Verlet
+                              :   2: Quasi-Newton method with BFGS formula
+                              :   3: RFO saddle points search
+                              :
+(cell optimization)           : only for optimization (ifmd == 1 except ioptmze == 1 & 10)
+   2                          : (ioptmze_cell)
+                              :  -1: do not optimize supercell
+                              :   0: Conjugate gradient
+                              :   1: not used yet
+                              :   2: Quasi-Newton method with BFGS formula
+                              :
+(tolerance)                   : tolerance for CG optimization (ifmd == 1 )
+  1.d-07                      : (tol_energy) energy/atom in [a.u.]
+  5.d-04                      : (tol_force ) max. force  in [a.u.]
+                              :
+(pressure)                    : only for NPT-MD (ifmd == 4 )
+  0.d0                        : (hpext) pressure in [GPa]
+                              :
+(barostat parameters)         : only for NPT-MD (ifmd == 4 )
+   5000.d0                    : (tbomega) in [a.u.] (a period of fluctuation)
+    40.d0                     : (blkmod)  in [GPa]  (bulk modulus)
+                              :
+(restriction for MD cell)     :
+   0                          : (irstrct)
+          0: no restriction (triclinic)
+          1: cubic          a  = b  = c, alpha = beta = gamma = 90
+          2: orthorhombic   a /= b /= c, alpha = beta = gamma = 90
+          3: tetragonal     a  = b /= c, alpha = beta = gamma = 90
+          4: monoclinic     a /= b /= c, alpha = beta = 90, gamma /= 90
+          5: hexagonal      a  = b /= c, alpha = beta = 90, gamma  = 120
+          6: trigonal       a  = b  = c, alpha = beta = gamma /= 90
+         10: by symmetry opearations (set automatically, when lsymop=.true. & irstrct==0)
+ If you want to enforce the lattice shape with symmetry opearations,
+ add 10 to the above values. For example,
+         12 for an orthorhombic cell with symmetry opearations.
+                              :
+(sub-restriction for MD cell) :
+   1                          : (irstrct_sub)
+      Sub-option for the restriction for MD cell
+      if irstrct == 3 (tetragonal),
+         irstrct_sub = 1 (default)...... a  = b /= c, alpha = beta = gamma = 90
+                     = 2          ...... b  = c /= a, alpha = beta = gamma = 90
+                    else          ...... c  = a /= b, alpha = beta = gamma = 90
+      if irstrct == 4 (monoclinic),
+         irstrct_sub = 1 (default)...... a /= b /= c, alpha = beta  = 90, gamma /= 90
+                     = 2          ...... a /= b /= c, beta  = gamma = 90, alpha /= 90
+                    else          ...... a /= b /= c, gamma = alpha = 90, beta  /= 90
+      if irstrct == 5 (hexagonal),
+         irstrct_sub = 1 (default)...... a  = b /= c, alpha = beta  = 90, gamma = 120
+                     = 2          ...... b  = c /= a, beta  = gamma = 90, alpha = 120
+                    else          ...... c  = a /= b, gamma = alpha = 90, beta  = 120
+                              :
+(shock wave velocity)         : only for MSST (ifmd == 10 )
+ 7000.d0                     : (shockspeed) speed of shock wave in [m/s]
+ 1  0  0                      : (nshockv(1:3)) direction with respect to super cell
+                              :   1 0 0 = Vs // L1 direction
+                              :   0 1 0 = Vs // L2 direction
+                              :   0 0 1 = Vs // L3 direction
+                              :   1 1 0 = Vs // L1 + L2 direction
+                              :   etc.
+(clear barostat velocity)     : only for MSST (ifmd == 10 )
+  .false.                     : (lmsstscale) .true. = Do it !
+   5                          : (msstscnum)  number of clear
+   100                        : (msstscstp)  skip step
+                              :
+(initial barostat velocity)   : only for MSST (ifmd == 10 )
+   0.d0                   : (vxmsst)
+                              :
+                              :
+(output data)                 : only for MD nodes
+    1                         : (ioskip)  skip step
+ .false.                      : (locoor) .true. = output scaled coordinates
+ .true.                       : (lovelo) .true. = output scaled velocities
+ .false.                      : (loforc) .true. = output scaled forces
+                              :
+(charge estimation)           :
+   3                          : (ichest) = 0:0th, 1:1st, 2:2nd
+                              :             order charge estimation
+(wavefunction estimation)     :
+   3                          : (ihest)  = 0:0th, 1:1st, 2:2nd
+                              :             order subspace alignment
+(ASPC charge estimation)      :
+ .false.                      : (laspc_chg) .true. = ASPC predictor
+                              :            .false.= usual extrapolation
+(ASPC wavefunction estimation):
+ .false.                      : (laspc_wv) .true. = ASPC predictor
+                              :            .false.= subspace alignment
+                              :
+(ASPC acceleration)           :
+ .false.                      : (laspc) .true. = do ASPC
+                              :
+(ASPC parameter for corrector):
+   1.d0                       : (aspc_corr) 0.d0 = default
+                              :
+(ASPC mixing charge)          :
+   0.4d0  0.6d0               : (aslh_aspc, bslh_aspc)
+                              :
+(ASPC iterations)             :
+   20                         : (iscfmx_aspc) No. of correction step
+                              :
+(ASPC tolerance)              :
+   1.d-06                     : (tolres_aspc) tolerance for residual
+                              :
+(ASPC correction skip step)   :
+   20                         : (nskp_aspc) 0 = no coorection
+*end                          :
+                              :
+                              :
+*save data                    :
+(how of it)                   :
+ .true.                       : (lsave) .true. = save data
+(data type)                   :
+ .true.                       : (lsreal8).true.=real*8/.false.=integer*2
+*end                          :
+                              :
+------------------------------:---------------------------------------
+*Mulliken analysis            :
+(how of it)                   :
+ .true.                       : (lmulken) .true. = Do it !
+(skip step)                   : only for molecular dynamics
+   5                          : (nskpmulk)
+(decompose overlap population):
+ .true.                      : (ldecmpovp) .true. = decompose ovp.
+*end                          :
+                              :
+*Wannier function             : calculation of maximully localized
+                              : Wannier functions
+(how of it)                   :
+ .false.                       : (lwannier) .true. = Do it !
+(iteration)                   :
+   200                        : (iterwan) maximum No. of iterations
+(tolerance)                   :
+   1.d-06                     : (tolwan)
+(dump orbitals)               :
+   1, 0                       : (iwstt1,iwstt2) orbital index
+                              :     ( 0, 0 -> all orbitals )
+                              :     ( 1, 0 -> none         )
+(skip step)                   : only for molecular dynamics
+   5                          : (nskpwann)
+*end                          :
+                              :
+*stress calculation           : only for bulk calculations
+(how of it)                   :
+ .true.                       : (lstress) .true. = Do it !
+(skip step)                   : only for molecular dynamics
+   5                          : (nskip_stress)
+*end                          :
+                              :
+*atomic charge                :
+(how of it)                   :
+ .false.                      : (lintchg) .true. = Do it !
+(skip step)                   : only for molecular dynamics
+   5                          : (nskip_intchg)
+*end                          :
+                              :
+*dump charge density          :
+(how of it)                   :
+  .false.                     : (ldpchg)  .true. = Do it !
+(skip step)                   : only for molecular dynamics
+   5                          : (nskip_dpchg)
+*end                          :
+                              :
+*dump wavefunctions           :
+(how of it)                   :
+  .false.                     : (ldpwav)  .true. = Do it !
+(bands)                       :
+   0, 0                       : (ibstt1,ibstt2) band index ( 0, 0 -> all bands)
+(skip step)                   : only for molecular dynamics
+   5                          : (nskip_dpwav)
+*end                          :
+                              :
+------------------------------:---------------------------------------
+*supercell                    :
+(unit of length)              :
+(bohr)                         : (bohr) or (ang)
+ The supercell is specified
+  by either (cell vector) or (lengths & angles) as below.
+ Caution !  For clusters or slab geometries including vacuum region,
+            the supercell have to be ORTHORHOMBIC.
+ (cell vector)                 :
+ 3.2 0.0 0.0
+ 0.0 3.2 0.0
+ 0.0 0.0 5.2 
+                              :
+  .or.                        :
+                              :
+(lengths & angles)            :
+ 2.0806041E+01 2.0806057E+01 2.0806057E+01
+ 90.0000   90.0000   90.0000  :  angles between cell vec. in [deg.]
+*end                          :
+                              :
+*vacuum                       :
+(how of it)                   :
+ .false.   0.d0   :lvacuum(1),vacuum(1) (vacuum(1)< x <L1 is vacuum, if .true.)
+ .false.   0.d0   :lvacuum(2),vacuum(2) (vacuum(2)< y <L2 is vacuum, if .true.)
+ .false.   0.d0   :lvacuum(3),vacuum(3) (vacuum(3)< z <L3 is vacuum, if .true.)
+*end                          :
+                              :
+*spherical region             :
+(how of it)                   :
+ .true.                       : (lsphere) .true. = use spherical region
+*end                          :                    in cluster calculations
+                              :
+*planewaves                   :
+(unit of cutoff energy)       :
+(ry)                          : (ry) or (hr) or (ev)
+(for wavefunctions)           :
+ 20.0                         : (ecut)
+(for electron density)        :
+ 200.0                         : (ecutdens)
+(for soft part of density)    :
+ 70.0                         : (ecutsoft)
+*end                          :
+                              :
+*electronic bands             :
+(occupied bands)              :
+       140                     : (noband)  No. of occupied bands
+(empty bands)                 :
+       10                      : (neband)  No. of empty bands
+                              :           total No.= noband + neband
+(broadening)                  :
+       3   2000.d0            : (lfermi) = 1:nonmetallic, 2:Fermi, 3:Gaussian,
+                              : (tfermi) = electronic temp.(K), if metallic
+*end                          :
+                              :
+*for lsda                     :
+(how of it)                   :
+   .false.                    : (lfixud) .true. = fix diff. between N_up & N_down
+(spin polarization)           :
+   0.0                        : (diffud) diff. between N_up & N_down
+*end                          :
+                              :
+------------------------------:---------------------------------------
+*atoms                        :
+(species)                     :
+  1                           : (ntype) No. of atomic species
+==============================:=======================================
+(atomic number)               :
+  14                        : (zatom)
+(pseudopotential)             :
+uspp                          : kbpp .or. uspp .or. vand
+(nonlocal potential)          :
+ .true. 1.5d0 1.25d0 0.5d0    : (lking) .true. = on, (rking, gkgmax, gkgexct)
+                              : smoothing parameters
+(local potential)             :
+ .false. 1.5d0 1.15d0 0.8d0    : (llking) .true. = on, (rlking, glkgmax, glkgexct)
+                              : smoothing parameters
+(partial core correction)     :
+ .true.   1.6d0               : (lpcc) .true. = on, (r_cut) in [a.u.]
+ .true. 1.1d0 1.15d0 0.8d0    : (lpking) .true. = on, (rpking, gpkgmax, gpkgexct)
+                              : smoothing parameters
+                              :
+(the number of atoms)         : No. of atoms in SUPERCELL, not in UNIT cell
+  0                          : (nhk) If zero, atomic positions are read from 
+                              :       'CONFIGURATION_FILE'.
+                              :
+(position file)               : Ignored, if (nhk) > 0.
+'control/CONFIG'  :
+ 1                            : 1:scaled, 2:real coordinates
+ 1                            : (keyword)
+                              :
+(atomic charge)               :
+   2.3d0                      : radius (a.u.) to calculate atomic charge
+(end)                         :
+*end                          : end of setting *atoms

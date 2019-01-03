@@ -126,7 +126,7 @@
 (bands)                       :
    36, 37                     : (ibstt1,ibstt2) band index ( 0, 0 -> all bands)
 (skip step)                   : only for molecular dynamics
-   101                        : (nskip_dpwav)
+   1001                        : (nskip_dpwav)
 *end
 ------------------------------:---------------------------------------
 *supercell                    :

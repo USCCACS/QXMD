@@ -80,7 +80,7 @@
                               :   5:NVT for each atom, 6:NVT with GLE thermostat,
                               :  10:MSST (multiscale shock technique)
 (time step)                   :
-   50.0d0   100                 : (dtmd, nstop) time step, total step
+   50.0d0   1000                 : (dtmd, nstop) time step, total step
 (activate STOP file)          : only for 1 <= ifmd <= 9
   .false.                     : (lmdstop) .true. = a STOP file is created.
 (temperature)                 : only for real dynamics (NVE-, NVT-, NPT-MD )

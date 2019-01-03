@@ -143,7 +143,7 @@ To get started,  clone this repository to your computer.
 
 ### 2.2 Set Working Directory
 
-First, change the working directory to **qxmd/**
+First, change the working directory to **QXMD/**
 ```
 ~$ cd qxmd
 ```

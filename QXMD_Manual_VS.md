@@ -143,18 +143,18 @@ To get started,  clone this repository to your computer.
 
 ### 2.2 Set Working Directory
 
-First, change the working directory to **qxmd/**
+First, change the working directory to **QXMD/**
 ```
-~$ cd qxmd
+~$ cd QXMD
 ```
 You will see following files and directories when you use the 'ls' command:
 
 ```
-qxmd $ ls
-Include/    Makefile    Qxmd/    Sources/     util/
+QXMD $ ls
+Include/   Examples/   Lib/    Makefile    QXMD_Manual_v3.2/    Sources/     util/
 ```
 
-**Include/** contains necessary libraries for compilation, **Makefile** will be used to build the program, **Qxmd** contains default variables for many input parameters, **Sources/** contains all **QXMD** source codes,and **util/** contains helpful codes for post-processing output data from **QXMD**.
+**Include/** contains necessary libraries for compilation, **Examples** contains sample input files for various example simulations, **Lib** contains pseudopotential files, **Makefile** will be used to build the program, **QXMD_Manual_v3.2** is the manual for this software packgae, **Sources/** contains all **QXMD** source codes,and **util/** contains helpful codes for post-processing output data from **QXMD**.
 
 ### 2.3 Configure Makefiles
 You have to choose makefile based on the configuration of your machine. For most of the facility supercomputers makefile is already configured. Complete list of the preconfigured makefile can be obtain by typing **make help**.

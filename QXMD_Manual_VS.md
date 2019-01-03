@@ -150,7 +150,7 @@ First, change the working directory to **QXMD/**
 You will see following files and directories when you use the 'ls' command:
 
 ```
-qxmd $ ls
+QXMD $ ls
 Include/   Examples/   Lib/    Makefile    QXMD_Manual_v3.2/    Sources/     util/
 ```
 

@@ -1,0 +1,11 @@
+Description of utility files:
+
+eig.f: outputs a text file with one column holding Kohn-Sham eigenenergies and a second column holding electronic occupation numbers for each time step in an adiabatic MD run.
+
+eig_exocc.f: outputs a text file with one column holding Kohn-Sham eigenenergies and a second column holding electronic occupation numbers for each time step in an NAQMD run.
+
+gcube.f90: outputs a Gaussian cube file holding the three-dimensional data of the charge densities for user-defined energy bands.
+
+pick_config.f90: outputs an atomic configuration file for a given step of an MD run which can be used as input to another QXMD simulation.
+
+toPDBcell.f: outputs atomic trajectories for a QXMD simulation in the PDB format, useful for many visualization software packages such as VMD and Ovito

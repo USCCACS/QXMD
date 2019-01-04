@@ -149,4 +149,8 @@ This project is licensed under the GPU 3.0 license - see the LICENSE.md file for
 
 ## 5. Publications
 
+1) F. Shimojo, Y. Zempo, K. Hoshino, and M. Watabe, "First-principles molecular-dynamics simulation of expanded liquid rubidium," Physical Review B, vol. 52, pp. 9320-9329, Oct 1 1995. <br>
+
+2) F. Shimojo, S. Hattori, R. K. Kalia, M. Kunaseth, W. Mou, A. Nakano, et al., "A divide-conquer-recombine algorithmic paradigm for large spatiotemporal quantum molecular dynamics simulations," Journal of Chemical Physics, vol. 140, 18A529, May 14, 2014.
+
 

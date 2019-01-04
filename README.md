@@ -142,10 +142,10 @@ In order to run QXMD, there are a few mandatory directories and files that must 
 
 There are many example input files for various types of simulations in the Examples/ directory, including optimization of water, adiabatic QMD of water in the canonical ensemble, non-adiabatic QMD of monolayer MoSe2 in the microcanonical ensemble, and a MSST simulation of Si.  The NAQMD and MSST examples are explained in more detail in the sections below. 
 
-To learn more about QXMD, please refer to QXMD manual.
+To learn more about QXMD, please refer to [QXMD manual]{https://github.com/USCCACS/QXMD/blob/master/QXMD_Manual_v3.2.md}.
 
 ## 4. License
-This project is licensed under the GPU 3.0 license - see the LICENSE.md file for details
+This project is licensed under the GPU 3.0 license - see the [LICENSE]{https://github.com/USCCACS/QXMD/blob/master/LICENSE} file for details
 
 ## 5. Publications
 

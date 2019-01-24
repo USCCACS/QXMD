@@ -19,7 +19,12 @@ SDIR		= Sources
 WDIR		= QXMD
 DDIR		= data
 
+NPROCS          = 1
+OS              = $(shell uname)
 
+ifeq ($(OS),Linux)
+  NPROCS        = $(shell grep -c ^processor /proc/cpuinfo)
+endif
 
 ####################################################################
 PROG		= qxmd
@@ -32,10 +37,10 @@ $(PROGMPI):	$(WDIR)/$(MAKEFILE) $(WDIR)/$(PROGMPI)
 
 
 $(WDIR)/$(PROG):
-	cd $(WDIR); make $(PROG)
+	cd $(WDIR); make -j $(NPROCS) $(PROG)
 
 $(WDIR)/$(PROGMPI):
-	cd $(WDIR); make $(PROGMPI)
+	cd $(WDIR); make -j $(NPROCS) $(PROGMPI)
 
 
 $(WDIR)/$(MAKEFILE):	$(SDIR)/$(MAKEFILE)

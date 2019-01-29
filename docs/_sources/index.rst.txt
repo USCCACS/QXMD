@@ -11,6 +11,10 @@ QXMD is a scalable, parallel program for Quantum Molecular Dynamics simulations 
 QXMD is supported as part of the Computational Materials Sciences Program funded by the US Department of Energy, Office of Science, Basic Energy
 Sciences, under Award Number DE-SC0014607.
 
+This manual is organized into the following sections.
+
+User Documentation
+==================
 .. toctree::
    :maxdepth: 3
     

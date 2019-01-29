@@ -7,8 +7,8 @@ libraries. There are no other library requirement for the **QXMD**
 Installation
 ============
 
-2.1 Download QXMD
-~~~~~~~~~~~~~~~~~
+2.1. Download QXMD
+~~~~~~~~~~~~~~~~~~
 
 To get started, clone this repository to your computer.
 
@@ -16,8 +16,8 @@ To get started, clone this repository to your computer.
 
    ~$ git clone https://github.com/USCCACS/QXMD.git
 
-2.2 Set Working Directory
-~~~~~~~~~~~~~~~~~~~~~~~~~
+2.2. Set Working Directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, change the working directory to **qxmd/**
 
@@ -31,16 +31,16 @@ command:
 ::
 
    qxmd $ ls
-   Include/    Makefile    Qxmd/    Sources/     util/
+   Include/  docs/  Makefile    Qxmd/    Sources/     util/
 
 **Include/** contains necessary libraries for compilation, **Makefile**
 will be used to build the program, **Qxmd** contains default variables
 for many input parameters, **Sources/** contains all **QXMD** source
-codes,and **util/** contains helpful codes for post-processing output
-data from **QXMD**.
+codes, **docs/** contains the documentation for QXMDand **util/** 
+contains helpful codes for post-processing output data from **QXMD**.
 
-2.3 Configure Makefiles
-~~~~~~~~~~~~~~~~~~~~~~~
+2.3. Configure Makefiles
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 You have to choose makefile based on the configuration of your machine.
 For most of the facility supercomputers makefile is already configured.
@@ -81,8 +81,8 @@ Complete list of the preconfigured makefile can be obtain by typing
 If you are not using aforementioned machine, you might need to modify
 the **Makefile** according to your computing environment.
 
-2.4 Precompiler variables
-~~~~~~~~~~~~~~~~~~~~~~~~~
+2.4. Precompiler variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Precompiler flags are defined in CPPDEFS as:
 

@@ -47,148 +47,28 @@
 <p>QXMD is a Quantum Molecular Dynamics (QMD) simulation software with
 various eXtensions. QMD follows the trajectories of all atoms while
 computing interatomic forces quantum mechanically in the framework of
-density functional theory (DFT). <a class="reference internal" href="#rn114" id="id1">[1]</a> The
-QXMD software has been developed by Fuyuki Shimojo since 1994. <a class="reference internal" href="#rn334" id="id2">[2]</a>
+density functional theory (DFT). [RN114] The
+QXMD software has been developed by Fuyuki Shimojo since 1994. [RN334]
 Since 1999, various extensions have been developed in collaboration with
-Rajiv Kalia, Aiichiro Nakano and Priya Vashishta. <a class="reference internal" href="#rn182" id="id3">[3]</a> The basic QXMD
+Rajiv Kalia, Aiichiro Nakano and Priya Vashishta. [RN182] The basic QXMD
 code is based on a plane-wave basis to represent electronic wave
 functions and pseudopotential (PP) methods to describe electron-ion
-interaction. Supported PPs include norm-conserving PP <a class="reference internal" href="#rn116" id="id4">[4]</a> and ultrasoft PP <a class="reference internal" href="#rn211" id="id5">[5]</a> , as well as an all-electron
-projector augmented-wave (PAW) method <a class="reference internal" href="#rn263" id="id6">[6]</a>. Electron-electron interaction beyond the mean-field
+interaction. Supported PPs include norm-conserving PP [RN116] and ultrasoft PP [RN211] , as well as an all-electron
+projector augmented-wave (PAW) method [RN263]. Electron-electron interaction beyond the mean-field
 Hartree approximation is included using various exchange-correlation
 functionals, with and without spin polarization: generalized gradient
-approximation (GGA) <a class="reference internal" href="#rn277" id="id7">[7]</a>, DFT+U method for transition metals <a class="reference internal" href="#rn322" id="id8">[8]</a>, van der Waals (vDW) functional for molecular crystals and
-layered materials <a class="reference internal" href="#rn21" id="id9">[9]</a>,
-nonlocal correlation functional <a class="reference internal" href="#rn126" id="id10">[10]</a>, and range-separated exact-exchange functional <a class="reference internal" href="#rn324" id="id11">[11]</a> <a class="reference internal" href="#rn99" id="id12">[12]</a>. Various
+approximation (GGA) [RN277], DFT+U method for transition metals [RN322], van der Waals (vDW) functional for molecular crystals and
+layered materials [RN21],
+nonlocal correlation functional [RN126], and range-separated exact-exchange functional [RN324] [RN99]. Various
 unique capabilities included in the QXMD code (some of which are
-described in <a class="reference internal" href="#rn181" id="id13">[13]</a>) include:</p>
+described in [RN181]) include:</p>
 <ul><ol class="arabic simple">
-<li>Linear-scaling DFT algorithms <a class="reference internal" href="#rn181" id="id14">[13]</a> <a class="reference internal" href="#rn184" id="id15">[14]</a> <a class="reference internal" href="#rn128" id="id16">[15]</a></li>
-<li>Scalable algorithms on massively parallel computers <a class="reference internal" href="#rn139" id="id17">[16]</a> <a class="reference internal" href="#rn139" id="id18">[16]</a> <a class="reference internal" href="#rn64" id="id19">[17]</a></li>
-<li>Nonadiabatic quantum molecular dynamics (NAQMD) to describe excitation dynamics <a class="reference internal" href="#rn329" id="id20">[18]</a></li>
-<li>Omni-directional multiscale shock technique (OD-MSST) to study shock response of materials <a class="reference internal" href="#rn250" id="id21">[19]</a> <a class="reference internal" href="#rn251" id="id22">[20]</a></li>
+<li>Linear-scaling DFT algorithms [RN181] [RN184] [RN128]</li>
+<li>Scalable algorithms on massively parallel computers [RN139] [RN139] [RN64]</li>
+<li>Nonadiabatic quantum molecular dynamics (NAQMD) to describe excitation dynamics [RN329]</li>
+<li>Omni-directional multiscale shock technique (OD-MSST) to study shock response of materials [RN250] [RN251]</li>
 </ol>
-<p id="bibtex-bibliography-Intro-0"><table class="docutils citation" frame="void" id="rn114" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>P.&nbsp;Hohenberg and W.&nbsp;Kohn. Inhomogeneous electron gas. <em>Physical Review</em>, 136(3B):B864–B871, 1964. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRev.136.B864">https://link.aps.org/doi/10.1103/PhysRev.136.B864</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRev.136.B864">doi:10.1103/PhysRev.136.B864</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn334" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>F.&nbsp;Shimojo, Y.&nbsp;Zempo, K.&nbsp;Hoshino, and M.&nbsp;Watabe. First-principles molecular-dynamics simulation of expanded liquid rubidium. <em>Physical Review B</em>, 52(13):9320–9329, 1995. URL: <a class="reference external" href="&lt;Go to ISI&gt;://A1995RY42500042">&lt;Go to ISI&gt;://A1995RY42500042</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.52.9320">doi:10.1103/PhysRevB.52.9320</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn182" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>Fuyuki Shimojo, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, and Priya Vashishta. Linear-scaling density-functional-theory calculations of electronic structure based on real-space grids: design, analysis, and scalability test of parallel algorithms. <em>Computer Physics Communications</em>, 140(3):303–314, 2001. <a class="reference external" href="https://doi.org/10.1016/S0010-4655(01)00247-8">doi:10.1016/S0010-4655(01)00247-8</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn116" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>N.&nbsp;Troullier and José&nbsp;Luriaas Martins. Efficient pseudopotentials for plane-wave calculations. <em>Physical Review B</em>, 43(3):1993–2006, 1991. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.43.1993">https://link.aps.org/doi/10.1103/PhysRevB.43.1993</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.43.1993">doi:10.1103/PhysRevB.43.1993</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn211" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>David Vanderbilt. Soft self-consistent pseudopotentials in a generalized eigenvalue formalism. <em>Physical Review B</em>, 41(11):7892–7895, 1990. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.41.7892">https://link.aps.org/doi/10.1103/PhysRevB.41.7892</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.41.7892">doi:10.1103/PhysRevB.41.7892</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn263" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td>P.&nbsp;E. Blöchl. Projector augmented-wave method. <em>Physical Review B</em>, 50(24):17953–17979, 1994. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.50.17953">https://link.aps.org/doi/10.1103/PhysRevB.50.17953</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.50.17953">doi:10.1103/PhysRevB.50.17953</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn277" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td>John&nbsp;P. Perdew, Kieron Burke, and Matthias Ernzerhof. Generalized gradient approximation made simple. <em>Physical Review Letters</em>, 77(18):3865–3868, 1996. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.77.3865">https://link.aps.org/doi/10.1103/PhysRevLett.77.3865</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.77.3865">doi:10.1103/PhysRevLett.77.3865</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn322" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td>A.&nbsp;I. Liechtenstein, V.&nbsp;I. Anisimov, and J.&nbsp;Zaanen. Density-functional theory and strong interactions: orbital ordering in mott-hubbard insulators. <em>Physical Review B</em>, 52(8):R5467–R5470, 1995. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.52.R5467">https://link.aps.org/doi/10.1103/PhysRevB.52.R5467</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.52.R5467">doi:10.1103/PhysRevB.52.R5467</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn21" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[9]</a></td><td>Stefan Grimme. Semiempirical gga-type density functional constructed with a long-range dispersion correction. <em>Journal of Computational Chemistry</em>, 27(15):1787–1799, 2006. URL: <a class="reference external" href="http://doi.wiley.com/10.1002/jcc.20495">http://doi.wiley.com/10.1002/jcc.20495</a>, <a class="reference external" href="https://doi.org/10.1002/jcc.20495">doi:10.1002/jcc.20495</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn126" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[10]</a></td><td>M.&nbsp;Dion, H.&nbsp;Rydberg, E.&nbsp;Schröder, D.&nbsp;C. Langreth, and B.&nbsp;I. Lundqvist. Van der waals density functional for general geometries. <em>Physical Review Letters</em>, 92(24):22–25, 2004. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.92.246401">doi:10.1103/PhysRevLett.92.246401</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn324" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id11">[11]</a></td><td>Jochen Heyd and Gustavo&nbsp;E. Scuseria. Efficient hybrid density functional calculations in solids: assessment of the heyd–scuseria–ernzerhof screened coulomb hybrid functional. <em>The Journal of Chemical Physics</em>, 121(3):1187–1192, 2004. URL: <a class="reference external" href="https://doi.org/10.1063/1.1760074">https://doi.org/10.1063/1.1760074</a>, <a class="reference external" href="https://doi.org/10.1063/1.1760074">doi:10.1063/1.1760074</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn99" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id12">[12]</a></td><td>Jochen Heyd, Gustavo&nbsp;E. Scuseria, and Matthias Ernzerhof. Hybrid functionals based on a screened coulomb potential. <em>Journal of Chemical Physics</em>, 118(18):8207–8215, 2003. <a class="reference external" href="https://doi.org/10.1063/1.1564060">doi:10.1063/1.1564060</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn181" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[13]</td><td><em>(<a class="fn-backref" href="#id13">1</a>, <a class="fn-backref" href="#id14">2</a>)</em> Fuyuki Shimojo, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, and Priya Vashishta. Divide-and-conquer density functional theory on hierarchical real-space grids: parallel implementation and applications. <em>Physical Review B - Condensed Matter and Materials Physics</em>, 77(8):1–12, 2008. <a class="reference external" href="https://doi.org/10.1103/PhysRevB.77.085103">doi:10.1103/PhysRevB.77.085103</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn184" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id15">[14]</a></td><td>Fuyuki Shimojo, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, and Priya Vashishta. Embedded divide-and-conquer algorithm on hierarchical real-space grids: parallel molecular dynamics simulation based on linear-scaling density functional theory. <em>Computer Physics Communications</em>, 167(3):151–164, 2005. <a class="reference external" href="https://doi.org/10.1016/j.cpc.2005.01.005">doi:10.1016/j.cpc.2005.01.005</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn128" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id16">[15]</a></td><td>E.&nbsp;Hernández, M.&nbsp;Gillan, and C.&nbsp;Goringe. Linear-scaling density-functional-theory technique: the density-matrix approach. <em>Physical Review B - Condensed Matter and Materials Physics</em>, 53(11):7147–7157, 1996. <a class="reference external" href="https://doi.org/10.1103/PhysRevB.53.7147">doi:10.1103/PhysRevB.53.7147</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn139" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[16]</td><td><em>(<a class="fn-backref" href="#id17">1</a>, <a class="fn-backref" href="#id18">2</a>)</em> Manaschai Kunaseth, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, Ken-ichi Nomura, and Priya Vashishta. A scalable parallel algorithm for dynamic range-limited &lt;i&gt;n&lt;/i&gt; -tuple computation in many-body molecular dynamics simulation. <em>Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis on - SC ‘13</em>, pages 1–12, 2013. URL: <a class="reference external" href="http://dl.acm.org/citation.cfm?doid=2503210.2503235">http://dl.acm.org/citation.cfm?doid=2503210.2503235</a>, <a class="reference external" href="https://doi.org/10.1145/2503210.2503235">doi:10.1145/2503210.2503235</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn64" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id19">[17]</a></td><td>Ken-Ichi Nomura, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, Priya Vashishta, Kohei Shimamura, Fuyuki Shimojo, Manaschai Kunaseth, Paul&nbsp;C. Messina, and Nichols&nbsp;A. Romerod. Metascalable quantum molecular dynamics simulations of hydrogen-on-demand. <em>SC14: International Conference for High Performance Computing, Networking, Storage and Analysis</em>, pages 661–673, 2014. URL: <a class="reference external" href="http://ieeexplore.ieee.org/document/7013041/">http://ieeexplore.ieee.org/document/7013041/</a>, <a class="reference external" href="https://doi.org/10.1109/SC.2014.59">doi:10.1109/SC.2014.59</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn329" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id20">[18]</a></td><td>F.&nbsp;Shimojo, S.&nbsp;Ohmura, W.&nbsp;Mou, R.&nbsp;K. Kalia, A.&nbsp;Nakano, and P.&nbsp;Vashishta. Large nonadiabatic quantum molecular dynamics simulations on parallel computers. <em>Computer Physics Communications</em>, 184(1):1–8, 2013. <a class="reference external" href="https://doi.org/10.1016/j.bbr.2011.03.031">doi:10.1016/j.bbr.2011.03.031</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn250" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id21">[19]</a></td><td>Kohei Shimamura, Masaaki Misawa, Satoshi Ohmura, Fuyuki Shimojo, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, and Priya Vashishta. Crystalline anisotropy of shock-induced phenomena: omni-directional multiscale shock technique. <em>Applied Physics Letters</em>, 108(7):071901–071901, 2016. URL: <a class="reference external" href="http://dx.doi.org/10.1063/1.4942191 http://aip.scitation.org/doi/10.1063/1.4942191">http://dx.doi.org/10.1063/1.4942191 http://aip.scitation.org/doi/10.1063/1.4942191</a>, <a class="reference external" href="https://doi.org/10.1063/1.4942191">doi:10.1063/1.4942191</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn251" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id22">[20]</a></td><td>Kohei Shimamura, Masaaki Misawa, Ying Li, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, Fuyuki Shimojo, and Priya Vashishta. A crossover in anisotropic nanomechanochemistry of van der waals crystals. <em>Applied Physics Letters</em>, 107(23):231903–231903, 2015. URL: <a class="reference external" href="http://dx.doi.org/10.1063/1.4937268 http://aip.scitation.org/doi/10.1063/1.4937268">http://dx.doi.org/10.1063/1.4937268 http://aip.scitation.org/doi/10.1063/1.4937268</a>, <a class="reference external" href="https://doi.org/10.1063/1.4937268">doi:10.1063/1.4937268</a>.</td></tr>
-</tbody>
-</table>
-</p>
+<p id="bibtex-bibliography-Intro-0"></p>
 </div>
 
 
@@ -242,7 +122,7 @@ described in <a class="reference internal" href="#rn181" id="id13">[13]</a>) inc
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Subodh Tiwari &amp; Lindsay Bassman.
+        &#169; Copyright 2019, Subodh Tiwari &amp;&amp; Lindsay Bassman.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
     </div>
   </body>

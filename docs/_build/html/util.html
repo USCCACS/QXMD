@@ -1,0 +1,582 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Utilities &mdash; QXMD 3.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="QXMD Simulation Quick-Start" href="output.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> QXMD
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program.html">Program Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IOf.html">Input/Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="param.html">Input Parameters: IN.PARAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">QXMD Simulation Quick-Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-pdb-file-from-output">7.1 Creating PDB file from output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-file">Input file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-file">Output file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#executing-program">Executing program</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#picking-last-configuration-from-simulation">7.2 Picking last configuration from simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-file-1">Input file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-file-1">Output file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#executing-program-1">Executing program</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#create-gaussian-cube-file-to-visualize-wave-function">7.3 Create gaussian cube file to visualize wave function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-file-2">Input file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-file-2">Output file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#executing-program-2">Executing program</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kohn-sham-eigenvalues">7.4 Kohn Sham eigenvalues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-file-3">Input file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-file-3">Output file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#executing-program-3">Executing program</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QXMD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Utilities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/util.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="utilities">
+<h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h1>
+<p>Utilities program are provided in the util directory in the download.
+Util directory consists of multiple small fortran and C/C++ program.
+These small program are used to convert output file generated by QXMD to
+a formatted structure. This section gives an overveiw of utility program
+available with QXMD. It should be noted that this list is not
+comprehensive and any user can create there own utility program to
+extract data from QXMD output. output file stucture can be referred to
+section 4.2.</p>
+<p>All the utility program can be compiled using following step.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>util $ ifort $(util_program).f -o $(util_program)
+</pre></div>
+</div>
+<p>All the utility programs take argument <strong>-h</strong> for help. -h flag prints
+the argument taken by utility programs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>util $ ./$(util_program) -h
+</pre></div>
+</div>
+<p>Each program takes path of output data directory as a command line
+argument. To run the program please eter following steps</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>util $ ./$(util_program) -d $(path of output data directory)
+</pre></div>
+</div>
+<p>Utility files may also take more than one argument depending on their
+calculation. Please check below about the command line section for each
+analysis.</p>
+<p>NOTE: All the utility program are written for INTEL Fortran compiler. It
+is possible the your program will not compile with gfortran.</p>
+<div class="section" id="creating-pdb-file-from-output">
+<span id="id1"></span><h2>7.1 Creating PDB file from output<a class="headerlink" href="#creating-pdb-file-from-output" title="Permalink to this headline">¶</a></h2>
+<p>Program <strong>toPDBcell.f</strong> is used to create the PDB file from QXMD output.
+This program requires following files in the output directory.</p>
+<div class="section" id="input-file">
+<h3>Input file<a class="headerlink" href="#input-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qm_ion</span><span class="o">.</span><span class="n">d</span>
+<span class="n">qm_box</span><span class="o">.</span><span class="n">d</span>
+<span class="n">md_spc</span><span class="o">.</span><span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output-file">
+<h3>Output file<a class="headerlink" href="#output-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">pdb</span>
+</pre></div>
+</div>
+<p>The program will read complete trajectory after a simulation and create
+a PDB trajectory file. PDB file format can be read by multiple
+visualization software including VMD, OVITO.</p>
+</div>
+<div class="section" id="executing-program">
+<h3>Executing program<a class="headerlink" href="#executing-program" title="Permalink to this headline">¶</a></h3>
+<p>The program takes one argument.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-d $(Path of the output data directory)
+</pre></div>
+</div>
+<p>Path of the output data directory is mandatory.</p>
+<p>To run the program, please use following step</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span><span class="p">:</span>
+<span class="o">./</span><span class="n">toPDBcell</span> <span class="o">-</span><span class="n">d</span> <span class="n">data</span>
+</pre></div>
+</div>
+<p>It will create a file name config.pdb. It will also print timestep on
+the terminal</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="p">:</span>
+<span class="n">data</span><span class="o">/</span><span class="n">qm_ion</span><span class="o">.</span><span class="n">d</span>
+
+<span class="nb">open</span> <span class="p">:</span>
+<span class="n">data</span><span class="o">/</span><span class="n">qm_box</span><span class="o">.</span><span class="n">d</span>
+
+<span class="nb">open</span> <span class="p">:</span>
+<span class="n">data</span><span class="o">/</span><span class="n">md_spc</span><span class="o">.</span><span class="n">d</span>
+
+          <span class="mi">0</span>
+          <span class="mi">1</span>
+          <span class="mi">2</span>
+          <span class="mi">3</span>
+          <span class="mi">4</span>
+          <span class="mi">5</span>
+          <span class="mi">6</span>
+          <span class="mi">7</span>
+          <span class="o">..</span>
+          <span class="o">..</span>
+          <span class="o">..</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="picking-last-configuration-from-simulation">
+<span id="id2"></span><h2>7.2 Picking last configuration from simulation<a class="headerlink" href="#picking-last-configuration-from-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Program <strong>pick_config.f90</strong> is used to obtain the last configuration
+from a trajectory. This program is useful to restart the job in case you
+have not saved restart files. The program requires following files.</p>
+<div class="section" id="input-file-1">
+<span id="id3"></span><h3>Input file<a class="headerlink" href="#input-file-1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qm_ion</span><span class="o">.</span><span class="n">d</span>
+<span class="n">qm_box</span><span class="o">.</span><span class="n">d</span>
+<span class="n">md_spc</span><span class="o">.</span><span class="n">d</span>
+<span class="n">qm_cel</span><span class="o">.</span><span class="n">d</span>
+<span class="n">md_vel</span><span class="o">.</span><span class="n">d</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output-file-1">
+<span id="id4"></span><h3>Output file<a class="headerlink" href="#output-file-1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IN</span><span class="o">.</span><span class="n">VELOC</span> <span class="p">(</span><span class="n">Velocity</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">IN</span><span class="o">.</span><span class="n">CONFIG</span> <span class="p">(</span><span class="n">Coordinate</span> <span class="n">of</span> <span class="n">each</span> <span class="n">atom</span><span class="p">)</span>
+<span class="n">Lattice_vector</span><span class="o">.</span><span class="n">dat</span> <span class="p">(</span><span class="n">Supercell</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>md_vel.d</strong> file is optional, if <strong>md_vel.d</strong> file exist. Otherwise,
+program will igonre the option. Program will create three file IN.VELOC,
+IN. CONFIG and Lattice_vector.dat. IN.VELOC contains velocity data for
+each atoms. IN.CONFIG contains coordiates of all the atoms in the system
+and Lattice_vecotr.dat has supercell data.</p>
+</div>
+<div class="section" id="executing-program-1">
+<span id="id5"></span><h3>Executing program<a class="headerlink" href="#executing-program-1" title="Permalink to this headline">¶</a></h3>
+<p>The program takes two argument.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-d $(Path of the output data directory)
+-n $(TIMESTEP)
+</pre></div>
+</div>
+<p>Path of the output data directory is mandatory. TIMESTEP selection is
+optional. If you do not specify -n TIMESTEP option, the program will
+create output from last snanshot of the trajectory. If you would like to
+pick certain step from the complete trajectory, specify the timestep.</p>
+<p>To run the program, please use following step.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span><span class="p">:</span>
+<span class="n">To</span> <span class="n">pick</span> <span class="mi">5</span><span class="n">th</span> <span class="n">step</span> <span class="kn">from</span> <span class="mi">100</span> <span class="n">step</span> <span class="n">trajectory</span>
+  <span class="o">./</span><span class="n">pick_config</span> <span class="o">-</span><span class="n">d</span> <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span> <span class="o">-</span><span class="n">n</span> <span class="mi">5</span>
+<span class="n">To</span> <span class="n">pick</span> <span class="n">last</span> <span class="n">step</span> <span class="kn">from</span> <span class="mi">100</span> <span class="n">step</span> <span class="n">trajecotry</span>
+  <span class="o">./</span><span class="n">pick_config</span> <span class="o">-</span><span class="n">d</span> <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span>
+</pre></div>
+</div>
+<p>If the program is executed correctely. It will show output on terminal
+as following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="nb">open</span>  <span class="p">:</span>
+ <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span><span class="o">//</span><span class="n">md_spc</span><span class="o">.</span><span class="n">d</span>
+
+ <span class="nb">open</span>  <span class="p">:</span>
+ <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span><span class="o">//</span><span class="n">qm_ion</span><span class="o">.</span><span class="n">d</span>
+
+ <span class="nb">open</span>  <span class="p">:</span>
+ <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span><span class="o">//</span><span class="n">qm_box</span><span class="o">.</span><span class="n">d</span>
+
+ <span class="nb">open</span>  <span class="p">:</span>
+ <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span><span class="o">//</span><span class="n">qm_cel</span><span class="o">.</span><span class="n">d</span>
+
+ <span class="nb">open</span>  <span class="p">:</span>
+ <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span><span class="o">//</span><span class="n">md_vel</span><span class="o">.</span><span class="n">d</span>
+
+<span class="n">Pick</span> <span class="n">up</span> <span class="n">the</span> <span class="n">configuration</span> <span class="o">&amp;</span> <span class="n">velocity</span> <span class="n">files</span> <span class="n">at</span>    <span class="mi">100</span> <span class="n">step</span>
+<span class="n">BOX</span> <span class="n">at</span>      <span class="mi">0</span> <span class="n">step</span> <span class="p">[</span><span class="n">A</span><span class="p">]</span>
+  <span class="mf">7.0000</span><span class="p">,</span>   <span class="mf">7.0000</span><span class="p">,</span>   <span class="mf">7.0000</span>  <span class="p">:</span>  <span class="n">angles</span> <span class="n">between</span> <span class="n">cell</span> <span class="n">vec</span><span class="o">.</span> <span class="ow">in</span> <span class="p">[</span><span class="n">deg</span><span class="o">.</span><span class="p">]</span>
+ <span class="mf">90.0000</span><span class="p">,</span>  <span class="mf">90.0000</span><span class="p">,</span>  <span class="mf">90.0000</span>  <span class="p">:</span>  <span class="n">lengths</span> <span class="n">of</span> <span class="n">cell</span> <span class="n">vectors</span>
+<span class="n">CELL</span> <span class="n">at</span>      <span class="mi">0</span> <span class="n">step</span> <span class="p">[</span><span class="n">A</span><span class="p">]</span>
+  <span class="mf">7.00000</span>  <span class="mf">0.00000</span>  <span class="mf">0.00000</span>   <span class="p">:</span> <span class="nb">super</span> <span class="n">cell</span> <span class="n">vector</span> <span class="n">L1</span>
+  <span class="mf">0.00000</span>  <span class="mf">7.00000</span>  <span class="mf">0.00000</span>   <span class="p">:</span> <span class="nb">super</span> <span class="n">cell</span> <span class="n">vector</span> <span class="n">L2</span>
+  <span class="mf">0.00000</span>  <span class="mf">0.00000</span>  <span class="mf">7.00000</span>   <span class="p">:</span> <span class="nb">super</span> <span class="n">cell</span> <span class="n">vector</span> <span class="n">L3</span>
+</pre></div>
+</div>
+<p>First 14 lines shows all the file indentified and opened by the program.
+Next line</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Pick</span> <span class="n">up</span> <span class="n">the</span> <span class="n">configuration</span> <span class="o">&amp;</span> <span class="n">velocity</span> <span class="n">files</span> <span class="n">at</span>    <span class="mi">100</span> <span class="n">step</span>
+</pre></div>
+</div>
+<p>should correspond to your selected step.</p>
+</div>
+</div>
+<div class="section" id="create-gaussian-cube-file-to-visualize-wave-function">
+<span id="id6"></span><h2>7.3 Create gaussian cube file to visualize wave function<a class="headerlink" href="#create-gaussian-cube-file-to-visualize-wave-function" title="Permalink to this headline">¶</a></h2>
+<p>This program is used to create gaussian cube file to visualize wave
+function. It is to be noted that input files are this program are not
+outputed as default. You must set <strong>dump wavefunctions</strong> true in obtain
+the input files <strong>qm_eigv.d</strong>. Wavefunction dumping is extremely I/O
+intesive and each files are very large. You should dump minimal amount
+of wavefunction files.</p>
+<div class="section" id="input-file-2">
+<span id="id7"></span><h3>Input file<a class="headerlink" href="#input-file-2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qm_ion</span><span class="o">.</span><span class="n">d</span>
+<span class="n">qm_box</span><span class="o">.</span><span class="n">d</span>
+<span class="n">md_spc</span><span class="o">.</span><span class="n">d</span>
+<span class="n">qm_eigv</span><span class="o">.</span><span class="n">d</span><span class="o">.***</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output-file-2">
+<span id="id8"></span><h3>Output file<a class="headerlink" href="#output-file-2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.****.</span><span class="n">cube</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="executing-program-2">
+<span id="id9"></span><h3>Executing program<a class="headerlink" href="#executing-program-2" title="Permalink to this headline">¶</a></h3>
+<p>The program can take upto 5 argument.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-d $(Path_of_the_output_data_directory)
+-n $(frequency_of_snapshot)
+-ib $(create cube file from state number)
+-eb $(create cube file till state number)
+-w  $(selector between wave function or square of wave function )
+</pre></div>
+</div>
+<p>Path of the output data directory is mandatory. <strong>-n</strong> option allows you
+to choose frequency of cube file created. If you have printed several
+cube files for each iteration, <strong>-ib</strong> and <strong>-eb</strong> allows you to choose
+create dump file in one run. <strong>-w</strong> is optional. Adding -w flag will
+print wave function Ψ. If you would like to print Ψ2, please do not
+include <strong>-w</strong> flag.</p>
+<p>To run the program, use the</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span><span class="p">:</span>
+<span class="n">Create</span> <span class="n">cube</span> <span class="n">files</span> <span class="k">for</span> <span class="n">wave</span> <span class="n">function</span> <span class="n">every</span> <span class="mi">5</span><span class="n">th</span> <span class="n">step</span> <span class="k">for</span> <span class="n">band</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="ow">and</span> <span class="mi">5</span>
+  <span class="o">./</span><span class="n">gcube</span> <span class="o">-</span><span class="n">d</span> <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">adiabatic_qmd</span><span class="o">/</span><span class="n">data</span> <span class="o">-</span><span class="n">n</span> <span class="mi">5</span> <span class="o">-</span><span class="n">ib</span> <span class="mi">3</span> <span class="o">-</span><span class="n">eb</span> <span class="mi">5</span> <span class="o">-</span><span class="n">w</span>
+<span class="n">Create</span> <span class="n">cube</span> <span class="n">files</span> <span class="k">for</span> <span class="n">square</span> <span class="n">of</span> <span class="n">wave</span> <span class="n">function</span> <span class="n">every</span> <span class="mi">10</span><span class="n">th</span> <span class="n">step</span> <span class="k">for</span> <span class="n">band</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="ow">and</span> <span class="mi">5</span>
+  <span class="o">./</span><span class="n">gcube</span> <span class="o">-</span><span class="n">d</span> <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">adiabatic_qmd</span><span class="o">/</span><span class="n">data</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="o">-</span><span class="n">ib</span> <span class="mi">2</span> <span class="o">-</span><span class="n">eb</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>If the program is executed correctely. It will show output on terminal
+as following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Open</span><span class="p">:</span>
+<span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">qm_ion</span><span class="o">.</span><span class="n">d</span>
+
+
+          <span class="mi">2</span>
+          <span class="mi">2</span>
+<span class="n">Open</span><span class="p">:</span>
+<span class="o">./</span><span class="n">state</span><span class="o">.</span><span class="mf">02.000110</span><span class="o">.</span><span class="n">cube</span>
+
+
+          <span class="mi">3</span>
+          <span class="mi">3</span>
+<span class="n">Open</span><span class="p">:</span>
+<span class="o">./</span><span class="n">state</span><span class="o">.</span><span class="mf">03.000110</span><span class="o">.</span><span class="n">cube</span>
+
+
+          <span class="mi">4</span>
+          <span class="mi">4</span>
+<span class="n">Open</span><span class="p">:</span>
+<span class="o">./</span><span class="n">state</span><span class="o">.</span><span class="mf">04.000110</span><span class="o">.</span><span class="n">cube</span>
+
+
+          <span class="mi">5</span>
+          <span class="mi">5</span>
+<span class="n">Open</span><span class="p">:</span>
+<span class="o">./</span><span class="n">state</span><span class="o">.</span><span class="mf">05.000110</span><span class="o">.</span><span class="n">cube</span>
+
+
+          <span class="mi">2</span>
+          <span class="mi">2</span>
+<span class="n">Open</span><span class="p">:</span>
+<span class="o">./</span><span class="n">state</span><span class="o">.</span><span class="mf">02.000120</span><span class="o">.</span><span class="n">cube</span>
+<span class="o">....</span>
+<span class="o">....</span>
+<span class="o">....</span>
+<span class="o">....</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="kohn-sham-eigenvalues">
+<span id="id10"></span><h2>7.4 Kohn Sham eigenvalues<a class="headerlink" href="#kohn-sham-eigenvalues" title="Permalink to this headline">¶</a></h2>
+<p>This program is used to provide Kohn Sham eigenvales in table format.</p>
+<div class="section" id="input-file-3">
+<span id="id11"></span><h3>Input file<a class="headerlink" href="#input-file-3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qm_eig</span><span class="o">.</span><span class="n">d</span>
+<span class="n">qm_fer</span><span class="o">.</span><span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output-file-3">
+<span id="id12"></span><h3>Output file<a class="headerlink" href="#output-file-3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EIG</span><span class="o">.</span><span class="n">dat</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="executing-program-3">
+<span id="id13"></span><h3>Executing program<a class="headerlink" href="#executing-program-3" title="Permalink to this headline">¶</a></h3>
+<p>The program can take upto 1 argument. Providing the data path is
+mandotory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-d $(Path_of_the_output_data_directory)
+</pre></div>
+</div>
+<p>Path of the output data directory is mandatory which is passed as a
+argument by -d flag.</p>
+<p>To run the program, use the</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span><span class="p">:</span>
+<span class="n">Create</span> <span class="n">cube</span> <span class="n">files</span> <span class="k">for</span> <span class="n">wave</span> <span class="n">function</span> <span class="n">every</span> <span class="mi">5</span><span class="n">th</span> <span class="n">step</span> <span class="k">for</span> <span class="n">band</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="ow">and</span> <span class="mi">5</span>
+  <span class="o">./</span><span class="n">eig</span> <span class="o">-</span><span class="n">d</span> <span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">adiabatic_qmd</span><span class="o">/</span><span class="n">data</span>
+</pre></div>
+</div>
+<p>If the program is executed correctely. It will show output on terminal
+as following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="p">:</span>
+<span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">qm_eig</span><span class="o">.</span><span class="n">d</span>
+
+<span class="nb">open</span> <span class="p">:</span>
+<span class="o">../</span><span class="n">examples</span><span class="o">/</span><span class="mi">01</span><span class="n">_Water</span><span class="o">/</span><span class="n">optimization</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">qm_fer</span><span class="o">.</span><span class="n">d</span>
+
+          <span class="mi">0</span>
+          <span class="mi">1</span>
+          <span class="mi">2</span>
+          <span class="mi">3</span>
+          <span class="mi">4</span>
+          <span class="mi">5</span>
+          <span class="mi">6</span>
+          <span class="mi">7</span>
+<span class="o">....</span>
+<span class="o">....</span>
+<span class="o">....</span>
+<span class="o">....</span>
+</pre></div>
+</div>
+<p>The program will create ‘EIG.dat’ file. EIG.dat file contains two
+column. First column represent to TIMESTEP and second column corresponds
+to eigenvalues for timestep. For example, in case of single water
+molecule in box example in example directory, we have used 10 total
+bands. Thus, first row represent to 10 eigenvalues. Timesteps will
+remain same for first column of first 10 row. Afterthat, it will change
+to step 1 and next 10 rows will corresponds to 10 eigenvalues for
+timestep 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Format</span> <span class="n">of</span> <span class="n">EIG</span><span class="o">.</span><span class="n">dat</span><span class="p">:</span>
+     <span class="mi">0</span> <span class="o">-</span><span class="mf">0.2318E+01</span>
+     <span class="mi">0</span> <span class="o">-</span><span class="mf">0.4377E+00</span>
+     <span class="mi">0</span> <span class="o">-</span><span class="mf">0.3899E+00</span>
+     <span class="mi">0</span> <span class="o">-</span><span class="mf">0.3797E+00</span>
+     <span class="mi">0</span>  <span class="mf">0.3797E+00</span>
+     <span class="mi">0</span>  <span class="mf">0.5791E+00</span>
+     <span class="mi">0</span>  <span class="mf">0.6430E+00</span>
+     <span class="mi">0</span>  <span class="mf">0.6445E+00</span>
+     <span class="mi">0</span>  <span class="mf">0.6462E+00</span>
+     <span class="mi">0</span>  <span class="mf">0.6562E+00</span>
+     <span class="mi">1</span> <span class="o">-</span><span class="mf">0.2320E+01</span>
+     <span class="mi">1</span> <span class="o">-</span><span class="mf">0.4662E+00</span>
+     <span class="mi">1</span> <span class="o">-</span><span class="mf">0.3909E+00</span>
+     <span class="mi">1</span> <span class="o">-</span><span class="mf">0.3763E+00</span>
+     <span class="mi">1</span>  <span class="mf">0.3763E+00</span>
+ <span class="o">....</span>
+ <span class="o">....</span>
+ <span class="o">....</span>
+ <span class="o">....</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="output.html" class="btn btn-neutral" title="QXMD Simulation Quick-Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Subodh Tiwari &amp; Lindsay Bassman
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

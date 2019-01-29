@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Prerequisites &mdash; QXMD 3.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Program Structure" href="program.html" />
+    <link rel="prev" title="Introduction" href="Intro.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> QXMD
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-qxmd">2.1 Download QXMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-working-directory">2.2 Set Working Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-makefiles">2.3 Configure Makefiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#precompiler-variables">2.4 Precompiler variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-new-machine-configuration-in-makefile">2.5 Adding New Machine configuration in Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-qxmd">2.6 Build QXMD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="program.html">Program Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IOf.html">Input/Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="param.html">Input Parameters: IN.PARAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">QXMD Simulation Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Utilities</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QXMD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Prerequisites</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="prerequisites">
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
+<p><strong>QXMD</strong> parallel version requires Fortran compiler, FFT and MPI
+libraries. There are no other library requirement for the <strong>QXMD</strong></p>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="download-qxmd">
+<h2>2.1 Download QXMD<a class="headerlink" href="#download-qxmd" title="Permalink to this headline">¶</a></h2>
+<p>To get started, clone this repository to your computer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ git clone https://github.com/USCCACS/QXMD.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-working-directory">
+<h2>2.2 Set Working Directory<a class="headerlink" href="#set-working-directory" title="Permalink to this headline">¶</a></h2>
+<p>First, change the working directory to <strong>qxmd/</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cd qxmd
+</pre></div>
+</div>
+<p>You will see following files and directories when you use the ‘ls’
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>qxmd $ ls
+Include/    Makefile    Qxmd/    Sources/     util/
+</pre></div>
+</div>
+<p><strong>Include/</strong> contains necessary libraries for compilation, <strong>Makefile</strong>
+will be used to build the program, <strong>Qxmd</strong> contains default variables
+for many input parameters, <strong>Sources/</strong> contains all <strong>QXMD</strong> source
+codes,and <strong>util/</strong> contains helpful codes for post-processing output
+data from <strong>QXMD</strong>.</p>
+</div>
+<div class="section" id="configure-makefiles">
+<h2>2.3 Configure Makefiles<a class="headerlink" href="#configure-makefiles" title="Permalink to this headline">¶</a></h2>
+<p>You have to choose makefile based on the configuration of your machine.
+For most of the facility supercomputers makefile is already configured.
+Complete list of the preconfigured makefile can be obtain by typing
+<strong>make help</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$make help
+
+make dec        : DEC Alpha Degital Fortran
+make gnu        : GNU Fortran (only for classical MD)
+make ffc        : PC LINUX (Fujitsu Fortran&amp;C)
+make ffc-v64    : PC LINUX (Fujitsu Fortran&amp;C) on VT-64
+make ifc        : PC LINUX (Intel Fortran)
+make ifc-x86    : PC LINUX (Intel Fortran) on x86-64
+make ifc-v64    : PC LINUX (Intel Fortran) on VT-64
+make hpc        : PC LINUX (Intel Fortran) on x86-64 at USC-HPC
+make hp         : HP FORTRAN 90
+make sp         : IBM SP
+make origin     : SGI ORIGIN 2000
+make origin26   : SGI ORIGIN 2600
+make t3e        : CRAY T3E
+make sr2201     : HITACHI SR2201
+make sr8000     : HITACHI SR8000
+make sr11000    : HITACHI SR11000 at ISSP
+make ha8000     : HITACHI HA8000-tc/HT210
+make vpp        : Fujitsu VPP5000
+make sx7        : NEC SX-7
+make altix      : SGI Altix3700/1280 at ISSP
+make p5         : IBM eServer model p5
+make primequest : FUJITSU PRIMEQUEST 580
+make primergy   : FUJITSU PRIMERGY RX200S3
+make cx400      : FUJITSU PRIMERGY CX400
+make primehpc   : FUJITSU PRIMEHPC FX10
+make sekirei    : Intel Fortran on SGI ICE XA/UV (systemB) at ISSP
+</pre></div>
+</div>
+<p>If you are not using aforementioned machine, you might need to modify
+the <strong>Makefile</strong> according to your computing environment.</p>
+</div>
+<div class="section" id="precompiler-variables">
+<h2>2.4 Precompiler variables<a class="headerlink" href="#precompiler-variables" title="Permalink to this headline">¶</a></h2>
+<p>Precompiler flags are defined in CPPDEFS as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CPPDEFS</span><span class="o">=</span> <span class="o">-</span><span class="n">DFLAG1</span> <span class="o">-</span><span class="n">DFLAG2</span>
+</pre></div>
+</div>
+<p>Following flags are defined in <strong>QXMD</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">LIBFFTW</span> <span class="o">=</span> <span class="n">link</span> <span class="n">FFTW</span> <span class="n">library</span>
+<span class="o">-</span><span class="n">LIBFFTW3</span> <span class="o">=</span> <span class="n">link</span> <span class="n">FFTW3</span> <span class="n">library</span>
+<span class="o">-</span><span class="n">DPOINTER64</span> <span class="o">=</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="n">machines</span>
+<span class="o">-</span><span class="n">DSSL2VP</span> <span class="o">=</span> <span class="n">used</span> <span class="n">on</span> <span class="n">Fujitsu</span> <span class="n">machine</span>
+<span class="o">-</span><span class="n">DVECTOR</span> <span class="o">=</span> <span class="n">special</span> <span class="n">implementation</span><span class="o">.</span> <span class="n">It</span> <span class="n">may</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">faster</span> <span class="n">computation</span> <span class="n">on</span> <span class="n">some</span> <span class="n">machine</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>There are several flags are defined for future development. Currently,
+they are not used. Several flags are specific to compiler. Please check
+compiler manual for further details.</p>
+</div>
+<div class="section" id="adding-new-machine-configuration-in-makefile">
+<h2>2.5 Adding New Machine configuration in Makefile<a class="headerlink" href="#adding-new-machine-configuration-in-makefile" title="Permalink to this headline">¶</a></h2>
+<p><strong>Makefile</strong> defines which compiler you will use to build the <strong>QXMD</strong>
+executable.There are several predefined compiler setting which must be
+set. First, open Makefile available in QXMD directory and define the
+machine name. For example, theta machine at Argonne National Lab</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>theta: $(WDIR) $(DDIR) $(SOURCEFILE)
+        sed &quot;s/^#THETA#//&quot; $(SOURCEFILE) &gt; $(WORKFILE)
+</pre></div>
+</div>
+<p>This process will ensure that make will understand the target. Next, we
+need to define the macro such as <strong>LINKER</strong>, <strong>LDFLAGS</strong> and <strong>FFTLIB</strong>
+in the makefile included in Source directory. For example, theta machine
+definition are as follow</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#THETA#     LINKER        = ftn</span>
+<span class="c1">#THETA#     FFLAGS        = -c -fast -warn none</span>
+<span class="c1">#THETA#     LDFLAGS       = -O3 -ipo -no-prec-div</span>
+<span class="c1">#THETA#     FFLAGS        = -c -O3 -ipo -no-prec-div  -warn none</span>
+<span class="c1">#THETA#     CPPDEFS       = -traditional $(CPPDEF) -DLIBFFTW3 -DIFC -DVECTOR</span>
+<span class="c1">#THETA#     MKLPATH       = $(MKLROOT)/intel/lib64</span>
+<span class="c1">#THETA#     FFTLIB        = -L$(MKLPATH) -Wl,--start-group -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -Wl,--end-group</span>
+</pre></div>
+</div>
+<p>Definition of each macro is as follow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LINKER</span><span class="o">=</span> <span class="n">MPI</span> <span class="n">Fortran</span> <span class="n">compiler</span>
+<span class="n">FFLAGS</span><span class="o">=</span> <span class="n">Compiler</span> <span class="n">flags</span>
+<span class="n">LDFLAGS</span><span class="o">=</span> <span class="n">linking</span> <span class="n">libraries</span>
+<span class="n">CPPDEFS</span><span class="o">=</span> <span class="n">Preprocessing</span> <span class="n">MACROS</span>
+<span class="n">MKLPATH</span><span class="o">=</span> <span class="n">Variable</span> <span class="n">defined</span> <span class="k">for</span> <span class="n">MKL</span> <span class="n">libraries</span>
+<span class="n">FFTLIB</span><span class="o">=</span> <span class="n">FFT</span> <span class="n">library</span>
+</pre></div>
+</div>
+<p>It is up to the user to define a new macro for better readability. Once
+you have defined all the macros you are ready to build code for new
+architecture</p>
+</div>
+<div class="section" id="build-qxmd">
+<h2>2.6 Build QXMD<a class="headerlink" href="#build-qxmd" title="Permalink to this headline">¶</a></h2>
+<p>After tailoring the Makefile for your computing environment, type the
+command below to build the <strong>QXMD</strong> executable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>qxmd $ make $(MACHINE_NAME)
+qxmd $ make qxmd
+</pre></div>
+</div>
+<p>To create a <strong>parallel</strong> version of QXMD, please use the following steps</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>qxmd $ make $(MACHINE_NAME)
+qxmd $ make qxmd_mpi
+</pre></div>
+</div>
+<p>Check to see if you the <strong>QXMD</strong> executable has been created, and if so,
+you are ready to start a simulation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>qxmd $ ls
+Include/    Makefile    Qxmd/    qxmd_mpi Sources/     util/
+</pre></div>
+</div>
+<p>Parallel build is activated by default. The program will use all
+available core on the machine to build the program efficiently.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="program.html" class="btn btn-neutral float-right" title="Program Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Intro.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Subodh Tiwari &amp; Lindsay Bassman
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

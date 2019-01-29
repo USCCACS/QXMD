@@ -1,0 +1,21 @@
+.. QXMD documentation master file, created by
+   sphinx-quickstart on Mon Jan 28 16:46:45 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to QXMD's documentation!
+================================
+
+
+.. toctree::
+   :maxdepth: 3
+    
+   Intro
+   install
+   program
+   IOf
+   param
+   output
+   util
+   lic
+

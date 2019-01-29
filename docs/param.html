@@ -1,38 +1,556 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Input Parameters: IN.PARAM &#8212; QXMD 3.2 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Input Parameters: IN.PARAM &mdash; QXMD 3.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">QXMD 3.2 documentation</a> &#187;</li> 
-      </ul>
-    </div>  
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="QXMD Simulation Quick-Start" href="output.html" />
+    <link rel="prev" title="Input/Output files" href="IOf.html" /> 
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> QXMD
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program.html">Program Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IOf.html">Input/Output files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Input Parameters: IN.PARAM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parallel-section-parallel">5.1 Parallel Section: *parallel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#qm-nodes">5.1.1 (QM-Nodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#k-points">5.1.2 (k-points)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-response-tddft">5.1.3 (linear-response TDDFT)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-nodes">5.1.4 (MD-nodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#start-on-off-section">5.2 Start(on/off) Section</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#on-off">5.2.1 (On/Off)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tddft-md">5.3 TDDFT-MD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">5.3.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fssh">5.3.2 (FSSH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fssh-switch">5.3.3 (FSSH-switch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fssh-ground-state-scf">5.3.4 (FSSH-ground-state-SCF)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fssh-charge-mixing">5.3.5 (FSSH-charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fssh-random-initialize">5.3.6 (FSSH-random-initialize)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boltzmann-factor-for-upward-transition">5.3.7 (Boltzmann factor for upward transition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#velocity-scaling">5.3.8 (velocity scaling)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-step">5.3.9 (time step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallel-calculation">5.3.10 (parallel calculation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restart">5.3.11 (restart)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-exciton">5.3.12 (initial exciton)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ground-state-force">5.3.13 (ground state force)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nsc-force">5.3.14 (NSC force)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#occupations">5.3.15 (occupations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#broadening">5.3.16 (broadening)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dish">5.3.17 (DISH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Reference:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">5.4 linear-response TDDFT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">5.4.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#whether-to-specify-states">5.4.2 (whether to specify states)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specific-states">5.4.3 (specific states)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit-of-energy">5.4.4 (unit of energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy-difference">5.4.5 (energy difference)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finite-difference-mesh">5.4.6 (finite-difference mesh)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#threshold">5.4.7 (threshold)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transition-dipole-threshold">5.4.8 (transition-dipole threshold)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy-difference-threshold">5.4.9 (energy-difference threshold)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#long-range-exchange-scheme">5.4.10 (long-range exchange scheme)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parameters-to-divide-1-r">5.4.11 (parameters to divide 1/r)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hybrid-mixing-parameter">5.4.12 (hybrid mixing parameter)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#foerster-width-of-gaussian">5.4.13 (Foerster: width of Gaussian)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#diagonal-approximation">5.4.14 (diagonal approximation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scissors-correction">5.4.15 (scissors correction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#singlet-fission-rate-calculation">5.4.16 (singlet-fission-rate calculation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spontaneous-emission-rate">5.4.17 (spontaneous emission rate)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Reference:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#paw">5.5 PAW</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">5.5.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-spherical-symmetry">5.5.2 (non-spherical symmetry)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#onsite-charge-mixing">5.5.3 (onsite charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Reference:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cluster">5.6 Cluster</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">5.6.1 (On/Off)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#approximation-for-exchange">5.7 Approximation for Exchange</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#approximation">5.7.1 (approximation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dft-d">5.7.2 (DFT-D)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kernel-factorization-jgga-5-or-6-vdw-df-or-vdw-df2">5.7.3 (kernel factorization) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#q-mesh-range-jgga-5-or-6-vdw-df-or-vdw-df2">5.7.4 (q-mesh range) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kernel-cutoff-parameters-jgga-5-or-6-vdw-df-or-vdw-df2">5.7.5 (kernel cutoff parameters) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cutoff-length-lvdw-factorize-false">5.7.6 (cutoff length) —— lvdw_factorize = .FALSE.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integration-skip-lvdw-factorize-false">5.7.7 (integration skip) —— lvdw_factorize = .FALSE.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#order-of-cardinal-b-spline-lvdw-factorize-false">5.7.8 (order of cardinal B spline) —— lvdw_factorize = .FALSE.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dft-u">5.7.9 (DFT+U)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">5.7.10 (onsite charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dft-c">5.7.11 (DFT+C)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hybrid-functional">5.7.12 (hybrid functional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">5.7.13 (hybrid mixing parameter)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#range-separation-parameter">5.7.14 (range-separation parameter)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-reduction-factor">5.7.15 (grid-reduction factor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Reference:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scissors-correction-at-donor-acceptor-interface">5.8 scissors correction at donor/acceptor interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">5.8.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">5.8.2 (unit of energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#corrections">5.8.3 (corrections)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit-of-length">5.8.4 (unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundary">5.8.5 (boundary)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">5.9 k-points</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#number-of-k-points">5.9.1 (number of k points)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#k-vectors">5.9.2 (k vectors)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#division-number">5.9.3 (division number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tetrahedron-method">5.9.4 (tetrahedron method)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Reference:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#electric-field">5.10 electric field</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id16">5.10.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">5.10.2 (electric field)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Reference:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spin-polarization">5.11 spin polarization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">5.11.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#noncollinear-magnetism">5.11.2 (noncollinear magnetism)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fix-spin-polarization">5.11.3 (fix spin polarization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">5.11.4 (spin polarization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-wave-functions">5.11.5 (initial wave functions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-spin-density">5.11.6 (initial spin density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uniform-spin-density-inispin-1-lnoncollinear-true">5.11.7 (uniform spin density) —— <strong>inispin</strong> = 1 &amp; <strong>lnoncollinear</strong> = .TRUE.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ferromagnetic-spin-density-inispin-2">5.11.8 (ferromagnetic spin density) —— <strong>inispin</strong> = 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#antiferromagnetic-spin-density-inispin-3">5.11.9 (antiferromagnetic spin density) —— <strong>inispin</strong> = 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atomic-spin-density-inispin-4">5.11.10 (atomic spin density) —— <strong>inispin</strong> = 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-direction-lnoncollinear-true">5.11.11 (reference direction) —— <strong>lnoncollinear</strong> = .TRUE.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duplicate-the-up-spin-state-lnoncollinear-false">5.11.12 (duplicate the up-spin state) —— <strong>lnoncollinear</strong> = .FALSE.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scf-iterations">5.12 SCF iterations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-iterations">5.12.1 (global iterations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trial-global-iterations">5.12.2 (trial global iterations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trial-charge-mixing">5.12.3 (trial charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trial-spin-density-mixing">5.12.4 (trial spin-density mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tolerances">5.12.5 (tolerances)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hc-products">5.12.6 (HC products)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#charge-mixing">5.12.7 (charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#number-of-mixing">5.12.8 (number of mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metric-in-charge-mixing">5.12.9 (metric in charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#magnetic-moment-mixing">5.12.10 (magnetic moment mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spin-density-mixing">5.12.11 (spin-density mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#of-spin-density-mixing">5.12.12 (# of spin-density mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spin-metric-in-spin-density-mixing">5.12.13 (spin metric in spin-density mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kerker-mixing-weight-in-spin-density-mixing">5.12.14 (Kerker-mixing weight in spin-density mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-eigenvalues">5.12.15 (output eigenvalues)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-energy-parts">5.12.16 (output energy parts)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-residuals">5.12.17 (output residuals)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convergence-stabilizer">5.12.18 (convergence stabilizer)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#well-potenial">5.13 well potenial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">5.13.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#height-of-potential">5.13.2 (height of potential)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radius-around-each-atom">5.13.3 (radius around each atom)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kohn-sham-equation">5.14 Kohn-Sham equation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id22">5.14.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tolerance">5.14.2 (tolerance)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#threshold-for-w-f-direction">5.14.3 (threshold for w.f. direction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iteration">5.14.4 (iteration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#empty-band-iteration">5.14.5 (empty-band iteration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">5.14.6 (trial global iterations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cg-method">5.14.7 (CG method)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#poisson-equation">5.15 Poisson equation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#multigrid-level">5.15.1 (multigrid level)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">5.15.2 (tolerance)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preconditioner">5.15.3 (preconditioner)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#differentiation">5.15.4 (differentiation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mesh-for-serial-calculation">5.15.5 (mesh for serial calculation)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#molecular-dynamics">5.16 molecular dynamics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id25">5.16.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">5.16.2 (time step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-step-number">5.16.3 (initial step number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#temperature">5.16.4 (temperature)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-temperature">5.16.5 (check temperature)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-total-momentum-zero">5.16.6 (make total momentum zero)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optimization">5.16.7 (optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-optimization">5.16.8 (cell optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-cg-time-step">5.16.9 (cell CG time step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stabilizer-for-quasi-newton">5.16.10 (stabilizer for quasi-Newton)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-hessian">5.16.11 (clear Hessian)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-cell-hessian">5.16.12 (clear cell Hessian)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hybrid-optimization">5.16.13 (hybrid optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#displacement">5.16.14 (displacement)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#order-of-differentiation">5.16.15 (order of differentiation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thermostat-parameters">5.16.16 (thermostat parameters)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atom-type-with-thermostat">5.16.17 (atom type with thermostat)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atom-thermostat-parameters">5.16.18 (atom thermostat parameters)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pressure">5.16.19 (pressure)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#barostat-parameters">5.16.20 (barostat parameters)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restriction-for-md-cell">5.16.21 (restriction for MD cell)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-cell-edge-restriction">5.16.23 (MD cell edge restriction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shock-wave-velocity">5.16.24 (shock wave velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-barostat-velocity">5.16.25 (clear barostat velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-barostat-velocity">5.16.26 (initial barostat velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-data">5.16.27 (output data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#charge-estimation">5.16.28 (charge estimation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wavefunction-estimation">5.16.29 (wavefunction estimation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-charge-estimation">5.16.30 (ASPC charge estimation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-wavefunction-estimation">5.16.31 (ASPC wavefunction estimation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-acceleration">5.16.32 (ASPC acceleration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extended-lagrangian-scheme">5.16.33 (Extended Lagrangian scheme)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#previous-values">5.16.34 (previous values)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-parameter-for-corrector">5.16.35 (ASPC parameter for corrector)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-mixing-charge">5.16.36 (ASPC mixing charge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-iterations">5.16.37 (ASPC iterations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-tolerance">5.16.38 (ASPC tolerance)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-correction-skip-step">5.16.39 (ASPC correction skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#planewave-expansion">5.16.40 (planewave expansion)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statistical-calculation">5.16.41 (statistical calculation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id45">5.16.42 (tolerance)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#save-data">5.17 save data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#onoff">5.17.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-type">5.17.2 (data type)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#soft-walls">5.18 soft walls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#walls">5.18.1 (walls)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gravitational-field">5.19 gravitational field</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id53">5.19.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#magnitude">5.19.2 (magnitude)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#direction">5.19.3 (direction)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mulliken-analysis">5.20 Mulliken analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id58">5.20.21 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#skip-step">5.20.22 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decompose-overlap-population">5.20.23 (decompose overlap population)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#weights-associated-with-each-atom">5.20.24 (weights associated with each atom)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bond-charge">5.20.25 (bond charge)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spherical-harmonics-expansion">5.21 Spherical Harmonics expansion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id65">5.21.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id67">5.21.2 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default-radius">5.21.3 (default radius)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#eda">5.22 EDA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id71">5.22.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id73">5.22.2 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radius-for-grid-eda">5.22.3 (radius for grid EDA)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#wannier-function">5.23 Wannier function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id77">5.23.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#band-index">5.23.2 (band index)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id80">5.23.3 (iteration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id82">5.23.4 (tolerance)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dump-orbitals">5.23.5 (dump orbitals)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orbitals-around-atoms">5.23.6 (orbitals around atoms)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id86">5.23.7 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-unitary-matrix">5.23.8 (output unitary matrix)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conductivity">5.24 Conductivity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id90">5.24.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id92">5.24.2 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id94">5.24.3 (unit of energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#width-of-energy">5.24.4 (width of energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id97">5.24.5 (temperature)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dc-current-density">5.24.6 (DC current density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id100">5.24.7 (electric field)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#current-states">5.24.8 (current states)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hole-states">5.24.9 (hole states)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#electron-states">5.24.10 (electron states)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-momentum-matrix">5.24.11 (output momentum matrix)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id106">5.24.12 (unit of energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frequency-range">5.24.13 (frequency range)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-states">5.24.14 (matrix states)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stress-calculation-only-for-bulk-calculations">5.25 stress calculation —— only for bulk calculations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id111">5.25.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id113">5.25.2 (skip step)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dump-charge-density">5.26 dump charge density</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id116">5.26.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id118">5.26.2 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-area">5.26.3 (output area)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dump-wavefunctions">5.27 dump wavefunctions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id122">5.27.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bands">5.27.2 (bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id125">5.27.3 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id127">5.27.4 (output area)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dump-local-potential">5.28 dump local potential</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id130">5.28.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#average-plane">5.28.2 (average plane)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id133">5.28.3 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id135">5.28.4 (output area)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#supercell">5.29 supercell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id138">5.29.1 (unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-vector">5.29.2 (cell vector)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lengths-angles">5.29.3 (lengths &amp; angles)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vacuum">5.30 vacuum</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id143">5.30.1 (unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id145">5.30.2 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parameter-in-error-function">5.30.3 (parameter in error function)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spherical-region">5.31 spherical region</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id149">5.31.1 (On/Off)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#planewaves">5.32 planewaves</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unit-of-cutoff-energy">5.32.1 (unit of cutoff energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-wavefuctions">5.32.2 (for wavefuctions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-electron-density">5.32.3 (for electron density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-soft-part-of-density">5.32.4 (for soft part of density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-orthogonalization">5.32.5 (for orthogonalization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-charge-density-mixing">5.32.6 (for charge density mixing)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#double-grid-method">5.33 double-grid method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#order-of-cardinal-b-spline">5.33.1 (order of cardinal B spline)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id160">5.33.2 (unit of cutoff energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-non-periodic-direction">5.33.3 (for non-periodic direction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-periodic-direction">5.33.3 (for periodic direction)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#electronic-bands">5.34 electronic bands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#occupied-bands">5.34.1 (occupied bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#empty-bands">5.34.2 (empty bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id167">5.34.3 (broadening)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#charge-number-of-ion">5.34.4 (charge number of ion)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#symmetry-operations">5.35 Symmetry operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id171">5.35.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit-cell">5.35.2 (unit cell)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformation-matrix">5.35.3 (transformation matrix)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inverse-transformation-matrix">5.35.3 (inverse transformation matrix)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#origin-of-symmetry-op">5.35.4 (origin of symmetry op.)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id177">5.35.5 (symmetry operations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#denominator-of-trans-vector">5.35.6 (denominator of trans. vector)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inversion-operations">5.35.7 (inversion operations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radius-to-identify-atoms">5.35.8 (radius to identify atoms)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-charge-density">5.35.9 (for charge density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-spin-density">5.35.10 (for spin density)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#atoms">5.36 Atoms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#species">5.36.1 (species)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atomic-number">5.36.2 (atomic number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pseudopotential">5.36.3 (pseudopotential)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nonlocal-potential">5.36.4 (nonlocal potential)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-potential">5.36.5 (local potential)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partial-core-correction">5.36.6 (partial core correction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compensation-charge-cutoff">5.36.7 (compensation charge cutoff)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-number-of-atoms">5.36.8 (the number of atoms)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id193">5.36.9 (unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#position-file">5.36.10 (position file)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#positions">5.36.11 (positions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fix-positions">5.36.12 (fix positions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fix-displacement">5.36.13 (fix displacement)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fictitious-mass">5.36.14 (fictitious mass)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#velocity-file">5.36.15 (velocity file)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#velocities">5.36.16 (velocities)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id202">5.36.17 (Spherical Harmonics expansion)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id204">5.36.18 (EDA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atomic-charge">5.36.19 (atomic charge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dftu">5.36.20 (DFT+U)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dftc">5.36.21 (DFT+C)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#constraint-conditions">5.37 Constraint conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id210">5.37.1 (unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bond-length-constraint">5.37.1 (bond length constraint)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#virtual-molecular-dynamics">5.38 Virtual Molecular Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cholesky-decomposition">5.39 Cholesky decomposition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-number-of-nodes">5.39.1 (the number of nodes)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#eigenvalue-problem">5.40 Eigenvalue problem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id217">5.40.1 (the number of nodes)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#work-array">5.41 Work Array</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#size-of-array">5.41.1 (size of array)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#table-dimension">5.42 Table Dimension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id222">5.42.1 (local potential)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#others">5.42.2 (others)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">QXMD Simulation Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lic.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QXMD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Input Parameters: IN.PARAM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/param.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="input-parameters-in-param">
 <h1>Input Parameters: IN.PARAM<a class="headerlink" href="#input-parameters-in-param" title="Permalink to this headline">¶</a></h1>
@@ -2793,451 +3311,62 @@ default <strong>cblength</strong> = No default</p>
 </div>
 
 
+           </div>
+           
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Input Parameters: IN.PARAM</a><ul>
-<li><a class="reference internal" href="#parallel-section-parallel">5.1 Parallel Section: *parallel</a><ul>
-<li><a class="reference internal" href="#qm-nodes">5.1.1 (QM-Nodes)</a></li>
-<li><a class="reference internal" href="#k-points">5.1.2 (k-points)</a></li>
-<li><a class="reference internal" href="#linear-response-tddft">5.1.3 (linear-response TDDFT)</a></li>
-<li><a class="reference internal" href="#md-nodes">5.1.4 (MD-nodes)</a></li>
-<li><a class="reference internal" href="#reference">Reference:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#start-on-off-section">5.2 Start(on/off) Section</a><ul>
-<li><a class="reference internal" href="#on-off">5.2.1 (On/Off)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#tddft-md">5.3 TDDFT-MD</a><ul>
-<li><a class="reference internal" href="#id1">5.3.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#fssh">5.3.2 (FSSH)</a></li>
-<li><a class="reference internal" href="#fssh-switch">5.3.3 (FSSH-switch)</a></li>
-<li><a class="reference internal" href="#fssh-ground-state-scf">5.3.4 (FSSH-ground-state-SCF)</a></li>
-<li><a class="reference internal" href="#fssh-charge-mixing">5.3.5 (FSSH-charge mixing)</a></li>
-<li><a class="reference internal" href="#fssh-random-initialize">5.3.6 (FSSH-random-initialize)</a></li>
-<li><a class="reference internal" href="#boltzmann-factor-for-upward-transition">5.3.7 (Boltzmann factor for upward transition)</a></li>
-<li><a class="reference internal" href="#velocity-scaling">5.3.8 (velocity scaling)</a></li>
-<li><a class="reference internal" href="#time-step">5.3.9 (time step)</a></li>
-<li><a class="reference internal" href="#parallel-calculation">5.3.10 (parallel calculation)</a></li>
-<li><a class="reference internal" href="#restart">5.3.11 (restart)</a></li>
-<li><a class="reference internal" href="#initial-exciton">5.3.12 (initial exciton)</a></li>
-<li><a class="reference internal" href="#ground-state-force">5.3.13 (ground state force)</a></li>
-<li><a class="reference internal" href="#nsc-force">5.3.14 (NSC force)</a></li>
-<li><a class="reference internal" href="#occupations">5.3.15 (occupations)</a></li>
-<li><a class="reference internal" href="#broadening">5.3.16 (broadening)</a></li>
-<li><a class="reference internal" href="#dish">5.3.17 (DISH)</a></li>
-<li><a class="reference internal" href="#id2">Reference:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id3">5.4 linear-response TDDFT</a><ul>
-<li><a class="reference internal" href="#id4">5.4.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#whether-to-specify-states">5.4.2 (whether to specify states)</a></li>
-<li><a class="reference internal" href="#specific-states">5.4.3 (specific states)</a></li>
-<li><a class="reference internal" href="#unit-of-energy">5.4.4 (unit of energy)</a></li>
-<li><a class="reference internal" href="#energy-difference">5.4.5 (energy difference)</a></li>
-<li><a class="reference internal" href="#finite-difference-mesh">5.4.6 (finite-difference mesh)</a></li>
-<li><a class="reference internal" href="#threshold">5.4.7 (threshold)</a></li>
-<li><a class="reference internal" href="#transition-dipole-threshold">5.4.8 (transition-dipole threshold)</a></li>
-<li><a class="reference internal" href="#energy-difference-threshold">5.4.9 (energy-difference threshold)</a></li>
-<li><a class="reference internal" href="#long-range-exchange-scheme">5.4.10 (long-range exchange scheme)</a></li>
-<li><a class="reference internal" href="#parameters-to-divide-1-r">5.4.11 (parameters to divide 1/r)</a></li>
-<li><a class="reference internal" href="#hybrid-mixing-parameter">5.4.12 (hybrid mixing parameter)</a></li>
-<li><a class="reference internal" href="#foerster-width-of-gaussian">5.4.13 (Foerster: width of Gaussian)</a></li>
-<li><a class="reference internal" href="#diagonal-approximation">5.4.14 (diagonal approximation)</a></li>
-<li><a class="reference internal" href="#scissors-correction">5.4.15 (scissors correction)</a></li>
-<li><a class="reference internal" href="#singlet-fission-rate-calculation">5.4.16 (singlet-fission-rate calculation)</a></li>
-<li><a class="reference internal" href="#spontaneous-emission-rate">5.4.17 (spontaneous emission rate)</a></li>
-<li><a class="reference internal" href="#id5">Reference:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#paw">5.5 PAW</a><ul>
-<li><a class="reference internal" href="#id6">5.5.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#non-spherical-symmetry">5.5.2 (non-spherical symmetry)</a></li>
-<li><a class="reference internal" href="#onsite-charge-mixing">5.5.3 (onsite charge mixing)</a></li>
-<li><a class="reference internal" href="#id7">Reference:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#cluster">5.6 Cluster</a><ul>
-<li><a class="reference internal" href="#id8">5.6.1 (On/Off)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#approximation-for-exchange">5.7 Approximation for Exchange</a><ul>
-<li><a class="reference internal" href="#approximation">5.7.1 (approximation)</a></li>
-<li><a class="reference internal" href="#dft-d">5.7.2 (DFT-D)</a></li>
-<li><a class="reference internal" href="#kernel-factorization-jgga-5-or-6-vdw-df-or-vdw-df2">5.7.3 (kernel factorization) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
-<li><a class="reference internal" href="#q-mesh-range-jgga-5-or-6-vdw-df-or-vdw-df2">5.7.4 (q-mesh range) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
-<li><a class="reference internal" href="#kernel-cutoff-parameters-jgga-5-or-6-vdw-df-or-vdw-df2">5.7.5 (kernel cutoff parameters) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
-<li><a class="reference internal" href="#cutoff-length-lvdw-factorize-false">5.7.6 (cutoff length) —— lvdw_factorize = .FALSE.</a></li>
-<li><a class="reference internal" href="#integration-skip-lvdw-factorize-false">5.7.7 (integration skip) —— lvdw_factorize = .FALSE.</a></li>
-<li><a class="reference internal" href="#order-of-cardinal-b-spline-lvdw-factorize-false">5.7.8 (order of cardinal B spline) —— lvdw_factorize = .FALSE.</a></li>
-<li><a class="reference internal" href="#dft-u">5.7.9 (DFT+U)</a></li>
-<li><a class="reference internal" href="#id9">5.7.10 (onsite charge mixing)</a></li>
-<li><a class="reference internal" href="#dft-c">5.7.11 (DFT+C)</a></li>
-<li><a class="reference internal" href="#hybrid-functional">5.7.12 (hybrid functional)</a></li>
-<li><a class="reference internal" href="#id10">5.7.13 (hybrid mixing parameter)</a></li>
-<li><a class="reference internal" href="#range-separation-parameter">5.7.14 (range-separation parameter)</a></li>
-<li><a class="reference internal" href="#grid-reduction-factor">5.7.15 (grid-reduction factor)</a></li>
-<li><a class="reference internal" href="#id11">Reference:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#scissors-correction-at-donor-acceptor-interface">5.8 scissors correction at donor/acceptor interface</a><ul>
-<li><a class="reference internal" href="#id12">5.8.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#id13">5.8.2 (unit of energy)</a></li>
-<li><a class="reference internal" href="#corrections">5.8.3 (corrections)</a></li>
-<li><a class="reference internal" href="#unit-of-length">5.8.4 (unit of length)</a></li>
-<li><a class="reference internal" href="#boundary">5.8.5 (boundary)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id14">5.9 k-points</a><ul>
-<li><a class="reference internal" href="#number-of-k-points">5.9.1 (number of k points)</a></li>
-<li><a class="reference internal" href="#k-vectors">5.9.2 (k vectors)</a></li>
-<li><a class="reference internal" href="#division-number">5.9.3 (division number)</a></li>
-<li><a class="reference internal" href="#tetrahedron-method">5.9.4 (tetrahedron method)</a></li>
-<li><a class="reference internal" href="#id15">Reference:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#electric-field">5.10 electric field</a><ul>
-<li><a class="reference internal" href="#id16">5.10.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#id17">5.10.2 (electric field)</a></li>
-<li><a class="reference internal" href="#id18">Reference:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#spin-polarization">5.11 spin polarization</a><ul>
-<li><a class="reference internal" href="#id19">5.11.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#noncollinear-magnetism">5.11.2 (noncollinear magnetism)</a></li>
-<li><a class="reference internal" href="#fix-spin-polarization">5.11.3 (fix spin polarization)</a></li>
-<li><a class="reference internal" href="#id20">5.11.4 (spin polarization)</a></li>
-<li><a class="reference internal" href="#initial-wave-functions">5.11.5 (initial wave functions)</a></li>
-<li><a class="reference internal" href="#initial-spin-density">5.11.6 (initial spin density)</a></li>
-<li><a class="reference internal" href="#uniform-spin-density-inispin-1-lnoncollinear-true">5.11.7 (uniform spin density) —— <strong>inispin</strong> = 1 &amp; <strong>lnoncollinear</strong> = .TRUE.</a></li>
-<li><a class="reference internal" href="#ferromagnetic-spin-density-inispin-2">5.11.8 (ferromagnetic spin density) —— <strong>inispin</strong> = 2</a></li>
-<li><a class="reference internal" href="#antiferromagnetic-spin-density-inispin-3">5.11.9 (antiferromagnetic spin density) —— <strong>inispin</strong> = 3</a></li>
-<li><a class="reference internal" href="#atomic-spin-density-inispin-4">5.11.10 (atomic spin density) —— <strong>inispin</strong> = 4</a></li>
-<li><a class="reference internal" href="#reference-direction-lnoncollinear-true">5.11.11 (reference direction) —— <strong>lnoncollinear</strong> = .TRUE.</a></li>
-<li><a class="reference internal" href="#duplicate-the-up-spin-state-lnoncollinear-false">5.11.12 (duplicate the up-spin state) —— <strong>lnoncollinear</strong> = .FALSE.</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#scf-iterations">5.12 SCF iterations</a><ul>
-<li><a class="reference internal" href="#global-iterations">5.12.1 (global iterations)</a></li>
-<li><a class="reference internal" href="#trial-global-iterations">5.12.2 (trial global iterations)</a></li>
-<li><a class="reference internal" href="#trial-charge-mixing">5.12.3 (trial charge mixing)</a></li>
-<li><a class="reference internal" href="#trial-spin-density-mixing">5.12.4 (trial spin-density mixing)</a></li>
-<li><a class="reference internal" href="#tolerances">5.12.5 (tolerances)</a></li>
-<li><a class="reference internal" href="#hc-products">5.12.6 (HC products)</a></li>
-<li><a class="reference internal" href="#charge-mixing">5.12.7 (charge mixing)</a></li>
-<li><a class="reference internal" href="#number-of-mixing">5.12.8 (number of mixing)</a></li>
-<li><a class="reference internal" href="#metric-in-charge-mixing">5.12.9 (metric in charge mixing)</a></li>
-<li><a class="reference internal" href="#magnetic-moment-mixing">5.12.10 (magnetic moment mixing)</a></li>
-<li><a class="reference internal" href="#spin-density-mixing">5.12.11 (spin-density mixing)</a></li>
-<li><a class="reference internal" href="#of-spin-density-mixing">5.12.12 (# of spin-density mixing)</a></li>
-<li><a class="reference internal" href="#spin-metric-in-spin-density-mixing">5.12.13 (spin metric in spin-density mixing)</a></li>
-<li><a class="reference internal" href="#kerker-mixing-weight-in-spin-density-mixing">5.12.14 (Kerker-mixing weight in spin-density mixing)</a></li>
-<li><a class="reference internal" href="#output-eigenvalues">5.12.15 (output eigenvalues)</a></li>
-<li><a class="reference internal" href="#output-energy-parts">5.12.16 (output energy parts)</a></li>
-<li><a class="reference internal" href="#output-residuals">5.12.17 (output residuals)</a></li>
-<li><a class="reference internal" href="#convergence-stabilizer">5.12.18 (convergence stabilizer)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#well-potenial">5.13 well potenial</a><ul>
-<li><a class="reference internal" href="#id21">5.13.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#height-of-potential">5.13.2 (height of potential)</a></li>
-<li><a class="reference internal" href="#radius-around-each-atom">5.13.3 (radius around each atom)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#kohn-sham-equation">5.14 Kohn-Sham equation</a><ul>
-<li><a class="reference internal" href="#id22">5.14.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#tolerance">5.14.2 (tolerance)</a></li>
-<li><a class="reference internal" href="#threshold-for-w-f-direction">5.14.3 (threshold for w.f. direction)</a></li>
-<li><a class="reference internal" href="#iteration">5.14.4 (iteration)</a></li>
-<li><a class="reference internal" href="#empty-band-iteration">5.14.5 (empty-band iteration)</a></li>
-<li><a class="reference internal" href="#id23">5.14.6 (trial global iterations)</a></li>
-<li><a class="reference internal" href="#cg-method">5.14.7 (CG method)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#poisson-equation">5.15 Poisson equation</a><ul>
-<li><a class="reference internal" href="#multigrid-level">5.15.1 (multigrid level)</a></li>
-<li><a class="reference internal" href="#id24">5.15.2 (tolerance)</a></li>
-<li><a class="reference internal" href="#preconditioner">5.15.3 (preconditioner)</a></li>
-<li><a class="reference internal" href="#differentiation">5.15.4 (differentiation)</a></li>
-<li><a class="reference internal" href="#mesh-for-serial-calculation">5.15.5 (mesh for serial calculation)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#molecular-dynamics">5.16 molecular dynamics</a><ul>
-<li><a class="reference internal" href="#id25">5.16.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#id26">5.16.2 (time step)</a></li>
-<li><a class="reference internal" href="#initial-step-number">5.16.3 (initial step number)</a></li>
-<li><a class="reference internal" href="#temperature">5.16.4 (temperature)</a></li>
-<li><a class="reference internal" href="#check-temperature">5.16.5 (check temperature)</a></li>
-<li><a class="reference internal" href="#make-total-momentum-zero">5.16.6 (make total momentum zero)</a></li>
-<li><a class="reference internal" href="#optimization">5.16.7 (optimization)</a></li>
-<li><a class="reference internal" href="#cell-optimization">5.16.8 (cell optimization)</a></li>
-<li><a class="reference internal" href="#cell-cg-time-step">5.16.9 (cell CG time step)</a></li>
-<li><a class="reference internal" href="#stabilizer-for-quasi-newton">5.16.10 (stabilizer for quasi-Newton)</a></li>
-<li><a class="reference internal" href="#clear-hessian">5.16.11 (clear Hessian)</a></li>
-<li><a class="reference internal" href="#clear-cell-hessian">5.16.12 (clear cell Hessian)</a></li>
-<li><a class="reference internal" href="#hybrid-optimization">5.16.13 (hybrid optimization)</a></li>
-<li><a class="reference internal" href="#displacement">5.16.14 (displacement)</a></li>
-<li><a class="reference internal" href="#order-of-differentiation">5.16.15 (order of differentiation)</a></li>
-<li><a class="reference internal" href="#thermostat-parameters">5.16.16 (thermostat parameters)</a></li>
-<li><a class="reference internal" href="#atom-type-with-thermostat">5.16.17 (atom type with thermostat)</a></li>
-<li><a class="reference internal" href="#atom-thermostat-parameters">5.16.18 (atom thermostat parameters)</a></li>
-<li><a class="reference internal" href="#pressure">5.16.19 (pressure)</a></li>
-<li><a class="reference internal" href="#barostat-parameters">5.16.20 (barostat parameters)</a></li>
-<li><a class="reference internal" href="#restriction-for-md-cell">5.16.21 (restriction for MD cell)</a></li>
-<li><a class="reference internal" href="#md-cell-edge-restriction">5.16.23 (MD cell edge restriction)</a></li>
-<li><a class="reference internal" href="#shock-wave-velocity">5.16.24 (shock wave velocity)</a></li>
-<li><a class="reference internal" href="#clear-barostat-velocity">5.16.25 (clear barostat velocity)</a></li>
-<li><a class="reference internal" href="#initial-barostat-velocity">5.16.26 (initial barostat velocity)</a></li>
-<li><a class="reference internal" href="#output-data">5.16.27 (output data)</a></li>
-<li><a class="reference internal" href="#charge-estimation">5.16.28 (charge estimation)</a></li>
-<li><a class="reference internal" href="#wavefunction-estimation">5.16.29 (wavefunction estimation)</a></li>
-<li><a class="reference internal" href="#aspc-charge-estimation">5.16.30 (ASPC charge estimation)</a></li>
-<li><a class="reference internal" href="#aspc-wavefunction-estimation">5.16.31 (ASPC wavefunction estimation)</a></li>
-<li><a class="reference internal" href="#aspc-acceleration">5.16.32 (ASPC acceleration)</a></li>
-<li><a class="reference internal" href="#extended-lagrangian-scheme">5.16.33 (Extended Lagrangian scheme)</a></li>
-<li><a class="reference internal" href="#previous-values">5.16.34 (previous values)</a></li>
-<li><a class="reference internal" href="#aspc-parameter-for-corrector">5.16.35 (ASPC parameter for corrector)</a></li>
-<li><a class="reference internal" href="#aspc-mixing-charge">5.16.36 (ASPC mixing charge)</a></li>
-<li><a class="reference internal" href="#aspc-iterations">5.16.37 (ASPC iterations)</a></li>
-<li><a class="reference internal" href="#aspc-tolerance">5.16.38 (ASPC tolerance)</a></li>
-<li><a class="reference internal" href="#aspc-correction-skip-step">5.16.39 (ASPC correction skip step)</a></li>
-<li><a class="reference internal" href="#planewave-expansion">5.16.40 (planewave expansion)</a></li>
-<li><a class="reference internal" href="#statistical-calculation">5.16.41 (statistical calculation)</a></li>
-<li><a class="reference internal" href="#id45">5.16.42 (tolerance)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#save-data">5.17 save data</a><ul>
-<li><a class="reference internal" href="#onoff">5.17.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#data-type">5.17.2 (data type)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#soft-walls">5.18 soft walls</a><ul>
-<li><a class="reference internal" href="#walls">5.18.1 (walls)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#gravitational-field">5.19 gravitational field</a><ul>
-<li><a class="reference internal" href="#id53">5.19.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#magnitude">5.19.2 (magnitude)</a></li>
-<li><a class="reference internal" href="#direction">5.19.3 (direction)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#mulliken-analysis">5.20 Mulliken analysis</a><ul>
-<li><a class="reference internal" href="#id58">5.20.21 (On/Off)</a></li>
-<li><a class="reference internal" href="#skip-step">5.20.22 (skip step)</a></li>
-<li><a class="reference internal" href="#decompose-overlap-population">5.20.23 (decompose overlap population)</a></li>
-<li><a class="reference internal" href="#weights-associated-with-each-atom">5.20.24 (weights associated with each atom)</a></li>
-<li><a class="reference internal" href="#bond-charge">5.20.25 (bond charge)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#spherical-harmonics-expansion">5.21 Spherical Harmonics expansion</a><ul>
-<li><a class="reference internal" href="#id65">5.21.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#id67">5.21.2 (skip step)</a></li>
-<li><a class="reference internal" href="#default-radius">5.21.3 (default radius)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#eda">5.22 EDA</a><ul>
-<li><a class="reference internal" href="#id71">5.22.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#id73">5.22.2 (skip step)</a></li>
-<li><a class="reference internal" href="#radius-for-grid-eda">5.22.3 (radius for grid EDA)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#wannier-function">5.23 Wannier function</a><ul>
-<li><a class="reference internal" href="#id77">5.23.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#band-index">5.23.2 (band index)</a></li>
-<li><a class="reference internal" href="#id80">5.23.3 (iteration)</a></li>
-<li><a class="reference internal" href="#id82">5.23.4 (tolerance)</a></li>
-<li><a class="reference internal" href="#dump-orbitals">5.23.5 (dump orbitals)</a></li>
-<li><a class="reference internal" href="#orbitals-around-atoms">5.23.6 (orbitals around atoms)</a></li>
-<li><a class="reference internal" href="#id86">5.23.7 (skip step)</a></li>
-<li><a class="reference internal" href="#output-unitary-matrix">5.23.8 (output unitary matrix)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#conductivity">5.24 Conductivity</a><ul>
-<li><a class="reference internal" href="#id90">5.24.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#id92">5.24.2 (skip step)</a></li>
-<li><a class="reference internal" href="#id94">5.24.3 (unit of energy)</a></li>
-<li><a class="reference internal" href="#width-of-energy">5.24.4 (width of energy)</a></li>
-<li><a class="reference internal" href="#id97">5.24.5 (temperature)</a></li>
-<li><a class="reference internal" href="#dc-current-density">5.24.6 (DC current density)</a></li>
-<li><a class="reference internal" href="#id100">5.24.7 (electric field)</a></li>
-<li><a class="reference internal" href="#current-states">5.24.8 (current states)</a></li>
-<li><a class="reference internal" href="#hole-states">5.24.9 (hole states)</a></li>
-<li><a class="reference internal" href="#electron-states">5.24.10 (electron states)</a></li>
-<li><a class="reference internal" href="#output-momentum-matrix">5.24.11 (output momentum matrix)</a></li>
-<li><a class="reference internal" href="#id106">5.24.12 (unit of energy)</a></li>
-<li><a class="reference internal" href="#frequency-range">5.24.13 (frequency range)</a></li>
-<li><a class="reference internal" href="#matrix-states">5.24.14 (matrix states)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#stress-calculation-only-for-bulk-calculations">5.25 stress calculation —— only for bulk calculations</a><ul>
-<li><a class="reference internal" href="#id111">5.25.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#id113">5.25.2 (skip step)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#dump-charge-density">5.26 dump charge density</a><ul>
-<li><a class="reference internal" href="#id116">5.26.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#id118">5.26.2 (skip step)</a></li>
-<li><a class="reference internal" href="#output-area">5.26.3 (output area)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#dump-wavefunctions">5.27 dump wavefunctions</a><ul>
-<li><a class="reference internal" href="#id122">5.27.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#bands">5.27.2 (bands)</a></li>
-<li><a class="reference internal" href="#id125">5.27.3 (skip step)</a></li>
-<li><a class="reference internal" href="#id127">5.27.4 (output area)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#dump-local-potential">5.28 dump local potential</a><ul>
-<li><a class="reference internal" href="#id130">5.28.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#average-plane">5.28.2 (average plane)</a></li>
-<li><a class="reference internal" href="#id133">5.28.3 (skip step)</a></li>
-<li><a class="reference internal" href="#id135">5.28.4 (output area)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#supercell">5.29 supercell</a><ul>
-<li><a class="reference internal" href="#id138">5.29.1 (unit of length)</a></li>
-<li><a class="reference internal" href="#cell-vector">5.29.2 (cell vector)</a></li>
-<li><a class="reference internal" href="#lengths-angles">5.29.3 (lengths &amp; angles)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#vacuum">5.30 vacuum</a><ul>
-<li><a class="reference internal" href="#id143">5.30.1 (unit of length)</a></li>
-<li><a class="reference internal" href="#id145">5.30.2 (On/Off)</a></li>
-<li><a class="reference internal" href="#parameter-in-error-function">5.30.3 (parameter in error function)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#spherical-region">5.31 spherical region</a><ul>
-<li><a class="reference internal" href="#id149">5.31.1 (On/Off)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#planewaves">5.32 planewaves</a><ul>
-<li><a class="reference internal" href="#unit-of-cutoff-energy">5.32.1 (unit of cutoff energy)</a></li>
-<li><a class="reference internal" href="#for-wavefuctions">5.32.2 (for wavefuctions)</a></li>
-<li><a class="reference internal" href="#for-electron-density">5.32.3 (for electron density)</a></li>
-<li><a class="reference internal" href="#for-soft-part-of-density">5.32.4 (for soft part of density)</a></li>
-<li><a class="reference internal" href="#for-orthogonalization">5.32.5 (for orthogonalization)</a></li>
-<li><a class="reference internal" href="#for-charge-density-mixing">5.32.6 (for charge density mixing)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#double-grid-method">5.33 double-grid method</a><ul>
-<li><a class="reference internal" href="#order-of-cardinal-b-spline">5.33.1 (order of cardinal B spline)</a></li>
-<li><a class="reference internal" href="#id160">5.33.2 (unit of cutoff energy)</a></li>
-<li><a class="reference internal" href="#for-non-periodic-direction">5.33.3 (for non-periodic direction)</a></li>
-<li><a class="reference internal" href="#for-periodic-direction">5.33.3 (for periodic direction)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#electronic-bands">5.34 electronic bands</a><ul>
-<li><a class="reference internal" href="#occupied-bands">5.34.1 (occupied bands)</a></li>
-<li><a class="reference internal" href="#empty-bands">5.34.2 (empty bands)</a></li>
-<li><a class="reference internal" href="#id167">5.34.3 (broadening)</a></li>
-<li><a class="reference internal" href="#charge-number-of-ion">5.34.4 (charge number of ion)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#symmetry-operations">5.35 Symmetry operations</a><ul>
-<li><a class="reference internal" href="#id171">5.35.1 (On/Off)</a></li>
-<li><a class="reference internal" href="#unit-cell">5.35.2 (unit cell)</a></li>
-<li><a class="reference internal" href="#transformation-matrix">5.35.3 (transformation matrix)</a></li>
-<li><a class="reference internal" href="#inverse-transformation-matrix">5.35.3 (inverse transformation matrix)</a></li>
-<li><a class="reference internal" href="#origin-of-symmetry-op">5.35.4 (origin of symmetry op.)</a></li>
-<li><a class="reference internal" href="#id177">5.35.5 (symmetry operations)</a></li>
-<li><a class="reference internal" href="#denominator-of-trans-vector">5.35.6 (denominator of trans. vector)</a></li>
-<li><a class="reference internal" href="#inversion-operations">5.35.7 (inversion operations)</a></li>
-<li><a class="reference internal" href="#radius-to-identify-atoms">5.35.8 (radius to identify atoms)</a></li>
-<li><a class="reference internal" href="#for-charge-density">5.35.9 (for charge density)</a></li>
-<li><a class="reference internal" href="#for-spin-density">5.35.10 (for spin density)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#atoms">5.36 Atoms</a><ul>
-<li><a class="reference internal" href="#species">5.36.1 (species)</a></li>
-<li><a class="reference internal" href="#atomic-number">5.36.2 (atomic number)</a></li>
-<li><a class="reference internal" href="#pseudopotential">5.36.3 (pseudopotential)</a></li>
-<li><a class="reference internal" href="#nonlocal-potential">5.36.4 (nonlocal potential)</a></li>
-<li><a class="reference internal" href="#local-potential">5.36.5 (local potential)</a></li>
-<li><a class="reference internal" href="#partial-core-correction">5.36.6 (partial core correction)</a></li>
-<li><a class="reference internal" href="#compensation-charge-cutoff">5.36.7 (compensation charge cutoff)</a></li>
-<li><a class="reference internal" href="#the-number-of-atoms">5.36.8 (the number of atoms)</a></li>
-<li><a class="reference internal" href="#id193">5.36.9 (unit of length)</a></li>
-<li><a class="reference internal" href="#position-file">5.36.10 (position file)</a></li>
-<li><a class="reference internal" href="#positions">5.36.11 (positions)</a></li>
-<li><a class="reference internal" href="#fix-positions">5.36.12 (fix positions)</a></li>
-<li><a class="reference internal" href="#fix-displacement">5.36.13 (fix displacement)</a></li>
-<li><a class="reference internal" href="#fictitious-mass">5.36.14 (fictitious mass)</a></li>
-<li><a class="reference internal" href="#velocity-file">5.36.15 (velocity file)</a></li>
-<li><a class="reference internal" href="#velocities">5.36.16 (velocities)</a></li>
-<li><a class="reference internal" href="#id202">5.36.17 (Spherical Harmonics expansion)</a></li>
-<li><a class="reference internal" href="#id204">5.36.18 (EDA)</a></li>
-<li><a class="reference internal" href="#atomic-charge">5.36.19 (atomic charge)</a></li>
-<li><a class="reference internal" href="#dftu">5.36.20 (DFT+U)</a></li>
-<li><a class="reference internal" href="#dftc">5.36.21 (DFT+C)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#constraint-conditions">5.37 Constraint conditions</a><ul>
-<li><a class="reference internal" href="#id210">5.37.1 (unit of length)</a></li>
-<li><a class="reference internal" href="#bond-length-constraint">5.37.1 (bond length constraint)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#virtual-molecular-dynamics">5.38 Virtual Molecular Dynamics</a></li>
-<li><a class="reference internal" href="#cholesky-decomposition">5.39 Cholesky decomposition</a><ul>
-<li><a class="reference internal" href="#the-number-of-nodes">5.39.1 (the number of nodes)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#eigenvalue-problem">5.40 Eigenvalue problem</a><ul>
-<li><a class="reference internal" href="#id217">5.40.1 (the number of nodes)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#work-array">5.41 Work Array</a><ul>
-<li><a class="reference internal" href="#size-of-array">5.41.1 (size of array)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#table-dimension">5.42 Table Dimension</a><ul>
-<li><a class="reference internal" href="#id222">5.42.1 (local potential)</a></li>
-<li><a class="reference internal" href="#others">5.42.2 (others)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="output.html" class="btn btn-neutral float-right" title="QXMD Simulation Quick-Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="IOf.html" class="btn btn-neutral" title="Input/Output files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/param.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Subodh Tiwari &amp;&amp; Lindsay Bassman
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">QXMD 3.2 documentation</a> &#187;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Subodh Tiwari &amp;&amp; Lindsay Bassman.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>

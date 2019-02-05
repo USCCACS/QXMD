@@ -86,9 +86,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Input/Output files</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#input-files">4.1 Input Files</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#filename">4.1.1 filename</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#in-config">4.1.2 IN.CONFIG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config">4.1.2 CONFIG</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#in-param">4.1.3 IN.PARAM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#in-veloc">4.1.4 IN.VELOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#veloc">4.1.4 VELOC</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#output-files">4.2 Output Files</a><ul>
@@ -206,10 +206,10 @@
 the main input file, relative to the QXMD executable, in between single
 quotes. Below shows the entire contents of a sample <strong>filename</strong></p>
 </div>
-<div class="section" id="in-config">
-<h3>4.1.2 IN.CONFIG<a class="headerlink" href="#in-config" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="config">
+<h3>4.1.2 CONFIG<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
 <p>An initial configuration file must be included for any new QXMD run. It
-is best practice to name this file <strong>IN.CONFIG</strong>. Below shows a sample
+is best practice to name this file <strong>CONFIG</strong>. Below shows a sample
 configuration file for a water molecule.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
 <span class="mi">1</span> <span class="mf">0.579029</span> <span class="mf">0.305583</span> <span class="mf">0.264540</span>
@@ -241,10 +241,10 @@ parameters have default settings, many of which need not be changed for
 most routine QXMD simulations. Details of these parameters may be found
 in section 5.</p>
 </div>
-<div class="section" id="in-veloc">
-<h3>4.1.4 IN.VELOC<a class="headerlink" href="#in-veloc" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="veloc">
+<h3>4.1.4 VELOC<a class="headerlink" href="#veloc" title="Permalink to this headline">¶</a></h3>
 <p>A file defining the intial velocities of the atoms may optionally be
-provided. It is best practice to name this file <strong>IN.VELOC</strong>. If this is
+provided. It is best practice to name this file <strong>VELOC</strong>. If this is
 not provided, random inital velocities will be assigned to each atom, in
 accordance with the initial system temperature. Below shows a sample
 initial velocity file for a water molecule.</p>
@@ -970,7 +970,6 @@ equations are appoximately solved.</p>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
     
 
   

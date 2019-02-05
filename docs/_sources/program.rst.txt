@@ -9,14 +9,14 @@ files needed to run a **QXMD** simulation.
    .
    ├── control
    │   ├── filename
-   │   ├── IN.CONFIG
+   │   ├── CONFIG
    │   ├── IN.PARAM
-   │   ├── IN.VELOC
+   │   ├── VELOC
    │   └── PAW
    │       ├── H.PBE
    │       └── O.PBE
    ├── data
-   └── qxmd_mpi
+   └── qxmdmpi
 
 An overview is given below, while a more detailed explanation can be
 found in section 4.1.
@@ -62,5 +62,5 @@ QXMD run, there are some required files that must be present in
 3.3 QXMD executable
 ~~~~~~~~~~~~~~~~~~~
 
-The QXMD executable, in this case **qxmd_mpi** should be at the same
+The QXMD executable, in this case ``qxmdmpi`` should be at the same
 directory level as the **control** and **data** directories.

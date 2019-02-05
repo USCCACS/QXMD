@@ -163,7 +163,7 @@ To create a **parallel** version of QXMD, please use the following steps
 ::
 
    qxmd $ make $(MACHINE_NAME)
-   qxmd $ make qxmd_mpi
+   qxmd $ make qxmdmpi
 
 Check to see if you the **QXMD** executable has been created, and if so,
 you are ready to start a simulation.
@@ -171,7 +171,7 @@ you are ready to start a simulation.
 ::
 
    qxmd $ ls
-   Include/    Makefile    Qxmd/    qxmd_mpi Sources/     util/
+   Include/    Makefile    docs/   Qxmd/    qxmdmpi*  Sources/     util/
 
 Parallel build is activated by default. The program will use all
 available core on the machine to build the program efficiently.

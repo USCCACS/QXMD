@@ -12,11 +12,11 @@ Input/Output files
 the main input file, relative to the QXMD executable, in between single
 quotes. Below shows the entire contents of a sample **filename**
 
-4.1.2 IN.CONFIG
+4.1.2 CONFIG
 ^^^^^^^^^^^^^^^
 
 An initial configuration file must be included for any new QXMD run. It
-is best practice to name this file **IN.CONFIG**. Below shows a sample
+is best practice to name this file **CONFIG**. Below shows a sample
 configuration file for a water molecule.
 
 ::
@@ -51,11 +51,11 @@ parameters have default settings, many of which need not be changed for
 most routine QXMD simulations. Details of these parameters may be found
 in section 5.
 
-4.1.4 IN.VELOC
+4.1.4 VELOC
 ^^^^^^^^^^^^^^
 
 A file defining the intial velocities of the atoms may optionally be
-provided. It is best practice to name this file **IN.VELOC**. If this is
+provided. It is best practice to name this file **VELOC**. If this is
 not provided, random inital velocities will be assigned to each atom, in
 accordance with the initial system temperature. Below shows a sample
 initial velocity file for a water molecule.

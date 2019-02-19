@@ -88,7 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#parallel-section-parallel">5.1 Parallel Section: *parallel</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#qm-nodes">5.1.1 (QM-Nodes)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#k-points">5.1.2 (k-points)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-nodes">5.1.4 (MD-nodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-nodes">5.1.3 (MD-nodes)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#start-on-off-section">5.2 Start(on/off) Section</a><ul>
@@ -118,200 +118,111 @@
 <li class="toctree-l2"><a class="reference internal" href="#approximation-for-exchange">5.4 Approximation for Exchange</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#approximation">5.4.1 (approximation)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dft-d">5.4.2 (DFT-D)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#kernel-factorization-jgga-5-or-6-vdw-df-or-vdw-df2">5.4.3 (kernel factorization) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#q-mesh-range-jgga-5-or-6-vdw-df-or-vdw-df2">5.4.4 (q-mesh range) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#kernel-cutoff-parameters-jgga-5-or-6-vdw-df-or-vdw-df2">5.4.5 (kernel cutoff parameters) —— jgga=5 or 6 (vdW-DF or vdW-DF2)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cutoff-length-lvdw-factorize-false">5.4.6 (cutoff length) —— lvdw_factorize = .FALSE.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#integration-skip-lvdw-factorize-false">5.4.7 (integration skip) —— lvdw_factorize = .FALSE.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#order-of-cardinal-b-spline-lvdw-factorize-false">5.4.8 (order of cardinal B spline) —— lvdw_factorize = .FALSE.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dft-u">5.4.9 (DFT+U)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#onsite-charge-mixing">5.4.10 (onsite charge mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dft-c">5.4.11 (DFT+C)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id24">5.5 k-points</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#number-of-k-points">5.5.1 (number of k points)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#k-vectors">5.5.2 (k vectors)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#division-number">5.5.3 (division number)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tetrahedron-method">5.5.4 (tetrahedron method)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reference">Reference:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scf-iterations">5.5 SCF iterations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-iterations">5.5.1 (global iterations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tolerances">5.5.2 (tolerances)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#charge-mixing">5.5.3 (charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#number-of-mixing">5.5.4 (number of mixing)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#spin-polarization">5.6 spin polarization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id25">5.6.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fix-spin-polarization">5.6.3 (fix spin polarization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id26">5.6.4 (spin polarization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#initial-wave-functions">5.6.5 (initial wave functions)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#initial-spin-density">5.6.6 (initial spin density)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#uniform-spin-density-inispin-1-lnoncollinear-true">5.6.7 (uniform spin density) —— <strong>inispin</strong> = 1 &amp; <strong>lnoncollinear</strong> = .TRUE.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ferromagnetic-spin-density-inispin-2">5.6.8 (ferromagnetic spin density) —— <strong>inispin</strong> = 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#antiferromagnetic-spin-density-inispin-3">5.6.9 (antiferromagnetic spin density) —— <strong>inispin</strong> = 3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#atomic-spin-density-inispin-4">5.6.10 (atomic spin density) —— <strong>inispin</strong> = 4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reference-direction-lnoncollinear-true">5.6.11 (reference direction) —— <strong>lnoncollinear</strong> = .TRUE.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#duplicate-the-up-spin-state-lnoncollinear-false">5.6.12 (duplicate the up-spin state) —— <strong>lnoncollinear</strong> = .FALSE.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kohn-sham-equation">5.6 Kohn-Sham equation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">5.6.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tolerance">5.6.2 (tolerance)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#threshold-for-w-f-direction">5.6.3 (threshold for w.f. direction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iteration">5.6.4 (iteration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#empty-band-iteration">5.6.5 (empty-band iteration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cg-method">5.6.6 (CG method)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#scf-iterations">5.7 SCF iterations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#global-iterations">5.7.1 (global iterations)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#trial-global-iterations">5.7.2 (trial global iterations)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#trial-charge-mixing">5.7.3 (trial charge mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#trial-spin-density-mixing">5.7.4 (trial spin-density mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tolerances">5.7.5 (tolerances)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hc-products">5.7.6 (HC products)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#charge-mixing">5.7.7 (charge mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#number-of-mixing">5.7.8 (number of mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#metric-in-charge-mixing">5.7.9 (metric in charge mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#magnetic-moment-mixing">5.7.10 (magnetic moment mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spin-density-mixing">5.7.11 (spin-density mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#of-spin-density-mixing">5.7.12 (# of spin-density mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spin-metric-in-spin-density-mixing">5.7.13 (spin metric in spin-density mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#kerker-mixing-weight-in-spin-density-mixing">5.7.14 (Kerker-mixing weight in spin-density mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output-eigenvalues">5.7.15 (output eigenvalues)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output-energy-parts">5.7.16 (output energy parts)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output-residuals">5.7.17 (output residuals)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#convergence-stabilizer">5.7.18 (convergence stabilizer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#molecular-dynamics">5.7 molecular dynamics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">5.7.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">5.7.2 (time step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-step-number">5.7.3 (initial step number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#temperature">5.7.4 (temperature)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-temperature">5.7.5 (check temperature)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-total-momentum-zero">5.7.6 (make total momentum zero)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optimization">5.7.7 (optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-optimization">5.7.8 (cell optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-cg-time-step">5.7.9 (cell CG time step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stabilizer-for-quasi-newton">5.7.10 (stabilizer for quasi-Newton)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-hessian">5.7.11 (clear Hessian)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-cell-hessian">5.7.12 (clear cell Hessian)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hybrid-optimization">5.7.13 (hybrid optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pressure">5.7.14 (pressure)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#barostat-parameters">5.7.15 (barostat parameters)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shock-wave-velocity">5.7.16 (shock wave velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-barostat-velocity">5.7.17 (clear barostat velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-barostat-velocity">5.7.18 (initial barostat velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-data">5.7.19 (output data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#charge-estimation">5.7.20 (charge estimation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wavefunction-estimation">5.7.21 (wavefunction estimation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aspc-charge-estimation">5.7.22 (tolerance)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#kohn-sham-equation">5.8 Kohn-Sham equation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id27">5.8.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tolerance">5.8.2 (tolerance)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#threshold-for-w-f-direction">5.8.3 (threshold for w.f. direction)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#iteration">5.8.4 (iteration)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#empty-band-iteration">5.8.5 (empty-band iteration)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id28">5.8.6 (trial global iterations)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cg-method">5.8.7 (CG method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#save-data">5.8 save data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#onoff">5.8.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-type">5.8.2 (data type)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#poisson-equation">5.9 Poisson equation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#multigrid-level">5.9.1 (multigrid level)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id29">5.9.2 (tolerance)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preconditioner">5.9.3 (preconditioner)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#differentiation">5.9.4 (differentiation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mesh-for-serial-calculation">5.9.5 (mesh for serial calculation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stress-calculation-only-for-bulk-calculations">5.9 stress calculation —— only for bulk calculations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id33">5.9.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#skip-step">5.9.2 (skip step)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#molecular-dynamics">5.10 molecular dynamics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id30">5.10.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id31">5.10.2 (time step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#initial-step-number">5.10.3 (initial step number)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#temperature">5.10.4 (temperature)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#check-temperature">5.10.5 (check temperature)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#make-total-momentum-zero">5.10.6 (make total momentum zero)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#optimization">5.10.7 (optimization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cell-optimization">5.10.8 (cell optimization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cell-cg-time-step">5.10.9 (cell CG time step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stabilizer-for-quasi-newton">5.10.10 (stabilizer for quasi-Newton)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#clear-hessian">5.10.11 (clear Hessian)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#clear-cell-hessian">5.10.12 (clear cell Hessian)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hybrid-optimization">5.10.13 (hybrid optimization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#displacement">5.10.14 (displacement)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#order-of-differentiation">5.10.15 (order of differentiation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thermostat-parameters">5.10.16 (thermostat parameters)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#atom-type-with-thermostat">5.10.17 (atom type with thermostat)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#atom-thermostat-parameters">5.10.18 (atom thermostat parameters)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pressure">5.10.19 (pressure)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#barostat-parameters">5.10.20 (barostat parameters)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#restriction-for-md-cell">5.10.21 (restriction for MD cell)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sub-restriction-for-md-cell">5.10.22 (sub-restriction for MD cell)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-cell-edge-restriction">5.10.23 (MD cell edge restriction)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#shock-wave-velocity">5.10.24 (shock wave velocity)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#clear-barostat-velocity">5.10.25 (clear barostat velocity)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#initial-barostat-velocity">5.10.26 (initial barostat velocity)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output-data">5.10.27 (output data)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#charge-estimation">5.10.28 (charge estimation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wavefunction-estimation">5.10.29 (wavefunction estimation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aspc-charge-estimation">5.10.30 (ASPC charge estimation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aspc-wavefunction-estimation">5.10.31 (ASPC wavefunction estimation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aspc-acceleration">5.10.32 (ASPC acceleration)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#extended-lagrangian-scheme">5.10.33 (Extended Lagrangian scheme)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#previous-values">5.10.34 (previous values)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aspc-parameter-for-corrector">5.10.35 (ASPC parameter for corrector)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aspc-mixing-charge">5.10.36 (ASPC mixing charge)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aspc-iterations">5.10.37 (ASPC iterations)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aspc-tolerance">5.10.38 (ASPC tolerance)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#aspc-correction-skip-step">5.10.39 (ASPC correction skip step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#planewave-expansion">5.10.40 (planewave expansion)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#statistical-calculation">5.10.41 (statistical calculation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id50">5.10.42 (tolerance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dump-charge-density">5.10 dump charge density</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id37">5.10.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id39">5.10.2 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-area">5.10.3 (output area)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#save-data">5.11 save data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#onoff">5.11.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-type">5.11.2 (data type)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dump-wavefunctions">5.11 dump wavefunctions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id43">5.11.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bands">5.11.2 (bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id46">5.11.3 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id48">5.11.4 (output area)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#stress-calculation-only-for-bulk-calculations">5.12 stress calculation —— only for bulk calculations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id55">5.12.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#skip-step">5.12.2 (skip step)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dump-local-potential">5.12 dump local potential</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id51">5.12.1 (On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#average-plane">5.12.2 (average plane)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id54">5.12.3 (skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id56">5.12.4 (output area)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#dump-charge-density">5.13 dump charge density</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id59">5.13.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id61">5.13.2 (skip step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output-area">5.13.3 (output area)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supercell">5.13 supercell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unit-of-length">5.13.1 (unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cell-vector">5.13.2 (cell vector)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lengths-angles">5.13.3 (lengths &amp; angles)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#dump-wavefunctions">5.14 dump wavefunctions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id65">5.14.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bands">5.14.2 (bands)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id68">5.14.3 (skip step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id70">5.14.4 (output area)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#planewaves">5.14 planewaves</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unit-of-cutoff-energy">5.14.1 (unit of cutoff energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-wavefuctions">5.14.2 (for wavefuctions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-electron-density">5.14.3 (for electron density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-soft-part-of-density">5.14.4 (for soft part of density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-orthogonalization">5.14.5 (for orthogonalization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-charge-density-mixing">5.14.5 (for charge density mixing)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#dump-local-potential">5.15 dump local potential</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id73">5.15.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#average-plane">5.15.2 (average plane)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id76">5.15.3 (skip step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id78">5.15.4 (output area)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#electronic-bands">5.15 electronic bands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#occupied-bands">5.15.1 (occupied bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#empty-bands">5.15.2 (empty bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id70">5.15.3 (broadening)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#charge-number-of-ion">5.15.4 (charge number of ion)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#supercell">5.16 supercell</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#unit-of-length">5.16.1 (unit of length)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cell-vector">5.16.2 (cell vector)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#lengths-angles">5.16.3 (lengths &amp; angles)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#planewaves">5.17 planewaves</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#unit-of-cutoff-energy">5.17.1 (unit of cutoff energy)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#for-wavefuctions">5.17.2 (for wavefuctions)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#for-electron-density">5.17.3 (for electron density)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#for-soft-part-of-density">5.17.4 (for soft part of density)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#for-orthogonalization">5.17.5 (for orthogonalization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#for-charge-density-mixing">5.17.6 (for charge density mixing)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#electronic-bands">5.18 electronic bands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#occupied-bands">5.18.1 (occupied bands)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#empty-bands">5.18.2 (empty bands)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id92">5.18.3 (broadening)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#charge-number-of-ion">5.18.4 (charge number of ion)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#atoms">5.19 Atoms</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#species">5.19.1 (species)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#atomic-number">5.19.2 (atomic number)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pseudopotential">5.19.3 (pseudopotential)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nonlocal-potential">5.19.4 (nonlocal potential)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#local-potential">5.19.5 (local potential)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#partial-core-correction">5.19.6 (partial core correction)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compensation-charge-cutoff">5.19.7 (compensation charge cutoff)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-number-of-atoms">5.19.8 (the number of atoms)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id104">5.19.9 (unit of length)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#position-file">5.19.10 (position file)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#positions">5.19.11 (positions)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fix-positions">5.19.12 (fix positions)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fix-displacement">5.19.13 (fix displacement)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fictitious-mass">5.19.14 (fictitious mass)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#velocity-file">5.19.15 (velocity file)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#velocities">5.19.16 (velocities)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#atomic-charge">5.19.19 (atomic charge)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dftu">5.19.20 (DFT+U)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dftc">5.19.21 (DFT+C)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#constraint-conditions">5.20 Constraint conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id116">5.20.1 (unit of length)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bond-length-constraint">5.20.1 (bond length constraint)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#atoms">5.16 Atoms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#species">5.16.1 (species)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atomic-number">5.16.2 (atomic number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partial-core-correction">5.16.3 (partial core correction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-number-of-atoms">5.16.4 (the number of atoms)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id77">5.16.5 (unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#position-file">5.16.6 (position file)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#positions">5.16.7 (positions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#velocity-file">5.16.8 (velocity file)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#velocities">5.16.9 (velocities)</a></li>
 </ul>
 </li>
 </ul>
@@ -438,10 +349,10 @@ defines the number of MPI ranks.</p>
 </pre></div>
 </div>
 <p>Defines the number of MPI ranks to parallelize k-point sampling. See
-section 5.9 for k-point sampling.</p>
+section 5.8 for k-point sampling.</p>
 </div>
 <div class="section" id="md-nodes">
-<h3>5.1.4 (MD-nodes)<a class="headerlink" href="#md-nodes" title="Permalink to this headline">¶</a></h3>
+<h3>5.1.3 (MD-nodes)<a class="headerlink" href="#md-nodes" title="Permalink to this headline">¶</a></h3>
 <p><strong>md_npx, md_npy, md_npz</strong> = [1|even integer] [1|even integer] [1|even
 integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span><span class="p">:</span> <span class="o">**</span><span class="n">md_npx</span> <span class="o">=</span><span class="mi">1</span> <span class="p">,</span> <span class="n">md_npy</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">md_npz</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
@@ -630,7 +541,7 @@ Solves time-dependent K-S equations serially.</p>
 <p>.FALSE. : Initialize electronic occupations as specified in the
 (occupations) subsection .TRUE. : Initialize electronic occupations with
 their values from the last step of a previously completed simulation.
-All files beginning with <a href="#id119"><span class="problematic" id="id120">QM_</span></a>* and <a href="#id121"><span class="problematic" id="id122">MD_</span></a>* must be present in the
+All files beginning with <a href="#id82"><span class="problematic" id="id83">QM_</span></a>* and <a href="#id84"><span class="problematic" id="id85">MD_</span></a>* must be present in the
 <strong>data/</strong> directory.</p>
 <p>Determines how to initialize electronic excitations for an NAQMD
 simulation. Note that if you are continuing a calculation by setting
@@ -755,8 +666,8 @@ DISH</p>
  <span class="o">.</span><span class="n">true</span><span class="o">.</span>
    <span class="mi">6</span>
    <span class="mi">23</span>   <span class="mi">24</span>  <span class="mf">5.063109E-03</span>
-   <span class="mi">23</span>   <span class="mi">25</span>  <span class="mf">5.147713E-03</span>
-   <span class="mi">23</span>   <span class="mi">26</span>  <span class="mf">4.596093E-03</span>
+   <span class="mi">23</span>   <span class="mi">25</span>  <span class="mf">5.117713E-03</span>
+   <span class="mi">23</span>   <span class="mi">26</span>  <span class="mf">4.5</span><span class="o">.</span><span class="mf">5.83E-03</span>
    <span class="mi">24</span>   <span class="mi">25</span>  <span class="mf">7.877069E-03</span>
    <span class="mi">24</span>   <span class="mi">26</span>  <span class="mf">7.426337E-03</span>
    <span class="mi">25</span>   <span class="mi">26</span>  <span class="mf">2.768402E-03</span>
@@ -797,7 +708,7 @@ states</p>
 <h2>5.4 Approximation for Exchange<a class="headerlink" href="#approximation-for-exchange" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="approximation">
 <h3>5.4.1 (approximation)<a class="headerlink" href="#approximation" title="Permalink to this headline">¶</a></h3>
-<p><strong>jgga</strong> = 1|2|3|4|5|6</p>
+<p><strong>jgga</strong> = 1|2|3|4|5.5</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">jgga</span><span class="o">**</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
@@ -818,18 +729,6 @@ states</p>
 <tr class="row-odd"><td><strong>2</strong></td>
 <td>GGA(PBE)<a class="reference internal" href="#rn42" id="id14">[12]</a></td>
 </tr>
-<tr class="row-even"><td><strong>3</strong></td>
-<td>GGA(RPBE)<a class="reference internal" href="#rn33" id="id15">[13]</a></td>
-</tr>
-<tr class="row-odd"><td><strong>4</strong></td>
-<td>GGA(revPBE)<a class="reference internal" href="#rn34" id="id16">[14]</a></td>
-</tr>
-<tr class="row-even"><td><strong>5</strong></td>
-<td>vdW-DF<a class="reference internal" href="#rn35" id="id17">[15]</a></td>
-</tr>
-<tr class="row-odd"><td><strong>6</strong></td>
-<td>vdW-DF2 <a class="reference internal" href="#rn36" id="id18">[16]</a></td>
-</tr>
 </tbody>
 </table>
 <p><strong>jgga</strong> is used to specify the exchange correction functional.</p>
@@ -843,356 +742,21 @@ states</p>
 <p>.TRUE. : Employ an empirical vdW correction .FASLE. : Do not use an
 empirical vdW correction</p>
 <p>Determines whether to use an empirical correction for the van der Waals
-interaction proposed by S. Grimme <a class="reference internal" href="#rn37" id="id19">[17]</a> <a class="reference internal" href="#rn38" id="id20">[18]</a></p>
-</div>
-<div class="section" id="kernel-factorization-jgga-5-or-6-vdw-df-or-vdw-df2">
-<h3>5.4.3 (kernel factorization) —— jgga=5 or 6 (vdW-DF or vdW-DF2)<a class="headerlink" href="#kernel-factorization-jgga-5-or-6-vdw-df-or-vdw-df2" title="Permalink to this headline">¶</a></h3>
-<p><strong>lvdw_factorize</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lvdw_factorize</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Take into account. .FASLE. : Do not</p>
-<p>only used for for vdW-DF or vdW-DF2 (jgga=5 or 6 )</p>
-</div>
-<div class="section" id="q-mesh-range-jgga-5-or-6-vdw-df-or-vdw-df2">
-<h3>5.4.4 (q-mesh range) —— jgga=5 or 6 (vdW-DF or vdW-DF2)<a class="headerlink" href="#q-mesh-range-jgga-5-or-6-vdw-df-or-vdw-df2" title="Permalink to this headline">¶</a></h3>
-<p><strong>lvdw_factorize</strong> = [boolean] <strong>q_cut</strong> = [real] <strong>dlambda</strong> = [real]
-<strong>nqmesh</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">q_cut</span><span class="o">**</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="o">**</span><span class="n">dlambda</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="o">**</span><span class="n">nqmesh</span><span class="o">**</span> <span class="o">=</span> <span class="mi">20</span>
-</pre></div>
-</div>
-<p>These parameters are used to saturate the original function q_0(n,|Delta
-n|) by redefining q_0^{sat} = h[q_0,q_c].</p>
-<p>h(x,x_c) = x_c[1 - exp( - sum_{m=1}^{m_c} (x/x_c)^m/m)]</p>
-<p><strong>q_cut</strong> is corresponding to q_c and <strong>dlambda</strong> and <strong>nqmesh</strong> are a
-width and the number of a logarithmic mesh.</p>
-</div>
-<div class="section" id="kernel-cutoff-parameters-jgga-5-or-6-vdw-df-or-vdw-df2">
-<h3>5.4.5 (kernel cutoff parameters) —— jgga=5 or 6 (vdW-DF or vdW-DF2)<a class="headerlink" href="#kernel-cutoff-parameters-jgga-5-or-6-vdw-df-or-vdw-df2" title="Permalink to this headline">¶</a></h3>
-<p><strong>d_soft</strong> = [real] <strong>phi_at_0</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">d_soft</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">**</span><span class="n">phi_at_0</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.5</span>
-</pre></div>
-</div>
-<p>Because the kernel phi(d_1,d_2) has a logarithmic divergence when d_1
-and d_2 tend to zero, the modified kernel is used for small d_1 and d_2:</p>
-<p>phi(d_1,d_2) = phi_0 + phi_2 d^2 + phi_4 d^4 (d &lt; d_s)</p>
-<p>where d = sqrt(d_1^2 + d_2^2) and phi_2 and phi_4 are fitting
-parameters. d_s and phi_0 are corresponding to <strong>d_soft</strong> and
-<strong>phi_at_0</strong></p>
-</div>
-<div class="section" id="cutoff-length-lvdw-factorize-false">
-<h3>5.4.6 (cutoff length) —— lvdw_factorize = .FALSE.<a class="headerlink" href="#cutoff-length-lvdw-factorize-false" title="Permalink to this headline">¶</a></h3>
-<p><strong>rvdwmax</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">rvdwmax</span><span class="o">**</span> <span class="o">=</span> <span class="mf">10.</span><span class="n">d0</span>
-</pre></div>
-</div>
-<p>Cutoff length in [a.u]</p>
-</div>
-<div class="section" id="integration-skip-lvdw-factorize-false">
-<h3>5.4.7 (integration skip) —— lvdw_factorize = .FALSE.<a class="headerlink" href="#integration-skip-lvdw-factorize-false" title="Permalink to this headline">¶</a></h3>
-<p><strong>imod1</strong> = [even integer] <strong>imod2</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">imod1</span><span class="o">**</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span><span class="n">imod2</span><span class="o">**</span> <span class="o">=</span> <span class="mi">3</span>
-</pre></div>
-</div>
-<p>Integration of r’ on every <strong>imod1</strong> meshes Integration of r on every
-<strong>imod2</strong> meshes</p>
-</div>
-<div class="section" id="order-of-cardinal-b-spline-lvdw-factorize-false">
-<h3>5.4.8 (order of cardinal B spline) —— lvdw_factorize = .FALSE.<a class="headerlink" href="#order-of-cardinal-b-spline-lvdw-factorize-false" title="Permalink to this headline">¶</a></h3>
-<p><strong>iosp</strong> = [odd integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">iosp</span><span class="o">**</span> <span class="o">=</span> <span class="mi">7</span>
-</pre></div>
-</div>
-<p>order of cardinal B spline in the double-grid method <a class="reference internal" href="#rn39" id="id21">[19]</a></p>
-</div>
-<div class="section" id="dft-u">
-<h3>5.4.9 (DFT+U)<a class="headerlink" href="#dft-u" title="Permalink to this headline">¶</a></h3>
-<p><strong>lplusU</strong> = [boolen]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lplusU</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Employ DFT+U correction of the mean-field Hubbard model .FASLE.
-: Do not use DFT+U correction Determines whether to use DFT+U correction
-of the mean-field Hubbard model <a class="reference internal" href="#rn40" id="id22">[20]</a>. The value of U
-and J parameter is set to in the *atoms section. Note that this
-subsection is only considered when <strong>lpaw</strong> is set to .TRUE.</p>
-</div>
-<div class="section" id="onsite-charge-mixing">
-<h3>5.4.10 (onsite charge mixing)<a class="headerlink" href="#onsite-charge-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>plusU_mix</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">plusU_mix</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.5</span>
-</pre></div>
-</div>
-<p><strong>plusU_mix</strong> is used as turning parameter for onsite charge mixing.
-Note that this subsection is only considered when both <strong>lpaw</strong> and
-<strong>lplusU</strong> are set to .TRUE.</p>
-</div>
-<div class="section" id="dft-c">
-<h3>5.4.11 (DFT+C)<a class="headerlink" href="#dft-c" title="Permalink to this headline">¶</a></h3>
-<p><strong>lplusC</strong> = [boolen]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lplusC</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>.TRUE. <span class="classifier-delimiter">:</span> <span class="classifier">Employ an empirical correction to non-local pseudopotential <a class="reference internal" href="#rn41" id="id23">[21]</a></span></dt>
-<dd>.FASLE. : Do not</dd>
-</dl>
-</div>
-</div>
-<div class="section" id="id24">
-<h2>5.5 k-points<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="number-of-k-points">
-<h3>5.5.1 (number of k points)<a class="headerlink" href="#number-of-k-points" title="Permalink to this headline">¶</a></h3>
-<p><strong>nkpnt</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="p">(</span><span class="n">gamma</span> <span class="n">point</span><span class="p">)</span> <span class="o">**</span><span class="n">nkpnt</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p><strong>nkpnt</strong> is the number of k points. If <strong>nkpnt</strong> is greater than zero,
-you set k vectors in (k vectors). If <strong>nkpnt</strong> is zero, you set the
-number of division for the reciprocal vectors in (division number).</p>
-</div>
-<div class="section" id="k-vectors">
-<h3>5.5.2 (k vectors)<a class="headerlink" href="#k-vectors" title="Permalink to this headline">¶</a></h3>
-<p><strong>(bzk,wbzk)</strong> = [real] [real] [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="p">(</span><span class="n">gamma</span> <span class="n">point</span><span class="p">)</span> <span class="o">**</span><span class="n">bzk</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span> <span class="o">=</span> <span class="p">(</span><span class="o">/</span><span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span><span class="o">/</span><span class="p">)</span> <span class="o">**</span><span class="n">wbzk</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span>
-</pre></div>
-</div>
-<p><strong>bzk(1:3)</strong> are k vectors and <strong>wbzk</strong> is the weight of each k-vector.
-Note that this subsection is only considered when <strong>nkpnt</strong> is greater
-than zero.Also, Please set K vectors between -0.5 and 0.5.</p>
-</div>
-<div class="section" id="division-number">
-<h3>5.5.3 (division number)<a class="headerlink" href="#division-number" title="Permalink to this headline">¶</a></h3>
-<p><strong>npkx(1:3)</strong> = [integer] [integer] [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">npkx</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span> <span class="o">=</span> <span class="p">(</span><span class="o">/</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">/</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>npkx(1:3)</strong> is the number of division for reciprocal vectors and
-Monkhorst-Pack method is used. <a class="reference external" href="#Monkhorst_1976">[1]</a></p>
-</div>
-<div class="section" id="tetrahedron-method">
-<h3>5.5.4 (tetrahedron method)<a class="headerlink" href="#tetrahedron-method" title="Permalink to this headline">¶</a></h3>
-<p><strong>ltetra</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ltetra</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Use the tetrahedron method .FALSE. : Do not use</p>
-<p>Determines whether to use the modified tetrahedron method
-<a class="reference external" href="#Blochl_1994">[2]</a> for the Brillouin Zone integration.</p>
-</div>
-<div class="section" id="reference">
-<h3>Reference:<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
-<p>1. “Special points for Brillouin-zone integrations” H. J. Monkhorst and
-J. D. Pack, O. Jepsen, and O. K. Andersen. Phys. Rev. B 13, 5188 (1976)
-2. “Improved tetrahedron method for Brillouin-zone integrations.” P. E.
-Blöchl, O. Jepsen, and O. K. Andersen. Phys. Rev. B 49, 16223 (1994)</p>
-</div>
-</div>
-<div class="section" id="spin-polarization">
-<h2>5.6 spin polarization<a class="headerlink" href="#spin-polarization" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id25">
-<h3>5.6.1 (On/Off)<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
-<p><strong>lspin</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lspin</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Apply spin polarization .FALSE. : Do not use</p>
-<p>Determines whether to take into account spin polarization.</p>
-</div>
-<div class="section" id="fix-spin-polarization">
-<h3>5.6.3 (fix spin polarization)<a class="headerlink" href="#fix-spin-polarization" title="Permalink to this headline">¶</a></h3>
-<p><strong>lfixud</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lfixud</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">TRUE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Fix the value of spin polarization .FALSE. : Do not fix</p>
-<p><strong>lfixud</strong> set to .TRUE. will be fixed the value of spin polarization.
-Note that this subsection is only considered when <strong>lnoncollinear</strong> is
-.FALSE.</p>
-</div>
-<div class="section" id="id26">
-<h3>5.6.4 (spin polarization)<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
-<p><strong>diffud</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">diffud</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
-</pre></div>
-</div>
-<p><strong>diffud</strong> is the value of spin polarization to fix total magnetic
-moment. Note that this subsection is only considered when <strong>lfixud</strong> is
-.TRUE.</p>
-</div>
-<div class="section" id="initial-wave-functions">
-<h3>5.6.5 (initial wave functions)<a class="headerlink" href="#initial-wave-functions" title="Permalink to this headline">¶</a></h3>
-<p><strong>lwfrand</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lfixud</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.FALSE. : Down spin is given as same as up spin .TRUE. : Down spin is
-given by random number</p>
-<p>Determines how to give the down spin.</p>
-</div>
-<div class="section" id="initial-spin-density">
-<h3>5.6.6 (initial spin density)<a class="headerlink" href="#initial-spin-density" title="Permalink to this headline">¶</a></h3>
-<p><strong>inispin</strong> = [0|1|2|3|4]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">inispin</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<table border="1" class="docutils">
-<colgroup>
-<col width="24%" />
-<col width="76%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>inispin</strong></th>
-<th class="head">Initial spin density</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>0</strong></td>
-<td>from LSDA (lnoncollinear = .TRUE.)</td>
-</tr>
-<tr class="row-odd"><td><strong>1</strong></td>
-<td>uniformly polarized</td>
-</tr>
-<tr class="row-even"><td><strong>2</strong></td>
-<td>ferromagnetic alignment</td>
-</tr>
-<tr class="row-odd"><td><strong>3</strong></td>
-<td>antiferromagnetic random alignment</td>
-</tr>
-<tr class="row-even"><td><strong>4</strong></td>
-<td>specify spin polarization par atom</td>
-</tr>
-</tbody>
-</table>
-<p><strong>inispin</strong> is used to specify the method for initial spin density. The
-detail parameter is set in another subsection.</p>
-</div>
-<div class="section" id="uniform-spin-density-inispin-1-lnoncollinear-true">
-<h3>5.6.7 (uniform spin density) —— <strong>inispin</strong> = 1 &amp; <strong>lnoncollinear</strong> = .TRUE.<a class="headerlink" href="#uniform-spin-density-inispin-1-lnoncollinear-true" title="Permalink to this headline">¶</a></h3>
-<p><strong>atmmagne</strong> = [real] <strong>umx</strong>, <strong>umy</strong>, <strong>umz</strong> = [real] [real] [real]</p>
-<p>If <strong>inispin</strong> is one, spin polarized uniformly. <strong>atmmagne</strong> is total
-magnetic moment and (<strong>umx</strong>, <strong>umy</strong>, <strong>umz</strong>) are a magnetization
-direction.</p>
-</div>
-<div class="section" id="ferromagnetic-spin-density-inispin-2">
-<h3>5.6.8 (ferromagnetic spin density) —— <strong>inispin</strong> = 2<a class="headerlink" href="#ferromagnetic-spin-density-inispin-2" title="Permalink to this headline">¶</a></h3>
-<p><strong>nspinat</strong> = [integer] <strong>iatspin</strong> = [integer] <strong>atmmagne</strong> = [real]
-(<strong>umx</strong>, <strong>umy</strong>, <strong>umz</strong>) = [real] [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nspinat</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>All <strong>itspin</strong>-type atoms are polarized with the magnetic moment of
-<strong>atmmagne</strong>. (<strong>umx</strong>, <strong>umy</strong>, <strong>umz</strong>) are available only when
-<strong>lnoncollinear</strong> is .TRUE. <strong>nspinat</strong> is the number of atom types to
-be polarized.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">ferromagnetic</span> <span class="n">spin</span> <span class="n">density</span><span class="p">)</span>
-   <span class="mi">2</span>                          <span class="p">:</span> <span class="p">(</span><span class="n">nspinat</span><span class="p">)</span>
-   <span class="mi">1</span>    <span class="mf">2.</span><span class="n">d0</span>  <span class="mf">0.</span><span class="n">d0</span> <span class="mf">0.</span><span class="n">d0</span> <span class="mf">1.</span><span class="n">d0</span>  <span class="p">:</span> <span class="p">(</span><span class="n">iatspin</span><span class="p">,</span> <span class="n">atmmagne</span><span class="p">,</span> <span class="n">umx</span><span class="p">,</span> <span class="n">umy</span><span class="p">,</span> <span class="n">umz</span><span class="p">)</span>
-   <span class="mi">2</span>   <span class="o">-</span><span class="mf">4.</span><span class="n">d0</span>  <span class="mf">0.</span><span class="n">d0</span> <span class="mf">0.</span><span class="n">d0</span> <span class="mf">1.</span><span class="n">d0</span>  <span class="p">:</span> <span class="p">(</span><span class="n">iatspin</span><span class="p">,</span> <span class="n">atmmagne</span><span class="p">,</span> <span class="n">umx</span><span class="p">,</span> <span class="n">umy</span><span class="p">,</span> <span class="n">umz</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="antiferromagnetic-spin-density-inispin-3">
-<h3>5.6.9 (antiferromagnetic spin density) —— <strong>inispin</strong> = 3<a class="headerlink" href="#antiferromagnetic-spin-density-inispin-3" title="Permalink to this headline">¶</a></h3>
-<p><strong>nspinat</strong> = [integer] <strong>iatspin</strong> = [integer] <strong>atmmagne</strong> = [real]
-(<strong>umx</strong>, <strong>umy</strong>, <strong>umz</strong>) = [real] [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nspinat</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>Half of <strong>itspin</strong>-type atoms are polarized with the magnetic moment of
-<strong>atmmagne</strong>, and the rest are polarized with the magnetic moment of
-<strong>-atmmagne</strong>. (<strong>umx</strong>, <strong>umy</strong>, <strong>umz</strong>) are available only when
-<strong>lnoncollinear</strong> is .TRUE. <strong>nspinat</strong> is the number of atom types to
-be polarized.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">antiferromagnetic</span> <span class="n">spin</span> <span class="n">density</span><span class="p">)</span>
-   <span class="mi">2</span>                          <span class="p">:</span> <span class="p">(</span><span class="n">nspinat</span><span class="p">)</span>
-   <span class="mi">1</span>    <span class="mf">2.</span><span class="n">d0</span>  <span class="mf">0.</span><span class="n">d0</span> <span class="mf">0.</span><span class="n">d0</span> <span class="mf">1.</span><span class="n">d0</span>  <span class="p">:</span> <span class="p">(</span><span class="n">iatspin</span><span class="p">,</span> <span class="n">atmmagne</span><span class="p">,</span> <span class="n">umx</span><span class="p">,</span> <span class="n">umy</span><span class="p">,</span> <span class="n">umz</span><span class="p">)</span>
-   <span class="mi">2</span>   <span class="o">-</span><span class="mf">4.</span><span class="n">d0</span>  <span class="mf">0.</span><span class="n">d0</span> <span class="mf">0.</span><span class="n">d0</span> <span class="mf">1.</span><span class="n">d0</span>  <span class="p">:</span> <span class="p">(</span><span class="n">iatspin</span><span class="p">,</span> <span class="n">atmmagne</span><span class="p">,</span> <span class="n">umx</span><span class="p">,</span> <span class="n">umy</span><span class="p">,</span> <span class="n">umz</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="atomic-spin-density-inispin-4">
-<h3>5.6.10 (atomic spin density) —— <strong>inispin</strong> = 4<a class="headerlink" href="#atomic-spin-density-inispin-4" title="Permalink to this headline">¶</a></h3>
-<p><strong>nspinat</strong> = [integer] <strong>iatspin</strong> = [integer] <strong>atmmagne</strong> = [real]
-(<strong>umx</strong>, <strong>umy</strong>, <strong>umz</strong>) = [real] [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nspinat</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>You can specify the magnetic moment of <strong>atmmagne</strong> par atom.
-<strong>iatspin</strong> is the index of atom number. (<strong>umx</strong>, <strong>umy</strong>, <strong>umz</strong>) are
-available only when <strong>lnoncollinear</strong> is .TRUE. <strong>nspinat</strong> is the
-number of atom types to be polarized.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">atomic</span> <span class="n">spin</span> <span class="n">density</span><span class="p">)</span>
-   <span class="mi">4</span>                          <span class="p">:</span> <span class="p">(</span><span class="n">nspinat</span><span class="p">)</span>
-  <span class="mi">10</span>    <span class="mf">2.</span><span class="n">d0</span>  <span class="mf">0.</span><span class="n">d0</span> <span class="mf">0.</span><span class="n">d0</span> <span class="mf">1.</span><span class="n">d0</span>  <span class="p">:</span> <span class="p">(</span><span class="n">iatspin</span><span class="p">,</span> <span class="n">atmmagne</span><span class="p">,</span> <span class="n">umx</span><span class="p">,</span> <span class="n">umy</span><span class="p">,</span> <span class="n">umz</span><span class="p">)</span>
-  <span class="mi">11</span>    <span class="mf">2.</span><span class="n">d0</span>  <span class="mf">0.</span><span class="n">d0</span> <span class="mf">0.</span><span class="n">d0</span> <span class="mf">1.</span><span class="n">d0</span>  <span class="p">:</span> <span class="p">(</span><span class="n">iatspin</span><span class="p">,</span> <span class="n">atmmagne</span><span class="p">,</span> <span class="n">umx</span><span class="p">,</span> <span class="n">umy</span><span class="p">,</span> <span class="n">umz</span><span class="p">)</span>
-  <span class="mi">23</span>    <span class="mf">2.</span><span class="n">d0</span>  <span class="mf">0.</span><span class="n">d0</span> <span class="mf">0.</span><span class="n">d0</span> <span class="mf">1.</span><span class="n">d0</span>  <span class="p">:</span> <span class="p">(</span><span class="n">iatspin</span><span class="p">,</span> <span class="n">atmmagne</span><span class="p">,</span> <span class="n">umx</span><span class="p">,</span> <span class="n">umy</span><span class="p">,</span> <span class="n">umz</span><span class="p">)</span>
-  <span class="mi">24</span>    <span class="mf">2.</span><span class="n">d0</span>  <span class="mf">0.</span><span class="n">d0</span> <span class="mf">0.</span><span class="n">d0</span> <span class="mf">1.</span><span class="n">d0</span>  <span class="p">:</span> <span class="p">(</span><span class="n">iatspin</span><span class="p">,</span> <span class="n">atmmagne</span><span class="p">,</span> <span class="n">umx</span><span class="p">,</span> <span class="n">umy</span><span class="p">,</span> <span class="n">umz</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="reference-direction-lnoncollinear-true">
-<h3>5.6.11 (reference direction) —— <strong>lnoncollinear</strong> = .TRUE.<a class="headerlink" href="#reference-direction-lnoncollinear-true" title="Permalink to this headline">¶</a></h3>
-<p><strong>refmx</strong>, <strong>refmy</strong>, <strong>refmz</strong> = [real] [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">refmx</span><span class="o">**</span><span class="p">,</span> <span class="o">**</span><span class="n">refmy</span><span class="o">**</span><span class="p">,</span> <span class="o">**</span><span class="n">refmz</span><span class="o">**</span> <span class="o">=</span> <span class="p">(</span><span class="o">/</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>When <strong>lnoncollinear</strong> is .TRUE., <strong>refmx</strong>, <strong>refmy</strong>, <strong>refmz</strong> shows
-the reference direction.</p>
-</div>
-<div class="section" id="duplicate-the-up-spin-state-lnoncollinear-false">
-<h3>5.6.12 (duplicate the up-spin state) —— <strong>lnoncollinear</strong> = .FALSE.<a class="headerlink" href="#duplicate-the-up-spin-state-lnoncollinear-false" title="Permalink to this headline">¶</a></h3>
-<p><strong>lduplicate</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lduplicate</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Duplicate wavefunction of the up spin state .FALSE. : Do not
-duplicate</p>
+interaction proposed by S. Grimme <a class="reference internal" href="#rn37" id="id15">[13]</a> <a class="reference internal" href="#rn38" id="id16">[14]</a></p>
 </div>
 </div>
 <div class="section" id="scf-iterations">
-<h2>5.7 SCF iterations<a class="headerlink" href="#scf-iterations" title="Permalink to this headline">¶</a></h2>
+<h2>5.5 SCF iterations<a class="headerlink" href="#scf-iterations" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="global-iterations">
-<h3>5.7.1 (global iterations)<a class="headerlink" href="#global-iterations" title="Permalink to this headline">¶</a></h3>
+<h3>5.5.1 (global iterations)<a class="headerlink" href="#global-iterations" title="Permalink to this headline">¶</a></h3>
 <p><strong>iscfmx</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">iscfmx</span><span class="o">**</span> <span class="o">=</span> <span class="mi">100</span>
 </pre></div>
 </div>
 <p>Gives the maximum number of global iterations of SCF to be performed.</p>
 </div>
-<div class="section" id="trial-global-iterations">
-<h3>5.7.2 (trial global iterations)<a class="headerlink" href="#trial-global-iterations" title="Permalink to this headline">¶</a></h3>
-<p><strong>itrial</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">itrial</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
-</pre></div>
-</div>
-<p>Gives the number of trial global iterations</p>
-</div>
-<div class="section" id="trial-charge-mixing">
-<h3>5.7.3 (trial charge mixing)<a class="headerlink" href="#trial-charge-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>imxchg_trial</strong> = [0|1] <strong>aslh_trial, bslh_trial</strong> = [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">imxchg_trial</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">**</span><span class="n">aslh_trial</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">**</span><span class="n">bslh_trial</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.64</span>
-</pre></div>
-</div>
-<p><strong>imxchg_trial</strong> = 0 : No trial charge mixing <strong>imxchg_trial</strong> = 1 :
-Trial charge mixing</p>
-<p>Determines whether to perform trial charge mixing, and if so, the tuning
-parameters, <strong>aslh_trial, bslh_trial</strong>, to be used.</p>
-</div>
-<div class="section" id="trial-spin-density-mixing">
-<h3>5.7.4 (trial spin-density mixing)<a class="headerlink" href="#trial-spin-density-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>imxspin_trial</strong> = [0|1] <strong>amxspin_trial, bmxspin_trial</strong> = [real]
-[real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">imxspin_trial</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">**</span><span class="n">amxspin_trial</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">**</span><span class="n">bmxspin_trial</span><span class="o">**</span>
-</pre></div>
-</div>
-<p>= 0.64</p>
-</div>
 <div class="section" id="tolerances">
-<h3>5.7.5 (tolerances)<a class="headerlink" href="#tolerances" title="Permalink to this headline">¶</a></h3>
+<h3>5.5.2 (tolerances)<a class="headerlink" href="#tolerances" title="Permalink to this headline">¶</a></h3>
 <p><strong>tolpot</strong> = [real] <strong>tolres</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">tolpot</span><span class="o">**</span> <span class="o">=</span> <span class="mf">5.0</span><span class="n">d</span><span class="o">-</span><span class="mi">09</span> <span class="o">**</span><span class="n">tolres</span><span class="o">**</span> <span class="o">=</span> <span class="mf">5.0</span><span class="n">d</span><span class="o">-</span><span class="mi">09</span>
 </pre></div>
@@ -1202,17 +766,9 @@ change in total energy between subsequent SCF iterations is smaller than
 the tolerance, the SCF iterations are considered to have converged.
 <strong>tolres</strong> similarly gives the tolerance for average residual.</p>
 </div>
-<div class="section" id="hc-products">
-<h3>5.7.6 (HC products)<a class="headerlink" href="#hc-products" title="Permalink to this headline">¶</a></h3>
-<p><strong>lhcunt</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lhcunt</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">TRUE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : HC products by Unitary tr.</p>
-</div>
 <div class="section" id="charge-mixing">
-<h3>5.7.7 (charge mixing)<a class="headerlink" href="#charge-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>imxchg</strong> = [0|1|2|3|4|5|6] <strong>aslh, bslh</strong> = [real] [real]</p>
+<h3>5.5.3 (charge mixing)<a class="headerlink" href="#charge-mixing" title="Permalink to this headline">¶</a></h3>
+<p><strong>imxchg</strong> = [0|1|2|3|4|5.5] <strong>aslh, bslh</strong> = [real] [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">imxchg</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
@@ -1254,7 +810,7 @@ the tolerance, the SCF iterations are considered to have converged.
 parameters for that method.</p>
 </div>
 <div class="section" id="number-of-mixing">
-<h3>5.7.8 (number of mixing)<a class="headerlink" href="#number-of-mixing" title="Permalink to this headline">¶</a></h3>
+<h3>5.5.4 (number of mixing)<a class="headerlink" href="#number-of-mixing" title="Permalink to this headline">¶</a></h3>
 <p><strong>itratn</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">itratn</span><span class="o">**</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
@@ -1262,145 +818,11 @@ parameters for that method.</p>
 <p>Determines how many charge densities from previous SCF iterations to use
 for charge mixing. Not available for imxchg = [0|3].</p>
 </div>
-<div class="section" id="metric-in-charge-mixing">
-<h3>5.7.9 (metric in charge mixing)<a class="headerlink" href="#metric-in-charge-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>cmetric</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">cmetric</span><span class="o">**</span> <span class="o">=</span> <span class="mf">20.0</span>
-</pre></div>
-</div>
-<p>Gives the metric for charge mixing. Used as the weighting factor w(g) in
-the calculation of residual is given by:</p>
-<p>w(g) = (cmetric-1)*G_min^2*G_max^2/(G_max^2 - cmetric*G_min^2)</p>
-<p>Not available for imxchg = [0|3].</p>
-</div>
-<div class="section" id="magnetic-moment-mixing">
-<h3>5.7.10 (magnetic moment mixing)<a class="headerlink" href="#magnetic-moment-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>lmixreal</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lmixreal</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">TRUE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. :real-space mixing .FALSE. : reciprocal-spcace mixing</p>
-<p>This is only read when <strong>lnoncollinear</strong> in the (noncollinear magnetism)
-subsection of the spin polarization section is set to .TRUE.</p>
-</div>
-<div class="section" id="spin-density-mixing">
-<h3>5.7.11 (spin-density mixing)<a class="headerlink" href="#spin-density-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>imxspin</strong> = [0|1|2|3|4|5|6] <strong>amxspin, bmxspin</strong> = [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">imxspin</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">**</span><span class="n">amxspin</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">**</span><span class="n">bmxspin</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.64</span>
-</pre></div>
-</div>
-<table border="1" class="docutils">
-<colgroup>
-<col width="21%" />
-<col width="79%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">imxspin</th>
-<th class="head">Charge Mixing Method</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>0</strong></td>
-<td>No Mixing</td>
-</tr>
-<tr class="row-odd"><td><strong>1</strong></td>
-<td>Pulay</td>
-</tr>
-<tr class="row-even"><td><strong>2</strong></td>
-<td>Anderson</td>
-</tr>
-<tr class="row-odd"><td><strong>3</strong></td>
-<td>Simple</td>
-</tr>
-<tr class="row-even"><td><strong>4</strong></td>
-<td>Srivastava</td>
-</tr>
-<tr class="row-odd"><td><strong>5</strong></td>
-<td>Johnson</td>
-</tr>
-<tr class="row-even"><td><strong>6</strong></td>
-<td>Johnson w/ variable weights</td>
-</tr>
-</tbody>
-</table>
-<p>This is only calculated when spin polarization is enabled in the *spin
-polarization section.</p>
-</div>
-<div class="section" id="of-spin-density-mixing">
-<h3>5.7.12 (# of spin-density mixing)<a class="headerlink" href="#of-spin-density-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>nmxspin</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nmxspin</span><span class="o">**</span> <span class="o">=</span> <span class="mi">10</span>
-</pre></div>
-</div>
-<p>Determines how many spin densities from previous SCF iterations to use
-for spin density mixing.</p>
-</div>
-<div class="section" id="spin-metric-in-spin-density-mixing">
-<h3>5.7.13 (spin metric in spin-density mixing)<a class="headerlink" href="#spin-metric-in-spin-density-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>spinmetric</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">spinmetric</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span>
-</pre></div>
-</div>
-<p>The metric in spin-density mixing. This variable is only read when
-<strong>lnoncollinear</strong> == .FALSE. or <strong>lmixreal</strong> == .FALSE.</p>
-</div>
-<div class="section" id="kerker-mixing-weight-in-spin-density-mixing">
-<h3>5.7.14 (Kerker-mixing weight in spin-density mixing)<a class="headerlink" href="#kerker-mixing-weight-in-spin-density-mixing" title="Permalink to this headline">¶</a></h3>
-<p><strong>wkerker</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">wkerker</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span>
-</pre></div>
-</div>
-<p>Kerker-mixing weight in spin-density mixing. This variable is only read
-when <strong>lnoncollinear</strong> == .FALSE. or <strong>lmixreal</strong> == .FALSE.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Sigma_new(G) = sigma_in(G) + K(G)<code class="docutils literal notranslate"><span class="pre">*(sigma_out(G)</span> <span class="pre">-sigma_in(G)),</span> <span class="pre">where</span> <span class="pre">sigma</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">spin</span> <span class="pre">density,</span> <span class="pre">and</span> <span class="pre">K(G)</span> <span class="pre">=</span> <span class="pre">amxspin*\</span> <span class="pre">(1</span> <span class="pre">-</span> <span class="pre">wkerker</span> <span class="pre">+</span> <span class="pre">wkerker*G~2/(G^2</span> <span class="pre">+</span> <span class="pre">bmxspin)).</span> <span class="pre">Note</span> <span class="pre">that</span> <span class="pre">sigma(G=0)</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">updated</span> <span class="pre">when</span> <span class="pre">wkerker</span> <span class="pre">=</span> <span class="pre">1.d0,</span> <span class="pre">i.e.,</span> <span class="pre">the</span> <span class="pre">difference</span> <span class="pre">between</span> <span class="pre">the</span> <span class="pre">numbers</span> <span class="pre">of</span> <span class="pre">up-</span> <span class="pre">and</span> <span class="pre">down-spin</span> <span class="pre">is</span> <span class="pre">fixed.</span></code></p>
-</div>
-<p>Not available for imxchg = [0|3].</p>
-</div>
-<div class="section" id="output-eigenvalues">
-<h3>5.7.15 (output eigenvalues)<a class="headerlink" href="#output-eigenvalues" title="Permalink to this headline">¶</a></h3>
-<p><strong>louteig</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">louteig</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Output eigenvalues to file .FALSE. : Do not output eigenvalues</p>
-<p>Whether or not to output eigenvalues through SCF iterations.</p>
-</div>
-<div class="section" id="output-energy-parts">
-<h3>5.7.16 (output energy parts)<a class="headerlink" href="#output-energy-parts" title="Permalink to this headline">¶</a></h3>
-<p><strong>loutenergy</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">loutenergy</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Output energy parts to file .FALSE. : Do not output energy
-parts</p>
-<p>Whether or not to output energy parts through SCF iterations</p>
-</div>
-<div class="section" id="output-residuals">
-<h3>5.7.17 (output residuals)<a class="headerlink" href="#output-residuals" title="Permalink to this headline">¶</a></h3>
-<p><strong>loutzansa</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">loutzansa</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>.TRUE. : Output residuals (standard deviation) to file .FALSE. : Do not
-output residuals.</p>
-<p>Whether or not to output residuals through SCF iterations</p>
-</div>
-<div class="section" id="convergence-stabilizer">
-<h3>5.7.18 (convergence stabilizer)<a class="headerlink" href="#convergence-stabilizer" title="Permalink to this headline">¶</a></h3>
-<p><strong>nstabi</strong> = [integer] <strong>xstabi</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nstabi</span><span class="o">**</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span><span class="n">xstabi</span><span class="o">**</span> <span class="o">=</span> <span class="mf">10.0</span>
-</pre></div>
-</div>
-<p>If zansa2 &lt; zansa2/xstabi at nstabi iterations before, set lreset =
-.FALSE.</p>
-</div>
 </div>
 <div class="section" id="kohn-sham-equation">
-<h2>5.8 Kohn-Sham equation<a class="headerlink" href="#kohn-sham-equation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id27">
-<h3>5.8.1 (On/Off)<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<h2>5.6 Kohn-Sham equation<a class="headerlink" href="#kohn-sham-equation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>5.6.1 (On/Off)<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p><strong>ihldam</strong> = [1|2]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ihldam</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
@@ -1411,7 +833,7 @@ direct inversion in the iterative subspace (RMM-DIIS) Method</p>
 functional of wavefunctions.</p>
 </div>
 <div class="section" id="tolerance">
-<h3>5.8.2 (tolerance)<a class="headerlink" href="#tolerance" title="Permalink to this headline">¶</a></h3>
+<h3>5.6.2 (tolerance)<a class="headerlink" href="#tolerance" title="Permalink to this headline">¶</a></h3>
 <p><strong>toleig</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">toleig</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">d</span><span class="o">-</span><span class="mi">10</span>
 </pre></div>
@@ -1419,7 +841,7 @@ functional of wavefunctions.</p>
 <p>Gives the tolerance for the Kohn-Sham equations.</p>
 </div>
 <div class="section" id="threshold-for-w-f-direction">
-<h3>5.8.3 (threshold for w.f. direction)<a class="headerlink" href="#threshold-for-w-f-direction" title="Permalink to this headline">¶</a></h3>
+<h3>5.6.3 (threshold for w.f. direction)<a class="headerlink" href="#threshold-for-w-f-direction" title="Permalink to this headline">¶</a></h3>
 <p><strong>threinn</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">threinn</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
 </pre></div>
@@ -1427,7 +849,7 @@ functional of wavefunctions.</p>
 <p>Gives the threshold for direction of new wavefunction</p>
 </div>
 <div class="section" id="iteration">
-<h3>5.8.4 (iteration)<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h3>
+<h3>5.6.4 (iteration)<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h3>
 <p><strong>itermx</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">itermx</span><span class="o">**</span> <span class="o">=</span> <span class="mi">4</span>
 </pre></div>
@@ -1435,23 +857,15 @@ functional of wavefunctions.</p>
 <p>Gives the maximum number of iterations.</p>
 </div>
 <div class="section" id="empty-band-iteration">
-<h3>5.8.5 (empty-band iteration)<a class="headerlink" href="#empty-band-iteration" title="Permalink to this headline">¶</a></h3>
+<h3>5.6.5 (empty-band iteration)<a class="headerlink" href="#empty-band-iteration" title="Permalink to this headline">¶</a></h3>
 <p><strong>iteremx</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">iteremx</span><span class="o">**</span> <span class="o">=</span> <span class="mi">4</span>
 </pre></div>
 </div>
 <p>Gives the maximum number of iterations for empty bands.</p>
 </div>
-<div class="section" id="id28">
-<h3>5.8.6 (trial global iterations)<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
-<p><strong>kstrial</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">kstrial</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
-</pre></div>
-</div>
-<p>Gives the number of trial global iterations with itermx = iteremx = 1</p>
-</div>
 <div class="section" id="cg-method">
-<h3>5.8.7 (CG method)<a class="headerlink" href="#cg-method" title="Permalink to this headline">¶</a></h3>
+<h3>5.6.6 (CG method)<a class="headerlink" href="#cg-method" title="Permalink to this headline">¶</a></h3>
 <p><strong>methodcg</strong> = [1|2]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">methodcg</span><span class="o">**</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
@@ -1461,59 +875,18 @@ functional of wavefunctions.</p>
 1</p>
 </div>
 </div>
-<div class="section" id="poisson-equation">
-<h2>5.9 Poisson equation<a class="headerlink" href="#poisson-equation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="multigrid-level">
-<h3>5.9.1 (multigrid level)<a class="headerlink" href="#multigrid-level" title="Permalink to this headline">¶</a></h3>
-<p><strong>multg</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">multg</span><span class="o">**</span> <span class="o">=</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id29">
-<h3>5.9.2 (tolerance)<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
-<p><strong>tolcg</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">tolcg</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">d</span><span class="o">-</span><span class="mi">11</span>
-</pre></div>
-</div>
-<p>Gives the tolerance energy in a.u. for one electron</p>
-</div>
-<div class="section" id="preconditioner">
-<h3>5.9.3 (preconditioner)<a class="headerlink" href="#preconditioner" title="Permalink to this headline">¶</a></h3>
-<p><strong>weigrd</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">weigrd</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.4</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="differentiation">
-<h3>5.9.4 (differentiation)<a class="headerlink" href="#differentiation" title="Permalink to this headline">¶</a></h3>
-<p><strong>nd2v</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nd2v</span><span class="o">**</span> <span class="o">=</span> <span class="mi">6</span>
-</pre></div>
-</div>
-<p>Gives the order of numerical differentiation.</p>
-</div>
-<div class="section" id="mesh-for-serial-calculation">
-<h3>5.9.5 (mesh for serial calculation)<a class="headerlink" href="#mesh-for-serial-calculation" title="Permalink to this headline">¶</a></h3>
-<p><strong>msrhmx, msrhmy, msrhmz</strong> = [integer] [integer] [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">msrhmx</span><span class="p">,</span> <span class="n">msrhmy</span><span class="p">,</span> <span class="n">msrhmz</span><span class="o">**</span> <span class="o">=</span> <span class="mi">14</span> <span class="mi">14</span> <span class="mi">14</span>
-</pre></div>
-</div>
-<p>Gives the mesh size for serial calculation.</p>
-</div>
-</div>
 <div class="section" id="molecular-dynamics">
-<h2>5.10 molecular dynamics<a class="headerlink" href="#molecular-dynamics" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id30">
-<h3>5.10.1 (On/Off)<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
-<p><strong>ifmd</strong> = [0|1|2|3|4|5|10]</p>
+<h2>5.7 molecular dynamics<a class="headerlink" href="#molecular-dynamics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>5.7.1 (On/Off)<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p><strong>ifmd</strong> = [0|1|2|3|4|5.7]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ifmd</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <table border="1" class="docutils">
 <colgroup>
-<col width="26%" />
-<col width="74%" />
+<col width="17%" />
+<col width="83%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">ifmd</th>
@@ -1531,24 +904,24 @@ functional of wavefunctions.</p>
 <td>NVE</td>
 </tr>
 <tr class="row-odd"><td><strong>3</strong></td>
-<td>NVT</td>
+<td>NVT <a class="reference internal" href="#rn45" id="id19">[15]</a></td>
 </tr>
 <tr class="row-even"><td><strong>4</strong></td>
-<td>NPT</td>
+<td>NPT <a class="reference internal" href="#rn45" id="id20">[15]</a></td>
 </tr>
 <tr class="row-odd"><td><strong>5</strong></td>
 <td>NVT for each atom</td>
 </tr>
 <tr class="row-even"><td><strong>10</strong></td>
-<td>MSST [ref]</td>
+<td>MSST <a class="reference internal" href="#rn47" id="id21">[16]</a> <a class="reference internal" href="#rn48" id="id22">[17]</a></td>
 </tr>
 </tbody>
 </table>
 <p>Determines the type of QMD simulation to run. Add short description of
 each type.</p>
 </div>
-<div class="section" id="id31">
-<h3>5.10.2 (time step)<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>5.7.2 (time step)<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <p><strong>dtmd, nstop</strong> = [real] [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">dtmd</span><span class="o">**</span> <span class="o">=</span> <span class="mf">50.0</span> <span class="o">**</span><span class="n">nstop</span><span class="o">**</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
@@ -1558,7 +931,7 @@ each type.</p>
 total simulation time will equal (<strong>nstop</strong> * <strong>dtmd</strong>)</p>
 </div>
 <div class="section" id="initial-step-number">
-<h3>5.10.3 (initial step number)<a class="headerlink" href="#initial-step-number" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.3 (initial step number)<a class="headerlink" href="#initial-step-number" title="Permalink to this headline">¶</a></h3>
 <p><strong>nstep_ini</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nstep_ini</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
@@ -1567,7 +940,7 @@ total simulation time will equal (<strong>nstop</strong> * <strong>dtmd</strong>
 == .TRUE.</p>
 </div>
 <div class="section" id="temperature">
-<h3>5.10.4 (temperature)<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.4 (temperature)<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h3>
 <p><strong>treq</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">treq</span><span class="o">**</span> <span class="o">=</span> <span class="mf">300.0</span>
 </pre></div>
@@ -1576,7 +949,7 @@ total simulation time will equal (<strong>nstop</strong> * <strong>dtmd</strong>
 simulations.</p>
 </div>
 <div class="section" id="check-temperature">
-<h3>5.10.5 (check temperature)<a class="headerlink" href="#check-temperature" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.5 (check temperature)<a class="headerlink" href="#check-temperature" title="Permalink to this headline">¶</a></h3>
 <p><strong>liscale</strong> = [boolean] <strong>iscnum</strong> = [integer] <strong>iscstp</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">liscale</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span> <span class="o">**</span><span class="n">iscnum</span><span class="o">**</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">**</span><span class="n">iscstp</span><span class="o">**</span> <span class="o">=</span> <span class="mi">20</span>
 </pre></div>
@@ -1588,13 +961,13 @@ between each scaling.</p>
 initial given temperature.</p>
 </div>
 <div class="section" id="make-total-momentum-zero">
-<h3>5.10.6 (make total momentum zero)<a class="headerlink" href="#make-total-momentum-zero" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.6 (make total momentum zero)<a class="headerlink" href="#make-total-momentum-zero" title="Permalink to this headline">¶</a></h3>
 <p><strong>lmomzero</strong> = [boolean]</p>
 <p>Deafault: <strong>lmomzero</strong> = .FALSE.</p>
 <p>.TRUE. : Make the total momentum zero. .FALSE. : Do not</p>
 </div>
 <div class="section" id="optimization">
-<h3>5.10.7 (optimization)<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.7 (optimization)<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h3>
 <p><strong>ioptmze</strong> = [-1|0|1|2|3|10]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ioptmze</span><span class="o">**</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
@@ -1622,19 +995,13 @@ initial given temperature.</p>
 <tr class="row-odd"><td><strong>2</strong></td>
 <td>Quasi-Newton method with BFGS formula</td>
 </tr>
-<tr class="row-even"><td><strong>3</strong></td>
-<td>RFO saddle points search</td>
-</tr>
-<tr class="row-odd"><td><strong>10</strong></td>
-<td>Harmonic-mode analysis</td>
-</tr>
 </tbody>
 </table>
 <p>Determines method for structural optimization of atomic coordinates.
 This varibale is onlt read when <strong>ifmd</strong> == 1.</p>
 </div>
 <div class="section" id="cell-optimization">
-<h3>5.10.8 (cell optimization)<a class="headerlink" href="#cell-optimization" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.8 (cell optimization)<a class="headerlink" href="#cell-optimization" title="Permalink to this headline">¶</a></h3>
 <p><strong>ioptmze_cell</strong> = [-1|0|1|2]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ioptmze_cell</span><span class="o">**</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
@@ -1669,7 +1036,7 @@ read when <strong>ifmd</strong> == 1, and is not not read when <strong>ioptmze</
 10.</p>
 </div>
 <div class="section" id="cell-cg-time-step">
-<h3>5.10.9 (cell CG time step)<a class="headerlink" href="#cell-cg-time-step" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.9 (cell CG time step)<a class="headerlink" href="#cell-cg-time-step" title="Permalink to this headline">¶</a></h3>
 <p><strong>dtcellcg</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">dtcellcg</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.1</span>
 </pre></div>
@@ -1678,7 +1045,7 @@ read when <strong>ifmd</strong> == 1, and is not not read when <strong>ioptmze</
 0).</p>
 </div>
 <div class="section" id="stabilizer-for-quasi-newton">
-<h3>5.10.10 (stabilizer for quasi-Newton)<a class="headerlink" href="#stabilizer-for-quasi-newton" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.10 (stabilizer for quasi-Newton)<a class="headerlink" href="#stabilizer-for-quasi-newton" title="Permalink to this headline">¶</a></h3>
 <p><strong>gammamin</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">gammamin</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.1</span>
 </pre></div>
@@ -1686,7 +1053,7 @@ read when <strong>ifmd</strong> == 1, and is not not read when <strong>ioptmze</
 <p>only for quasi-Newton method (<strong>ifmd</strong> == 1 &amp; <strong>ioptmze</strong> == 2).</p>
 </div>
 <div class="section" id="clear-hessian">
-<h3>5.10.11 (clear Hessian)<a class="headerlink" href="#clear-hessian" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.11 (clear Hessian)<a class="headerlink" href="#clear-hessian" title="Permalink to this headline">¶</a></h3>
 <p><strong>ibfgsclear</strong> = [0|1]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span>
 </pre></div>
@@ -1695,7 +1062,7 @@ read when <strong>ifmd</strong> == 1, and is not not read when <strong>ioptmze</
 <p>1: Clear Hessian after every ibfgsclear step 0: Hessian is not cleared</p>
 </div>
 <div class="section" id="clear-cell-hessian">
-<h3>5.10.12 (clear cell Hessian)<a class="headerlink" href="#clear-cell-hessian" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.12 (clear cell Hessian)<a class="headerlink" href="#clear-cell-hessian" title="Permalink to this headline">¶</a></h3>
 <p><strong>iclearcellh</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">iclearcellh</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
@@ -1704,7 +1071,7 @@ read when <strong>ifmd</strong> == 1, and is not not read when <strong>ioptmze</
 Hessian is not cleared.</p>
 </div>
 <div class="section" id="hybrid-optimization">
-<h3>5.10.13 (hybrid optimization)<a class="headerlink" href="#hybrid-optimization" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.13 (hybrid optimization)<a class="headerlink" href="#hybrid-optimization" title="Permalink to this headline">¶</a></h3>
 <p><strong>lhybridopt</strong> = [boolean] <strong>nstep_hybrid</strong> = [integer]
 <strong>nstep_hybrid_cell</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lhybridopt</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">TRUE</span><span class="o">.</span> <span class="o">**</span><span class="n">nstep_hybrid</span><span class="o">**</span> <span class="o">=</span> <span class="mi">10</span>
@@ -1719,67 +1086,8 @@ first, then structural optimization.</p>
 variables are only read for optimization calculations(<strong>ifmd</strong> == 1 &amp;
 <strong>ioptmze</strong> &gt;= 0 &amp; <strong>ioptmze_cell</strong> &gt;= 0 )</p>
 </div>
-<div class="section" id="displacement">
-<h3>5.10.14 (displacement)<a class="headerlink" href="#displacement" title="Permalink to this headline">¶</a></h3>
-<p><strong>hmadisp</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">hmadisp</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.01</span>
-</pre></div>
-</div>
-<p>Atomic displacement in [a.u.] for Harmonic analysis by finite
-difference. This is only used for Harmonic-mode analysis (<strong>ifmd</strong> == 1
-&amp; <strong>ioptmze</strong> == 10).</p>
-</div>
-<div class="section" id="order-of-differentiation">
-<h3>5.10.15 (order of differentiation)<a class="headerlink" href="#order-of-differentiation" title="Permalink to this headline">¶</a></h3>
-<p><strong>nhmaord</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nhmaord</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>Order of differentiation only defined for Harmonic-mode analysis
-(<strong>ifmd</strong> == 1 &amp; <strong>ioptmze</strong> == 10).</p>
-</div>
-<div class="section" id="thermostat-parameters">
-<h3>5.10.16 (thermostat parameters)<a class="headerlink" href="#thermostat-parameters" title="Permalink to this headline">¶</a></h3>
-<p><strong>nnos</strong> = [integer] <strong>nresn</strong> = [integer] <strong>nyosh</strong> = [integer]
-<strong>tomega</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nnos</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">**</span><span class="n">nresn</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">**</span><span class="n">nyosh</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">**</span><span class="n">tomega</span><span class="o">**</span> <span class="o">=</span> <span class="mf">5500.0</span>
-</pre></div>
-</div>
-<p>[add references] Only for NVT &amp; NPT-MD (<strong>ifmd</strong> == 3, 4) Notes for
-(tomega): The frequency for the thermostat will be given by omega [a.u.]
-= 2*pi / tomega. The tomega will be determined from the period of VAF.
-If you are not aware of it, try a value, 100 * dtmd in [a.u.], as an
-initial guess.</p>
-</div>
-<div class="section" id="atom-type-with-thermostat">
-<h3>5.10.17 (atom type with thermostat)<a class="headerlink" href="#atom-type-with-thermostat" title="Permalink to this headline">¶</a></h3>
-<p><strong>nathermo</strong> = [integer] <strong>ithermo</strong> = [integer]</p>
-<p>Only used for NVT for each atom (<strong>ifmd</strong> == 5)</p>
-<p><strong>nathermo</strong> gives the total number of atom types to be given a
-thermostat, followed by that many lines of <strong>ithermo</strong>, which specifies
-the atom type.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>  <span class="p">:</span> <span class="p">(</span><span class="n">nathermo</span><span class="p">)</span> <span class="c1"># of atom types with thermostat</span>
-<span class="mi">1</span>  <span class="p">:</span> <span class="p">(</span><span class="n">ithermo</span><span class="p">)</span> <span class="n">atom</span> <span class="nb">type</span>
-<span class="mi">4</span>  <span class="p">:</span> <span class="p">(</span><span class="n">ithermo</span><span class="p">)</span> <span class="n">atom</span> <span class="nb">type</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="atom-thermostat-parameters">
-<h3>5.10.18 (atom thermostat parameters)<a class="headerlink" href="#atom-thermostat-parameters" title="Permalink to this headline">¶</a></h3>
-<p><strong>nnos_atom</strong> = [integer] <strong>nresn_atom</strong> = [integer] <strong>nyosh_atom</strong> =
-[integer] <strong>tomega_atom</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nnos_atom</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">**</span><span class="n">nresn_atom</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">**</span><span class="n">nyosh_atom</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p><strong>tomega_atom</strong> = 5500.0</p>
-<p><strong>nnos_atom</strong> gives the number of thermostats, <strong>nresn_atom</strong> gives the
-MTS steps for heat bath, <strong>nyosh_atom</strong> gives the Yoshida-Suzuki
-decomposition step, and <strong>tomega_atom</strong> a period of fluctuation in
-[a.u.]. This is only used for NVT for each atom (<strong>ifmd</strong> == 5).</p>
-</div>
 <div class="section" id="pressure">
-<h3>5.10.19 (pressure)<a class="headerlink" href="#pressure" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.14 (pressure)<a class="headerlink" href="#pressure" title="Permalink to this headline">¶</a></h3>
 <p><strong>hpext</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">hpext</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
 </pre></div>
@@ -1788,7 +1096,7 @@ decomposition step, and <strong>tomega_atom</strong> a period of fluctuation in
 <strong>ioptmze_cell</strong> &gt;= 0.</p>
 </div>
 <div class="section" id="barostat-parameters">
-<h3>5.10.20 (barostat parameters)<a class="headerlink" href="#barostat-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.15 (barostat parameters)<a class="headerlink" href="#barostat-parameters" title="Permalink to this headline">¶</a></h3>
 <p><strong>tbomega</strong> = [real] <strong>blkmod</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">tbomega</span><span class="o">**</span> <span class="o">=</span> <span class="mf">5500.0</span> <span class="o">**</span><span class="n">blkmod</span><span class="o">**</span> <span class="o">=</span> <span class="mf">250.0</span>
 </pre></div>
@@ -1797,123 +1105,8 @@ decomposition step, and <strong>tomega_atom</strong> a period of fluctuation in
 scale for barostat in [a.u.], and <strong>blkmod</strong> gives the bulk modulus in
 [GPa].</p>
 </div>
-<div class="section" id="restriction-for-md-cell">
-<h3>5.10.21 (restriction for MD cell)<a class="headerlink" href="#restriction-for-md-cell" title="Permalink to this headline">¶</a></h3>
-<p><strong>irstrct</strong> = [0|1|2|3|4|5|6|10|11|12|13|14|15|16]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">irstrct</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
-</pre></div>
-</div>
-<table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">irstrct</th>
-<th class="head">Type of Restriction on cell</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>0</strong></td>
-<td>No restriction</td>
-</tr>
-<tr class="row-odd"><td><strong>1</strong></td>
-<td><strong>Cubic</strong>: a=b=c; alpha=beta=gamma=90</td>
-</tr>
-<tr class="row-even"><td><strong>2</strong></td>
-<td><strong>orthorhombic</strong>: a /= b/= c; alpha=beta=gamma=90</td>
-</tr>
-<tr class="row-odd"><td><strong>3</strong></td>
-<td><strong>Tetragonal</strong>: a = b /= c; alpha=beta=gamma=90</td>
-</tr>
-<tr class="row-even"><td><strong>4</strong></td>
-<td><strong>Monoclinic</strong>: a /= b /= c; alpha=beta=90; gamma /= 90</td>
-</tr>
-<tr class="row-odd"><td><strong>5</strong></td>
-<td><strong>Hexagonal</strong>: a = b /= c; alpha=beta=90; gamma=120</td>
-</tr>
-<tr class="row-even"><td><strong>6</strong></td>
-<td><strong>Trigonal</strong>: a=b=c; alpha = beta = gamma /= 90</td>
-</tr>
-<tr class="row-odd"><td><strong>10</strong></td>
-<td>symmetry opearations (enabled automatically when lsymop=.true. &amp; irstrct==0)</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Add 10 to the above values to enforce the lattice shape with symmetry opearation. For example, set <strong>irstrct</strong> == 12 for an orthorhombic cell with symmetry opearations.</p>
-</div>
-<p>Set restrictions for geometry of MD cell in NPT-MD simulations.</p>
-</div>
-<div class="section" id="sub-restriction-for-md-cell">
-<h3>5.10.22 (sub-restriction for MD cell)<a class="headerlink" href="#sub-restriction-for-md-cell" title="Permalink to this headline">¶</a></h3>
-<p><strong>irstrct_sub</strong> = [integer]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">irstrct_sub</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<table border="1" class="docutils">
-<colgroup>
-<col width="11%" />
-<col width="18%" />
-<col width="70%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">irstrct</th>
-<th class="head">irstrct_sub</th>
-<th class="head">Type of Sub-restriction on cell</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>3</strong></td>
-<td><strong>1</strong></td>
-<td>a = b /= c, alpha = beta = gamma = 90</td>
-</tr>
-<tr class="row-odd"><td></td>
-<td><strong>2</strong></td>
-<td>b = c /= a, alpha = beta = gamma = 90</td>
-</tr>
-<tr class="row-even"><td></td>
-<td><strong>other</strong></td>
-<td>c = a /= b, alpha = beta = gamma = 90</td>
-</tr>
-<tr class="row-odd"><td><strong>4</strong></td>
-<td><strong>1</strong></td>
-<td>a /= b /= c, alpha = beta = 90; gamma /= 90</td>
-</tr>
-<tr class="row-even"><td></td>
-<td><strong>2</strong></td>
-<td>a /= b /= c, beta = gamma = 90; alpha /= 90</td>
-</tr>
-<tr class="row-odd"><td></td>
-<td><strong>other</strong></td>
-<td>a /= b /= c, gamma = alpha = 90; beta /= 90</td>
-</tr>
-<tr class="row-even"><td><strong>5</strong></td>
-<td><strong>1</strong></td>
-<td>a = b /= c, alpha = beta = 90; gamma = 120</td>
-</tr>
-<tr class="row-odd"><td></td>
-<td><strong>2</strong></td>
-<td>b = c /= a, beta = gamma = 90; alpha = 120</td>
-</tr>
-<tr class="row-even"><td></td>
-<td><strong>other</strong></td>
-<td>c = a /= b, gamma = alpha = 90; beta = 120</td>
-</tr>
-</tbody>
-</table>
-<p>Defines sub-options for restriction for MD cell in NPT-MD simulations.</p>
-</div>
-<div class="section" id="md-cell-edge-restriction">
-<h3>5.10.23 (MD cell edge restriction)<a class="headerlink" href="#md-cell-edge-restriction" title="Permalink to this headline">¶</a></h3>
-<p><strong>lcell_rstrct(1)</strong> = [boolean] <strong>lcell_rstrct(2)</strong> = [boolean]
-<strong>lcell_rstrct(3)</strong> = [boolean]</p>
-<p>.TRUE. = fix the length of L[1,2,3] .FALSE. = do not fix length</p>
-<p>Determines whether or not to fix the lengths of MD cell edges.</p>
-</div>
 <div class="section" id="shock-wave-velocity">
-<span id="id32"></span><h3>5.10.24 (shock wave velocity)<a class="headerlink" href="#shock-wave-velocity" title="Permalink to this headline">¶</a></h3>
+<h3>5.7.16 (shock wave velocity)<a class="headerlink" href="#shock-wave-velocity" title="Permalink to this headline">¶</a></h3>
 <p><strong>shockspeed</strong> = [real] <strong>nshockv(1:3)</strong> = [0|1, 0|1, 0|1]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">shockspeed</span><span class="o">**</span> <span class="o">=</span> <span class="mf">2000.0</span> <span class="o">**</span><span class="n">nshockv</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span> <span class="o">=</span> <span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">)</span>
 </pre></div>
@@ -1925,7 +1118,7 @@ direction <strong>nshockv(1:3)</strong> = 0 0 1: L3 direction <strong>nshockv(1:
 0: L1 + L2 direction</p>
 </div>
 <div class="section" id="clear-barostat-velocity">
-<span id="id33"></span><h3>5.10.25 (clear barostat velocity)<a class="headerlink" href="#clear-barostat-velocity" title="Permalink to this headline">¶</a></h3>
+<span id="id24"></span><h3>5.7.17 (clear barostat velocity)<a class="headerlink" href="#clear-barostat-velocity" title="Permalink to this headline">¶</a></h3>
 <p><strong>lmsstscale</strong> = [boolean] <strong>msstscnum</strong> = [integer] <strong>msstscstp</strong> =
 [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lmsstscale</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span> <span class="o">**</span><span class="n">msstscnum</span><span class="o">**</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">**</span><span class="n">msstscstp</span><span class="o">**</span> <span class="o">=</span> <span class="mi">500</span>
@@ -1934,7 +1127,7 @@ direction <strong>nshockv(1:3)</strong> = 0 0 1: L3 direction <strong>nshockv(1:
 <p>These variables are only read for MSST (<strong>ifmd</strong> == 10).</p>
 </div>
 <div class="section" id="initial-barostat-velocity">
-<span id="id34"></span><h3>5.10.26 (initial barostat velocity)<a class="headerlink" href="#initial-barostat-velocity" title="Permalink to this headline">¶</a></h3>
+<span id="id25"></span><h3>5.7.18 (initial barostat velocity)<a class="headerlink" href="#initial-barostat-velocity" title="Permalink to this headline">¶</a></h3>
 <p><strong>vxmsst</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">vxmsst</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
 </pre></div>
@@ -1943,12 +1136,12 @@ direction <strong>nshockv(1:3)</strong> = 0 0 1: L3 direction <strong>nshockv(1:
 10).</p>
 </div>
 <div class="section" id="output-data">
-<span id="id35"></span><h3>5.10.27 (output data)<a class="headerlink" href="#output-data" title="Permalink to this headline">¶</a></h3>
+<span id="id26"></span><h3>5.7.19 (output data)<a class="headerlink" href="#output-data" title="Permalink to this headline">¶</a></h3>
 <p><strong>ioskip</strong> = [integer] <strong>locoor, ioskipcoor</strong> = [boolean, integer]</p>
 <p>Defines what data to output for MD-nodes.</p>
 </div>
 <div class="section" id="charge-estimation">
-<span id="id36"></span><h3>5.10.28 (charge estimation)<a class="headerlink" href="#charge-estimation" title="Permalink to this headline">¶</a></h3>
+<span id="id27"></span><h3>5.7.20 (charge estimation)<a class="headerlink" href="#charge-estimation" title="Permalink to this headline">¶</a></h3>
 <p><strong>ichest</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ichest</span><span class="o">**</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
@@ -1956,80 +1149,21 @@ direction <strong>nshockv(1:3)</strong> = 0 0 1: L3 direction <strong>nshockv(1:
 <p>Number of previous steps</p>
 </div>
 <div class="section" id="wavefunction-estimation">
-<span id="id37"></span><h3>5.10.29 (wavefunction estimation)<a class="headerlink" href="#wavefunction-estimation" title="Permalink to this headline">¶</a></h3>
+<span id="id28"></span><h3>5.7.21 (wavefunction estimation)<a class="headerlink" href="#wavefunction-estimation" title="Permalink to this headline">¶</a></h3>
 <p><strong>ihest</strong> = [integer]</p>
 <p>Number of previous steps</p>
 </div>
 <div class="section" id="aspc-charge-estimation">
-<span id="id38"></span><h3>5.10.30 (ASPC charge estimation)<a class="headerlink" href="#aspc-charge-estimation" title="Permalink to this headline">¶</a></h3>
-<p><strong>laspc_chg</strong> = [boolean]</p>
-<p>.TRUE. = ASPC predictor .FALSE. = usual extrapolation</p>
-</div>
-<div class="section" id="aspc-wavefunction-estimation">
-<span id="id39"></span><h3>5.10.31 (ASPC wavefunction estimation)<a class="headerlink" href="#aspc-wavefunction-estimation" title="Permalink to this headline">¶</a></h3>
-<p><strong>laspc_wv</strong> = [boolean]</p>
-<p>.TRUE. = ASPC predictor .FALSE. = subspace alignment</p>
-</div>
-<div class="section" id="aspc-acceleration">
-<span id="id40"></span><h3>5.10.32 (ASPC acceleration)<a class="headerlink" href="#aspc-acceleration" title="Permalink to this headline">¶</a></h3>
-<p><strong>laspc</strong> = [boolean]</p>
-<p>.TRUE. = do ASPC</p>
-</div>
-<div class="section" id="extended-lagrangian-scheme">
-<span id="id41"></span><h3>5.10.33 (Extended Lagrangian scheme)<a class="headerlink" href="#extended-lagrangian-scheme" title="Permalink to this headline">¶</a></h3>
-<p><strong>lxlbomd</strong> = [boolean]</p>
-<p>.TRUE. : time reversible XL-BOMD</p>
-</div>
-<div class="section" id="previous-values">
-<span id="id42"></span><h3>5.10.34 (previous values)<a class="headerlink" href="#previous-values" title="Permalink to this headline">¶</a></h3>
-<p><strong>kxlbomd</strong> = [integer]</p>
-<p>Number of previous values. If 0, kxlbomd = ihest.</p>
-</div>
-<div class="section" id="aspc-parameter-for-corrector">
-<span id="id43"></span><h3>5.10.35 (ASPC parameter for corrector)<a class="headerlink" href="#aspc-parameter-for-corrector" title="Permalink to this headline">¶</a></h3>
-<p><strong>aspc_corr</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">aspc_corr</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="aspc-mixing-charge">
-<span id="id44"></span><h3>5.10.36 (ASPC mixing charge)<a class="headerlink" href="#aspc-mixing-charge" title="Permalink to this headline">¶</a></h3>
-<p><strong>aslh_aspc, bslh_aspc</strong> = [real, real]</p>
-</div>
-<div class="section" id="aspc-iterations">
-<span id="id45"></span><h3>5.10.37 (ASPC iterations)<a class="headerlink" href="#aspc-iterations" title="Permalink to this headline">¶</a></h3>
-<p><strong>iscfmx_aspc</strong> = [integer]</p>
-<p>Gives the number of iterations.</p>
-</div>
-<div class="section" id="aspc-tolerance">
-<span id="id46"></span><h3>5.10.38 (ASPC tolerance)<a class="headerlink" href="#aspc-tolerance" title="Permalink to this headline">¶</a></h3>
-<p><strong>tolres_aspc</strong> = [real]</p>
-<p>Gives the tolerance for the residual.</p>
-</div>
-<div class="section" id="aspc-correction-skip-step">
-<span id="id47"></span><h3>5.10.39 (ASPC correction skip step)<a class="headerlink" href="#aspc-correction-skip-step" title="Permalink to this headline">¶</a></h3>
-<p><strong>nskp_aspc</strong> = [integer]</p>
-</div>
-<div class="section" id="planewave-expansion">
-<span id="id48"></span><h3>5.10.40 (planewave expansion)<a class="headerlink" href="#planewave-expansion" title="Permalink to this headline">¶</a></h3>
-<p><strong>pwscale</strong> = [real]</p>
-<p>only for NPT-MD (ifmd == 4 )</p>
-</div>
-<div class="section" id="statistical-calculation">
-<span id="id49"></span><h3>5.10.41 (statistical calculation)<a class="headerlink" href="#statistical-calculation" title="Permalink to this headline">¶</a></h3>
-<p><strong>lstat</strong> = [boolean]</p>
-</div>
-<div class="section" id="id50">
-<span id="id51"></span><h3>5.10.42 (tolerance)<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
+<span id="id29"></span><h3>5.7.22 (tolerance)<a class="headerlink" href="#aspc-charge-estimation" title="Permalink to this headline">¶</a></h3>
 <p><strong>tol_energy</strong> = [real] <strong>tol_force</strong> = [real]</p>
 <p>tolerance for CG optimization (ifmd == 1 ). <strong>tol_energy</strong> given in
 energy/atom in [a.u.]. <strong>tol_force</strong> gives maximum force in [a.u.].</p>
 </div>
 </div>
 <div class="section" id="save-data">
-<span id="id52"></span><h2>5.11 save data<a class="headerlink" href="#save-data" title="Permalink to this headline">¶</a></h2>
+<span id="id30"></span><h2>5.8 save data<a class="headerlink" href="#save-data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="onoff">
-<span id="id53"></span><h3>5.11.1 (On/Off)<a class="headerlink" href="#onoff" title="Permalink to this headline">¶</a></h3>
+<span id="id31"></span><h3>5.8.1 (On/Off)<a class="headerlink" href="#onoff" title="Permalink to this headline">¶</a></h3>
 <p><strong>lsave</strong> = [boolean]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lsave</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">TRUE</span><span class="o">.</span>
 </pre></div>
@@ -2037,7 +1171,7 @@ energy/atom in [a.u.]. <strong>tol_force</strong> gives maximum force in [a.u.].
 <p>Whether or not to save data…which data?</p>
 </div>
 <div class="section" id="data-type">
-<span id="id54"></span><h3>5.11.2 (data type)<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h3>
+<span id="id32"></span><h3>5.8.2 (data type)<a class="headerlink" href="#data-type" title="Permalink to this headline">¶</a></h3>
 <p><strong>lsreal8</strong> = [boolean]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lsreal8</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">TRUE</span><span class="o">.</span>
 </pre></div>
@@ -2047,9 +1181,9 @@ energy/atom in [a.u.]. <strong>tol_force</strong> gives maximum force in [a.u.].
 </div>
 </div>
 <div class="section" id="stress-calculation-only-for-bulk-calculations">
-<h2>5.12 stress calculation —— only for bulk calculations<a class="headerlink" href="#stress-calculation-only-for-bulk-calculations" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id55">
-<span id="id56"></span><h3>5.12.1 (On/Off)<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
+<h2>5.9 stress calculation —— only for bulk calculations<a class="headerlink" href="#stress-calculation-only-for-bulk-calculations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id33">
+<span id="id34"></span><h3>5.9.1 (On/Off)<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
 <p><strong>lstress</strong> = [boolean]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lstress</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">TRUE</span><span class="o">.</span>
 </pre></div>
@@ -2058,7 +1192,7 @@ energy/atom in [a.u.]. <strong>tol_force</strong> gives maximum force in [a.u.].
 <p>Determines whether to estimate the stress.</p>
 </div>
 <div class="section" id="skip-step">
-<span id="id57"></span><h3>5.12.2 (skip step)<a class="headerlink" href="#skip-step" title="Permalink to this headline">¶</a></h3>
+<span id="id35"></span><h3>5.9.2 (skip step)<a class="headerlink" href="#skip-step" title="Permalink to this headline">¶</a></h3>
 <p><strong>nskip_stress</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nskip_stress</span><span class="o">**</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
@@ -2067,9 +1201,9 @@ energy/atom in [a.u.]. <strong>tol_force</strong> gives maximum force in [a.u.].
 </div>
 </div>
 <div class="section" id="dump-charge-density">
-<span id="id58"></span><h2>5.13 dump charge density<a class="headerlink" href="#dump-charge-density" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id59">
-<span id="id60"></span><h3>5.13.1 (On/Off)<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
+<span id="id36"></span><h2>5.10 dump charge density<a class="headerlink" href="#dump-charge-density" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id37">
+<span id="id38"></span><h3>5.10.1 (On/Off)<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
 <p><strong>ldpchg</strong> = [boolean]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ldpchg</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
 </pre></div>
@@ -2077,8 +1211,8 @@ energy/atom in [a.u.]. <strong>tol_force</strong> gives maximum force in [a.u.].
 <p>.TRUE. : Output charge density .FASLE. : Do not output</p>
 <p>Determines whether to output the charge density.</p>
 </div>
-<div class="section" id="id61">
-<span id="id62"></span><h3>5.13.2 (skip step)<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id39">
+<span id="id40"></span><h3>5.10.2 (skip step)<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
 <p><strong>nskip_dpchg</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nskip_dpchg</span><span class="o">**</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
@@ -2086,7 +1220,7 @@ energy/atom in [a.u.]. <strong>tol_force</strong> gives maximum force in [a.u.].
 <p><strong>nskip_dpchg</strong> is skip step to output the charge density.</p>
 </div>
 <div class="section" id="output-area">
-<span id="id63"></span><h3>5.13.3 (output area)<a class="headerlink" href="#output-area" title="Permalink to this headline">¶</a></h3>
+<span id="id41"></span><h3>5.10.3 (output area)<a class="headerlink" href="#output-area" title="Permalink to this headline">¶</a></h3>
 <p><strong>x_min</strong> <strong>x_max</strong> = [real] [real] <strong>y_min</strong> <strong>y_max</strong> = [real] [real]
 <strong>z_min</strong> <strong>z_max</strong> = [real] [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">x_min</span><span class="o">**</span> <span class="o">**</span><span class="n">x_max</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="mf">0.0</span> <span class="o">**</span><span class="n">y_min</span><span class="o">**</span> <span class="o">**</span><span class="n">y_max</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="mf">0.0</span>
@@ -2099,9 +1233,9 @@ the whole space.</p>
 </div>
 </div>
 <div class="section" id="dump-wavefunctions">
-<span id="id64"></span><h2>5.14 dump wavefunctions<a class="headerlink" href="#dump-wavefunctions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id65">
-<span id="id66"></span><h3>5.14.1 (On/Off)<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+<span id="id42"></span><h2>5.11 dump wavefunctions<a class="headerlink" href="#dump-wavefunctions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id43">
+<span id="id44"></span><h3>5.11.1 (On/Off)<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
 <p><strong>ldpwav</strong> = [boolean]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ldpwav</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
 </pre></div>
@@ -2110,7 +1244,7 @@ the whole space.</p>
 <p>Determines whether to output the wavefunction.</p>
 </div>
 <div class="section" id="bands">
-<span id="id67"></span><h3>5.14.2 (bands)<a class="headerlink" href="#bands" title="Permalink to this headline">¶</a></h3>
+<span id="id45"></span><h3>5.11.2 (bands)<a class="headerlink" href="#bands" title="Permalink to this headline">¶</a></h3>
 <p>(<strong>ibstt1</strong>, <strong>ibstt2</strong>) = [integer] [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="p">(</span><span class="o">**</span><span class="n">ibstt1</span><span class="o">**</span><span class="p">,</span> <span class="o">**</span><span class="n">ibstt2</span><span class="o">**</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="o">/</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="o">/</span><span class="p">)</span>
 </pre></div>
@@ -2119,16 +1253,16 @@ the whole space.</p>
 <strong>ibstt1</strong> and <strong>ibstt2</strong> are the index of bands. If both <strong>ibstt1</strong> and
 <strong>ibstt2</strong> are zero, all bands will be output.</p>
 </div>
-<div class="section" id="id68">
-<span id="id69"></span><h3>5.14.3 (skip step)<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id46">
+<span id="id47"></span><h3>5.11.3 (skip step)<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
 <p><strong>nskip_dpwav</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nskip_dpwav</span><span class="o">**</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
 </div>
 <p><strong>nskip_dpwav</strong> is skip step to output the wavefunction.</p>
 </div>
-<div class="section" id="id70">
-<span id="id71"></span><h3>5.14.4 (output area)<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id48">
+<span id="id49"></span><h3>5.11.4 (output area)<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
 <p><strong>x_min</strong> <strong>x_max</strong> = [real] [real] <strong>y_min</strong> <strong>y_max</strong> = [real] [real]
 <strong>z_min</strong> <strong>z_max</strong> = [real] [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">x_min</span><span class="o">**</span> <span class="o">**</span><span class="n">x_max</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="mf">0.0</span> <span class="o">**</span><span class="n">y_min</span><span class="o">**</span> <span class="o">**</span><span class="n">y_max</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="mf">0.0</span>
@@ -2141,9 +1275,9 @@ the whole space.</p>
 </div>
 </div>
 <div class="section" id="dump-local-potential">
-<span id="id72"></span><h2>5.15 dump local potential<a class="headerlink" href="#dump-local-potential" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id73">
-<span id="id74"></span><h3>5.15.1 (On/Off)<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
+<span id="id50"></span><h2>5.12 dump local potential<a class="headerlink" href="#dump-local-potential" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id51">
+<span id="id52"></span><h3>5.12.1 (On/Off)<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
 <p><strong>ldppot</strong> = [boolean]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ldppot</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
 </pre></div>
@@ -2152,7 +1286,7 @@ the whole space.</p>
 <p>Determines whether to output the local potential.</p>
 </div>
 <div class="section" id="average-plane">
-<span id="id75"></span><h3>5.15.2 (average plane)<a class="headerlink" href="#average-plane" title="Permalink to this headline">¶</a></h3>
+<span id="id53"></span><h3>5.12.2 (average plane)<a class="headerlink" href="#average-plane" title="Permalink to this headline">¶</a></h3>
 <p><strong>nav_dppot</strong> = [1|2|3]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nav_dppot</span><span class="o">**</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
@@ -2181,16 +1315,16 @@ the whole space.</p>
 </table>
 <p>The plane-averaged local potential will be output.</p>
 </div>
-<div class="section" id="id76">
-<span id="id77"></span><h3>5.15.3 (skip step)<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id54">
+<span id="id55"></span><h3>5.12.3 (skip step)<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
 <p><strong>nskip_dppot</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nskip_dppot</span><span class="o">**</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
 </div>
 <p><strong>nskip_dppot</strong> is skip step to output the local potential.</p>
 </div>
-<div class="section" id="id78">
-<span id="id79"></span><h3>5.15.4 (output area)<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id56">
+<span id="id57"></span><h3>5.12.4 (output area)<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
 <p><strong>x_min</strong> <strong>x_max</strong> = [real] [real] <strong>y_min</strong> <strong>y_max</strong> = [real] [real]
 <strong>z_min</strong> <strong>z_max</strong> = [real] [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">x_min</span><span class="o">**</span> <span class="o">**</span><span class="n">x_max</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="mf">0.0</span> <span class="o">**</span><span class="n">y_min</span><span class="o">**</span> <span class="o">**</span><span class="n">y_max</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="mf">0.0</span>
@@ -2203,9 +1337,9 @@ the whole space.</p>
 </div>
 </div>
 <div class="section" id="supercell">
-<span id="id80"></span><h2>5.16 supercell<a class="headerlink" href="#supercell" title="Permalink to this headline">¶</a></h2>
+<span id="id58"></span><h2>5.13 supercell<a class="headerlink" href="#supercell" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="unit-of-length">
-<span id="id81"></span><h3>5.16.1 (unit of length)<a class="headerlink" href="#unit-of-length" title="Permalink to this headline">¶</a></h3>
+<span id="id59"></span><h3>5.13.1 (unit of length)<a class="headerlink" href="#unit-of-length" title="Permalink to this headline">¶</a></h3>
 <p>(bohr) or (ang)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="p">(</span><span class="n">bohr</span><span class="p">)</span>
 </pre></div>
@@ -2216,7 +1350,7 @@ comment out the subsection you do not specify. Note that for cluster
 calculations, the supercell has to be ORTHORHOMBIC.</p>
 </div>
 <div class="section" id="cell-vector">
-<span id="id82"></span><h3>5.16.2 (cell vector)<a class="headerlink" href="#cell-vector" title="Permalink to this headline">¶</a></h3>
+<span id="id60"></span><h3>5.13.2 (cell vector)<a class="headerlink" href="#cell-vector" title="Permalink to this headline">¶</a></h3>
 <p>L1 = [real] [real] [real] L2 = [real] [real] [real] L3 = [real] [real]
 [real]</p>
 <p>Example:</p>
@@ -2227,7 +1361,7 @@ calculations, the supercell has to be ORTHORHOMBIC.</p>
 </div>
 </div>
 <div class="section" id="lengths-angles">
-<span id="id83"></span><h3>5.16.3 (lengths &amp; angles)<a class="headerlink" href="#lengths-angles" title="Permalink to this headline">¶</a></h3>
+<span id="id61"></span><h3>5.13.3 (lengths &amp; angles)<a class="headerlink" href="#lengths-angles" title="Permalink to this headline">¶</a></h3>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">10.68</span><span class="p">,</span>  <span class="mf">10.68</span><span class="p">,</span>  <span class="mf">10.68</span>  <span class="p">:</span>  <span class="n">lengths</span> <span class="n">of</span> <span class="n">cell</span> <span class="n">vectors</span>
 <span class="mf">90.00</span><span class="p">,</span>  <span class="mf">90.00</span><span class="p">,</span>  <span class="mf">90.00</span>  <span class="p">:</span>  <span class="n">angles</span> <span class="n">between</span> <span class="n">cell</span> <span class="n">vec</span><span class="o">.</span> <span class="ow">in</span> <span class="p">[</span><span class="n">deg</span><span class="o">.</span><span class="p">]</span>
@@ -2236,9 +1370,9 @@ calculations, the supercell has to be ORTHORHOMBIC.</p>
 </div>
 </div>
 <div class="section" id="planewaves">
-<h2>5.17 planewaves<a class="headerlink" href="#planewaves" title="Permalink to this headline">¶</a></h2>
+<h2>5.14 planewaves<a class="headerlink" href="#planewaves" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="unit-of-cutoff-energy">
-<span id="id84"></span><h3>5.17.1 (unit of cutoff energy)<a class="headerlink" href="#unit-of-cutoff-energy" title="Permalink to this headline">¶</a></h3>
+<span id="id62"></span><h3>5.14.1 (unit of cutoff energy)<a class="headerlink" href="#unit-of-cutoff-energy" title="Permalink to this headline">¶</a></h3>
 <p>(ry) or (hr) or (ev)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="p">(</span><span class="n">ry</span><span class="p">)</span>
 </pre></div>
@@ -2246,12 +1380,12 @@ calculations, the supercell has to be ORTHORHOMBIC.</p>
 <p>Determines the unit of cutoff energy.</p>
 </div>
 <div class="section" id="for-wavefuctions">
-<span id="id85"></span><h3>5.17.2 (for wavefuctions)<a class="headerlink" href="#for-wavefuctions" title="Permalink to this headline">¶</a></h3>
+<span id="id63"></span><h3>5.14.2 (for wavefuctions)<a class="headerlink" href="#for-wavefuctions" title="Permalink to this headline">¶</a></h3>
 <p><strong>ecut</strong> = [real]</p>
 <p><strong>ecut</strong> is the cutoff energy to expand wavefunctions.</p>
 </div>
 <div class="section" id="for-electron-density">
-<span id="id86"></span><h3>5.17.3 (for electron density)<a class="headerlink" href="#for-electron-density" title="Permalink to this headline">¶</a></h3>
+<span id="id64"></span><h3>5.14.3 (for electron density)<a class="headerlink" href="#for-electron-density" title="Permalink to this headline">¶</a></h3>
 <p><strong>ecutdens</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ecutdens</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
 </pre></div>
@@ -2261,7 +1395,7 @@ calculations, the supercell has to be ORTHORHOMBIC.</p>
 <strong>ecutdens</strong> must be equal to <strong>ecutsoft</strong>.</p>
 </div>
 <div class="section" id="for-soft-part-of-density">
-<span id="id87"></span><h3>5.17.4 (for soft part of density)<a class="headerlink" href="#for-soft-part-of-density" title="Permalink to this headline">¶</a></h3>
+<span id="id65"></span><h3>5.14.4 (for soft part of density)<a class="headerlink" href="#for-soft-part-of-density" title="Permalink to this headline">¶</a></h3>
 <p><strong>ecutsoft</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ecutorth</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
 </pre></div>
@@ -2270,7 +1404,7 @@ calculations, the supercell has to be ORTHORHOMBIC.</p>
 density. It must be greater than ecut, and smaller than ecut*4.</p>
 </div>
 <div class="section" id="for-orthogonalization">
-<span id="id88"></span><h3>5.17.5 (for orthogonalization)<a class="headerlink" href="#for-orthogonalization" title="Permalink to this headline">¶</a></h3>
+<span id="id66"></span><h3>5.14.5 (for orthogonalization)<a class="headerlink" href="#for-orthogonalization" title="Permalink to this headline">¶</a></h3>
 <p><strong>ecutorth</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ecutorth</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
 </pre></div>
@@ -2278,7 +1412,7 @@ density. It must be greater than ecut, and smaller than ecut*4.</p>
 <p><strong>ecutorth</strong> is the cutoff energy for orthogonalization in CG iteration.</p>
 </div>
 <div class="section" id="for-charge-density-mixing">
-<span id="id89"></span><h3>5.17.6 (for charge density mixing)<a class="headerlink" href="#for-charge-density-mixing" title="Permalink to this headline">¶</a></h3>
+<span id="id67"></span><h3>5.14.5 (for charge density mixing)<a class="headerlink" href="#for-charge-density-mixing" title="Permalink to this headline">¶</a></h3>
 <p><strong>ecutc</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ecutc</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
 </pre></div>
@@ -2287,9 +1421,9 @@ density. It must be greater than ecut, and smaller than ecut*4.</p>
 </div>
 </div>
 <div class="section" id="electronic-bands">
-<h2>5.18 electronic bands<a class="headerlink" href="#electronic-bands" title="Permalink to this headline">¶</a></h2>
+<h2>5.15 electronic bands<a class="headerlink" href="#electronic-bands" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="occupied-bands">
-<span id="id90"></span><h3>5.18.1 (occupied bands)<a class="headerlink" href="#occupied-bands" title="Permalink to this headline">¶</a></h3>
+<span id="id68"></span><h3>5.15.1 (occupied bands)<a class="headerlink" href="#occupied-bands" title="Permalink to this headline">¶</a></h3>
 <p><strong>noband</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">noband</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
@@ -2298,15 +1432,15 @@ density. It must be greater than ecut, and smaller than ecut*4.</p>
 accommodate all the valence electrons in the simulation.</p>
 </div>
 <div class="section" id="empty-bands">
-<span id="id91"></span><h3>5.18.2 (empty bands)<a class="headerlink" href="#empty-bands" title="Permalink to this headline">¶</a></h3>
+<span id="id69"></span><h3>5.15.2 (empty bands)<a class="headerlink" href="#empty-bands" title="Permalink to this headline">¶</a></h3>
 <p><strong>neband</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">neband</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <p>A good rule of thumb is to set neband equal to 10% of occupied bands.</p>
 </div>
-<div class="section" id="id92">
-<span id="id93"></span><h3>5.18.3 (broadening)<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id70">
+<span id="id71"></span><h3>5.15.3 (broadening)<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
 <p><strong>lfermi</strong> = [integer] flag <strong>tfermi</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lfermi</span><span class="o">**</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">**</span><span class="n">tfermi</span><span class="o">**</span> <span class="o">=</span> <span class="mf">2000.0</span>
 </pre></div>
@@ -2316,7 +1450,7 @@ lfermi = 3 for Gaussian smearing and lfermi &gt; 3 for Methfessel-Paxton
 smearing scheme of order lfermi-3</p>
 </div>
 <div class="section" id="charge-number-of-ion">
-<span id="id94"></span><h3>5.18.4 (charge number of ion)<a class="headerlink" href="#charge-number-of-ion" title="Permalink to this headline">¶</a></h3>
+<span id="id72"></span><h3>5.15.4 (charge number of ion)<a class="headerlink" href="#charge-number-of-ion" title="Permalink to this headline">¶</a></h3>
 <p><strong>ncion</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ncion</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.</span> <span class="n">For</span> <span class="n">calculation</span> <span class="n">of</span> <span class="n">electronically</span> <span class="n">non</span><span class="o">-</span><span class="n">neutral</span>
 </pre></div>
@@ -2326,9 +1460,9 @@ Charged-periodic calculations are perfomed with the uniform background.</p>
 </div>
 </div>
 <div class="section" id="atoms">
-<span id="id95"></span><h2>5.19 Atoms<a class="headerlink" href="#atoms" title="Permalink to this headline">¶</a></h2>
+<span id="id73"></span><h2>5.16 Atoms<a class="headerlink" href="#atoms" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="species">
-<span id="id96"></span><h3>5.19.1 (species)<a class="headerlink" href="#species" title="Permalink to this headline">¶</a></h3>
+<span id="id74"></span><h3>5.16.1 (species)<a class="headerlink" href="#species" title="Permalink to this headline">¶</a></h3>
 <p><strong>ntype</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ntype</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
@@ -2337,57 +1471,15 @@ Charged-periodic calculations are perfomed with the uniform background.</p>
 <code class="docutils literal notranslate"><span class="pre">ntype</span></code> times.</p>
 </div>
 <div class="section" id="atomic-number">
-<span id="id97"></span><h3>5.19.2 (atomic number)<a class="headerlink" href="#atomic-number" title="Permalink to this headline">¶</a></h3>
+<span id="id75"></span><h3>5.16.2 (atomic number)<a class="headerlink" href="#atomic-number" title="Permalink to this headline">¶</a></h3>
 <p><strong>zatom</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">zatom</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span>
 </pre></div>
 </div>
 <p>Atomic number of the current atom type</p>
 </div>
-<div class="section" id="pseudopotential">
-<span id="id98"></span><h3>5.19.3 (pseudopotential)<a class="headerlink" href="#pseudopotential" title="Permalink to this headline">¶</a></h3>
-<p>kbpp or uspp or vand or local</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="n">No</span> <span class="n">default</span>
-</pre></div>
-</div>
-<p>Type of pseudopotential defined for the current atom type.</p>
-</div>
-<div class="section" id="nonlocal-potential">
-<span id="id99"></span><h3>5.19.4 (nonlocal potential)<a class="headerlink" href="#nonlocal-potential" title="Permalink to this headline">¶</a></h3>
-<p><strong>lking</strong> = [boolean] <strong>rking</strong> = [real] <strong>gkgmax</strong> = [real] <strong>gkgexct</strong>
-= [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lking</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">rking</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">gkgmax</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span>
-</pre></div>
-</div>
-<p>default <strong>gkgexct</strong> = No default</p>
-<p>These flags specify if nonlocal potntial is computed in real space or
-reciprocal space. We follow the formalism by [ R. D. King-smith et al.
-]. lking=.false. allows calculation to proceed in reciporocal space. In
-such case, next three parameter are read but not use. If lking=.true.,
-caculation will proceed in real space. In such case, rking, gkgmax and
-gkgexct are used. rking corresponds to real space cutoff radius. gkgmax
-and gkgexct correspond to accuracy of non-local potentials. For more
-detail, please follow paper by R. D. King-smith et al. Accuracy of real
-space must be tested if input parameters are not provided.</p>
-<p>Recommendation: <strong>lking</strong> = false for small system and true for large
-system <strong>rking</strong> = 1.5- 2 <strong>gkgmax</strong> = 1.25 <strong>gkgexct</strong> = 0.98</p>
-</div>
-<div class="section" id="local-potential">
-<span id="id100"></span><h3>5.19.5 (local potential)<a class="headerlink" href="#local-potential" title="Permalink to this headline">¶</a></h3>
-<p><strong>llking</strong> = [boolean] <strong>rlking</strong> = [real] <strong>glkgmax</strong> = [real]
-<strong>glkgexct</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">llking</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">rlking</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">glkgmax</span><span class="o">**</span> <span class="o">=</span>
-</pre></div>
-</div>
-<p>No default <strong>glkgexct</strong> = No default</p>
-<p>These flags specify if local potntial is computed in real space or
-reciprocal space. It is recommended to use reciprocal space reciprocal
-space for the calculation. In reciprocal space rlking, glkgmax and
-glkgexct are not used but values are read.</p>
-<p>Recommendation: <strong>llking</strong> = false</p>
-</div>
 <div class="section" id="partial-core-correction">
-<span id="id101"></span><h3>5.19.6 (partial core correction)<a class="headerlink" href="#partial-core-correction" title="Permalink to this headline">¶</a></h3>
+<span id="pseudopotential"></span><h3>5.16.3 (partial core correction)<a class="headerlink" href="#partial-core-correction" title="Permalink to this headline">¶</a></h3>
 <p><strong>lpcc</strong> = [boolean] <strong>rpcc</strong> = [real] <strong>lpking</strong> = [boolean] <strong>rpking</strong>
 = [real] <strong>gpkgmax</strong> = [real] <strong>gpkgexct</strong> = [real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lpcc</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">rpcc</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">lpking</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span>
@@ -2401,18 +1493,8 @@ perturbation which increase the transferrability of the code. It is
 recommended to use partial core correction. Please see paper by Louie et
 al.</p>
 </div>
-<div class="section" id="compensation-charge-cutoff">
-<span id="id102"></span><h3>5.19.7 (compensation charge cutoff)<a class="headerlink" href="#compensation-charge-cutoff" title="Permalink to this headline">¶</a></h3>
-<p><strong>frac_rcomp_it</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">frac_rcomp_it</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.3</span>
-</pre></div>
-</div>
-<p>Compensation charge must be used in PAW method to match all electron
-wave function. A recommended value is between 1.2 - 1.3. For more detail
-please see paper by Kresse et al.</p>
-</div>
 <div class="section" id="the-number-of-atoms">
-<span id="id103"></span><h3>5.19.8 (the number of atoms)<a class="headerlink" href="#the-number-of-atoms" title="Permalink to this headline">¶</a></h3>
+<span id="compensation-charge-cutoff"></span><span id="id76"></span><h3>5.16.4 (the number of atoms)<a class="headerlink" href="#the-number-of-atoms" title="Permalink to this headline">¶</a></h3>
 <p><strong>nhk</strong> = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nhk</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
@@ -2420,15 +1502,15 @@ please see paper by Kresse et al.</p>
 <p>Number of atoms of the current type. If <code class="docutils literal notranslate"><span class="pre">nhk</span></code> is zero, then atomic
 configuration is read from the positions file</p>
 </div>
-<div class="section" id="id104">
-<span id="id105"></span><h3>5.19.9 (unit of length)<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id77">
+<span id="id78"></span><h3>5.16.5 (unit of length)<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h3>
 <p>(bohr) or (ang)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="n">No</span> <span class="n">default</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="position-file">
-<span id="id106"></span><h3>5.19.10 (position file)<a class="headerlink" href="#position-file" title="Permalink to this headline">¶</a></h3>
+<span id="id79"></span><h3>5.16.6 (position file)<a class="headerlink" href="#position-file" title="Permalink to this headline">¶</a></h3>
 <p><strong>fname</strong> = [String] <strong>scaledflag</strong>* = [integer] <strong>keyword</strong>* =
 [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">fname</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">scaledflag</span><span class="o">**</span>\ \<span class="o">*</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span>
@@ -2451,7 +1533,7 @@ corrdinates file.</p>
 <p>The coordinates for (n_i == keyword) are selected.</p>
 </div>
 <div class="section" id="positions">
-<span id="id107"></span><h3>5.19.11 (positions)<a class="headerlink" href="#positions" title="Permalink to this headline">¶</a></h3>
+<span id="id80"></span><h3>5.16.7 (positions)<a class="headerlink" href="#positions" title="Permalink to this headline">¶</a></h3>
 <p><strong>nunitcells</strong> = [integer][integer][integer] <strong>scaledflag</strong>* =
 [integer] <code class="docutils literal notranslate"><span class="pre">nhk</span></code> lines of <strong>positions</strong> = [real][real][real]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">nunitcells</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">defaults</span> <span class="o">**</span><span class="n">scaledflag</span><span class="o">**</span>\ \<span class="o">*</span> <span class="o">=</span> <span class="n">No</span> <span class="n">defaults</span>
@@ -2472,34 +1554,8 @@ coordinates ( in a.u. ) have to be given like below.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="fix-positions">
-<span id="id108"></span><h3>5.19.12 (fix positions)<a class="headerlink" href="#fix-positions" title="Permalink to this headline">¶</a></h3>
-<p><strong>lfixion</strong> = [boolean]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lfixion</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>If .TRUE., atoms of current type are held fixed by setting atomic
-velocities to zero.</p>
-</div>
-<div class="section" id="fix-displacement">
-<span id="id109"></span><h3>5.19.13 (fix displacement)<a class="headerlink" href="#fix-displacement" title="Permalink to this headline">¶</a></h3>
-<p><strong>ldispion</strong> = [boolean] <strong>dvector</strong> = [real] [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ldispion</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span> <span class="o">**</span><span class="n">dvector</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span>
-</pre></div>
-</div>
-<p>If .TRUE., positions of atoms of current type are updated by adding
-<strong>dvector</strong> to the current position. <code class="docutils literal notranslate"><span class="pre">???</span></code></p>
-</div>
-<div class="section" id="fictitious-mass">
-<span id="id110"></span><h3>5.19.14 (fictitious mass)<a class="headerlink" href="#fictitious-mass" title="Permalink to this headline">¶</a></h3>
-<p><strong>ficmass</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ficmass</span><span class="o">**</span> <span class="o">=</span> <span class="mf">1.0</span>
-</pre></div>
-</div>
-<p>If set, the mass of atoms of this type are scaled by <strong>ficmass</strong></p>
-</div>
 <div class="section" id="velocity-file">
-<span id="id111"></span><h3>5.19.15 (velocity file)<a class="headerlink" href="#velocity-file" title="Permalink to this headline">¶</a></h3>
+<span id="fix-positions"></span><h3>5.16.8 (velocity file)<a class="headerlink" href="#velocity-file" title="Permalink to this headline">¶</a></h3>
 <p><strong>fname</strong> = [String] <strong>keyword</strong>* = [integer]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">fname</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">keyword</span><span class="o">**</span>\ \<span class="o">*</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span>
 </pre></div>
@@ -2519,7 +1575,7 @@ type are denoted by the integer <strong>keyword</strong> in the velocities file.
 <p>The velocities for (n_i == keyword) are selected.</p>
 </div>
 <div class="section" id="velocities">
-<span id="id112"></span><h3>5.19.16 (velocities)<a class="headerlink" href="#velocities" title="Permalink to this headline">¶</a></h3>
+<span id="id81"></span><h3>5.16.9 (velocities)<a class="headerlink" href="#velocities" title="Permalink to this headline">¶</a></h3>
 <p><strong>nunitcells</strong> = [integer][integer][integer] <strong>scalingfactor</strong>* =
 [real] <code class="docutils literal notranslate"><span class="pre">nhk</span></code> lines of scaled <strong>velocities</strong> = [real][real][real] .
 Ensure that -1.0 &lt; <strong>velocities</strong> &lt; 1.0</p>
@@ -2530,68 +1586,7 @@ Ensure that -1.0 &lt; <strong>velocities</strong> &lt; 1.0</p>
 <p><strong>nunitcells</strong> gives the number of unit cells along the x, y and z
 directions. Atomic velocities are initialized by multiplying the vector
 <strong>velocities</strong> by the <strong>scalingfactor</strong>.</p>
-</div>
-<div class="section" id="atomic-charge">
-<span id="spherical-harmonics-expansion"></span><h3>5.19.19 (atomic charge)<a class="headerlink" href="#atomic-charge" title="Permalink to this headline">¶</a></h3>
-<p><strong>rintchg</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">rintchg</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span>
-</pre></div>
-</div>
-<p>Radius of integration to calculate atomic charge</p>
-</div>
-<div class="section" id="dftu">
-<span id="id113"></span><h3>5.19.20 (DFT+U)<a class="headerlink" href="#dftu" title="Permalink to this headline">¶</a></h3>
-<p><strong>lplusU_at</strong> = [boolean] <strong>plusU_l</strong> = [integer] <strong>plusU_U</strong> = [real]
-<strong>plusU_J</strong> = [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lplusU_at</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span> <span class="o">**</span><span class="n">plusU_l</span><span class="o">**</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span><span class="n">plusU_U</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span>
-</pre></div>
-</div>
-<p><strong>plusU_J</strong> = 0.0</p>
-<p>The flag <strong>lplusU_at</strong> determines if the DFT+U method is used.
-<strong>plusU_l</strong> defines the angular momentum quantum number of the orbital
-of interest. <strong>plusU_U</strong> and <strong>plusU_J</strong> define the Hubbard parameter U
-and the screened exchange energy in electron-volts.</p>
-</div>
-<div class="section" id="dftc">
-<span id="id114"></span><h3>5.19.21 (DFT+C)<a class="headerlink" href="#dftc" title="Permalink to this headline">¶</a></h3>
-<p><strong>lplusC_at</strong> = [boolean] <strong>plusC_r_e_s</strong> = [real] [real]
-<strong>plusC_r_e_p</strong> = [real] [real] <strong>plusC_r_e_d</strong> = [real] [real]
-<strong>plusC_r_e_f</strong> = [real] [real]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">lplusC_at</span><span class="o">**</span> <span class="o">=</span> <span class="o">.</span><span class="n">FALSE</span><span class="o">.</span> <span class="o">**</span><span class="n">plusC_r_e_s</span><span class="o">**</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
-</pre></div>
-</div>
-<p><strong>plusC_r_e_p</strong> = 0.0 0.0 <strong>plusC_r_e_d</strong> = 0.0 0.0 <strong>plusC_r_e_f</strong> =
-0.0 0.0</p>
-<p>The flag <strong>lplusC_at</strong> determines if the DFT+C method is used.
-<strong>plusC_r_e</strong> defines the <code class="docutils literal notranslate"><span class="pre">plusC_r</span></code> and <code class="docutils literal notranslate"><span class="pre">plusC_e</span></code> vales for the s,
-p, d and f subshells.</p>
-<p>The form of correction</p>
-<p><code class="docutils literal notranslate"><span class="pre">modified</span> <span class="pre">V_nl(r)</span> <span class="pre">=</span> <span class="pre">V_nl(r)</span> <span class="pre">+</span> <span class="pre">plusC_e</span> <span class="pre">*</span> <span class="pre">sin(a*r)/(a*r),</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">pi/plusC_r</span></code></p>
-<p>where <code class="docutils literal notranslate"><span class="pre">plusC_r</span></code> is cutoff radius in [a.u.] and <code class="docutils literal notranslate"><span class="pre">plusC_e</span></code> is energy
-shift in [Ryd.]</p>
-</div>
-</div>
-<div class="section" id="constraint-conditions">
-<span id="id115"></span><h2>5.20 Constraint conditions<a class="headerlink" href="#constraint-conditions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id116">
-<span id="id117"></span><h3>5.20.1 (unit of length)<a class="headerlink" href="#id116" title="Permalink to this headline">¶</a></h3>
-<p>(bohr) or (ang)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="p">(</span><span class="n">ang</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="bond-length-constraint">
-<span id="id118"></span><h3>5.20.1 (bond length constraint)<a class="headerlink" href="#bond-length-constraint" title="Permalink to this headline">¶</a></h3>
-<p><strong>ncbonds</strong> = [integer]</p>
-<p>Followed by <strong>ncbonds</strong> lines of constraints.</p>
-<p><strong>ncbatm1</strong> = [integer] <strong>ncbatm2</strong> = [integer] <strong>cblength</strong> = [real]</p>
-<p>For each line, the bond length between <strong>ncbatm1</strong> and <strong>ncbatm2</strong> is
-held fixed at <strong>cblength</strong> Angstrom.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Default</span> <span class="o">**</span><span class="n">ncbonds</span><span class="o">**</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">**</span><span class="n">ncbatm1</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span> <span class="n">default</span> <span class="o">**</span><span class="n">ncbatm2</span><span class="o">**</span> <span class="o">=</span> <span class="n">No</span>
-</pre></div>
-</div>
-<p>default <strong>cblength</strong> = No default</p>
-<p id="bibtex-bibliography-param-0"><table class="docutils citation" frame="void" id="rn19" rules="none">
+<p id="bibtex-bibliography-param-0"><span id="spherical-harmonics-expansion"></span><table class="docutils citation" frame="void" id="rn19" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Fuyuki Shimojo, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, and Priya Vashishta. Linear-scaling density-functional-theory calculations of electronic structure based on real-space grids: design, analysis, and scalability test of parallel algorithms. <em>Computer Physics Communications</em>, 140(3):303–314, 2001. <a class="reference external" href="https://doi.org/10.1016/S0010-4655(01)00247-8">doi:10.1016/S0010-4655(01)00247-8</a>.</td></tr>
@@ -2663,58 +1658,34 @@ held fixed at <strong>cblength</strong> Angstrom.</p>
 <tr><td class="label"><a class="fn-backref" href="#id14">[12]</a></td><td>John&nbsp;P. Perdew, Kieron Burke, and Matthias Ernzerhof. Generalized gradient approximation made simple. <em>Physical Review Letters</em>, 77(18):3865–3868, 1996. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.77.3865">https://link.aps.org/doi/10.1103/PhysRevLett.77.3865</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.77.3865">doi:10.1103/PhysRevLett.77.3865</a>.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="rn33" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id15">[13]</a></td><td>B.&nbsp;Hammer, L.&nbsp;B. Hansen, and J.&nbsp;K. Nørskov. Improved adsorption energetics within density-functional theory using revised perdew-burke-ernzerhof functionals. <em>Phys. Rev. B</em>, 59:7413–7421, Mar 1999. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.59.7413">https://link.aps.org/doi/10.1103/PhysRevB.59.7413</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.59.7413">doi:10.1103/PhysRevB.59.7413</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn34" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id16">[14]</a></td><td>Yingkai Zhang and Weitao Yang. Comment on “generalized gradient approximation made simple”. <em>Phys. Rev. Lett.</em>, 80:890–890, Jan 1998. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.80.890">https://link.aps.org/doi/10.1103/PhysRevLett.80.890</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.80.890">doi:10.1103/PhysRevLett.80.890</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn35" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id17">[15]</a></td><td>M.&nbsp;Dion, H.&nbsp;Rydberg, E.&nbsp;Schröder, D.&nbsp;C. Langreth, and B.&nbsp;I. Lundqvist. Van der waals density functional for general geometries. <em>Phys. Rev. Lett.</em>, 92:246401, Jun 2004. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.92.246401">https://link.aps.org/doi/10.1103/PhysRevLett.92.246401</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.92.246401">doi:10.1103/PhysRevLett.92.246401</a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="rn36" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id18">[16]</a></td><td>Kyuho Lee, Éamonn&nbsp;D. Murray, Lingzhu Kong, Bengt&nbsp;I. Lundqvist, and David&nbsp;C. Langreth. Higher-accuracy van der waals density functional. <em>Phys. Rev. B</em>, 82:081101, Aug 2010. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.82.081101">https://link.aps.org/doi/10.1103/PhysRevB.82.081101</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.82.081101">doi:10.1103/PhysRevB.82.081101</a>.</td></tr>
-</tbody>
-</table>
 <table class="docutils citation" frame="void" id="rn37" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id19">[17]</a></td><td>Stefan Grimme. Accurate description of van der waals complexes by density functional theory including empirical corrections. <em>Journal of Computational Chemistry</em>, 25(12):1463–1473, 2004. <a class="reference external" href="https://doi.org/10.1002/jcc.20078">doi:10.1002/jcc.20078</a>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id15">[13]</a></td><td>Stefan Grimme. Accurate description of van der waals complexes by density functional theory including empirical corrections. <em>Journal of Computational Chemistry</em>, 25(12):1463–1473, 2004. <a class="reference external" href="https://doi.org/10.1002/jcc.20078">doi:10.1002/jcc.20078</a>.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="rn38" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id20">[18]</a></td><td>Stefan Grimme. Semiempirical gga-type density functional constructed with a long-range dispersion correction. <em>Journal of Computational Chemistry</em>, 27(15):1787–1799, 2006. URL: <a class="reference external" href="http://doi.wiley.com/10.1002/jcc.20495">http://doi.wiley.com/10.1002/jcc.20495</a>, <a class="reference external" href="https://doi.org/10.1002/jcc.20495">doi:10.1002/jcc.20495</a>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id16">[14]</a></td><td>Stefan Grimme. Semiempirical gga-type density functional constructed with a long-range dispersion correction. <em>Journal of Computational Chemistry</em>, 27(15):1787–1799, 2006. URL: <a class="reference external" href="http://doi.wiley.com/10.1002/jcc.20495">http://doi.wiley.com/10.1002/jcc.20495</a>, <a class="reference external" href="https://doi.org/10.1002/jcc.20495">doi:10.1002/jcc.20495</a>.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="rn39" rules="none">
+<table class="docutils citation" frame="void" id="rn45" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id21">[19]</a></td><td>Glenn&nbsp;J. Martyna and Mark&nbsp;E. Tuckerman. A reciprocal space based method for treating long range interactions in ab initio and force-field-based calculations in clusters. <em>The Journal of Chemical Physics</em>, 110(6):2810–2821, 1999. URL: <a class="reference external" href="https://doi.org/10.1063/1.477923">https://doi.org/10.1063/1.477923</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1063/1.477923">arXiv:https://doi.org/10.1063/1.477923</a>, <a class="reference external" href="https://doi.org/10.1063/1.477923">doi:10.1063/1.477923</a>.</td></tr>
+<tr><td class="label">[15]</td><td><em>(<a class="fn-backref" href="#id19">1</a>, <a class="fn-backref" href="#id20">2</a>)</em> Glenn&nbsp;J. Martyna, Mark&nbsp;E. Tuckerman, Douglas&nbsp;J. Tobias, and Michael&nbsp;L. Klein. Explicit reversible integrators for extended systems dynamics. <em>Molecular Physics</em>, 87(5):1117–1157, 1996. URL: <a class="reference external" href="http://www.tandfonline.com/doi/abs/10.1080/00268979600100761">http://www.tandfonline.com/doi/abs/10.1080/00268979600100761</a>, <a class="reference external" href="https://doi.org/10.1080/00268979600100761">doi:10.1080/00268979600100761</a>.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="rn40" rules="none">
+<table class="docutils citation" frame="void" id="rn47" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id22">[20]</a></td><td>S.&nbsp;L. Dudarev, G.&nbsp;A. Botton, S.&nbsp;Y. Savrasov, C.&nbsp;J. Humphreys, and A.&nbsp;P. Sutton. Electron-energy-loss spectra and the structural stability of nickel oxide: an lsda+u study. <em>Phys. Rev. B</em>, 57:1505–1509, Jan 1998. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.57.1505">https://link.aps.org/doi/10.1103/PhysRevB.57.1505</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.57.1505">doi:10.1103/PhysRevB.57.1505</a>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id21">[16]</a></td><td>Kohei Shimamura, Masaaki Misawa, Satoshi Ohmura, Fuyuki Shimojo, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, and Priya Vashishta. Crystalline anisotropy of shock-induced phenomena: omni- directional multiscale shock technique. <em>Applied Physics Letters</em>, 108(7):071901–071901, 2016. URL: <a class="reference external" href="http://dx.doi.org/10.1063/1.4942191 http://aip.scitation.org/doi/10.1063/1.4942191">http://dx.doi.org/10.1063/1.4942191 http://aip.scitation.org/doi/10.1063/1.4942191</a>, <a class="reference external" href="https://doi.org/10.1063/1.4942191">doi:10.1063/1.4942191</a>.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="rn41" rules="none">
+<table class="docutils citation" frame="void" id="rn48" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id23">[21]</a></td><td>Jingbo Li and Lin-Wang Wang. Band-structure-corrected local density approximation study of semiconductor quantum dots and wires. <em>Phys. Rev. B</em>, 72:125325, Sep 2005. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.72.125325">https://link.aps.org/doi/10.1103/PhysRevB.72.125325</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.72.125325">doi:10.1103/PhysRevB.72.125325</a>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id22">[17]</a></td><td>Kohei Shimamura, Masaaki Misawa, Ying Li, Rajiv&nbsp;K. Kalia, Aiichiro Nakano, Fuyuki Shimojo, and Priya Vashishta. A crossover in anisotropic nanomechanochemistry of van der waals crystals. <em>Applied Physics Letters</em>, 107(23):231903–231903, 2015. URL: <a class="reference external" href="http://dx.doi.org/10.1063/1.4937268,http://aip.scitation.org/doi/10.1063/1.4937268">http://dx.doi.org/10.1063/1.4937268,http://aip.scitation.org/doi/10.1063/1.4937268</a>, <a class="reference external" href="https://doi.org/10.1063/1.4937268">doi:10.1063/1.4937268</a>.</td></tr>
 </tbody>
 </table>
 </p>

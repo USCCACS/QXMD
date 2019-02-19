@@ -192,19 +192,6 @@ tailor a QXMD job to the user’s specifications.</p>
  .false.                       : (lstart) .true. = restart
 *end                          :
                               :
-*PAW                          :
-(how of it)                   :
- .true.                       : (lpaw)  .true.  = PAW method
-                              :         .false. = pseudopotential method
-(non-spherical symmetry)      :
- .false.                      : (lpaw_sym) .true. = full      symmetry
-                              :           .false. = spherical symmetry
-                              :
-(onsite charge mixing)        :
-    0.5d0                     : (paw_mix)
-*end                          :
-                              :
-                              :
                               :
 *approximation for Exc        :
 (approximation)               :
@@ -309,21 +296,10 @@ tailor a QXMD job to the user’s specifications.</p>
 ==============================:=======================================
 (atomic number)               :
   8.0                         : (zatom)
-(pseudopotential)             :
-uspp                          : kbpp .or. uspp .or. vand
-(nonlocal potential)          :
- .true. 1.5d0 1.25d0 0.8d0    : (lking) .true. = on, (rking, gkgmax, gkgexct)
-                              : smoothing parameters
-(local potential)             :
- .false. 1.5d0 1.15d0 0.8d0   : (llking) .true. = on, (rlking, glkgmax, glkgexct)
-                              : smoothing parameters
-(partial core correction)     :
- .true.   1.4d0               : (lpcc) .true. = on, (r_cut) in [a.u.]
- .true. 1.1d0 1.15d0 0.8d0    : (lpking) .true. = on, (rpking, gpkgmax, gpkgexct)
-                              : smoothing parameters
                               :
-(unit of length)              : only for positions
-(ang)                         : (bohr) or (ang)
+(the number of atoms)         : No. of atoms in SUPERCELL, not in UNIT cell
+0                             : (nhk) If zero, atomic positions are read from
+                              :       &#39;CONFIGURATION_FILE&#39;.
                               :
 (position file)               :
 &#39;control/IN.CONFIG&#39;           :
@@ -333,27 +309,17 @@ uspp                          : kbpp .or. uspp .or. vand
 ==============================:=======================================
 (atomic number)               :
   1.0                         : (zatom)
-(pseudopotential)             :
-uspp                          : kbpp .or. uspp .or. vand
-(nonlocal potential)          :
- .true. 1.5d0 1.25d0 0.8d0    : (lking) .true. = on, (rking, gkgmax, gkgexct)
-                              : smoothing parameters
-(local potential)             :
- .false. 1.5d0 1.15d0 0.8d0   : (llking) .true. = on, (rlking, glkgmax, glkgexct)
-                              : smoothing parameters
-(partial core correction)     :
- .false.   1.4d0              : (lpcc) .true. = on, (r_cut) in [a.u.]
- .true. 1.1d0 1.15d0 0.8d0    : (lpking) .true. = on, (rpking, gpkgmax, gpkgexct)
-                              : smoothing parameters
                               :
-(unit of length)              : only for positions
-(ang)                         : (bohr) or (ang)
+(the number of atoms)         : No. of atoms in SUPERCELL, not in UNIT cell
+0                             : (nhk) If zero, atomic positions are read from
+                              :       &#39;CONFIGURATION_FILE&#39;.
                               :
 (position file)               :
 &#39;control/IN.CONFIG&#39;           :
  2                            : 1:scaled, 2:real coordinates
  2                            : (keyword)
 (end)                         :
+==============================:=======================================
 *end                          : end of setting *atoms
 </pre></div>
 </div>
@@ -419,24 +385,10 @@ the <code class="docutils literal notranslate"><span class="pre">\*TDDFT-MD</spa
  .false.                       : (lstart) .true. = restart
 *end                          :
                               :
-*PAW                          :
-(how of it)                   :
- .true.                       : (lpaw)  .true.  = PAW method
-                              :         .false. = pseudopotential method
-(non-spherical symmetry)      :
- .false.                      : (lpaw_sym) .true. = full      symmetry
-                              :           .false. = spherical symmetry
-                              :
-(onsite charge mixing)        :
-    0.5d0                     : (paw_mix)
-*end                          :
-                              :
-                              :
                               :
 *approximation for Exc        :
 (approximation)               :
-       2                      : (jgga) = 1:LDA, 2:GGA(PBE), 3:GGA(RPBE),
-                              :          4:GGA(revPBE), 5:vdW-DF, 6:vdW-DF2
+       2                      : (jgga) = 1:LDA, 2:GGA(PBE),
                               :
 (DFT-D)                       : an empirical correction for the vdW interaction
  .true.                       : (ldftd) .true. = on, .false. = off
@@ -564,21 +516,10 @@ the <code class="docutils literal notranslate"><span class="pre">\*TDDFT-MD</spa
 ==============================:=======================================
 (atomic number)               :
   8.0                         : (zatom)
-(pseudopotential)             :
-uspp                          : kbpp .or. uspp .or. vand
-(nonlocal potential)          :
- .true. 1.5d0 1.25d0 0.8d0    : (lking) .true. = on, (rking, gkgmax, gkgexct)
-                              : smoothing parameters
-(local potential)             :
- .false. 1.5d0 1.15d0 0.8d0   : (llking) .true. = on, (rlking, glkgmax, glkgexct)
-                              : smoothing parameters
-(partial core correction)     :
- .true.   1.4d0               : (lpcc) .true. = on, (r_cut) in [a.u.]
- .true. 1.1d0 1.15d0 0.8d0    : (lpking) .true. = on, (rpking, gpkgmax, gpkgexct)
-                              : smoothing parameters
                               :
-(unit of length)              : only for positions
-(ang)                         : (bohr) or (ang)
+(the number of atoms)         : No. of atoms in SUPERCELL, not in UNIT cell
+0                             : (nhk) If zero, atomic positions are read from
+                              :       &#39;CONFIGURATION_FILE&#39;.
                               :
 (position file)               :
 &#39;control/IN.CONFIG&#39;           :
@@ -588,27 +529,17 @@ uspp                          : kbpp .or. uspp .or. vand
 ==============================:=======================================
 (atomic number)               :
   1.0                         : (zatom)
-(pseudopotential)             :
-uspp                          : kbpp .or. uspp .or. vand
-(nonlocal potential)          :
- .true. 1.5d0 1.25d0 0.8d0    : (lking) .true. = on, (rking, gkgmax, gkgexct)
-                              : smoothing parameters
-(local potential)             :
- .false. 1.5d0 1.15d0 0.8d0   : (llking) .true. = on, (rlking, glkgmax, glkgexct)
-                              : smoothing parameters
-(partial core correction)     :
- .false.   1.4d0              : (lpcc) .true. = on, (r_cut) in [a.u.]
- .true. 1.1d0 1.15d0 0.8d0    : (lpking) .true. = on, (rpking, gpkgmax, gpkgexct)
-                              : smoothing parameters
                               :
-(unit of length)              : only for positions
-(ang)                         : (bohr) or (ang)
+(the number of atoms)         : No. of atoms in SUPERCELL, not in UNIT cell
+0                             : (nhk) If zero, atomic positions are read from
+                              :       &#39;CONFIGURATION_FILE&#39;.
                               :
 (position file)               :
 &#39;control/IN.CONFIG&#39;           :
  2                            : 1:scaled, 2:real coordinates
  2                            : (keyword)
 (end)                         :
+==============================:=======================================
 *end                          : end of setting *atoms
 </pre></div>
 </div>

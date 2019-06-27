@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Help for rst2pdf developers &mdash; QXMD 3.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> QXMD
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../program.html">Program Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOf.html">Input/Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../param.html">Input Parameters: IN.PARAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output.html">QXMD Simulation Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../util.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lic.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">QXMD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Help for rst2pdf developers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="help-for-rst2pdf-developers">
+<h1>Help for rst2pdf developers<a class="headerlink" href="#help-for-rst2pdf-developers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="or-how-do-i-hack-this-thing">
+<h2>Or, how do I hack this thing?<a class="headerlink" href="#or-how-do-i-hack-this-thing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="guidelines">
+<h3>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h3>
+<p>In rst2pdf we want many things. We want ponies and icecream. But most of all, we want
+rst2pdf to kick ass. The best way to achieve that is making rst2pdf work right.
+The best way to do <em>that</em> is through testing and documenting.</p>
+<p>So, if you want to do something inside rst2pdf, you are welcome, but…</p>
+<ul>
+<li><p class="first">Create an Issue for the task. That’s easy, just go to
+<a class="reference external" href="https://github.com/rst2pdf/rst2pdf/issues">https://github.com/rst2pdf/rst2pdf/issues</a> and do it.</p>
+</li>
+<li><p class="first">If you intend to fix a bug:</p>
+<ul>
+<li><p class="first">Create a <strong>minimal</strong> test case that shows the bug.</p>
+</li>
+<li><p class="first">Put it inside <code class="docutils literal notranslate"><span class="pre">rst2pdf/tests/input</span></code> like the others:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">mytest.txt</span></code> is the test itself</li>
+<li><code class="docutils literal notranslate"><span class="pre">mytest.cli</span></code> is any needed command line arguments (if needed)</li>
+<li><code class="docutils literal notranslate"><span class="pre">mytest.style</span></code> is a custom stylesheet (if needed)</li>
+</ul>
+</li>
+<li><p class="first">Run the test suite on it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span>
+<span class="o">./</span><span class="n">autotest</span><span class="o">.</span><span class="n">py</span> <span class="nb">input</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check the output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">less</span> <span class="n">output</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">log</span>
+<span class="n">acroread</span> <span class="n">output</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">If it’s really a bug, mark the test as <em>bad</em> and save everything in git:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setmd5</span> <span class="n">bad</span> <span class="nb">input</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">issue</span><span class="o">-</span><span class="n">X</span>
+<span class="n">git</span> <span class="n">add</span> <span class="nb">input</span><span class="o">/</span><span class="n">mytest</span><span class="o">.*</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">md5</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">json</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Test case for Issue X&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">issue</span><span class="o">-</span><span class="n">X</span> <span class="c1"># then open a Pull Request</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Always, when committing something, check for regressions running the full test suite,
+it takes only a minute or two. Keep in mind that regressions can be trivial!</p>
+<p>For example, if you change the spacing of definition lists, 3 or 4 tests will
+regress.</p>
+</li>
+<li><p class="first">Keep your Issues updated. If you are working on frobnozzing the gargles, then by
+all means post it in the issue. There’s no issue about it? You were meant to
+create one, remember? ;-)</p>
+</li>
+<li><p class="first">If you added a command line option, document it in <code class="docutils literal notranslate"><span class="pre">doc/rst2pdf.txt</span></code>.
+That will make it appear in the manual and in the man page.</p>
+<p>Maybe it should also be available for sphinx users, let me know about it.</p>
+</li>
+<li><p class="first">If you implemented a new feature, please document it in <code class="docutils literal notranslate"><span class="pre">manual.rst</span></code>
+(or in a separate file and add an include in <code class="docutils literal notranslate"><span class="pre">manual.rst</span></code>)</p>
+</li>
+<li><p class="first">If you implement an extension, make the docstring valid restructured text
+and link it to the manual like the others.</p>
+</li>
+</ul>
+<p>Why should you bother with all this?</p>
+<p>It’s important that you do it this way because it means that the rest of us know what you are doing. It also means you don’t break rst2pdf.</p>
+</div>
+<div class="section" id="continuous-integration">
+<h3>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h3>
+<p>There’s a Travis build - see <a class="reference external" href="https://github.com/rst2pdf/rst2pdf/issues/621">https://github.com/rst2pdf/rst2pdf/issues/621</a> for more information on the current status</p>
+</div>
+<div class="section" id="running-tests">
+<h3>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h3>
+<p>The rst2pdf test suite generates PDFs, then calculates a checksum (an md5) of the resulting file and checks it against known lists of good and bad md5s. These known outcomes are in <code class="docutils literal notranslate"><span class="pre">rst2pdf/tests/md5/[test_name].json</span></code> (warning, not actually a json file).</p>
+<div class="section" id="first-run">
+<h4>First run<a class="headerlink" href="#first-run" title="Permalink to this headline">¶</a></h4>
+<p>To run the tests for the first time, you will need to do some setup (after this, you can just work on your given virtualenv each time).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="o">--</span><span class="n">python</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python2</span> <span class="n">env</span>
+<span class="o">.</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="n">nose</span> <span class="n">coverage</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span><span class="p">[</span><span class="n">tests</span><span class="p">,</span><span class="n">sphinx</span><span class="p">,</span><span class="n">images</span><span class="p">,</span><span class="n">svgsupport</span><span class="p">,</span><span class="n">aafiguresupport</span><span class="p">,</span><span class="n">mathsupport</span><span class="p">,</span><span class="n">rawhtmlsupport</span><span class="p">]</span>
+<span class="n">nosetests</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">i</span> <span class="n">regulartest</span> <span class="o">-</span><span class="n">i</span> <span class="n">sphinxtest</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-runs">
+<h4>Next runs<a class="headerlink" href="#next-runs" title="Permalink to this headline">¶</a></h4>
+<p>While in project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">i</span> <span class="n">regulartest</span> <span class="o">-</span><span class="n">i</span> <span class="n">sphinxtest</span>
+</pre></div>
+</div>
+<p>To stop the tests on the first failure, use the <code class="docutils literal notranslate"><span class="pre">-x</span></code> switch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">i</span> <span class="n">regulartest</span> <span class="o">-</span><span class="n">i</span> <span class="n">sphinxtest</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-autotest-directly">
+<h4>Using autotest directly<a class="headerlink" href="#using-autotest-directly" title="Permalink to this headline">¶</a></h4>
+<p>You can also run the tests using autorun directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span>
+<span class="o">./</span><span class="n">autotest</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">e</span> <span class="o">-</span><span class="n">f</span> <span class="o">&gt;&amp;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<span class="o">./</span><span class="n">parselogs</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;</span> <span class="n">log</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Now look at the output of <code class="docutils literal notranslate"><span class="pre">log.txt</span></code></p>
+</div>
+<div class="section" id="running-a-single-test">
+<h4>Running a single test<a class="headerlink" href="#running-a-single-test" title="Permalink to this headline">¶</a></h4>
+<p>To run one test only, try this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span>
+<span class="o">./</span><span class="n">autotest</span><span class="o">.</span><span class="n">py</span> <span class="nb">input</span><span class="o">/</span><span class="p">[</span><span class="n">test</span><span class="p">]</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This will run one test and show the output.</p>
+</div>
+<div class="section" id="skipping-tests">
+<h4>Skipping tests<a class="headerlink" href="#skipping-tests" title="Permalink to this headline">¶</a></h4>
+<p>To skip a test, simply create a text file in the <code class="docutils literal notranslate"><span class="pre">tests/input</span></code> directory called <code class="docutils literal notranslate"><span class="pre">[test].ignore</span></code> containing a note on why the test is skipped. This will mark the test as skipped when the test suite runs. This could be useful for inherited tests that we aren’t confident of the correct output for, but where we don’t want to delete/lose the test entirely.</p>
+</div>
+<div class="section" id="marking-a-failing-test-as-good">
+<h4>Marking a failing test as good<a class="headerlink" href="#marking-a-failing-test-as-good" title="Permalink to this headline">¶</a></h4>
+<p>Sometimes the local combination of software versions will create the “right” PDF but the binary file will have some minor differences. If your file looks good, then you can store the checksum of it as a valid outcome with a command like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span>
+<span class="o">./</span><span class="n">autotest</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">good</span> <span class="nb">input</span><span class="o">/</span><span class="p">[</span><span class="n">test</span><span class="p">]</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>You’ll see from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> that you now have a new entry in the related <code class="docutils literal notranslate"><span class="pre">md5/[test].json</span></code> file. Commit this to a new branch and open a pull request explaining what you did.</p>
+</div>
+</div>
+<div class="section" id="getting-commit-rights">
+<h3>Getting commit rights<a class="headerlink" href="#getting-commit-rights" title="Permalink to this headline">¶</a></h3>
+<p>Just ask in the mailing list.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, CACS &amp;&amp; Shimojo Lab
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

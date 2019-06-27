@@ -2,18 +2,18 @@ Input/Output files
 ==================
 
 
-4.1 Input Files
+Input Files
 ~~~~~~~~~~~~~~~
 
-4.1.1 filename
-^^^^^^^^^^^^^^
+filename
+^^^^^^^^
 
 **filename** is a simple, single line text file containing the path to
 the main input file, relative to the QXMD executable, in between single
 quotes. Below shows the entire contents of a sample **filename**
 
-4.1.2 CONFIG
-^^^^^^^^^^^^^^^
+CONFIG
+^^^^^^^^^
 
 An initial configuration file must be included for any new QXMD run. It
 is best practice to name this file **CONFIG**. Below shows a sample
@@ -40,8 +40,8 @@ numbers should be used for keywords, though it is arbitrary which
 numbers are chosen for each species, as long as what you choose is used
 consistently with atomic data entered in the main input file, IN.PARAM.
 
-4.1.3 IN.PARAM
-^^^^^^^^^^^^^^
+IN.PARAM
+^^^^^^^^
 
 A main input file is required for all QXMD runs, which contains all the
 parameters settings. It is best practice to name the main input file
@@ -51,8 +51,8 @@ parameters have default settings, many of which need not be changed for
 most routine QXMD simulations. Details of these parameters may be found
 in section 5.
 
-4.1.4 VELOC
-^^^^^^^^^^^^^^
+VELOC
+^^^^^^^^
 
 A file defining the intial velocities of the atoms may optionally be
 provided. It is best practice to name this file **VELOC**. If this is
@@ -79,8 +79,8 @@ species should be consistent with those provided in the IN.CONFIG and
 IN.PARAM files.
 
 
-4.2 Output Files
-~~~~~~~~~~~~~~~~
+Output Files
+~~~~~~~~~~~~
 
 All output data files are dumped to the **data** directory during QXMD
 runs. Output files with names beginning with a lower case letter are
@@ -92,8 +92,8 @@ output files that you wish to save should be moved out of the **data**
 directory and store elsewhere as a new QXMD run will write over all
 files present in **data**.
 
-4.2.1 md_box.d
-^^^^^^^^^^^^^^
+md_box.d
+^^^^^^^^
 
 This file gives the simulation box size for a classical MD simulation. A
 sample of output file md_box.d is shown below.
@@ -117,8 +117,8 @@ Note that there is also an output file named **qm_box.d**, which
 provides the supercell size for a quantum MD simulation.
 
 
-4.2.2 md_cel.d
-^^^^^^^^^^^^^^
+md_cel.d
+^^^^^^^^
 
 Similar to **md_box.d**, **md_cel.d** holds the cell vector data for the
 simulation cell in which molecular dynamics take place, however instead
@@ -140,8 +140,8 @@ however, if changes do occur, additional lines will be written beginning
 with the step number in which the cell vectors were changed, followed by
 their new values.
 
-4.2.3 md_eng.d
-^^^^^^^^^^^^^^
+md_eng.d
+^^^^^^^^
 
 This file contains the Hamiltonian, potential, and kinetic energies
 [Hartree] of the total system, as well as the temperature [K] at every
@@ -163,26 +163,26 @@ time step. A sample of the output is shown below.
         10 -1.4792698443E+04 -1.47928551E+04  1.56675161E-01   305.4053
 
 
-4.2.4 md_log
-^^^^^^^^^^^^
+md_log
+^^^^^^
 
 This file provides of log of the simulation, including values of input
 parameters set and lengths of computation time for force calculations
 for each time step.
 
-4.2.5 MD_mts0
-^^^^^^^^^^^^^
+MD_mts0
+^^^^^^^
 
 This is a binary file that is required for restarting a QXMD simulation.
 
-4.2.5 MD_mts0
-^^^^^^^^^^^^^
+MD_mts0
+^^^^^^^
 
 This is a binary file that is required for restarting a QXMD simulation.
 
 
-4.2.6 md_spc.d
-^^^^^^^^^^^^^^
+md_spc.d
+^^^^^^^^
 
 This file lists the species keyword for each atom at each time step. A
 sample of the output is shown below.
@@ -214,8 +214,8 @@ step number, followed by the total number of atoms in the system, in
 this case '12'.
 
 
-4.2.7 md_str.d
-^^^^^^^^^^^^^^
+md_str.d
+^^^^^^^^
 
 This file outputs components of the stress tensor [GPa] of the system,
 computed classically, at given time steps intervals (the interval is
@@ -239,8 +239,8 @@ contributions from the kinetic energy of the ions are included in these
 values, while in qm_str.d they are not.
 
 
-4.2.8 md_str_diag.d
-^^^^^^^^^^^^^^^^^^^
+md_str_diag.d
+^^^^^^^^^^^^^
 
 This file outputs the diagonalized stress tensor, along with the
 respective eigenvectors at given time step intervals. Below is sample
@@ -263,15 +263,15 @@ that time step. Here, diagonalized stress data is dumped every 5 time
 steps.
 
 
-4.2.9 MD_Tocontinue
-^^^^^^^^^^^^^^^^^^^
+MD_Tocontinue
+^^^^^^^^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a QXMD simulation.
 
 
-4.2.10 md_vel.d
-^^^^^^^^^^^^^^^
+md_vel.d
+^^^^^^^^
 
 This file contains scaled atomic velocities for each atom at each time
 step. Below is sample output.
@@ -295,8 +295,8 @@ components of velocity for the first atom, followed by those for the
 second atom, ending with those for the last atom.
 
 
-4.2.11 qm_box.d
-^^^^^^^^^^^^^^^
+qm_box.d
+^^^^^^^^
 
 This file holds the cell vector data for the supercell for a quantum
 molecular dynamics simulation. A sample of output file is shown below.
@@ -327,16 +327,16 @@ defined area inside which is treted quantum mechanically. In this case,
 defines the supercell area that is to be treated with QM.
 
 
-4.2.12 QM_cds
-^^^^^^^^^^^^^
+QM_cds
+^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a QXMD simulation, containing charge density data for the system
 at the last step of the previous run.
 
 
-4.2.13 qm_cel.d
-^^^^^^^^^^^^^^^
+qm_cel.d
+^^^^^^^^
 
 Similar to **qm_box.d**, **qm_cel.d** holds the cell vector data for the
 supercell, however instead of giving the lengths and angles of the
@@ -358,24 +358,24 @@ will be written beginning with the step number in which the supercell
 vectors were changed, followed by their new values.
 
 
-4.2.14 QM_cell
-^^^^^^^^^^^^^^
+QM_cell
+^^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a QXMD simulation, containing simulation cell data for the
 system at the last step of the previous run.
 
 
-4.2.15 QM_eig
-^^^^^^^^^^^^^
+QM_eig
+^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a QXMD simulation, containing energy eigenvalue data for the
 system at the last step of the previous run.
 
 
-4.2.16 qm_eig.d
-^^^^^^^^^^^^^^^
+qm_eig.d
+^^^^^^^^
 
 This file lists the energy eigenvalues, along with their electronic
 occupation number for each time step. Below is sample output.
@@ -421,8 +421,8 @@ two time steps.) In this example, the eight electrons of the system
 occupy the four lowest energy bands in the first time two steps.
 
 
-4.2.17 qm_eng.d
-^^^^^^^^^^^^^^^
+qm_eng.d
+^^^^^^^^
 
 This file provides various components of the system's energy [Rydberg]
 at each time step. Below is sample output.
@@ -444,8 +444,8 @@ followed by various components of system energy as labeled by the column
 titles.
 
 
-4.2.18 qm_fer.d
-^^^^^^^^^^^^^^^
+qm_fer.d
+^^^^^^^^
 
 This file gives the Fermi energy of the system at each time step. Below
 is sample output.
@@ -465,8 +465,8 @@ cumulative number of SCF iterations up to that step number, while the
 third column gives the Fermi energy in eV.
 
 
-4.2.19 qm_frc.d
-^^^^^^^^^^^^^^^
+qm_frc.d
+^^^^^^^^
 
 This file gives the three components of force on each atom at each time
 step. Below is sample output for a monolayer of MoSe2 with 12 total
@@ -502,8 +502,8 @@ components of force on the first atom, followed by those for the second
 atom, and so on.
 
 
-4.2.20 qm_fsshprob_***to***-u.d
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qm_fsshprob_***to***-u.d
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 This set of files are only written during a Non-Adiabatic QMD simulation
 (i.e. TD-DFT set to .true.). These files give the probabilities for
@@ -538,23 +538,23 @@ and 18, there were non-zero probabilities for this electronic
 transition. The accumulation column refers to ???
 
 
-4.2.21 QM_hrt
-^^^^^^^^^^^^^
+QM_hrt
+^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a QXMD simulation.
 
 
-4.2.22 QM_ion
-^^^^^^^^^^^^^
+QM_ion
+^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a QXMD simulation, containing atomic position data for the
 system at the last step of the previous run.
 
 
-4.2.23 qm_ion.d
-^^^^^^^^^^^^^^^
+qm_ion.d
+^^^^^^^^
 
 This files gives the three components of the positions for all the atoms
 at each time step. It can be used for visualization of the atomic
@@ -591,8 +591,8 @@ and **z** coordinates of the first atom, followed by those for the
 second atom, and so on.
 
 
-4.2.24 qm_log
-^^^^^^^^^^^^^
+qm_log
+^^^^^^
 
 This file provides of log of simulation details, including values of
 input parameters set, time statistics and energies computed for each SCF
@@ -601,51 +601,8 @@ time. This file is the best place to look to determine why a QXMD
 simulation fails/crashes, and general debugging.
 
 
-4.2.25 qm_mul.d
-^^^^^^^^^^^^^^^
-
-This file provides Mulliken analysis data. Note that this file will only
-be written if Mulliken analysis is set to .true. in IN.PARAM. Sample
-output for a water molecule is shown below.
-
-::
-
-   #  Mulliken analysis : s, p, & d population for each atom      
-         0      2      2      1     -1
-     2   0 1
-     1   0
-       1  1.8974  5.5777  7.4751
-       2  0.2624  0.2624
-       3  0.2625  0.2625
-
-After the first comment line, the second line gives the step number, the
-total number of atomic species in the system ('2' for hydrogen and
-oxygen), the number of atoms of the species corresponding to keyword '1'
-(in this case, keyword '1' was used for hydrogen and there are '2' H
-atoms), followed by the number of atoms of the species corresponding to
-keyword '2' (in this case, keyword '2' was used for oxygen and there is
-'1' O atom). The '-1' at the end of the line may be ignored as is it
-only included for backward compatibility with older versions of the
-code. The next set of two lines gives the number of different angular
-momenta (orbital types) each species has. Since oxygen was assigned
-keyword '1', the first of these lines (line 3) starts with '2'
-indicating that oxygen has 2 types of orbitals which are identified as
-'0' (meaning 's-type') and '1' (meaning 'p-type'). The second of these
-line corresponds to hydrogen, which only has one orbtial, '0' or
-'s-type'. Finally, the partial charges in each orbital type, followed by
-the total partial charge around each atom is given in the last three
-lines. For example, in line 5 of the sample output, '1' refers to atom
-1, in this case an oxygen atom, the next number is the partial charge in
-the s-type orbital, the next number is the partial charge in the p-type
-orbitals, while the last number is the total partial charge around the
-oxygen atom. The final two lines give the partial charge in the s-type
-orbital in atoms '2' and '3', the two H atoms, along with the total
-partial charge around the H atoms which is the same as the s-type
-orbital partial charge, since there is only one orbital.
-
-
-4.2.26 qm_ovp.d
-^^^^^^^^^^^^^^^
+qm_ovp.d
+^^^^^^^^
 
 This file provides the overlap charge densities between atoms at the
 given time step intervals. Note that this file is only written if
@@ -693,15 +650,15 @@ p-type(atom 9)/d-type(atom 2), d-type(atom 9)/s-type(atom 2),
 d-type(atom 9)/p-type(atom 2), d-type(atom 9)/d-type(atom 2).
 
 
-4.2.27 QM_pcds
-^^^^^^^^^^^^^^
+QM_pcds
+^^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a QXMD simulation.
 
 
-4.2.28 qm_pds.d
-^^^^^^^^^^^^^^^
+qm_pds.d
+^^^^^^^^
 
 This file gives the different angular momemta contributions to each
 energy band. Sample output for a water molecule is given below.
@@ -742,15 +699,15 @@ some, even majority contribution from higher angular momenta, in which
 case the last number in the line will not be '1'.
 
 
-4.2.28 QM_peig
-^^^^^^^^^^^^^^
+QM_peig
+^^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a QXMD simulation.
 
 
-4.2.29 qm_str.d
-^^^^^^^^^^^^^^^
+qm_str.d
+^^^^^^^^
 
 This file outputs components of the stress tensor [GPa] of the system,
 computed quantum mechanically, at given time steps intervals (the
@@ -775,16 +732,16 @@ varies slightly from md_str.d due since md_str.d includes contributions
 from the kinetic energy of the ions, while qm_str.d does not.
 
 
-4.2.30 QM_tddftfssh
-^^^^^^^^^^^^^^^^^^^
+QM_tddftfssh
+^^^^^^^^^^^^
 
 This is a binary file that is required in the **data** directory to
 restart a Non-Adiabtic QXMD simulation, containing electronic transition
 probability data for the system at the last step of the previous run.
 
 
-4.2.31 qm_td_eig.d
-^^^^^^^^^^^^^^^^^^
+qm_td_eig.d
+^^^^^^^^^^^
 
 This file gives the enery eigenvalues and the electron occupation
 numbers for each energy band for each time step in a Non-Adiabtic QMD
@@ -820,8 +777,8 @@ fourth band had two electrons removed and placed in the fifth band,
 simulation an electronic excitation in a NAQMD simulation.
 
 
-4.2.32 qm_zan.d
-^^^^^^^^^^^^^^^
+qm_zan.d
+^^^^^^^^
 
 This file gives energy differences per electron and residuals for each
 time step. Note that the word "zansa" means residual in Japanese.

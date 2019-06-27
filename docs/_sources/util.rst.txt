@@ -39,8 +39,8 @@ is possible the your program will not compile with gfortran.
 
 .. _71-creating-pdb-file-from-output:
 
-7.1 Creating PDB file from output
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating PDB file from output
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Program **toPDBcell.f** is used to create the PDB file from QXMD output.
 This program requires following files in the output directory.
@@ -111,8 +111,8 @@ the terminal
 
 .. _72-picking-last-configuration-from-simulation:
 
-7.2 Picking last configuration from simulation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Picking last configuration from simulation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Program **pick_config.f90** is used to obtain the last configuration
 from a trajectory. This program is useful to restart the job in case you
@@ -215,8 +215,8 @@ should correspond to your selected step.
 
 .. _73-create-gaussian-cube-file-to-visualize-wave-function:
 
-7.3 Create gaussian cube file to visualize wave function
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create gaussian cube file to visualize wave function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This program is used to create gaussian cube file to visualize wave
 function. It is to be noted that input files are this program are not
@@ -322,8 +322,8 @@ as following.
 
 .. _74-kohn-sham-eigenvalues:
 
-7.4 Kohn Sham eigenvalues
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Kohn Sham eigenvalues
+~~~~~~~~~~~~~~~~~~~~~
 
 This program is used to provide Kohn Sham eigenvales in table format.
 

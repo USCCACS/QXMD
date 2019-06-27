@@ -1,0 +1,177 @@
+Prerequisites
+=============
+
+**QXMD** parallel version requires Fortran compiler, FFT and MPI
+libraries. There are no other library requirement for the **QXMD**
+
+Installation
+============
+
+2.1. Download QXMD
+~~~~~~~~~~~~~~~~~~
+
+To get started, clone this repository to your computer.
+
+::
+
+   ~$ git clone https://github.com/USCCACS/QXMD.git
+
+2.2. Set Working Directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+First, change the working directory to **qxmd/**
+
+::
+
+   ~$ cd qxmd
+
+You will see following files and directories when you use the 'ls'
+command:
+
+::
+
+   qxmd $ ls
+   Include/  docs/  Makefile    Qxmd/    Sources/     util/
+
+**Include/** contains necessary libraries for compilation, **Makefile**
+will be used to build the program, **Qxmd** contains default variables
+for many input parameters, **Sources/** contains all **QXMD** source
+codes, **docs/** contains the documentation for QXMDand **util/** 
+contains helpful codes for post-processing output data from **QXMD**.
+
+2.3. Configure Makefiles
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You have to choose makefile based on the configuration of your machine.
+For most of the facility supercomputers makefile is already configured.
+Complete list of the preconfigured makefile can be obtain by typing
+**make help**.
+
+::
+
+   $make help
+
+   make dec        : DEC Alpha Degital Fortran
+   make gnu        : GNU Fortran (only for classical MD)
+   make ffc        : PC LINUX (Fujitsu Fortran&C)
+   make ffc-v64    : PC LINUX (Fujitsu Fortran&C) on VT-64
+   make ifc        : PC LINUX (Intel Fortran)
+   make ifc-x86    : PC LINUX (Intel Fortran) on x86-64
+   make ifc-v64    : PC LINUX (Intel Fortran) on VT-64
+   make hpc        : PC LINUX (Intel Fortran) on x86-64 at USC-HPC
+   make hp         : HP FORTRAN 90
+   make sp         : IBM SP
+   make origin     : SGI ORIGIN 2000
+   make origin26   : SGI ORIGIN 2600
+   make t3e        : CRAY T3E
+   make sr2201     : HITACHI SR2201
+   make sr8000     : HITACHI SR8000
+   make sr11000    : HITACHI SR11000 at ISSP
+   make ha8000     : HITACHI HA8000-tc/HT210
+   make vpp        : Fujitsu VPP5000
+   make sx7        : NEC SX-7
+   make altix      : SGI Altix3700/1280 at ISSP
+   make p5         : IBM eServer model p5
+   make primequest : FUJITSU PRIMEQUEST 580
+   make primergy   : FUJITSU PRIMERGY RX200S3
+   make cx400      : FUJITSU PRIMERGY CX400
+   make primehpc   : FUJITSU PRIMEHPC FX10
+   make sekirei    : Intel Fortran on SGI ICE XA/UV (systemB) at ISSP
+
+If you are not using aforementioned machine, you might need to modify
+the **Makefile** according to your computing environment.
+
+2.4. Precompiler variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Precompiler flags are defined in CPPDEFS as:
+
+::
+
+   CPPDEFS= -DFLAG1 -DFLAG2
+
+Following flags are defined in **QXMD**
+
+::
+
+   -LIBFFTW = link FFTW library
+   -LIBFFTW3 = link FFTW3 library
+   -DPOINTER64 = used for 64-bit machines
+   -DSSL2VP = used on Fujitsu machine
+   -DVECTOR = special implementation. It may result in faster computation on some machine.
+
+There are several flags are defined for future development. Currently,
+they are not used. Several flags are specific to compiler. Please check
+compiler manual for further details.
+
+2.5 Adding New Machine configuration in Makefile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Makefile** defines which compiler you will use to build the **QXMD**
+executable.There are several predefined compiler setting which must be
+set. First, open Makefile available in QXMD directory and define the
+machine name. For example, theta machine at Argonne National Lab
+
+::
+
+   theta: $(WDIR) $(DDIR) $(SOURCEFILE)
+           sed "s/^#THETA#//" $(SOURCEFILE) > $(WORKFILE)
+
+This process will ensure that make will understand the target. Next, we
+need to define the macro such as **LINKER**, **LDFLAGS** and **FFTLIB**
+in the makefile included in Source directory. For example, theta machine
+definition are as follow
+
+::
+
+   #THETA#     LINKER        = ftn
+   #THETA#     FFLAGS        = -c -fast -warn none
+   #THETA#     LDFLAGS       = -O3 -ipo -no-prec-div
+   #THETA#     FFLAGS        = -c -O3 -ipo -no-prec-div  -warn none
+   #THETA#     CPPDEFS       = -traditional $(CPPDEF) -DLIBFFTW3 -DIFC -DVECTOR
+   #THETA#     MKLPATH       = $(MKLROOT)/intel/lib64
+   #THETA#     FFTLIB        = -L$(MKLPATH) -Wl,--start-group -lmkl_intel_lp64 -lmkl_core -lmkl_sequential -Wl,--end-group
+
+Definition of each macro is as follow:
+
+::
+
+   LINKER= MPI Fortran compiler
+   FFLAGS= Compiler flags
+   LDFLAGS= linking libraries
+   CPPDEFS= Preprocessing MACROS
+   MKLPATH= Variable defined for MKL libraries
+   FFTLIB= FFT library
+
+It is up to the user to define a new macro for better readability. Once
+you have defined all the macros you are ready to build code for new
+architecture
+
+2.6 Build QXMD
+~~~~~~~~~~~~~~
+
+After tailoring the Makefile for your computing environment, type the
+command below to build the **QXMD** executable.
+
+::
+
+   qxmd $ make $(MACHINE_NAME)
+   qxmd $ make qxmd
+
+To create a **parallel** version of QXMD, please use the following steps
+
+::
+
+   qxmd $ make $(MACHINE_NAME)
+   qxmd $ make qxmdmpi
+
+Check to see if you the **QXMD** executable has been created, and if so,
+you are ready to start a simulation.
+
+::
+
+   qxmd $ ls
+   Include/    Makefile    docs/   Qxmd/    qxmdmpi*  Sources/     util/
+
+Parallel build is activated by default. The program will use all
+available core on the machine to build the program efficiently.

@@ -87,25 +87,25 @@
 <li class="toctree-l1"><a class="reference internal" href="param.html">Input Parameters: IN.PARAM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="output.html">QXMD Simulation Quick-Start</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Utilities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creating-pdb-file-from-output">7.1 Creating PDB file from output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-pdb-file-from-output">Creating PDB file from output</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#input-file">Input file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#output-file">Output file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#executing-program">Executing program</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#picking-last-configuration-from-simulation">7.2 Picking last configuration from simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#picking-last-configuration-from-simulation">Picking last configuration from simulation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#input-file-1">Input file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#output-file-1">Output file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#executing-program-1">Executing program</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#create-gaussian-cube-file-to-visualize-wave-function">7.3 Create gaussian cube file to visualize wave function</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-gaussian-cube-file-to-visualize-wave-function">Create gaussian cube file to visualize wave function</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#input-file-2">Input file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#output-file-2">Output file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#executing-program-2">Executing program</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#kohn-sham-eigenvalues">7.4 Kohn Sham eigenvalues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#kohn-sham-eigenvalues">Kohn Sham eigenvalues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#input-file-3">Input file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#output-file-3">Output file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#executing-program-3">Executing program</a></li>
@@ -206,7 +206,7 @@ analysis.</p>
 <p>NOTE: All the utility program are written for INTEL Fortran compiler. It
 is possible the your program will not compile with gfortran.</p>
 <div class="section" id="creating-pdb-file-from-output">
-<span id="id1"></span><h2>7.1 Creating PDB file from output<a class="headerlink" href="#creating-pdb-file-from-output" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Creating PDB file from output<a class="headerlink" href="#creating-pdb-file-from-output" title="Permalink to this headline">¶</a></h2>
 <p>Program <strong>toPDBcell.f</strong> is used to create the PDB file from QXMD output.
 This program requires following files in the output directory.</p>
 <div class="section" id="input-file">
@@ -265,7 +265,7 @@ the terminal</p>
 </div>
 </div>
 <div class="section" id="picking-last-configuration-from-simulation">
-<span id="id2"></span><h2>7.2 Picking last configuration from simulation<a class="headerlink" href="#picking-last-configuration-from-simulation" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Picking last configuration from simulation<a class="headerlink" href="#picking-last-configuration-from-simulation" title="Permalink to this headline">¶</a></h2>
 <p>Program <strong>pick_config.f90</strong> is used to obtain the last configuration
 from a trajectory. This program is useful to restart the job in case you
 have not saved restart files. The program requires following files.</p>
@@ -347,7 +347,7 @@ Next line</p>
 </div>
 </div>
 <div class="section" id="create-gaussian-cube-file-to-visualize-wave-function">
-<span id="id6"></span><h2>7.3 Create gaussian cube file to visualize wave function<a class="headerlink" href="#create-gaussian-cube-file-to-visualize-wave-function" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>Create gaussian cube file to visualize wave function<a class="headerlink" href="#create-gaussian-cube-file-to-visualize-wave-function" title="Permalink to this headline">¶</a></h2>
 <p>This program is used to create gaussian cube file to visualize wave
 function. It is to be noted that input files are this program are not
 outputed as default. You must set <strong>dump wavefunctions</strong> true in obtain
@@ -436,7 +436,7 @@ as following.</p>
 </div>
 </div>
 <div class="section" id="kohn-sham-eigenvalues">
-<span id="id10"></span><h2>7.4 Kohn Sham eigenvalues<a class="headerlink" href="#kohn-sham-eigenvalues" title="Permalink to this headline">¶</a></h2>
+<span id="id10"></span><h2>Kohn Sham eigenvalues<a class="headerlink" href="#kohn-sham-eigenvalues" title="Permalink to this headline">¶</a></h2>
 <p>This program is used to provide Kohn Sham eigenvales in table format.</p>
 <div class="section" id="input-file-3">
 <span id="id11"></span><h3>Input file<a class="headerlink" href="#input-file-3" title="Permalink to this headline">¶</a></h3>
@@ -542,7 +542,7 @@ timestep 1.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Subodh Tiwari &amp;&amp; Lindsay Bassman
+        &copy; Copyright 2019, CACS &amp;&amp; Shimojo Lab
 
     </p>
   </div>

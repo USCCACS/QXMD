@@ -1,0 +1,12 @@
+Support
+=========
+
+Reporting Bug
+~~~~~~~~~~~~~
+To report a bug in the code, please open a issue in github development page. If you would us to add new functionality, please send us an email at cacs@usc.edu or open a request at github.
+
+Requesting Pseudopotential
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To request new pseudopotential for QXMD, please send us an email at cacs@usc.edu
+

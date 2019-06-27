@@ -1,0 +1,2385 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1   How to use rst2pdf &mdash; QXMD 3.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> QXMD
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../program.html">Program Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOf.html">Input/Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../param.html">Input Parameters: IN.PARAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output.html">QXMD Simulation Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../util.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lic.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">QXMD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>1&nbsp;&nbsp;&nbsp;How to use rst2pdf</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-use-rst2pdf">
+<h1><a class="toc-backref" href="#id18">1&nbsp;&nbsp;&nbsp;How to use rst2pdf</a><a class="headerlink" href="#how-to-use-rst2pdf" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Roberto Alsina &lt;<a class="reference external" href="mailto:ralsina&#37;&#52;&#48;netmanagers&#46;com&#46;ar">ralsina<span>&#64;</span>netmanagers<span>&#46;</span>com<span>&#46;</span>ar</a>&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">version:</th><td class="field-body">0.93</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">revision:</th><td class="field-body">$LastChangedRevision$</td>
+</tr>
+</tbody>
+</table>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#how-to-use-rst2pdf" id="id18">1&nbsp;&nbsp;&nbsp;How to use rst2pdf</a><ul class="auto-toc">
+<li><a class="reference internal" href="#introduction" id="id19">1.1&nbsp;&nbsp;&nbsp;Introduction</a></li>
+<li><a class="reference internal" href="#command-line-options" id="id20">1.2&nbsp;&nbsp;&nbsp;Command line options</a></li>
+<li><a class="reference internal" href="#configuration-file" id="id21">1.3&nbsp;&nbsp;&nbsp;Configuration File</a></li>
+<li><a class="reference internal" href="#pipe-usage" id="id22">1.4&nbsp;&nbsp;&nbsp;Pipe usage</a></li>
+<li><a class="reference internal" href="#headers-and-footers" id="id23">1.5&nbsp;&nbsp;&nbsp;Headers and Footers</a></li>
+<li><a class="reference internal" href="#footnotes" id="id24">1.6&nbsp;&nbsp;&nbsp;Footnotes</a></li>
+<li><a class="reference internal" href="#images" id="id25">1.7&nbsp;&nbsp;&nbsp;Images</a><ul class="auto-toc">
+<li><a class="reference internal" href="#inline" id="id26">1.7.1&nbsp;&nbsp;&nbsp;Inline</a></li>
+<li><a class="reference internal" href="#supported-image-types" id="id27">1.7.2&nbsp;&nbsp;&nbsp;Supported Image Types</a></li>
+<li><a class="reference internal" href="#image-size" id="id28">1.7.3&nbsp;&nbsp;&nbsp;Image Size</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#styles" id="id29">1.8&nbsp;&nbsp;&nbsp;Styles</a><ul class="auto-toc">
+<li><a class="reference internal" href="#included-stylesheets" id="id30">1.8.1&nbsp;&nbsp;&nbsp;Included StyleSheets</a></li>
+<li><a class="reference internal" href="#stylesheet-syntax" id="id31">1.8.2&nbsp;&nbsp;&nbsp;StyleSheet Syntax</a></li>
+<li><a class="reference internal" href="#font-alias" id="id32">1.8.3&nbsp;&nbsp;&nbsp;Font Alias</a></li>
+<li><a class="reference internal" href="#style-definition" id="id33">1.8.4&nbsp;&nbsp;&nbsp;Style Definition</a></li>
+<li><a class="reference internal" href="#widows-and-orphans" id="id34">1.8.5&nbsp;&nbsp;&nbsp;Widows and Orphans</a></li>
+<li><a class="reference internal" href="#font-embedding" id="id35">1.8.6&nbsp;&nbsp;&nbsp;Font Embedding</a><ul class="auto-toc">
+<li><a class="reference internal" href="#the-easy-way" id="id36">1.8.6.1&nbsp;&nbsp;&nbsp;The Easy Way</a><ul class="auto-toc">
+<li><a class="reference internal" href="#fonty-is-a-true-type-font" id="id37">1.8.6.1.1&nbsp;&nbsp;&nbsp;Fonty is a True Type font:</a></li>
+<li><a class="reference internal" href="#fonty-is-a-type-1-font" id="id38">1.8.6.1.2&nbsp;&nbsp;&nbsp;Fonty is a Type 1 font:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-harder-way-true-type" id="id39">1.8.6.2&nbsp;&nbsp;&nbsp;The Harder Way (True Type)</a></li>
+<li><a class="reference internal" href="#the-harder-way-type1" id="id40">1.8.6.3&nbsp;&nbsp;&nbsp;The Harder Way (Type1)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#page-size-and-margins" id="id41">1.8.7&nbsp;&nbsp;&nbsp;Page Size and Margins</a></li>
+<li><a class="reference internal" href="#advanced-table-styles" id="id42">1.8.8&nbsp;&nbsp;&nbsp;Advanced: table styles</a></li>
+<li><a class="reference internal" href="#multiple-stylesheets" id="id43">1.8.9&nbsp;&nbsp;&nbsp;Multiple Stylesheets</a></li>
+<li><a class="reference internal" href="#styling-your-document" id="id44">1.8.10&nbsp;&nbsp;&nbsp;Styling Your Document</a><ul class="auto-toc">
+<li><a class="reference internal" href="#the-base-styles" id="id45">1.8.10.1&nbsp;&nbsp;&nbsp;The Base Styles</a></li>
+<li><a class="reference internal" href="#lists" id="id46">1.8.10.2&nbsp;&nbsp;&nbsp;Lists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#syntax-highlighting" id="id47">1.9&nbsp;&nbsp;&nbsp;Syntax Highlighting</a><ul class="auto-toc">
+<li><a class="reference internal" href="#file-inclusion" id="id48">1.9.1&nbsp;&nbsp;&nbsp;File inclusion</a><ul class="auto-toc">
+<li><a class="reference internal" href="#include-with-boundaries" id="id49">1.9.1.1&nbsp;&nbsp;&nbsp;Include with Boundaries</a></li>
+<li><a class="reference internal" href="#options" id="id50">1.9.1.2&nbsp;&nbsp;&nbsp;Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#raw-directive" id="id51">1.10&nbsp;&nbsp;&nbsp;Raw Directive</a><ul class="auto-toc">
+<li><a class="reference internal" href="#raw-pdf" id="id52">1.10.1&nbsp;&nbsp;&nbsp;Raw PDF</a></li>
+<li><a class="reference internal" href="#page-counters" id="id53">1.10.2&nbsp;&nbsp;&nbsp;Page Counters</a></li>
+<li><a class="reference internal" href="#page-breaks" id="id54">1.10.3&nbsp;&nbsp;&nbsp;Page Breaks</a></li>
+<li><a class="reference internal" href="#frame-breaks" id="id55">1.10.4&nbsp;&nbsp;&nbsp;Frame Breaks</a></li>
+<li><a class="reference internal" href="#page-transitions" id="id56">1.10.5&nbsp;&nbsp;&nbsp;Page Transitions</a></li>
+<li><a class="reference internal" href="#text-annotations" id="id57">1.10.6&nbsp;&nbsp;&nbsp;Text Annotations</a></li>
+<li><a class="reference internal" href="#raw-html" id="id58">1.10.7&nbsp;&nbsp;&nbsp;Raw HTML</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-counter-role" id="id59">1.11&nbsp;&nbsp;&nbsp;The counter role</a></li>
+<li><a class="reference internal" href="#the-oddeven-directive" id="id60">1.12&nbsp;&nbsp;&nbsp;The oddeven directive</a></li>
+<li><a class="reference internal" href="#mathematics" id="id61">1.13&nbsp;&nbsp;&nbsp;Mathematics</a></li>
+<li><a class="reference internal" href="#hyphenation" id="id62">1.14&nbsp;&nbsp;&nbsp;Hyphenation</a></li>
+<li><a class="reference internal" href="#page-layout" id="id63">1.15&nbsp;&nbsp;&nbsp;Page Layout</a></li>
+<li><a class="reference internal" href="#smart-quotes" id="id64">1.16&nbsp;&nbsp;&nbsp;Smart Quotes</a></li>
+<li><a class="reference internal" href="#kerning" id="id65">1.17&nbsp;&nbsp;&nbsp;Kerning</a></li>
+<li><a class="reference internal" href="#sphinx" id="id66">1.18&nbsp;&nbsp;&nbsp;Sphinx</a></li>
+<li><a class="reference internal" href="#extensions" id="id67">1.19&nbsp;&nbsp;&nbsp;Extensions</a><ul class="auto-toc">
+<li><a class="reference internal" href="#preprocess-e-preprocess" id="id68">1.19.1&nbsp;&nbsp;&nbsp;Preprocess (<code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">preprocess</span></code>)</a></li>
+<li><a class="reference internal" href="#inkscape-e-inkscape" id="id69">1.19.2&nbsp;&nbsp;&nbsp;Inkscape (<code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">inkscape</span></code>)</a></li>
+<li><a class="reference internal" href="#dotted-toc-e-dotted-toc" id="id70">1.19.3&nbsp;&nbsp;&nbsp;Dotted_TOC (<code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">dotted_toc</span></code>)</a><ul class="auto-toc">
+<li><a class="reference internal" href="#history" id="id71">1.19.3.1&nbsp;&nbsp;&nbsp;History:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#developers" id="id72">1.20&nbsp;&nbsp;&nbsp;Developers</a><ul class="auto-toc">
+<li><a class="reference internal" href="#guidelines" id="id73">1.20.1&nbsp;&nbsp;&nbsp;Guidelines</a></li>
+<li><a class="reference internal" href="#continuous-integration" id="id74">1.20.2&nbsp;&nbsp;&nbsp;Continuous Integration</a></li>
+<li><a class="reference internal" href="#running-tests" id="id75">1.20.3&nbsp;&nbsp;&nbsp;Running tests</a><ul class="auto-toc">
+<li><a class="reference internal" href="#first-run" id="id76">1.20.3.1&nbsp;&nbsp;&nbsp;First run</a></li>
+<li><a class="reference internal" href="#next-runs" id="id77">1.20.3.2&nbsp;&nbsp;&nbsp;Next runs</a></li>
+<li><a class="reference internal" href="#using-autotest-directly" id="id78">1.20.3.3&nbsp;&nbsp;&nbsp;Using autotest directly</a></li>
+<li><a class="reference internal" href="#running-a-single-test" id="id79">1.20.3.4&nbsp;&nbsp;&nbsp;Running a single test</a></li>
+<li><a class="reference internal" href="#skipping-tests" id="id80">1.20.3.5&nbsp;&nbsp;&nbsp;Skipping tests</a></li>
+<li><a class="reference internal" href="#marking-a-failing-test-as-good" id="id81">1.20.3.6&nbsp;&nbsp;&nbsp;Marking a failing test as good</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-commit-rights" id="id82">1.20.4&nbsp;&nbsp;&nbsp;Getting commit rights</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#licenses" id="id83">1.21&nbsp;&nbsp;&nbsp;Licenses</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id19">1.1&nbsp;&nbsp;&nbsp;Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This document explains how to use rst2pdf. Here is the very short version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2pdf</span><span class="o">.</span><span class="n">py</span> <span class="n">mydocument</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">o</span> <span class="n">mydocument</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>That will, as long as mydocument.txt is a valid Restructured Text (ReST)
+document, produce a file called mydocument.pdf which is a PDF
+version of your document.</p>
+<p>Of course, that means you just used default styles and settings. If it
+looks good enough for you, then you may stop reading this document,
+because you are done with it. If you are reading this in a PDF,
+it was generated using those default settings.</p>
+<p>However, if you want to customize the output, or are just curious to see
+what can be done, let’s continue.</p>
+</div>
+<div class="section" id="command-line-options">
+<h2><a class="toc-backref" href="#id20">1.2&nbsp;&nbsp;&nbsp;Command line options</a><a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Show this help message and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--config=<var>FILE</var></span></kbd></td>
+<td>Config file to use. Default=~/.rst2pdf/config</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-o <var>FILE</var></span>, <span class="option">--output=<var>FILE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Write the PDF to FILE</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-s <var>STYLESHEETS</var></span>, <span class="option">--stylesheets=<var>STYLESHEETS</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>A comma-separated list of custom stylesheets.
+Default=”“</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--stylesheet-path=<var>FOLDERLIST</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>A colon-separated list of folders to search for
+stylesheets. Default=”“</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-c</span>, <span class="option">--compressed</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Create a compressed PDF. Default=False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--print-stylesheet</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Print the default stylesheet and exit</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--font-folder=<var>FOLDER</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Search this folder for fonts. (Deprecated)</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--font-path=<var>FOLDERLIST</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>A colon-separated list of folders to search for fonts.
+Default=”“</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--baseurl=<var>URL</var></span></kbd></td>
+<td>The base URL for relative URLs.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-l <var>LANG</var></span>, <span class="option">--language=<var>LANG</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Language to be used for hyphenation and docutils localization.
+Default=None</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--header=<var>HEADER</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Page header if not specified in the document.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--footer=<var>FOOTER</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Page footer if not specified in the document.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--section-header-depth=<var>N</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Sections up to this dept will be used in the header
+and footer’s replacement of ###Section###. Default=2</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--smart-quotes=<var>VALUE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Try to convert ASCII quotes, ellipsis and dashes to
+the typographically correct equivalent. Default=0</td></tr>
+</tbody>
+</table>
+<p>The possible values are:</p>
+<ol class="arabic simple" start="0">
+<li>Suppress all transformations. (Do nothing.)</li>
+<li>Performs default SmartyPants transformations: quotes (including backticks-style), em-dashes, and ellipses. “–” (dash dash) is used to signify an em-dash; there is no support for en-dashes.</li>
+<li>Same as –smart-quotes=1, except that it uses the old-school typewriter shorthand for dashes: “–” (dash dash) for en-dashes, “—” (dash dash dash) for em-dashes.</li>
+<li>Same as –smart-quotes=2, but inverts the shorthand for dashes: “–” (dash dash) for em-dashes, and “—” (dash dash dash) for en-dashes.</li>
+</ol>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--fit-literal-mode=<var>MODE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>What to do when a literal is too wide.
+One of error,overflow,shrink,truncate.
+Default=”shrink”</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--fit-background-mode=<var>MODE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>How to fit the background image to the page. One of
+scale or center. Default=”center”</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--inline-links</span></kbd></td>
+<td>Shows target between parenthesis instead of active link</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--repeat-table-rows</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Repeats header row for each splitted table</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--raw-html</span></kbd></td>
+<td>Support embeddig raw HTML. Default: False</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-q</span>, <span class="option">--quiet</span></kbd></td>
+<td>Print less information.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>Print debug information.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--very-verbose</span></kbd></td>
+<td>Print even more debug information.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--version</span></kbd></td>
+<td>Print version number and exit.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--no-footnote-backlinks</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Disable footnote backlinks. Default: False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--inline-footnotes</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Show footnotes inline. Default: True</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--default-dpi=<var>NUMBER</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>DPI for objects sized in pixels. Default=300</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--show-frame-boundary</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Show frame borders (only useful for debugging).
+Default=False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--disable-splittables</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Don’t use splittable flowables in some elements. Only
+try this if you can’t process a document any other
+way.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-b <var>LEVEL</var></span>, <span class="option">--break-level=<var>LEVEL</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Maximum section level that starts in a new page. Default: 0</td></tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>–first-page-on-right When using double sided pages, the first page will start</dt>
+<dd>on the right hand side. (Book Style)</dd>
+</dl>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--blank-first-page</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Add a blank page at the beginning of the document.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--break-side=<var>VALUE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>How section breaks work. Can be “even”, and sections
+start in an even page,”odd”, and sections start in odd
+pages, or “any” and sections start in the next page,be
+it even or odd. See also the -b option.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--date-invariant</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Don’t store the current date in the PDF. Useful mainly
+for the test suite, where we don’t want the PDFs to
+change.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e <var>EXTENSIONS</var></span></kbd></td>
+<td>Alias for –extension-module</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--extension-module=<var>EXTENSIONS</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Add a helper extension module to this invocation of
+rst2pdf (module must end in .py and be on the python
+path)</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--custom-cover=<var>FILE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Template file used for the cover page. Default:
+cover.tmpl</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--use-floating-images</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Makes images with :aling: attribute work more like in
+rst2html. Default: False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--use-numbered-links</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>When using numbered sections, adds the numbers to all
+links referring to the section headers. Default: False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--strip-elements-with-class=<var>CLASS</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Remove elements with this CLASS from the output. Can
+be used multiple times.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configuration-file">
+<h2><a class="toc-backref" href="#id21">1.3&nbsp;&nbsp;&nbsp;Configuration File</a><a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+<p>Since version 0.8, rst2pdf will read (if it is available) configuration files in
+<code class="docutils literal notranslate"><span class="pre">/etc/rst2pdf.conf</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.rst2pdf/config</span></code>.</p>
+<p>The user’s file at <code class="docutils literal notranslate"><span class="pre">~/.rst2pdf/config</span></code> will have priority over the system’s at
+<code class="docutils literal notranslate"><span class="pre">/etc/rst2pdf.conf</span></code> <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The <code class="docutils literal notranslate"><span class="pre">/etc/rst2pdf.conf</span></code> location makes sense for Linux and linux-like systems.
+if you are using rst2pdf in other systems, please contact me and tell me where
+the system-wide config file should be.</td></tr>
+</tbody>
+</table>
+<p>Here’s an example file showing some of the currently available options:</p>
+</div>
+<div class="section" id="pipe-usage">
+<h2><a class="toc-backref" href="#id22">1.4&nbsp;&nbsp;&nbsp;Pipe usage</a><a class="headerlink" href="#pipe-usage" title="Permalink to this headline">¶</a></h2>
+<p>If no input nor output are provided, stdin and stdout will be used respectively</p>
+<p>You may want to use rst2pdf in a linux pipe as such:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="n">rst2pdf</span> <span class="o">|</span> <span class="n">gzip</span> <span class="o">-</span><span class="n">c</span> <span class="o">&gt;</span> <span class="n">readme</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">docutils</span><span class="o">.</span><span class="n">sourceforge</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">rst</span><span class="o">/</span><span class="n">quickstart</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="n">rst2pdf</span> <span class="o">&gt;</span> <span class="n">quickstart</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>If no input argument is provided, stdin will be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="n">rst2pdf</span> <span class="o">-</span><span class="n">o</span> <span class="n">readme</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>If output is set to dash ‘-‘, output goes to stdout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2pdf</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span> <span class="n">readme</span><span class="o">.</span><span class="n">txt</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="headers-and-footers">
+<h2><a class="toc-backref" href="#id23">1.5&nbsp;&nbsp;&nbsp;Headers and Footers</a><a class="headerlink" href="#headers-and-footers" title="Permalink to this headline">¶</a></h2>
+<p>ReST supports headers and footers, using the header and footer directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">header</span><span class="p">::</span>
+
+   <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">at</span> <span class="n">the</span> <span class="n">top</span> <span class="n">of</span> <span class="n">every</span> <span class="n">page</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Often, you may want to put a page number there, or a section name.The following
+magic tokens will be replaced (More may be added as rst2pdf evolves):</p>
+<dl class="docutils">
+<dt>###Page###</dt>
+<dd>Replaced by the current page number.</dd>
+<dt>###Title###</dt>
+<dd>Replaced by the document title</dd>
+<dt>###Section###</dt>
+<dd>Replaced by the current section title</dd>
+<dt>###SectNum###</dt>
+<dd>Replaced by the current section number. <strong>Important:</strong> You must use the sectnum directive for this to work.</dd>
+<dt>###Total###</dt>
+<dd>Replaced by the total number of pages in the document. Keep in mind that this is the <strong>real</strong> number of pages, not the displayed number, so if you play with <a class="reference internal" href="#page-counters">page counters</a> this number will probably be wrong.</dd>
+</dl>
+<p>Headers and footers are visible by default but they can be disabled by specific
+<a class="reference internal" href="#page-templates">Page Templates</a> for example, cover pages. You can also set headers and footers
+via <cite>command line options</cite> or the <a class="reference internal" href="#configuration-file">configuration file</a>.</p>
+<p>If you want to do things like “put the page number on the <em>out</em> side of the page, check <a class="reference internal" href="#the-oddeven-directive">The oddeven directive</a></p>
+</div>
+<div class="section" id="footnotes">
+<h2><a class="toc-backref" href="#id24">1.6&nbsp;&nbsp;&nbsp;Footnotes</a><a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
+<p>Currently rst2pdf doesn’t support real footnotes, and converts them to endnotes.
+There is a real complicated technical reason for this: I can’t figure out a
+clean way to do it right.</p>
+<p>You can get the same behaviour as with rst2html by specifying –inline-footnotes,
+and then the footnotes will appear where you put them (in other words, not footnotes,
+but “in-the-middle-of-text-notes” or just plain notes.)</p>
+</div>
+<div class="section" id="images">
+<h2><a class="toc-backref" href="#id25">1.7&nbsp;&nbsp;&nbsp;Images</a><a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inline">
+<h3><a class="toc-backref" href="#id26">1.7.1&nbsp;&nbsp;&nbsp;Inline</a><a class="headerlink" href="#inline" title="Permalink to this headline">¶</a></h3>
+<p>You can insert images in the middle of your text like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="o">|</span><span class="n">biohazard</span><span class="o">|</span> <span class="n">means</span> <span class="n">you</span> <span class="n">have</span> <span class="n">to</span> <span class="n">run</span><span class="o">.</span>
+
+<span class="o">..</span> <span class="o">|</span><span class="n">biohazard</span><span class="o">|</span> <span class="n">image</span><span class="p">::</span> <span class="o">../</span><span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span><span class="nb">input</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">biohazard</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>This <img alt="biohazard" src="../../_images/biohazard.png" /> means you have to run.</p>
+<p>This only works correctly with reportlab 2.2 or later.</p>
+</div>
+<div class="section" id="supported-image-types">
+<h3><a class="toc-backref" href="#id27">1.7.2&nbsp;&nbsp;&nbsp;Supported Image Types</a><a class="headerlink" href="#supported-image-types" title="Permalink to this headline">¶</a></h3>
+<p>For raster images, rst2pdf supports anything PIL (The Python Imaging Library) supports.
+The exact list of supported formats varies according to your PIL version and system.</p>
+<p>For SVG support, you need to install svg2rlg or use the inkscape extension.</p>
+<p>Some features will not work when using these images.For example, gradients will not
+display, and text may cause problems depending on font availability.</p>
+<p>You can also use PDF images, via pdfrw.</p>
+<p>If you can choose between raster and vectorial images, for non-photographic images,
+vector files are usually smaller and look better, specially when printed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Image URLs</p>
+<p>Attempting to be more compatible with rst2html, rst2pdf will try
+to handle images specified as HTTP or FTP URLs by downloading them
+to a temporary file and including them in the PDF.</p>
+<p class="last">This is probably not a good idea unless you are <strong>really</strong> sure
+the image won’t go away.</p>
+</div>
+</div>
+<div class="section" id="image-size">
+<h3><a class="toc-backref" href="#id28">1.7.3&nbsp;&nbsp;&nbsp;Image Size</a><a class="headerlink" href="#image-size" title="Permalink to this headline">¶</a></h3>
+<p>PDFs are meant to reflect paper. A PDF has a specific size in centimeters or inches.</p>
+<p>Images usually are measured in pixels, which are meaningless in a PDF. To convert
+between pixels and inches or centimeters, we use a DPI (dots-per-inch) value.</p>
+<p>For example, 300 pixels, with a 300DPI, are exactly one inch. 300 pixels at 100DPI
+are 3 inches.</p>
+<p>For that reason, to achieve a nice layout of the page, it’s usually a good idea
+to specify the size of your images in those units, or as a percentage of the
+available width and you can ignore all this DPI nonsense ;-)</p>
+<p>The rst2pdf default is 300DPI, but you can change it using the –default-dpi option
+or the default_dpi setting in the config file.</p>
+<p>Examples of images with specified sizes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">home</span><span class="o">.</span><span class="n">png</span>
+   <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">3</span><span class="ow">in</span>
+
+<span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">home</span><span class="o">.</span><span class="n">png</span>
+   <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">80</span><span class="o">%</span>
+
+<span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">home</span><span class="o">.</span><span class="n">png</span>
+   <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">7</span><span class="n">cm</span>
+</pre></div>
+</div>
+<p>The valid units you can use are:</p>
+<p>“em” “ex” “px” “in” “cm” “mm” “pt” “pc” “%” “”.</p>
+<ul class="simple">
+<li>px: Pixels. If you specify the size using this unit, rst2pdf will convert it to
+inches using the default DPI explained above.</li>
+<li>No unit. If you just use a number, it will be considered as pixels. (<strong>IMPORTANT:</strong>
+this used to default to points. It was changed to be more compatible with rst2html)</li>
+<li>em: This is the same as your base style’s font size. By default: 10 points.</li>
+<li>ex: rst2pdf will use the same broken definition as IE: em/2. In truth this should
+be the height of the lower-case x character in your base style.</li>
+<li>in: Inches (1 inch = 2.54 cm).</li>
+<li>cm: centimeters (1cm = 0.39 inches)</li>
+<li>mm: millimeters (10mm = 1cm)</li>
+<li>pt: 1/72 inch</li>
+<li>pc: 1/6 inch</li>
+<li>%: percentage of available width in the frame. Setting a percentage as a height
+does <strong>not</strong> work and probably never will.</li>
+</ul>
+<p>If you don’t specify a size at all, rst2pdf will do its best to figure out what it should do:</p>
+<p>Since there is no specified size, rst2pdf will try to convert the image’s pixel size to
+inches using the DPI information available in the image itself. You can set that value
+using most image editors. For example, using Gimp, it’s in the Image -&gt; Print Size menu.</p>
+<p>So, if your image is 6000 pixels wide, and is set to 1200DPI, it will be 5 inches wide.</p>
+<p>If your image doesn’t have a DPI property set, and doesn’t have it’s desired size specified,
+rst2pdf will arbitrarily decide it should use 300DPI (or whatever you choose with
+the –default-dpi option).</p>
+</div>
+</div>
+<div class="section" id="styles">
+<h2><a class="toc-backref" href="#id29">1.8&nbsp;&nbsp;&nbsp;Styles</a><a class="headerlink" href="#styles" title="Permalink to this headline">¶</a></h2>
+<p>You can style paragraphs with a style using the class directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">special</span>
+
+<span class="n">This</span> <span class="n">paragraph</span> <span class="ow">is</span> <span class="n">special</span><span class="o">.</span>
+
+<span class="n">This</span> <span class="n">one</span> <span class="ow">is</span> <span class="ow">not</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Or inline styles using custom interpreted roles:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. role:: redtext
+
+I like color :redtext:`red`.
+</pre></div>
+</div>
+<p>For more information about this, please check the ReST docs.</p>
+<p>The only special thing about using rst2pdf here is the syntax of
+the stylesheet.</p>
+<p>You can make rst2pdf print the default stylesheet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2pdf</span> <span class="o">--</span><span class="nb">print</span><span class="o">-</span><span class="n">stylesheet</span>
+</pre></div>
+</div>
+<p>If you want to add styles, just create a stylesheet, (or take the standard
+stylesheet and modify it) and pass it with the -s option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2pdf</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">s</span> <span class="n">mystyles</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Those styles will always be searched in these places, in order:</p>
+<ul class="simple">
+<li>What you specify using –stylesheet_path</li>
+<li>The option stylesheet_path in the config file</li>
+<li>The current folder</li>
+<li>~/.rst2pdf/styles</li>
+<li>The styles folder within rst2pdf’s installation folder.</li>
+</ul>
+<p>You can use multiple -s options, or pass more than one stylesheet
+separated with commas. They are processed in the order you give them
+so the <em>last</em> one has priority.</p>
+<div class="section" id="included-stylesheets">
+<h3><a class="toc-backref" href="#id30">1.8.1&nbsp;&nbsp;&nbsp;Included StyleSheets</a><a class="headerlink" href="#included-stylesheets" title="Permalink to this headline">¶</a></h3>
+<p>To make some of the more common adjustments easier, rst2pdf includes a
+collection of stylesheets you can use:</p>
+<dl class="docutils">
+<dt>Font styles</dt>
+<dd><p class="first">These stylesheets modify your font settings.</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">serif</span></code> uses the PDF serif font (Times) instead of the default Sans
+Serif (Arial)</li>
+<li><code class="docutils literal notranslate"><span class="pre">freetype-sans</span></code> uses your system’s default TrueType Sans Serif font</li>
+<li><code class="docutils literal notranslate"><span class="pre">freetype-serif</span></code> uses your system’s default TrueType Serif font</li>
+<li><code class="docutils literal notranslate"><span class="pre">twelvepoint</span></code> makes the base font 12pt (default is 10pt)</li>
+<li><code class="docutils literal notranslate"><span class="pre">tenpoint</span></code> makes the base font 10pt</li>
+<li><code class="docutils literal notranslate"><span class="pre">eightpoint</span></code> makes the base font 8pt</li>
+<li><code class="docutils literal notranslate"><span class="pre">kerning</span></code> switches to document to DejaVu Sans font and enables kerning.</li>
+</ul>
+</dd>
+<dt>Page layout styles</dt>
+<dd><p class="first">These stylesheets modify your page layout.</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">twocolumn</span></code> uses the twoColumn layout as the initial page layout.</li>
+<li><code class="docutils literal notranslate"><span class="pre">double-sided</span></code> adds a gutter margin (margin at the “in side” of the pages)</li>
+</ul>
+</dd>
+<dt>Page size styles</dt>
+<dd><p class="first">Stylesheets that change the paper size.</p>
+<p>The usual standard paper sizes are supported:</p>
+<ul class="simple">
+<li>A0</li>
+<li>A1</li>
+<li>A2</li>
+<li>A3</li>
+<li>A4 (default)</li>
+<li>A5</li>
+<li>A6</li>
+<li>B0</li>
+<li>B1</li>
+<li>B2</li>
+<li>B3</li>
+<li>B4</li>
+<li>B5</li>
+<li>B6</li>
+<li>Letter</li>
+<li>Legal</li>
+<li>11x17</li>
+</ul>
+<p class="last">The name of the stylesheet is lowercase.</p>
+</dd>
+<dt>Code block styles</dt>
+<dd>See <a class="reference internal" href="#syntax-highlighting">Syntax Highlighting</a></dd>
+</dl>
+<p>So, if you want to have a two-column, legal size, serif document with code in murphy style:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2pdf</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">s</span> <span class="n">twocolumn</span><span class="p">,</span><span class="n">serif</span><span class="p">,</span><span class="n">murphy</span><span class="p">,</span><span class="n">legal</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stylesheet-syntax">
+<h3><a class="toc-backref" href="#id31">1.8.2&nbsp;&nbsp;&nbsp;StyleSheet Syntax</a><a class="headerlink" href="#stylesheet-syntax" title="Permalink to this headline">¶</a></h3>
+<p>It’s a JSON file with several elements in it.</p>
+</div>
+<div class="section" id="font-alias">
+<h3><a class="toc-backref" href="#id32">1.8.3&nbsp;&nbsp;&nbsp;Font Alias</a><a class="headerlink" href="#font-alias" title="Permalink to this headline">¶</a></h3>
+<p>This is the fontsAlias element. By default, it uses some of the standard PDF fonts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;fontsAlias&quot;</span> <span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;stdFont&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stdBold&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica-Bold&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stdItalic&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica-Oblique&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stdBoldItalic&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica-BoldOblique&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stdMono&quot;</span><span class="p">:</span> <span class="s2">&quot;Courier&quot;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>This defines the fonts used in the styles. You can use, for example, Helvetica
+directly in a style, but if later you want to use another font all through
+your document, you will have to change it in each style. So, I suggest you
+use aliases.</p>
+<p>The standard PDF fonts are these:</p>
+<blockquote>
+<div>Times_Roman
+Times-Bold
+Times-Italic
+Times-Bold-Italic
+Helvetica
+Helvetica_Bold
+Helvetica-Oblique
+Helvetica-Bold-Oblique
+Courier
+Courier-Bold
+Courier-Oblique
+Courier-Bold-Oblique
+Symbol
+Zapf-Dingbats</div></blockquote>
+</div>
+<div class="section" id="style-definition">
+<h3><a class="toc-backref" href="#id33">1.8.4&nbsp;&nbsp;&nbsp;Style Definition</a><a class="headerlink" href="#style-definition" title="Permalink to this headline">¶</a></h3>
+<p>Then you have a ‘styles’ which is a list of [ stylename, styleproperties ]. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;normal&quot;</span> <span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;base&quot;</span>
+<span class="p">}],</span>
+</pre></div>
+</div>
+<p>This means that the style called “normal” inherits style “base”. So, each property
+not defined in the normal style will be taken from the base style.</p>
+<p>I suggest you do not remove any style from the default stylesheet. Add or modify at
+will, though.</p>
+<p>If your document requires a style that is not defined in your stylesheet, it will
+print a warning and use bodytext instead.</p>
+<p>Also, the order of the styles is important: if styleA is the parent of styleB,
+styleA should be earlier in the stylesheet.</p>
+<p>These are all the possible attributes for a style and their default values.
+Some of them, like alignment, apply only when used to paragraphs,
+and not on inline styles:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;fontName&quot;</span><span class="p">:</span><span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
+<span class="s2">&quot;fontSize&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+<span class="s2">&quot;leading&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span>
+<span class="s2">&quot;leftIndent&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;rightIndent&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;firstLineIndent&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;alignment&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+<span class="s2">&quot;spaceBefore&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;spaceAfter&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;bulletFontName&quot;</span><span class="p">:</span><span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
+<span class="s2">&quot;bulletFontSize&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+<span class="s2">&quot;bulletText&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\u2022</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="s2">&quot;bulletIndent&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;textColor&quot;</span><span class="p">:</span> <span class="n">black</span><span class="p">,</span>
+<span class="s2">&quot;backColor&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;wordWrap&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;borderWidth&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;borderPadding&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;borderColor&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;borderRadius&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="s2">&quot;allowWidows&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="s2">&quot;allowOrphans&quot;</span><span class="p">:</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>The following are the only attributes that work on styles when used for interpreted roles
+(inline styles):</p>
+<ul class="simple">
+<li>fontName</li>
+<li>fontSize</li>
+<li>textColor</li>
+<li>backColor (if your reportlab is version 2.3 or newer)</li>
+</ul>
+</div>
+<div class="section" id="widows-and-orphans">
+<h3><a class="toc-backref" href="#id34">1.8.5&nbsp;&nbsp;&nbsp;Widows and Orphans</a><a class="headerlink" href="#widows-and-orphans" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Widow</dt>
+<dd>A paragraph-ending line that falls at the beginning of the following page/column, thus separated from the remainder of the text.</dd>
+<dt>Orphan</dt>
+<dd>A paragraph-opening line that appears by itself at the bottom of a page/column.</dd>
+</dl>
+<p>Rst2pdf has <em>some</em> widow/orphan control. Specifically, here’s what’s currently implemented:</p>
+<p>On ordinary paragraphs, allowWidows and allowOrphans is passed to reportlab, which is supposed to do something about it if they are non-zero. In practice, it doesn’t seem to have much effect.</p>
+<p>The plan is to change the semantics of those settings, so that they mean the minimum number of lines that can be left alone at the beginning of a page (widows) or at the end (orphans).</p>
+<p>Currently, these semantics only work for literal blocks and code blocks.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>A literal block<span class="se">::</span>
+
+<span class="s">    This is a literal block.</span>
+
+A code block:
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">python</span>
+
+    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>In future versions this may extend to ordinary paragraphs.</p>
+</div>
+<div class="section" id="font-embedding">
+<h3><a class="toc-backref" href="#id35">1.8.6&nbsp;&nbsp;&nbsp;Font Embedding</a><a class="headerlink" href="#font-embedding" title="Permalink to this headline">¶</a></h3>
+<p>There are thousands of excellent free True Type and Type 1 fonts available on the
+web, and you can use many of them in your documents by declaring them in your
+stylesheet.</p>
+<div class="section" id="the-easy-way">
+<h4><a class="toc-backref" href="#id36">1.8.6.1&nbsp;&nbsp;&nbsp;The Easy Way</a><a class="headerlink" href="#the-easy-way" title="Permalink to this headline">¶</a></h4>
+<p>Just use the font name in your style. For example, you can define this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;normal&quot;</span> <span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;fontName&quot;</span> <span class="p">:</span> <span class="s2">&quot;fonty&quot;</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+<p>And then it <em>may</em> work.</p>
+<p>What would need to happen for this to work?</p>
+<div class="section" id="fonty-is-a-true-type-font">
+<h5><a class="toc-backref" href="#id37">1.8.6.1.1&nbsp;&nbsp;&nbsp;Fonty is a True Type font:</a><a class="headerlink" href="#fonty-is-a-true-type-font" title="Permalink to this headline">¶</a></h5>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>You need to have it installed in your system, and have the fc-match</dt>
+<dd><p class="first">utility available (it’s part of <a class="reference external" href="http://www.freedesktop.org/fontconfig/">fontconfig</a>). You can test if it is
+so by running this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fc-match fonty
+fonty.ttf: &quot;Fonty&quot; &quot;Normal&quot;
+</pre></div>
+</div>
+<p class="last">If you are in Windows, I need your help ;-) or you can use <a class="reference internal" href="#the-harder-way-true-type">The Harder Way (True Type)</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The folder where fonty.ttf is located needs to be in your font path. You can set it</dt>
+<dd><p class="first">using the –font-path option. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2pdf</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">s</span> <span class="n">mystyle</span><span class="o">.</span><span class="n">style</span> <span class="o">--</span><span class="n">font</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">fonts</span>
+</pre></div>
+</div>
+<p class="last">You don’t need to put the <em>exact</em> folder, just something that is above it. In my own case,
+fonty is in /usr/share/fonts/TTF</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Whenever a font is embedded, you can refer to it in a style by its name, and
+to its variants by the aliases Name-Oblique, Name-Bold, Name-BoldOblique.</p>
+</div>
+<div class="section" id="fonty-is-a-type-1-font">
+<h5><a class="toc-backref" href="#id38">1.8.6.1.2&nbsp;&nbsp;&nbsp;Fonty is a Type 1 font:</a><a class="headerlink" href="#fonty-is-a-type-1-font" title="Permalink to this headline">¶</a></h5>
+<p>You need it installed, and the folders where its font metric (.afm) and binary (.pfb) files
+are located need to be in your font fath.</p>
+<p>For example, the “URW Palladio L” font that came with my installation of TeX consists of
+the following files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">type1</span><span class="o">/</span><span class="n">urw</span><span class="o">/</span><span class="n">palatino</span><span class="o">/</span><span class="n">uplb8a</span><span class="o">.</span><span class="n">pfb</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">type1</span><span class="o">/</span><span class="n">urw</span><span class="o">/</span><span class="n">palatino</span><span class="o">/</span><span class="n">uplbi8a</span><span class="o">.</span><span class="n">pfb</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">type1</span><span class="o">/</span><span class="n">urw</span><span class="o">/</span><span class="n">palatino</span><span class="o">/</span><span class="n">uplr8a</span><span class="o">.</span><span class="n">pfb</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">type1</span><span class="o">/</span><span class="n">urw</span><span class="o">/</span><span class="n">palatino</span><span class="o">/</span><span class="n">uplri8a</span><span class="o">.</span><span class="n">pfb</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">afm</span><span class="o">/</span><span class="n">urw</span><span class="o">/</span><span class="n">palatino</span><span class="o">/</span><span class="n">uplb8a</span><span class="o">.</span><span class="n">afm</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">afm</span><span class="o">/</span><span class="n">urw</span><span class="o">/</span><span class="n">palatino</span><span class="o">/</span><span class="n">uplbi8a</span><span class="o">.</span><span class="n">afm</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">afm</span><span class="o">/</span><span class="n">urw</span><span class="o">/</span><span class="n">palatino</span><span class="o">/</span><span class="n">uplr8a</span><span class="o">.</span><span class="n">afm</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">afm</span><span class="o">/</span><span class="n">urw</span><span class="o">/</span><span class="n">palatino</span><span class="o">/</span><span class="n">uplri8a</span><span class="o">.</span><span class="n">afm</span>
+</pre></div>
+</div>
+<p>So, I can use it if I put <code class="docutils literal notranslate"><span class="pre">/usr/share/texmf-dist/fonts</span></code> in my font path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2pdf</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">s</span> <span class="n">mystyle</span><span class="o">.</span><span class="n">style</span> <span class="o">--</span><span class="n">font</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">texmf</span><span class="o">-</span><span class="n">dist</span><span class="o">/</span><span class="n">fonts</span>
+</pre></div>
+</div>
+<p>And putting this in my stylesheet, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;fontName&quot;</span> <span class="p">:</span> <span class="s2">&quot;URWPalladioL-Bold&quot;</span> <span class="p">}</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>There are some standard aliases defined so you can use other names:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ITC Bookman&#39;</span>            <span class="p">:</span> <span class="s1">&#39;URW Bookman L&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ITC Avant Garde Gothic&#39;</span> <span class="p">:</span> <span class="s1">&#39;URW Gothic L&#39;</span><span class="p">,</span>
+<span class="s1">&#39;Palatino&#39;</span>               <span class="p">:</span> <span class="s1">&#39;URW Palladio L&#39;</span><span class="p">,</span>
+<span class="s1">&#39;New Century Schoolbook&#39;</span> <span class="p">:</span> <span class="s1">&#39;Century Schoolbook L&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ITC Zapf Chancery&#39;</span>      <span class="p">:</span> <span class="s1">&#39;URW Chancery L&#39;</span>
+</pre></div>
+</div>
+<p>So, for example, you can use <code class="docutils literal notranslate"><span class="pre">Palatino</span></code> or <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Century</span> <span class="pre">SchoolBook-Oblique</span></code> And it will mean
+<code class="docutils literal notranslate"><span class="pre">URWPalladioL</span></code> or <code class="docutils literal notranslate"><span class="pre">CenturySchL-Ital</span></code>, respectively.</p>
+<p>Whenever a font is embedded, you can refer to it in a style by its name, and
+to its variants by the aliases Name-Oblique, Name-Bold, Name-BoldOblique.</p>
+</div>
+</div>
+<div class="section" id="the-harder-way-true-type">
+<h4><a class="toc-backref" href="#id39">1.8.6.2&nbsp;&nbsp;&nbsp;The Harder Way (True Type)</a><a class="headerlink" href="#the-harder-way-true-type" title="Permalink to this headline">¶</a></h4>
+<p>The stylesheet has an element is “embeddedFonts” that handles embedding True Type
+fonts in your PDF.</p>
+<p>Usually, it’s empty, because with the default styles you are not using any font
+beyond the standard PDF fonts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;embeddedFonts&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">],</span>
+</pre></div>
+</div>
+<p>You can put there the name of the font, and rst2pdf will try to embed it as described
+above. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;embeddedFonts&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;Tuffy&quot;</span> <span class="p">],</span>
+</pre></div>
+</div>
+<p>Or you can be explicit and tell rst2pdf the files that contain each variant of the
+font.</p>
+<p>Suppose you want to use the nice public domain <a class="reference external" href="http://tulrich.com/fonts/">Tuffy font</a>, then you need to give the
+filenames of all variants:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;embeddedFonts&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">[</span><span class="s2">&quot;Tuffy.ttf&quot;</span><span class="p">,</span><span class="s2">&quot;Tuffy_Bold.ttf&quot;</span><span class="p">,</span><span class="s2">&quot;Tuffy_Italic.ttf&quot;</span><span class="p">,</span><span class="s2">&quot;Tuffy_Bold_Italic.ttf&quot;</span><span class="p">]</span> <span class="p">],</span>
+</pre></div>
+</div>
+<p>This will provide your styles with fonts called “Tuffy” “Tuffy_Bold” and so on. They will
+be available with the names based on the filenames (Tuffy_Bold) and also by standard
+aliases similar to those of the standard PDF fonts (Tuffy-Bold/Tuffy-Oblique/Tuffy-BoldOblique).</p>
+<p>Now, if you use <em>italics</em> in a paragraph whose style uses the Tuffy font, it will use
+Tuffy_Italic. That’s why it’s better if you use fonts that provide the four variants, and
+you should put them in <strong>that</strong> order. If your font lacks a variant, use the
+“normal” variant instead.</p>
+<p>For example, if you only had Tuffy.ttf:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;embeddedFonts&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">[</span><span class="s2">&quot;Tuffy.ttf&quot;</span><span class="p">,</span><span class="s2">&quot;Tuffy.ttf&quot;</span><span class="p">,</span><span class="s2">&quot;Tuffy.ttf&quot;</span><span class="p">,</span><span class="s2">&quot;Tuffy.ttf&quot;</span><span class="p">]</span> <span class="p">],</span>
+</pre></div>
+</div>
+<p>However, that means that italics and bold in styles using Tuffy will not work correctly (they will
+display as regular text).</p>
+<p>If you want to use this as the base font for your document, you should change the fontsAlias
+section accordingly. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;fontsAlias&quot;</span> <span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;stdFont&quot;</span><span class="p">:</span> <span class="s2">&quot;Tuffy&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stdBold&quot;</span><span class="p">:</span> <span class="s2">&quot;Tuffy_Bold&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stdItalic&quot;</span><span class="p">:</span> <span class="s2">&quot;Tuffy_Italic&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stdBoldItalic&quot;</span><span class="p">:</span> <span class="s2">&quot;Tuffy_Bold_Italic&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stdMono&quot;</span><span class="p">:</span> <span class="s2">&quot;Courier&quot;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>If, on the other hand, you only want a specific style to use the Tuffy
+font, don’t change the fontAlias, and set the fontName properties for
+that style. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;heading1&quot;</span> <span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;fontName&quot;</span><span class="p">:</span> <span class="s2">&quot;Tuffy_Bold&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;fontSize&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+  <span class="s2">&quot;keepWithNext&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;spaceAfter&quot;</span><span class="p">:</span> <span class="mi">6</span>
+<span class="p">}],</span>
+</pre></div>
+</div>
+<p>By default, rst2pdf will search for the fonts in its fonts folder and
+in the current folder. You can make it search another folder by passing
+the –font-folder option, or you can use absolute paths in your stylesheet.</p>
+</div>
+<div class="section" id="the-harder-way-type1">
+<h4><a class="toc-backref" href="#id40">1.8.6.3&nbsp;&nbsp;&nbsp;The Harder Way (Type1)</a><a class="headerlink" href="#the-harder-way-type1" title="Permalink to this headline">¶</a></h4>
+<p>To be written (and implemented and tested)</p>
+</div>
+</div>
+<div class="section" id="page-size-and-margins">
+<h3><a class="toc-backref" href="#id41">1.8.7&nbsp;&nbsp;&nbsp;Page Size and Margins</a><a class="headerlink" href="#page-size-and-margins" title="Permalink to this headline">¶</a></h3>
+<p>In your stylesheet, the pageSetup element controls your page layout.</p>
+<p>Here’s the default stylesheet’s:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;pageSetup&quot;</span> <span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;A4&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;margin-top&quot;</span><span class="p">:</span> <span class="s2">&quot;2cm&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;margin-bottom&quot;</span><span class="p">:</span> <span class="s2">&quot;2cm&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;margin-left&quot;</span><span class="p">:</span> <span class="s2">&quot;2cm&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;margin-right&quot;</span><span class="p">:</span> <span class="s2">&quot;2cm&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;spacing-header&quot;</span><span class="p">:</span> <span class="s2">&quot;5mm&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;spacing-footer&quot;</span><span class="p">:</span> <span class="s2">&quot;5mm&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;margin-gutter&quot;</span><span class="p">:</span> <span class="s2">&quot;0cm&quot;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>Size is one of the standard paper sizes, like A4 or LETTER.</p>
+<p>Here’s a list: A0, A1, A2, A3, A4, A5, A6, B0, B1, B2, B3, B4, B5, B6,
+LETTER, LEGAL, ELEVENSEVENTEEN.</p>
+<p>If you want a non-standard size, set size to null and use width and height.</p>
+<p>When specifying width, height or margins, you need to use units, like
+inch (inches) or cm (centimeters).</p>
+<p>When both width/height and size are specified, size will be used, and
+width/height ignored.</p>
+<p>All margins should be self-explanatory, except for margin-gutter. That’s the
+margin in the center of a two-page spread.</p>
+<p>This value is added to the left margin of odd pages and the right margin of
+even pages, adding (or removing, if it’s negative) space “in the middle” of
+opposing pages.</p>
+<p>If you intend to bound a printed copy, you may need extra space there. OTOH,
+if you will display it on-screen on a two-page format (common in many PDF
+readers, nice for ebooks), a negative value may be pleasant.</p>
+</div>
+<div class="section" id="advanced-table-styles">
+<h3><a class="toc-backref" href="#id42">1.8.8&nbsp;&nbsp;&nbsp;Advanced: table styles</a><a class="headerlink" href="#advanced-table-styles" title="Permalink to this headline">¶</a></h3>
+<p>This is new in 0.12.</p>
+<p>These are a few extra options in styles that are only used when the style is applied to a table.
+This happens in two cases:</p>
+<ol class="arabic simple">
+<li>You are using the class directive on a table:</li>
+</ol>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">class</span><span class="p">::</span> thick
+
++-------+---------+
+<span class="o">|</span>   A   |   B     |
++-----------------+
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>It’s a style that automatically applies to something that is <em>drawn</em> using a table.
+Currently these include:<ul>
+<li>Footnotes / endnotes (endnote style)</li>
+<li>Lists (item_list, bullet_list option_list and field_list styles)</li>
+</ul>
+</li>
+</ol>
+<p>The options are as follows:</p>
+<dl class="docutils">
+<dt>Commands</dt>
+<dd><p class="first">For a full reference of these, please check the Reportlab User Guide
+specifically the TableStyle Commands section (section 7.4 in the manual
+for version 2.3)</p>
+<p>Here, however, is a list of the possible commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BOX</span> <span class="p">(</span><span class="ow">or</span> <span class="n">OUTLINE</span><span class="p">)</span>
+<span class="n">FONT</span>
+<span class="n">FONTNAME</span> <span class="p">(</span><span class="ow">or</span> <span class="n">FACE</span><span class="p">)</span>
+<span class="n">FONTSIZE</span> <span class="p">(</span><span class="ow">or</span> <span class="n">SIZE</span><span class="p">)</span>
+<span class="n">GRID</span>
+<span class="n">INNERGRID</span>
+<span class="n">LEADING</span>
+<span class="n">LINEBELOW</span>
+<span class="n">LINEABOVE</span>
+<span class="n">LINEBEFORE</span>
+<span class="n">LINEAFTER</span>
+<span class="n">TEXTCOLOR</span>
+<span class="n">ALIGNMENT</span> <span class="p">(</span><span class="ow">or</span> <span class="n">ALIGN</span><span class="p">)</span>
+<span class="n">LEFTPADDING</span>
+<span class="n">RIGHTPADDING</span>
+<span class="n">BOTTOMPADDING</span>
+<span class="n">TOPPADDING</span>
+<span class="n">BACKGROUND</span>
+<span class="n">ROWBACKGROUNDS</span>
+<span class="n">COLBACKGROUNDS</span>
+<span class="n">VALIGN</span>
+</pre></div>
+</div>
+<p>Each takes as argument a couple of coordinates, where (0,0) is top-left, and (-1,-1) is
+bottom-right, and 0 or more extra arguments.</p>
+<p>For example, INNERGRID takes a linewidth and a color:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="s2">&quot;INNERGRID&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span> <span class="p">],</span>
+</pre></div>
+</div>
+<p class="last">That would mean “draw all lines inside the table with .25pt black”</p>
+</dd>
+<dt>colWidths</dt>
+<dd><p class="first">A list of the column widths you want, in the unit you prefer (default unit is pt).</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;colWidths&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;3cm&quot;</span><span class="p">,</span><span class="n">null</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If your colWidths has fewer values than columns in your table, the rest are autocalculated.
+A column width of null means “guess”.</p>
+<p class="last">If you don’t specify column widths, the table will try to look proportional to the restructured
+text source.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="multiple-stylesheets">
+<h3><a class="toc-backref" href="#id43">1.8.9&nbsp;&nbsp;&nbsp;Multiple Stylesheets</a><a class="headerlink" href="#multiple-stylesheets" title="Permalink to this headline">¶</a></h3>
+<p>When you use a custom stylesheet, you don’t need to define <em>everything</em> in it.
+Whatever you don’t define will be taken from the default stylesheet. For example,
+if you only want to change page size, default font and font size, this would
+be enough:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;pageSetup&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;size&quot;</span><span class="o">:</span> <span class="s2">&quot;A5&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;fontsAlias&quot;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;stdFont&quot;</span><span class="o">:</span> <span class="s2">&quot;Times-Roman&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;styles&quot;</span> <span class="o">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;normal&quot;</span> <span class="p">,</span> <span class="p">{</span>
+        <span class="s2">&quot;fontSize&quot;</span><span class="o">:</span> <span class="mi">14</span>
+        <span class="p">}]</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">command</span></code> option used for table styles is not kept across stylesheets.
+For example, the default stylesheet defines endnote with this command list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">[</span> <span class="s2">&quot;VALIGN&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="s2">&quot;TOP&quot;</span> <span class="p">]</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>If you redefine endnote in another stylesheet and use this to create a vertical line between
+the endnote’s columns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">[</span> <span class="s2">&quot;LINEAFTER&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span> <span class="p">]</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Then the footnotes will <strong>not</strong> have VALIGN TOP!</p>
+<p>To do that, you <strong>MUST</strong> use all commands in your stylesheet:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span> <span class="s2">&quot;VALIGN&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="s2">&quot;TOP&quot;</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">&quot;LINEAFTER&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span> <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="styling-your-document">
+<h3><a class="toc-backref" href="#id44">1.8.10&nbsp;&nbsp;&nbsp;Styling Your Document</a><a class="headerlink" href="#styling-your-document" title="Permalink to this headline">¶</a></h3>
+<p>Which styles you need to modify to achieve your desired result is not obvious.
+In this section, you will see some hints and pointers to that effect.</p>
+<div class="section" id="the-base-styles">
+<h4><a class="toc-backref" href="#id45">1.8.10.1&nbsp;&nbsp;&nbsp;The Base Styles</a><a class="headerlink" href="#the-base-styles" title="Permalink to this headline">¶</a></h4>
+<p>There are three styles which have great effect, they are <code class="docutils literal notranslate"><span class="pre">base</span></code>,
+<code class="docutils literal notranslate"><span class="pre">normal</span></code> and <code class="docutils literal notranslate"><span class="pre">bodytext</span></code>.</p>
+<p>Here’s an example, the twelvepoint stylesheet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;styles&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;base&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;fontSize&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">}]]}</span>
+</pre></div>
+</div>
+<p>Since all other styles inherit <code class="docutils literal notranslate"><span class="pre">base</span></code>, changing the fontSize changes the fontSize
+for everything in your document.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">normal</span></code> style is meant for most elements, so usually it’s the same as changing
+<code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">bodytext</span></code> style is for elements that form paragraphs. So, for example, you can set
+your document to be left-aligned like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;styles&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;bodytext&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;left&quot;</span><span class="p">}]]}</span>
+</pre></div>
+</div>
+<p>There are elements, however, that don’t inherit from bodytext, for example headings and the
+styles used in the table of contents. Those are elements that are not real paragraphs, so
+they should not follow the indentation and spacing you use for your document’s main content.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">heading</span></code> style is inherited by all sorts of titles: section titles, topic titles,
+admonition titles, etc.</p>
+</div>
+<div class="section" id="lists">
+<h4><a class="toc-backref" href="#id46">1.8.10.2&nbsp;&nbsp;&nbsp;Lists</a><a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h4>
+<p>Styling lists is mostly a matter of spacing and indentation.</p>
+<p>The space before and after a list is taken from the <code class="docutils literal notranslate"><span class="pre">item_list</span></code> and <code class="docutils literal notranslate"><span class="pre">bullet_list</span></code> styles:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;item_list&quot;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;bodytext&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;spaceBefore&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span> <span class="s2">&quot;VALIGN&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="s2">&quot;TOP&quot;</span> <span class="p">],</span>
+        <span class="p">[</span> <span class="s2">&quot;RIGHTPADDING&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="mi">0</span> <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;colWidths&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;20pt&quot;</span><span class="p">,</span><span class="n">null</span><span class="p">]</span>
+<span class="p">}]</span>
+
+<span class="p">[</span><span class="s2">&quot;bullet_list&quot;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;bodytext&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;spaceBefore&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span> <span class="s2">&quot;VALIGN&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="s2">&quot;TOP&quot;</span> <span class="p">],</span>
+        <span class="p">[</span> <span class="s2">&quot;RIGHTPADDING&quot;</span><span class="p">,</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">],</span> <span class="mi">0</span> <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;colWidths&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="n">null</span><span class="p">]</span>
+<span class="p">}],</span>
+</pre></div>
+</div>
+<p>Yes, these are table styles, because they are implemented as tables. The RIGHTPADDING command
+and the colWidths option can be used to adjust the position of the bullet/item number.</p>
+<p>To control the separation between items, you use the item_list_item and
+<code class="docutils literal notranslate"><span class="pre">bullet_list_item</span></code> styles’ spaceBefore and spaceAfter options, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;bullet_list_item&quot;</span> <span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;bodytext&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;spaceBefore&quot;</span><span class="p">:</span> <span class="mi">20</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+<p>Remember that this is only used <strong>between items</strong> and not before the first or after the
+last items.</p>
+</div>
+</div>
+</div>
+<div class="section" id="syntax-highlighting">
+<h2><a class="toc-backref" href="#id47">1.9&nbsp;&nbsp;&nbsp;Syntax Highlighting</a><a class="headerlink" href="#syntax-highlighting" title="Permalink to this headline">¶</a></h2>
+<p>Rst2pdf adds a non-standard directive, called code-block, which produces syntax
+highlighted for many languages using <a class="reference external" href="http://pygments.org/">Pygments</a>.</p>
+<p>For example, if you want to include a python fragment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
+
+    <span class="k">def</span> <span class="nf">myFun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</pre></div>
+</div>
+<p>Notice that you need to declare the language of the fragment. Here’s a list of
+the currently <a class="reference external" href="http://pygments.org/docs/lexers/">supported</a>.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">linenos</span></code> option to display line numbers:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myFun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</pre></div>
+</td></tr></table></div>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">hl_lines</span></code> option to emphasize certain lines by dimming the
+other lines. This parameter takes a space separated list of line numbers. The
+other lines are then styled with the class <code class="docutils literal notranslate"><span class="pre">pygments_diml</span></code> that defaults to
+gray. e.g. to highlight <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">&quot;line</span> <span class="pre">a&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">&quot;line</span> <span class="pre">b&quot;</span></code>:</p>
+<p>Rst2pdf includes several stylesheets for highlighting code:</p>
+<ul class="simple">
+<li>autumn</li>
+<li>borland</li>
+<li>bw</li>
+<li>colorful</li>
+<li>emacs</li>
+<li>friendly</li>
+<li>fruity</li>
+<li>manni</li>
+<li>murphy</li>
+<li>native</li>
+<li>pastie</li>
+<li>perldoc</li>
+<li>trac</li>
+<li>vs</li>
+</ul>
+<p>You can use any of them instead of the default by adding, for example, a <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">murphy</span></code> to
+the command line.</p>
+<p>If you already are using a custom stylesheet, use both:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2pdf</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">rst</span> <span class="o">-</span><span class="n">o</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">pdf</span> <span class="o">-</span><span class="n">s</span> <span class="n">mystyle</span><span class="o">.</span><span class="n">json</span><span class="p">,</span><span class="n">murphy</span>
+</pre></div>
+</div>
+<p>The default is the same as “emacs”.</p>
+<p>There is an online demo of pygments showing these styles:</p>
+<blockquote>
+<div><a class="reference external" href="http://pygments.org/demo/1817/">http://pygments.org/demo/1817/</a></div></blockquote>
+<p>The overall look of a code box is controlled by the “code” style or by a class you apply to it using the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">class::</span></code> directive.
+Additionally, if you want to change some properties when using different languages, you can define styles with the name of the language.
+For example, a <code class="docutils literal notranslate"><span class="pre">python</span></code> style will be applied to code blocks created with <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">code-block::</span> <span class="pre">python</span></code>.</p>
+<p>The look of the line numbers is controlled by the “linenumbers” style.</p>
+<p>As rst2pdf is written in python let’s see some examples and variations around python.</p>
+<p>Python in console</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="o">=</span><span class="s2">&quot;python is great&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;great&#39;</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;py&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Python traceback</p>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+    File &quot;error.py&quot;, line 9, in ?
+    main()
+    File &quot;error.py&quot;, line 6, in main
+    print call_error()
+    File &quot;error.py&quot;, line 2, in call_error
+    r = 1/0
+ZeroDivisionError: integer division or modulo by zero
+Exit 1
+</pre></div>
+</div>
+<p>The code-block directive supports many options, that mirror pygments’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FIXME</span><span class="p">:</span> <span class="n">fix</span> <span class="n">this</span> <span class="n">to</span> <span class="n">really</span> <span class="n">explain</span> <span class="n">them</span> <span class="nb">all</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">placeholder</span><span class="o">.</span>
+
+                        <span class="s1">&#39;stripnl&#39;</span> <span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;stripall&#39;</span><span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;ensurenl&#39;</span><span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;tabsize&#39;</span> <span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">positive_int</span><span class="p">,</span>
+                        <span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+                        <span class="c1"># Lua</span>
+                        <span class="s1">&#39;func_name_hightlighting&#39;</span><span class="p">:</span><span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;disabled_modules&#39;</span><span class="p">:</span> <span class="n">string_list</span><span class="p">,</span>
+                        <span class="c1"># Python Console</span>
+                        <span class="s1">&#39;python3&#39;</span><span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="c1"># Delphi</span>
+                        <span class="s1">&#39;turbopascal&#39;</span><span class="p">:</span><span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;delphi&#39;</span> <span class="p">:</span><span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;freepascal&#39;</span><span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="n">string_list</span><span class="p">,</span>
+                        <span class="c1"># Modula2</span>
+                        <span class="s1">&#39;pim&#39;</span>   <span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;iso&#39;</span>   <span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;objm2&#39;</span> <span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;gm2ext&#39;</span><span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="c1"># CSharp</span>
+                        <span class="s1">&#39;unicodelevel&#39;</span> <span class="p">:</span> <span class="n">csharp_unicodelevel</span><span class="p">,</span>
+                        <span class="c1"># Literate haskell</span>
+                        <span class="s1">&#39;litstyle&#39;</span> <span class="p">:</span> <span class="n">lhs_litstyle</span><span class="p">,</span>
+                        <span class="c1"># Raw</span>
+                        <span class="s1">&#39;compress&#39;</span><span class="p">:</span> <span class="n">raw_compress</span><span class="p">,</span>
+                        <span class="c1"># Rst</span>
+                        <span class="s1">&#39;handlecodeblocks&#39;</span><span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="c1"># Php</span>
+                        <span class="s1">&#39;startinline&#39;</span><span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;funcnamehighlighting&#39;</span><span class="p">:</span> <span class="n">string_bool</span><span class="p">,</span>
+                        <span class="s1">&#39;disabledmodules&#39;</span><span class="p">:</span> <span class="n">string_list</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>You can find more information about them in the pygments manual.</p>
+<div class="section" id="file-inclusion">
+<h3><a class="toc-backref" href="#id48">1.9.1&nbsp;&nbsp;&nbsp;File inclusion</a><a class="headerlink" href="#file-inclusion" title="Permalink to this headline">¶</a></h3>
+<p>Also, you can use the code-block directive with an external file, using
+the :include: option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
+   <span class="p">:</span><span class="n">include</span><span class="p">:</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>This will give a warning if setup.py doesn’t exist or can’t be opened.</p>
+<div class="section" id="include-with-boundaries">
+<h4><a class="toc-backref" href="#id49">1.9.1.1&nbsp;&nbsp;&nbsp;Include with Boundaries</a><a class="headerlink" href="#include-with-boundaries" title="Permalink to this headline">¶</a></h4>
+<p>you can add selectors to limit the inclusion to a portion of the file.
+the options are:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">start-at:</th><td class="field-body">string
+will include file beginning at the first occurrence of string, string <strong>included</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">start-after:</th><td class="field-body">string
+will include file beginning at the first occurrence of string, string <strong>excluded</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">end-before:</th><td class="field-body">string
+will include file up to the first occurrence of string, string <strong>excluded</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">end-at:</th><td class="field-body">string
+will include file up to the first occurrence of string, string <strong>included</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s display a class from rst2pdf:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
+   <span class="p">:</span><span class="n">include</span><span class="p">:</span> <span class="o">../</span><span class="n">rst2pdf</span><span class="o">/</span><span class="n">flowables</span><span class="o">.</span><span class="n">py</span>
+   <span class="p">:</span><span class="n">start</span><span class="o">-</span><span class="n">at</span><span class="p">:</span> <span class="k">class</span> <span class="nc">Separation</span><span class="p">(</span><span class="n">Flowable</span><span class="p">):</span>
+   <span class="p">:</span><span class="n">end</span><span class="o">-</span><span class="n">before</span><span class="p">:</span> <span class="k">class</span> <span class="nc">Reference</span><span class="p">(</span><span class="n">Flowable</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>this command gives</p>
+</div>
+<div class="section" id="options">
+<h4><a class="toc-backref" href="#id50">1.9.1.2&nbsp;&nbsp;&nbsp;Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>linenos</dt>
+<dd>Display line numbers along the code</dd>
+<dt>linenos_offset</dt>
+<dd>If you include a file and are skipping the beginning, using the linenos_offset
+makes the line count start from the real line number, instead of 1.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="raw-directive">
+<h2><a class="toc-backref" href="#id51">1.10&nbsp;&nbsp;&nbsp;Raw Directive</a><a class="headerlink" href="#raw-directive" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="raw-pdf">
+<h3><a class="toc-backref" href="#id52">1.10.1&nbsp;&nbsp;&nbsp;Raw PDF</a><a class="headerlink" href="#raw-pdf" title="Permalink to this headline">¶</a></h3>
+<p>Rst2pdf has a very limited mechanism to pass commands to reportlab, the PDF generation library.
+You can use the raw directive to insert pagebreaks and spacers (other reportlab flowables
+may be added if there’s interest), and set page transitions.</p>
+<p>The syntax is shell-like, here’s an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">One</span> <span class="n">page</span>
+
+<span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">pdf</span>
+
+    <span class="n">PageBreak</span>
+
+<span class="n">Another</span> <span class="n">page</span><span class="o">.</span> <span class="n">Now</span> <span class="n">some</span> <span class="n">space</span><span class="p">:</span>
+
+<span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">pdf</span>
+
+    <span class="n">Spacer</span> <span class="mi">0</span><span class="p">,</span><span class="mi">200</span>
+    <span class="n">Spacer</span> <span class="mi">0</span> <span class="mi">200</span>
+
+<span class="n">And</span> <span class="n">another</span> <span class="n">paragraph</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The unit used by the spacer by default is points, and using a space or a comma is the same thing
+in all cases.</p>
+</div>
+<div class="section" id="page-counters">
+<h3><a class="toc-backref" href="#id53">1.10.2&nbsp;&nbsp;&nbsp;Page Counters</a><a class="headerlink" href="#page-counters" title="Permalink to this headline">¶</a></h3>
+<p>In some documents, you may not want your page counter to start in the first page.</p>
+<p>For example, if the first pages are a coverpage and a table of contents, you want page 1 to be
+where your first section starts.</p>
+<p>To do that, you have to use the SetPageCounter command.</p>
+<p>Here is a syntax example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">pdf</span>
+
+    <span class="n">SetPageCounter</span> <span class="mi">0</span> <span class="n">lowerroman</span>
+</pre></div>
+</div>
+<p>This sets the counter to 0, and makes it display in lower roman characters (i, ii, iii, etc)
+which is a style often used for the pages before the document proper (for example, TOCs and
+abstracts).</p>
+<p>It can take zero or two arguments.</p>
+<dl class="docutils">
+<dt>SetPageCounter</dt>
+<dd>When used with no arguments, it sets the counter to 0, and the style to arabic numerals.</dd>
+<dt>SetPageCounter number style</dt>
+<dd><p class="first">When used with two arguments, the first argument must be a number, it sets the page counter
+to that number.</p>
+<p>The second number is a style of counter. Valid values are:</p>
+<ul class="last simple">
+<li>lowerroman: i, ii, iii, iv, v …</li>
+<li>roman: I, II, III, IV, V …</li>
+<li>arabic: 1, 2, 3, 4, 5 …</li>
+<li>loweralpha: a, b, c, d, e … [Don’t use for numbers above 26]</li>
+<li>alpha: A, B, C, D, E … [Don’t use for numbers above 26]</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Page counter changes take effect on the <strong>current</strong> page.</p>
+</div>
+</div>
+<div class="section" id="page-breaks">
+<h3><a class="toc-backref" href="#id54">1.10.3&nbsp;&nbsp;&nbsp;Page Breaks</a><a class="headerlink" href="#page-breaks" title="Permalink to this headline">¶</a></h3>
+<p>There are three kinds of page breaks:</p>
+<dl class="docutils">
+<dt>PageBreak</dt>
+<dd>Break to the next page</dd>
+<dt>EvenPageBreak</dt>
+<dd>Break to the next <strong>even</strong> numbered page</dd>
+<dt>OddPageBreak</dt>
+<dd>Break to the next <strong>odd</strong> numbered page</dd>
+</dl>
+<p>Each of them can take an additional number which is the name of the next page template.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PageBreak</span> <span class="n">twoColumn</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="frame-breaks">
+<h3><a class="toc-backref" href="#id55">1.10.4&nbsp;&nbsp;&nbsp;Frame Breaks</a><a class="headerlink" href="#frame-breaks" title="Permalink to this headline">¶</a></h3>
+<p>If you want to jump to the next frame in the page (or the next page if the current
+frame is the last), you can use the FrameBreak command. It takes an optional
+height in points, and then it only breaks the frame if there is less than that
+vertical space available.</p>
+<p>For example, if you don’t want a paragraph to begin if it’s less than 50 points from the
+bottom of the frame:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">pdf</span>
+
+   <span class="n">FrameBreak</span> <span class="mi">50</span>
+
+<span class="n">This</span> <span class="n">paragraph</span> <span class="ow">is</span> <span class="n">so</span> <span class="n">important</span> <span class="n">that</span> <span class="n">I</span> <span class="n">don</span><span class="s1">&#39;t want it at the very bottom of the page...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="page-transitions">
+<h3><a class="toc-backref" href="#id56">1.10.5&nbsp;&nbsp;&nbsp;Page Transitions</a><a class="headerlink" href="#page-transitions" title="Permalink to this headline">¶</a></h3>
+<p>Page transitions are effects used when you change pages in <em>Presentation</em> or <em>Full Screen</em> mode (depends on the viewer).
+You can use it when creating a presentation using PDF files.</p>
+<p>The syntax is this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">pdf</span>
+
+   <span class="n">Transition</span> <span class="n">effect</span> <span class="n">duration</span> <span class="p">[</span><span class="n">optional</span> <span class="n">arguments</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The optional arguments are:</p>
+<dl class="docutils">
+<dt>direction:</dt>
+<dd>Can be 0,90,180 or 270 (top,right,bottom,left)</dd>
+<dt>dimension:</dt>
+<dd>Can be H or V</dd>
+<dt>motion:</dt>
+<dd>Can be I or O (Inside or Outside)</dd>
+</dl>
+<p>The effects with their arguments are:</p>
+<ul class="simple">
+<li>Split duration direction motion</li>
+<li>Blinds duration dimension</li>
+<li>Box duration motion</li>
+<li>Wipe duration direction</li>
+<li>Dissolve duration</li>
+<li>Glitter duration direction</li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">pdf</span>
+
+   <span class="n">Transition</span> <span class="n">Glitter</span> <span class="mi">3</span> <span class="mi">90</span>
+</pre></div>
+</div>
+<p>Uses the Glitter effect, for 3 seconds, at direction 90 degrees (from the right?)</p>
+<p>Keep in mind that Transition sets the transition <em>from this page to the next</em> so the
+natural thing is to use it before a PageBreak:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">pdf</span>
+
+   <span class="n">Transition</span> <span class="n">Dissolve</span> <span class="mi">1</span>
+   <span class="n">PageBreak</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="text-annotations">
+<h3><a class="toc-backref" href="#id57">1.10.6&nbsp;&nbsp;&nbsp;Text Annotations</a><a class="headerlink" href="#text-annotations" title="Permalink to this headline">¶</a></h3>
+<p>Text annotations are meta notes added to a page.</p>
+<p>The syntax is this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">pdf</span>
+
+   <span class="n">TextAnnotation</span> <span class="s2">&quot;text to add&quot;</span> <span class="p">[</span><span class="n">optional</span> <span class="n">position</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The optional position is a set of 4 numbers for <code class="docutils literal notranslate"><span class="pre">x_begin</span></code>, <code class="docutils literal notranslate"><span class="pre">y_begin`,</span> <span class="pre">``x_end</span></code> and <code class="docutils literal notranslate"><span class="pre">y_end</span></code></p>
+</div>
+<div class="section" id="raw-html">
+<h3><a class="toc-backref" href="#id58">1.10.7&nbsp;&nbsp;&nbsp;Raw HTML</a><a class="headerlink" href="#raw-html" title="Permalink to this headline">¶</a></h3>
+<p>If you have a document that contains raw HTML, and have <code class="docutils literal notranslate"><span class="pre">xhtml2pdf</span></code> installed,
+<code class="docutils literal notranslate"><span class="pre">rst2pdf</span></code> will try to render that HTML inside your document. To enable this,
+use the <code class="docutils literal notranslate"><span class="pre">--raw-html</span></code> command line option.</p>
+</div>
+</div>
+<div class="section" id="the-counter-role">
+<h2><a class="toc-backref" href="#id59">1.11&nbsp;&nbsp;&nbsp;The counter role</a><a class="headerlink" href="#the-counter-role" title="Permalink to this headline">¶</a></h2>
+<p>This is a nonstandard interpreted text role, which means it will only work with rst2pdf. It implements an unlimited number of counters you can use in your text.
+For example, you could use it to have numbered figures, or numbered tables.</p>
+<p>The syntax is this:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Start a counter called seq1 that starts from 1: <span class="na">:counter:</span><span class="nv">`seq1`</span>
+Now this should print 2: <span class="na">:counter:</span><span class="nv">`seq1`</span>
+
+You can start counters from any number (this prints 12): <span class="na">:counter:</span><span class="nv">`seq2:12`</span>
+
+And have any number of counters with any name: <span class="na">:counter:</span><span class="nv">`figures`</span>
+
+So <span class="s">``#seq1-2``</span> should link to <span class="s">`the number 2 above </span><span class="si">&lt;#seq1-2&gt;</span><span class="s">`_</span>
+</pre></div>
+</div>
+<p>The output is:</p>
+<p>Start a counter called seq1 that starts from 1: <a href="#id3"><span class="problematic" id="id4">:counter:`seq1`</span></a>
+Now this should print 2: <a href="#id5"><span class="problematic" id="id6">:counter:`seq1`</span></a></p>
+<p>You can start counters from any number (this prints 12): <a href="#id7"><span class="problematic" id="id8">:counter:`seq2:12`</span></a></p>
+<p>And have any number of counters with any name: <a href="#id9"><span class="problematic" id="id10">:counter:`figures`</span></a></p>
+<p>Also, the counters create targets for links with this scheme: #countername-number.</p>
+<p>So <code class="docutils literal notranslate"><span class="pre">#seq1-2</span></code> should link to <a class="reference external" href="#seq1-2">the number 2 above</a></p>
+</div>
+<div class="section" id="the-oddeven-directive">
+<h2><a class="toc-backref" href="#id60">1.12&nbsp;&nbsp;&nbsp;The oddeven directive</a><a class="headerlink" href="#the-oddeven-directive" title="Permalink to this headline">¶</a></h2>
+<p>This is a nonstandard directive, which means it will only work with rst2pdf, and not with rst2html or any other docutils tool.</p>
+<p>The contents of oddeven should consist of <strong>exactly</strong> two things (in this case, two paragraphs). The first will be used on odd pages, and the second one on even pages.</p>
+<p>If you want to use more complex content, you should wrap it with containers, like in this example:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">oddeven</span><span class="p">::</span>
+
+<span class="p">    ..</span> <span class="ow">container</span><span class="p">::</span>
+
+        This will appear on odd pages.
+
+        Both paragraphs in the container are for odd pages.
+
+    This will appear on even pages. It&#39;s a single paragraph, so no need for containers.
+</pre></div>
+</div>
+<p>This directive has several limitations.</p>
+<ul class="simple">
+<li>I intentionally have disabled splitting into pages for this, because I have
+no idea how that could make sense. That means that if its content is larger
+than a frame, you <strong>will</strong> make rst2pdf barf with one of those ugly errors.</li>
+<li>It will reserve the space of the larger of the two sets of contents. So if
+one is small and the other large, it <strong>will</strong> look wrong. I may be able to
+fix this though.</li>
+<li>If you try to generate HTML (or anything other than a PDF via rst2pdf) from a file
+containing this, it will not do what you want.</li>
+</ul>
+</div>
+<div class="section" id="mathematics">
+<h2><a class="toc-backref" href="#id61">1.13&nbsp;&nbsp;&nbsp;Mathematics</a><a class="headerlink" href="#mathematics" title="Permalink to this headline">¶</a></h2>
+<p>If you have <a class="reference external" href="http://matplotlib.sf.net">Matplotlib</a> installed, rst2pdf supports a math role and a math directive. You can use
+them to insert formulae and mathematical notation in your documents using a subset of LaTeX
+syntax, but doesn’t require you have LaTeX installed.</p>
+<p>For example, here’s how you use the math directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">math</span><span class="p">::</span>
+
+   \<span class="n">frac</span><span class="p">{</span><span class="mi">2</span> \<span class="n">pm</span> \<span class="n">sqrt</span><span class="p">{</span><span class="mi">7</span><span class="p">}}{</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>And here’s the result:</p>
+<div class="math notranslate nohighlight">
+\[\frac{2 \pm \sqrt{7}}{3}\]</div>
+<p>If you want to insert mathematical notation in your text like this: <span class="math notranslate nohighlight">\(\pi\)</span> that is the job
+of the math <em>role</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is :math:`\pi`
+</pre></div>
+</div>
+<p>Produces: This is <span class="math notranslate nohighlight">\(\pi\)</span></p>
+<p>Currently, the math role is slightly buggy, and in some cases will produce misaligned and
+generally broken output. Also, while the math directive embeds fonts and draws your formula
+as text, the math role embeds an image. That means:</p>
+<ul class="simple">
+<li>You can’t copy the text of inline math</li>
+<li>Inline math will look worse when printed, or make your file larger.</li>
+</ul>
+<p>So, use it only in emergencies ;-)</p>
+<p>You can also use an inline substitution of the math directive for things you use often,
+which is the same as using the math role:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">square</span> <span class="n">of</span> <span class="n">x</span><span class="p">:</span> <span class="o">|</span><span class="n">xsq</span><span class="o">|</span>
+
+<span class="o">..</span> <span class="o">|</span><span class="n">xsq</span><span class="o">|</span> <span class="n">math</span><span class="p">::</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>This is the square of x: <a href="#id16"><span class="problematic" id="id17">|xsq|</span></a></p>
+<div class="math notranslate nohighlight">
+\[x^2\]</div>
+<p>You don’t need to worry about fonts, the correct math fonts will be used and embedded in
+your PDF automatically (they are included with matplotlib).</p>
+<p>For an introduction to LaTeX syntax, see the “Typesetting Mathematical Formulae” chapter
+in “The Not So Short Introduction to LaTeX 2e”:</p>
+<p><a class="reference external" href="http://www.tex.ac.uk/tex-archive/info/lshort/english/lshort.pdf">http://www.tex.ac.uk/tex-archive/info/lshort/english/lshort.pdf</a></p>
+<p>Basically, the inline form <code class="docutils literal notranslate"><span class="pre">$a^2$</span></code> is similar to the math role, and the display form
+is similar to the math directive.</p>
+<p>Rst2pdf doesn’t support numbering equations yet.</p>
+<p>The math directive supports the following options:</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">:fontsize:</span></code></dt>
+<dd>Sets the font size used in the math directive. By default it will use the paragraph’s
+font and size.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">:color:</span></code></dt>
+<dd>Can change the color of the math directive’s output. Can take either a color by name
+like <code class="docutils literal notranslate"><span class="pre">red</span></code> or a hex code like <code class="docutils literal notranslate"><span class="pre">#4c050f</span></code></dd>
+</dl>
+</div>
+<div class="section" id="hyphenation">
+<h2><a class="toc-backref" href="#id62">1.14&nbsp;&nbsp;&nbsp;Hyphenation</a><a class="headerlink" href="#hyphenation" title="Permalink to this headline">¶</a></h2>
+<p>If you want good looking documents, you want to enable hyphenation.</p>
+<p>To do it, you need to install Wordaxe <a class="footnote-reference" href="#id12" id="id11">[2]</a>.</p>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[2]</a></td><td>You can get Wordaxe from <a class="reference external" href="http://deco-cow.sf.net">http://deco-cow.sf.net</a>. Version 1.0.0 or later is
+recommended.</td></tr>
+</tbody>
+</table>
+<p>If after installing it you get the letter “s” or a black square instead of a hyphen,
+that means you need to replace the rl_codecs.py file from reportlab with the one from
+wordaxe.</p>
+<p>For more information, see <a class="reference external" href="http://code.google.com/p/rst2pdf/issues/detail?id=5">this issue</a> in rst2pdf’s bug tracker.</p>
+<p>Also, you may need to set hyphenation to true in one or more styles, and the language
+for hyphenation via the command line or paragraph styles.</p>
+<p>For english, this should be enough:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;bodytext&quot;</span> <span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;justify&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;hyphenation&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}],</span>
+</pre></div>
+</div>
+<p>If you are not an english speaker, you need to change the language using
+the -l or –language option.</p>
+<p>Since Wordaxe version 0.2.6, it can use the PyHyphen library if it’s
+available. PyHyphen can use any OpenOffice dictionary, and can even download
+them automatically. <a class="footnote-reference" href="#id14" id="id13">[3]</a></p>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id13">[3]</a></td><td>For more information, please check the PyHyphen website at <a class="reference external" href="http://pyhyphen.googlecode.com">http://pyhyphen.googlecode.com</a></td></tr>
+</tbody>
+</table>
+<p>For example, this will enable german hyphenation globally:</p>
+<blockquote>
+<div>rst2pdf -l de_DE mydocument.txt</div></blockquote>
+<p>If you are creating a multilingual document, you can declare styles with specific languages.
+For example, you could inherit bodytext for Spanish:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;bodytext_es&quot;</span> <span class="p">,</span> <span class="p">{</span>
+  <span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;bodytext&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;alignment&quot;</span><span class="p">:</span> <span class="s2">&quot;justify&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;hyphenation&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;es_ES&quot;</span>
+<span class="p">}],</span>
+</pre></div>
+</div>
+<p>And all paragraphs declared of bodytext_es style would have Spanish hyphenation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">bodytext_es</span>
+
+<span class="n">Debo</span> <span class="n">a</span> <span class="n">la</span> <span class="n">conjunción</span> <span class="n">de</span> <span class="n">un</span> <span class="n">espejo</span> <span class="n">y</span> <span class="n">de</span> <span class="n">una</span> <span class="n">enciclopedia</span> <span class="n">el</span> <span class="n">descubrimiento</span> <span class="n">de</span> <span class="n">Uqbar</span><span class="o">.</span>
+<span class="n">El</span> <span class="n">espejo</span> <span class="n">inquietaba</span> <span class="n">el</span> <span class="n">fondo</span> <span class="n">de</span> <span class="n">un</span> <span class="n">corredor</span> <span class="n">en</span> <span class="n">una</span> <span class="n">quinta</span> <span class="n">de</span> <span class="n">la</span> <span class="n">calle</span> <span class="n">Gaona</span><span class="p">,</span>
+<span class="n">en</span> <span class="n">Ramos</span> <span class="n">Mejía</span><span class="p">;</span> <span class="n">la</span> <span class="n">enciclopedia</span> <span class="n">falazmente</span> <span class="n">se</span> <span class="n">llama</span> <span class="o">*</span><span class="n">The</span> <span class="n">Anglo</span><span class="o">-</span><span class="n">American</span> <span class="n">Cyclopaedía</span><span class="o">*</span>
+<span class="p">(</span><span class="n">New</span> <span class="n">York</span><span class="p">,</span> <span class="mi">1917</span><span class="p">)</span> <span class="n">y</span> <span class="n">es</span> <span class="n">una</span> <span class="n">reimpresión</span> <span class="n">literal</span><span class="p">,</span> <span class="n">pero</span> <span class="n">también</span> <span class="n">morosa</span><span class="p">,</span> <span class="n">de</span> <span class="n">la</span>
+<span class="o">*</span><span class="n">Encyclopaedia</span> <span class="n">Britannica</span><span class="o">*</span> <span class="n">de</span> <span class="mf">1902.</span>
+</pre></div>
+</div>
+<p>Here is the result (made thinner to force hyphenation):</p>
+<dl class="class">
+<dt id="thin">
+<em class="property">class </em><code class="descname">thin</code><a class="headerlink" href="#thin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Debo a la conjunción de un espejo y de una enciclopedia el descubrimiento de Uqbar.
+El espejo inquietaba el fondo de un corredor en una quinta de la calle Gaona,
+en Ramos Mejía; la enciclopedia falazmente se llama <em>The Anglo-American Cyclopaedía</em>
+(New York, 1917) y es una reimpresión literal, pero también morosa, de la
+<em>Encyclopaedia Britannica</em> de 1902.</p>
+<p>BTW: That’s the beginning of “Tlön, Uqbar, Orbis Tertius”, read it, it’s cool.</p>
+<p>If you explicitly configure a language in a paragraph style and also pass a
+language in the command line, the style has priority, so remember:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>If you configure the bodytext style to have a language, your document
+is supposed to be in that language, regardless of what the command line
+says.</p>
+<p class="last">If this is too confusing, let me know, I will try to figure out a simpler
+way.</p>
+</div>
+</div>
+<div class="section" id="page-layout">
+<h2><a class="toc-backref" href="#id63">1.15&nbsp;&nbsp;&nbsp;Page Layout</a><a class="headerlink" href="#page-layout" title="Permalink to this headline">¶</a></h2>
+<p>By default, your document will have a single column of text covering the space
+between the margins. You can change that, though, in fact you can do so even in
+the middle of your document!</p>
+<p id="page-templates">To do it, you need to define <em>Page Templates</em> in your stylesheet. The default
+stylesheet already has 3 of them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;pageTemplates&quot;</span> <span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;coverPage&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;frames&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">[</span><span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">]</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;showHeader&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;showFooter&quot;</span> <span class="p">:</span> <span class="n">false</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;oneColumn&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;frames&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">[</span><span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">]</span>
+      <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;twoColumn&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;frames&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">[</span><span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;49%&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">],</span>
+          <span class="p">[</span><span class="s2">&quot;51%&quot;</span><span class="p">,</span> <span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;49%&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">]</span>
+      <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A page template has a name (oneColumn, twoColumn), some options, and a list of frames.
+A frame is a list containing this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">left</span> <span class="n">position</span><span class="p">,</span> <span class="n">bottom</span> <span class="n">position</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>For example, this defines a frame “at the very left”, “at the very bottom”, “a bit less than half
+a page wide” and “as tall as possible”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;49%&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And this means “the top third of the page”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;0cm&quot;</span><span class="p">,</span> <span class="s2">&quot;66.66%&quot;</span><span class="p">,</span> <span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="s2">&quot;33.34%&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can use all the usual units, cm, mm, inch, and % which means “percentage of
+the page (excluding margins and headers or footers)”. Using % is probably the smartest
+for columns and gives you a fluid layout, while the other units are better for more
+“fixed” elements.</p>
+<p>Since we can have more than one template, there is a way to specify which one we want
+to use, and a way to change from one to another.</p>
+<p>To specify the first template, do it in your stylesheet, in pageSetup (oneColumn is
+the default):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;pageSetup&quot;</span> <span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;firstTemplate&quot;</span><span class="p">:</span> <span class="s2">&quot;oneColumn&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then, to change to another template, in your document use this syntax (will change soon,
+though):</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">raw</span><span class="p">::</span> pdf
+
+   PageBreak twoColumn
+</pre></div>
+</div>
+<p>That will trigger a page break, and the new page will use the twoColumn template.</p>
+<p>You can see an example of this in the <em>Montecristo</em> folder in the source package.</p>
+<p>The supported page template options and their defaults are:</p>
+<ul>
+<li><p class="first">showHeader : True</p>
+</li>
+<li><p class="first">defaultHeader : None</p>
+<p>Has the same effect as the header directive in the document.</p>
+</li>
+<li><p class="first">showFooter : True</p>
+</li>
+<li><p class="first">defaultFooter : None</p>
+<p>Has the same effect as the footer directive in the document.</p>
+</li>
+<li><p class="first">background: None</p>
+<p>The background should be an image, which will be centered in your page or
+stretched to match your page size, depending on the <code class="docutils literal notranslate"><span class="pre">--fit-background-mode</span></code>
+option, so use with caution.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="smart-quotes">
+<h2><a class="toc-backref" href="#id64">1.16&nbsp;&nbsp;&nbsp;Smart Quotes</a><a class="headerlink" href="#smart-quotes" title="Permalink to this headline">¶</a></h2>
+<p>Quoted from the <a class="reference external" href="http://web.chad.org/projects/smartypants.py/">smartypants</a> documentation:</p>
+<blockquote>
+<div><p>This feature can perform the following transformations:</p>
+<p>Straight quotes ( ” and ‘ ) into “curly” quote HTML entities
+Backticks-style quotes (``like this’‘) into “curly” quote HTML entities
+Dashes (– and —) into en- and em-dash entities
+Three consecutive dots (… or …) into an ellipsis entity
+This means you can write, edit, and save your posts using plain old ASCII straight
+quotes, plain dashes, and plain dots, but your published posts (and final PDF
+output) will appear with smart quotes, em-dashes, and proper ellipses.</p>
+</div></blockquote>
+<p>You can enable this by passing the <code class="docutils literal notranslate"><span class="pre">--smart-quotes</span></code> option in the command line.
+By default, it’s disabled.
+Here are the different values you can use (again, from the smartypants docs):</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>0</dt>
+<dd>Suppress all transformations. (Do nothing.)</dd>
+<dt>1</dt>
+<dd>Performs default SmartyPants transformations: quotes
+(including ``backticks’’ -style), em-dashes, and ellipses.
+“–” (dash dash) is used to signify an em-dash; there is no
+support for en-dashes.</dd>
+<dt>2</dt>
+<dd>Same as smarty_pants=”1”, except that it uses the old-school
+typewriter shorthand for dashes: “–” (dash dash) for en-dashes,
+“—” (dash dash dash) for em-dashes.</dd>
+<dt>3</dt>
+<dd>Same as smarty_pants=”2”, but inverts the shorthand for dashes:
+“–” (dash dash) for em-dashes, and “—” (dash dash dash)
+for en-dashes.</dd>
+</dl>
+</div></blockquote>
+<p>Currently, even if you enable it, this transformation will only take place in
+regular paragraphs, titles, headers, footers and block quotes.</p>
+</div>
+<div class="section" id="kerning">
+<h2><a class="toc-backref" href="#id65">1.17&nbsp;&nbsp;&nbsp;Kerning</a><a class="headerlink" href="#kerning" title="Permalink to this headline">¶</a></h2>
+<p>Kerning is the process of adjusting letter spacing. It is usually accepted that
+kerning makes your text look better.</p>
+<p>For example, if you are using proper kerning, the As and Ws in AWAWA will overlap
+slightly.</p>
+<p>If you want kerning in your PDFs, you need to do the following:</p>
+<ul class="simple">
+<li>Use wordaxe at least 1.0.0</li>
+<li>Use a TrueType font</li>
+<li>Set kerning to true in your style. For example, if you want <strong>all</strong>
+text to be kerned, you can set it in the “base” style.</li>
+</ul>
+<p>For convenience, a stylesheet that uses DejaVu fonts with kerning is provided
+as kerning.json, so you can copy and adapt to your needs, or just use it
+with the <code class="docutils literal notranslate"><span class="pre">-s</span></code> option.</p>
+</div>
+<div class="section" id="sphinx">
+<h2><a class="toc-backref" href="#id66">1.18&nbsp;&nbsp;&nbsp;Sphinx</a><a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://sphinx.pocoo.org">Sphinx</a> is a very popular tool. This is the description from its website:</p>
+<blockquote>
+<div><p>Sphinx is a tool that makes it easy to create intelligent and beautiful documentation,
+written by Georg Brandl and licensed under the BSD license.</p>
+<p>It was originally created to translate the new Python documentation, and it
+has excellent support for the documentation of Python projects, but other
+documents can be written with it too.</p>
+</div></blockquote>
+<p>Rst2pdf includes an experimental PDF extension for sphinx.</p>
+<p>To use it in your existing sphinx project you need to do the following:</p>
+<ol class="arabic">
+<li><p class="first">Add rst2pdf.pdfbuilder in your conf.py’s extensions. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span><span class="s1">&#39;rst2pdf.pdfbuilder&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the PDF options at the end of conf.py, adapted to your project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- Options for PDF output --------------------------------------------------</span>
+
+<span class="c1"># Grouping the document tree into PDF files. List of tuples</span>
+<span class="c1"># (source start file, target name, title, author, options).</span>
+<span class="c1">#</span>
+<span class="c1"># If there is more than one author, separate them with \\.</span>
+<span class="c1"># For example: r&#39;Guido van Rossum\\Fred L. Drake, Jr., editor&#39;</span>
+<span class="c1">#</span>
+<span class="c1"># The options element is a dictionary that lets you override</span>
+<span class="c1"># this config per-document.</span>
+<span class="c1"># For example,</span>
+<span class="c1"># (&#39;index&#39;, u&#39;MyProject&#39;, u&#39;My Project&#39;, u&#39;Author Name&#39;,</span>
+<span class="c1">#  dict(pdf_compressed = True))</span>
+<span class="c1"># would mean that specific document would be compressed</span>
+<span class="c1"># regardless of the global pdf_compressed setting.</span>
+
+<span class="n">pdf_documents</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;MyProject&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;My Project&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Author Name&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># A comma-separated list of custom stylesheets. Example:</span>
+<span class="n">pdf_stylesheets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx&#39;</span><span class="p">,</span><span class="s1">&#39;kerning&#39;</span><span class="p">,</span><span class="s1">&#39;a4&#39;</span><span class="p">]</span>
+
+<span class="c1"># A list of folders to search for stylesheets. Example:</span>
+<span class="n">pdf_style_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;_styles&#39;</span><span class="p">]</span>
+
+<span class="c1"># Create a compressed PDF</span>
+<span class="c1"># Use True/False or 1/0</span>
+<span class="c1"># Example: compressed=True</span>
+<span class="c1">#pdf_compressed = False</span>
+
+<span class="c1"># A colon-separated list of folders to search for fonts. Example:</span>
+<span class="c1"># pdf_font_path = [&#39;/usr/share/fonts&#39;, &#39;/usr/share/texmf-dist/fonts/&#39;]</span>
+
+<span class="c1"># Language to be used for hyphenation support</span>
+<span class="c1">#pdf_language = &quot;en_US&quot;</span>
+
+<span class="c1"># Mode for literal blocks wider than the frame. Can be</span>
+<span class="c1"># overflow, shrink or truncate</span>
+<span class="c1">#pdf_fit_mode = &quot;shrink&quot;</span>
+
+<span class="c1"># Section level that forces a break page.</span>
+<span class="c1"># For example: 1 means top-level sections start in a new page</span>
+<span class="c1"># 0 means disabled</span>
+<span class="c1">#pdf_break_level = 0</span>
+
+<span class="c1"># When a section starts in a new page, force it to be &#39;even&#39;, &#39;odd&#39;,</span>
+<span class="c1"># or just use &#39;any&#39;</span>
+<span class="c1">#pdf_breakside = &#39;any&#39;</span>
+
+<span class="c1"># Insert footnotes where they are defined instead of</span>
+<span class="c1"># at the end.</span>
+<span class="c1">#pdf_inline_footnotes = True</span>
+
+<span class="c1"># verbosity level. 0 1 or 2</span>
+<span class="c1">#pdf_verbosity = 0</span>
+
+<span class="c1"># If false, no index is generated.</span>
+<span class="c1">#pdf_use_index = True</span>
+
+<span class="c1"># If false, no modindex is generated.</span>
+<span class="c1">#pdf_use_modindex = True</span>
+
+<span class="c1"># If false, no coverpage is generated.</span>
+<span class="c1">#pdf_use_coverpage = True</span>
+
+<span class="c1"># Name of the cover page template to use</span>
+<span class="c1">#pdf_cover_template = &#39;sphinxcover.tmpl&#39;</span>
+
+<span class="c1"># Documents to append as an appendix to all manuals.</span>
+<span class="c1">#pdf_appendices = []</span>
+
+<span class="c1"># Enable experimental feature to split table cells. Use it</span>
+<span class="c1"># if you get &quot;DelayedTable too big&quot; errors</span>
+<span class="c1">#pdf_splittables = False</span>
+
+<span class="c1"># Set the default DPI for images</span>
+<span class="c1">#pdf_default_dpi = 72</span>
+
+<span class="c1"># Enable rst2pdf extension modules (default is only vectorpdf)</span>
+<span class="c1"># you need vectorpdf if you want to use sphinx&#39;s graphviz support</span>
+<span class="c1">#pdf_extensions = [&#39;vectorpdf&#39;]</span>
+
+<span class="c1"># Page template name for &quot;regular&quot; pages</span>
+<span class="c1">#pdf_page_template = &#39;cutePage&#39;</span>
+
+<span class="c1"># Show Table Of Contents at the beginning?</span>
+<span class="c1">#pdf_use_toc = True</span>
+
+<span class="c1"># How many levels deep should the table of contents be?</span>
+<span class="n">pdf_toc_depth</span> <span class="o">=</span> <span class="mi">9999</span>
+
+<span class="c1"># Add section number to section references</span>
+<span class="n">pdf_use_numbered_links</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Background images fitting mode</span>
+<span class="n">pdf_fit_background_mode</span> <span class="o">=</span> <span class="s1">&#39;scale&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">(Maybe) add this in your Makefile (on unix-like systems):</p>
+<blockquote>
+<div><div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">pdf</span><span class="o">:</span>
+    <span class="k">$(</span>SPHINXBUILD<span class="k">)</span> -b pdf <span class="k">$(</span>ALLSPHINXOPTS<span class="k">)</span> _build/pdf
+    @echo
+    @echo <span class="s2">&quot;Build finished. The PDF files are in _build/pdf.&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">(Maybe) add this to your make.bat (on windows):</p>
+<blockquote>
+<div><div class="highlight-bat notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;</span><span class="nv">%1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;pdf&quot;</span> <span class="p">(</span>
+    <span class="nv">%SPHINXBUILD%</span> -b pdf <span class="nv">%ALLSPHINXOPTS%</span> <span class="nv">%BUILDDIR%</span>/pdf
+    <span class="k">echo</span>.
+    <span class="k">echo</span>.Build finished. The PDF files are in <span class="nv">%BUILDDIR%</span>/pdf
+    <span class="k">goto</span> <span class="nl">end</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Then you can run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">pdf</span></code> or <code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">-b</span> <span class="pre">pdf</span> <span class="pre">...</span></code> similar
+to how you did it before.</p>
+</div>
+<div class="section" id="extensions">
+<h2><a class="toc-backref" href="#id67">1.19&nbsp;&nbsp;&nbsp;Extensions</a><a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h2>
+<p>Rst2pdf can get new features from <em>extensions</em>. Extensions are python modules that can be enabled with the -e option.</p>
+<p>Several are included with rst2pdf.</p>
+<div class="section" id="preprocess-e-preprocess">
+<h3><a class="toc-backref" href="#id68">1.19.1&nbsp;&nbsp;&nbsp;Preprocess (<code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">preprocess</span></code>)</a><a class="headerlink" href="#preprocess-e-preprocess" title="Permalink to this headline">¶</a></h3>
+<p>preprocess is a rst2pdf extension module (invoked by -e preprocess
+on the rst2pdf command line.</p>
+<p>There is a testcase for this file at rst2pdf/tests/test_preprocess.txt</p>
+<p>This preprocesses the source text file before handing it to docutils.</p>
+<p>This module serves two purposes:</p>
+<ol class="arabic simple">
+<li>It demonstrates the technique and can be a starting point for similar
+user-written processing modules; and</li>
+<li>It provides a simplified syntax for documents which are targeted only
+at rst2pdf, rather than docutils in general.</li>
+</ol>
+<p>The design goal of “base rst2pdf” is to be completely compatible with
+docutils, such that a file which works as a PDF can also work as HTML,
+etc.</p>
+<p>Unfortunately, base docutils is a slow-moving target, and does not
+make this easy.  For example, SVG images do not work properly with
+the HTML backend unless you install a patch, and docutils has no
+concept of page breaks or additional vertical space (other than
+the &lt;hr&gt;).</p>
+<p>So, while it would be nice to have documents that render perfectly
+with any backend, this goal is hard to achieve for some documents,
+and once you are restricted to a particular transformation type,
+then you might as well have a slightly nicer syntax for your source
+document.</p>
+<hr class="docutils" />
+<p>Preprocessor extensions:</p>
+<p>All current extensions except style occupy a single line in the
+source file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">include::</span></code></p>
+<blockquote>
+<div>Processes the include file as well.  An include file may
+either be a restructured text file, OR may be an RSON or
+JSON stylesheet.  The determination is made by trying to
+parse it as RSON.  If it passes, it is a stylesheet; if not,
+well, we’ll let the docutils parser have its way with it.</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">page::</span></code></p>
+<blockquote>
+<div>Is translated into a raw PageBreak.</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">space::</span></code></p>
+<blockquote>
+<div>Is translated into a raw Spacer.  If only one number given, is
+used for vertical space.  This is the canonical use case, since
+horizontal space is ignored anyway!</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">style::</span></code></p>
+<blockquote>
+<div>Allows you to create in-line stylesheets.  As with other
+restructured text components, the stylesheet data must
+be indented.  Stylesheets are in RSON or JSON.</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">widths::</span></code></p>
+<blockquote>
+<div>creates a new table style (based on table or the first
+non-numeric token) and creates a class using that style
+specifically for the next table in the document. (Creates
+a .. class::, so you must specify .. widths:: immediately
+before the table it applies to.   Allows you to set the
+widths for the table, using percentages.</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">SingleWordAtLeftColumn</span></code></p>
+<blockquote>
+<div>If a single word at the left column is surrounded by
+blank lines, the singleword style is automatically applied to
+the word.  This is a workaround for the broken interaction
+between docutils subtitles and bibliographic metadata.  (I
+found that docutils was referencing my subtitles from inside
+the TOC, and that seemed silly.  Perhaps there is a better
+workaround at a lower level in rst2pdf.)</div></blockquote>
+<hr class="docutils" />
+<p>Preprocessor operation:</p>
+<p>The preprocessor generates a file that has the same name as the source
+file, with .build_temp. embedded in the name, and then passes that
+file to the restructured text parser.</p>
+<p>This file is left on the disk after operation, because any error
+messages from docutils will refer to line numbers in it, rather than
+in the original source, so debugging could be difficult if the
+file were automatically removed.</p>
+</div>
+<div class="section" id="inkscape-e-inkscape">
+<h3><a class="toc-backref" href="#id69">1.19.2&nbsp;&nbsp;&nbsp;Inkscape (<code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">inkscape</span></code>)</a><a class="headerlink" href="#inkscape-e-inkscape" title="Permalink to this headline">¶</a></h3>
+<p>inkscape.py is an rst2pdf extension (e.g. rst2pdf -e inkscape xxx xxxx)
+which uses the inkscape program to convert an svg to a PDF, then uses
+the vectorpdf code to process the PDF.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The initial version is a proof of concept; uses subprocess in a naive way,
+and doesn’t check return from inkscape for errors.</p>
+</div>
+</div>
+<div class="section" id="dotted-toc-e-dotted-toc">
+<h3><a class="toc-backref" href="#id70">1.19.3&nbsp;&nbsp;&nbsp;Dotted_TOC (<code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">dotted_toc</span></code>)</a><a class="headerlink" href="#dotted-toc-e-dotted-toc" title="Permalink to this headline">¶</a></h3>
+<p>All I did was take the wrap() method from the stock reportlab TOC generator,
+and make the minimal changes to make it work on MY documents in rst2pdf.</p>
+<div class="section" id="history">
+<h4><a class="toc-backref" href="#id71">1.19.3.1&nbsp;&nbsp;&nbsp;History:</a><a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h4>
+<p>The reportlab TOC generator adds nice dots between the text and the page number.
+The rst2pdf one does not.</p>
+<p>A closer examination reveals that the rst2pdf one probably deliberately stripped
+this code, because the reportlab implementation only allowed a single TOC, and
+this is unacceptable for at least some rst2pdf users.</p>
+<p>There are other differences in the rst2pdf one I don’t understand.  This module
+is a hack to add back dots between the lines. Maybe at some point we can figure
+out if this is right, or how to support dots in the TOC in the main code.</p>
+<p>Mind you, the original RL implementation is a complete hack in any case:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>It uses a callback to a nested function which doesn’t even bother to</dt>
+<dd>assume the original enclosing scope is available at callback time.
+This leads it to do crazy things like eval()</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>It uses a single name in the canvas for the callback function</dt>
+<dd>(this is what kills multiple TOC capability) when it would be
+extremely easy to generate a unique name.</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="developers">
+<h2><a class="toc-backref" href="#id72">1.20&nbsp;&nbsp;&nbsp;Developers</a><a class="headerlink" href="#developers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="guidelines">
+<h3><a class="toc-backref" href="#id73">1.20.1&nbsp;&nbsp;&nbsp;Guidelines</a><a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h3>
+<p>In rst2pdf we want many things. We want ponies and icecream. But most of all, we want
+rst2pdf to kick ass. The best way to achieve that is making rst2pdf work right.
+The best way to do <em>that</em> is through testing and documenting.</p>
+<p>So, if you want to do something inside rst2pdf, you are welcome, but…</p>
+<ul>
+<li><p class="first">Create an Issue for the task. That’s easy, just go to
+<a class="reference external" href="https://github.com/rst2pdf/rst2pdf/issues">https://github.com/rst2pdf/rst2pdf/issues</a> and do it.</p>
+</li>
+<li><p class="first">If you intend to fix a bug:</p>
+<ul>
+<li><p class="first">Create a <strong>minimal</strong> test case that shows the bug.</p>
+</li>
+<li><p class="first">Put it inside <code class="docutils literal notranslate"><span class="pre">rst2pdf/tests/input</span></code> like the others:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">mytest.txt</span></code> is the test itself</li>
+<li><code class="docutils literal notranslate"><span class="pre">mytest.cli</span></code> is any needed command line arguments (if needed)</li>
+<li><code class="docutils literal notranslate"><span class="pre">mytest.style</span></code> is a custom stylesheet (if needed)</li>
+</ul>
+</li>
+<li><p class="first">Run the test suite on it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span>
+<span class="o">./</span><span class="n">autotest</span><span class="o">.</span><span class="n">py</span> <span class="nb">input</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Check the output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">less</span> <span class="n">output</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">log</span>
+<span class="n">acroread</span> <span class="n">output</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">If it’s really a bug, mark the test as <em>bad</em> and save everything in git:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setmd5</span> <span class="n">bad</span> <span class="nb">input</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">issue</span><span class="o">-</span><span class="n">X</span>
+<span class="n">git</span> <span class="n">add</span> <span class="nb">input</span><span class="o">/</span><span class="n">mytest</span><span class="o">.*</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">md5</span><span class="o">/</span><span class="n">mytest</span><span class="o">.</span><span class="n">json</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Test case for Issue X&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">issue</span><span class="o">-</span><span class="n">X</span> <span class="c1"># then open a Pull Request</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">Always, when committing something, check for regressions running the full test suite,
+it takes only a minute or two. Keep in mind that regressions can be trivial!</p>
+<p>For example, if you change the spacing of definition lists, 3 or 4 tests will
+regress.</p>
+</li>
+<li><p class="first">Keep your Issues updated. If you are working on frobnozzing the gargles, then by
+all means post it in the issue. There’s no issue about it? You were meant to
+create one, remember? ;-)</p>
+</li>
+<li><p class="first">If you added a command line option, document it in <code class="docutils literal notranslate"><span class="pre">doc/rst2pdf.txt</span></code>.
+That will make it appear in the manual and in the man page.</p>
+<p>Maybe it should also be available for sphinx users, let me know about it.</p>
+</li>
+<li><p class="first">If you implemented a new feature, please document it in <code class="docutils literal notranslate"><span class="pre">manual.rst</span></code>
+(or in a separate file and add an include in <code class="docutils literal notranslate"><span class="pre">manual.rst</span></code>)</p>
+</li>
+<li><p class="first">If you implement an extension, make the docstring valid restructured text
+and link it to the manual like the others.</p>
+</li>
+</ul>
+<p>Why should you bother with all this?</p>
+<p>It’s important that you do it this way because it means that the rest of us know what you are doing. It also means you don’t break rst2pdf.</p>
+</div>
+<div class="section" id="continuous-integration">
+<h3><a class="toc-backref" href="#id74">1.20.2&nbsp;&nbsp;&nbsp;Continuous Integration</a><a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h3>
+<p>There’s a Travis build - see <a class="reference external" href="https://github.com/rst2pdf/rst2pdf/issues/621">https://github.com/rst2pdf/rst2pdf/issues/621</a> for more information on the current status</p>
+</div>
+<div class="section" id="running-tests">
+<h3><a class="toc-backref" href="#id75">1.20.3&nbsp;&nbsp;&nbsp;Running tests</a><a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h3>
+<p>The rst2pdf test suite generates PDFs, then calculates a checksum (an md5) of the resulting file and checks it against known lists of good and bad md5s. These known outcomes are in <code class="docutils literal notranslate"><span class="pre">rst2pdf/tests/md5/[test_name].json</span></code> (warning, not actually a json file).</p>
+<div class="section" id="first-run">
+<h4><a class="toc-backref" href="#id76">1.20.3.1&nbsp;&nbsp;&nbsp;First run</a><a class="headerlink" href="#first-run" title="Permalink to this headline">¶</a></h4>
+<p>To run the tests for the first time, you will need to do some setup (after this, you can just work on your given virtualenv each time).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="o">--</span><span class="n">python</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python2</span> <span class="n">env</span>
+<span class="o">.</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="n">nose</span> <span class="n">coverage</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span><span class="p">[</span><span class="n">tests</span><span class="p">,</span><span class="n">sphinx</span><span class="p">,</span><span class="n">images</span><span class="p">,</span><span class="n">svgsupport</span><span class="p">,</span><span class="n">aafiguresupport</span><span class="p">,</span><span class="n">mathsupport</span><span class="p">,</span><span class="n">rawhtmlsupport</span><span class="p">]</span>
+<span class="n">nosetests</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">i</span> <span class="n">regulartest</span> <span class="o">-</span><span class="n">i</span> <span class="n">sphinxtest</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="next-runs">
+<h4><a class="toc-backref" href="#id77">1.20.3.2&nbsp;&nbsp;&nbsp;Next runs</a><a class="headerlink" href="#next-runs" title="Permalink to this headline">¶</a></h4>
+<p>While in project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">i</span> <span class="n">regulartest</span> <span class="o">-</span><span class="n">i</span> <span class="n">sphinxtest</span>
+</pre></div>
+</div>
+<p>To stop the tests on the first failure, use the <code class="docutils literal notranslate"><span class="pre">-x</span></code> switch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">i</span> <span class="n">regulartest</span> <span class="o">-</span><span class="n">i</span> <span class="n">sphinxtest</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-autotest-directly">
+<h4><a class="toc-backref" href="#id78">1.20.3.3&nbsp;&nbsp;&nbsp;Using autotest directly</a><a class="headerlink" href="#using-autotest-directly" title="Permalink to this headline">¶</a></h4>
+<p>You can also run the tests using autorun directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span>
+<span class="o">./</span><span class="n">autotest</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">e</span> <span class="o">-</span><span class="n">f</span> <span class="o">&gt;&amp;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<span class="o">./</span><span class="n">parselogs</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;</span> <span class="n">log</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Now look at the output of <code class="docutils literal notranslate"><span class="pre">log.txt</span></code></p>
+</div>
+<div class="section" id="running-a-single-test">
+<h4><a class="toc-backref" href="#id79">1.20.3.4&nbsp;&nbsp;&nbsp;Running a single test</a><a class="headerlink" href="#running-a-single-test" title="Permalink to this headline">¶</a></h4>
+<p>To run one test only, try this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span>
+<span class="o">./</span><span class="n">autotest</span><span class="o">.</span><span class="n">py</span> <span class="nb">input</span><span class="o">/</span><span class="p">[</span><span class="n">test</span><span class="p">]</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This will run one test and show the output.</p>
+</div>
+<div class="section" id="skipping-tests">
+<h4><a class="toc-backref" href="#id80">1.20.3.5&nbsp;&nbsp;&nbsp;Skipping tests</a><a class="headerlink" href="#skipping-tests" title="Permalink to this headline">¶</a></h4>
+<p>To skip a test, simply create a text file in the <code class="docutils literal notranslate"><span class="pre">tests/input</span></code> directory called <code class="docutils literal notranslate"><span class="pre">[test].ignore</span></code> containing a note on why the test is skipped. This will mark the test as skipped when the test suite runs. This could be useful for inherited tests that we aren’t confident of the correct output for, but where we don’t want to delete/lose the test entirely.</p>
+</div>
+<div class="section" id="marking-a-failing-test-as-good">
+<h4><a class="toc-backref" href="#id81">1.20.3.6&nbsp;&nbsp;&nbsp;Marking a failing test as good</a><a class="headerlink" href="#marking-a-failing-test-as-good" title="Permalink to this headline">¶</a></h4>
+<p>Sometimes the local combination of software versions will create the “right” PDF but the binary file will have some minor differences. If your file looks good, then you can store the checksum of it as a valid outcome with a command like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rst2pdf</span><span class="o">/</span><span class="n">tests</span>
+<span class="o">./</span><span class="n">autotest</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="n">good</span> <span class="nb">input</span><span class="o">/</span><span class="p">[</span><span class="n">test</span><span class="p">]</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>You’ll see from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> that you now have a new entry in the related <code class="docutils literal notranslate"><span class="pre">md5/[test].json</span></code> file. Commit this to a new branch and open a pull request explaining what you did.</p>
+</div>
+</div>
+<div class="section" id="getting-commit-rights">
+<h3><a class="toc-backref" href="#id82">1.20.4&nbsp;&nbsp;&nbsp;Getting commit rights</a><a class="headerlink" href="#getting-commit-rights" title="Permalink to this headline">¶</a></h3>
+<p>Just ask in the mailing list.</p>
+</div>
+</div>
+<div class="section" id="licenses">
+<h2><a class="toc-backref" href="#id83">1.21&nbsp;&nbsp;&nbsp;Licenses</a><a class="headerlink" href="#licenses" title="Permalink to this headline">¶</a></h2>
+<p>This is the license for rst2pdf:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2007</span><span class="p">,</span><span class="mi">2008</span><span class="p">,</span><span class="mi">2009</span> <span class="n">Roberto</span> <span class="n">Alsina</span>
+<span class="n">Nicolas</span> <span class="n">Laurance</span><span class="p">,</span> <span class="n">Christoph</span> <span class="n">Zwerschke</span><span class="p">,</span> <span class="n">Yasushi</span> <span class="n">Masuda</span><span class="p">,</span> <span class="n">Josh</span> <span class="n">VanderLinden</span><span class="p">,</span>
+<span class="n">Patrick</span> <span class="n">Maupin</span><span class="o">.</span>
+
+
+<span class="n">Permission</span> <span class="ow">is</span> <span class="n">hereby</span> <span class="n">granted</span><span class="p">,</span> <span class="n">free</span> <span class="n">of</span> <span class="n">charge</span><span class="p">,</span> <span class="n">to</span> <span class="nb">any</span> <span class="n">person</span> <span class="n">obtaining</span> <span class="n">a</span> <span class="n">copy</span>
+<span class="n">of</span> <span class="n">this</span> <span class="n">software</span> <span class="ow">and</span> <span class="n">associated</span> <span class="n">documentation</span> <span class="n">files</span> <span class="p">(</span><span class="n">the</span> <span class="s2">&quot;Software&quot;</span><span class="p">),</span> <span class="n">to</span> <span class="n">deal</span>
+<span class="ow">in</span> <span class="n">the</span> <span class="n">Software</span> <span class="n">without</span> <span class="n">restriction</span><span class="p">,</span> <span class="n">including</span> <span class="n">without</span> <span class="n">limitation</span> <span class="n">the</span> <span class="n">rights</span>
+<span class="n">to</span> <span class="n">use</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">modify</span><span class="p">,</span> <span class="n">merge</span><span class="p">,</span> <span class="n">publish</span><span class="p">,</span> <span class="n">distribute</span><span class="p">,</span> <span class="n">sublicense</span><span class="p">,</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">sell</span>
+<span class="n">copies</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Software</span><span class="p">,</span> <span class="ow">and</span> <span class="n">to</span> <span class="n">permit</span> <span class="n">persons</span> <span class="n">to</span> <span class="n">whom</span> <span class="n">the</span> <span class="n">Software</span> <span class="ow">is</span>
+<span class="n">furnished</span> <span class="n">to</span> <span class="n">do</span> <span class="n">so</span><span class="p">,</span> <span class="n">subject</span> <span class="n">to</span> <span class="n">the</span> <span class="n">following</span> <span class="n">conditions</span><span class="p">:</span>
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">copyright</span> <span class="n">notice</span> <span class="ow">and</span> <span class="n">this</span> <span class="n">permission</span> <span class="n">notice</span> <span class="n">shall</span> <span class="n">be</span> <span class="n">included</span> <span class="ow">in</span>
+<span class="nb">all</span> <span class="n">copies</span> <span class="ow">or</span> <span class="n">substantial</span> <span class="n">portions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Software</span><span class="o">.</span>
+
+<span class="n">THE</span> <span class="n">SOFTWARE</span> <span class="n">IS</span> <span class="n">PROVIDED</span> <span class="s2">&quot;AS IS&quot;</span><span class="p">,</span> <span class="n">WITHOUT</span> <span class="n">WARRANTY</span> <span class="n">OF</span> <span class="n">ANY</span> <span class="n">KIND</span><span class="p">,</span> <span class="n">EXPRESS</span> <span class="n">OR</span>
+<span class="n">IMPLIED</span><span class="p">,</span> <span class="n">INCLUDING</span> <span class="n">BUT</span> <span class="n">NOT</span> <span class="n">LIMITED</span> <span class="n">TO</span> <span class="n">THE</span> <span class="n">WARRANTIES</span> <span class="n">OF</span> <span class="n">MERCHANTABILITY</span><span class="p">,</span>
+<span class="n">FITNESS</span> <span class="n">FOR</span> <span class="n">A</span> <span class="n">PARTICULAR</span> <span class="n">PURPOSE</span> <span class="n">AND</span> <span class="n">NONINFRINGEMENT</span><span class="o">.</span> <span class="n">IN</span> <span class="n">NO</span> <span class="n">EVENT</span> <span class="n">SHALL</span> <span class="n">THE</span>
+<span class="n">AUTHORS</span> <span class="n">OR</span> <span class="n">COPYRIGHT</span> <span class="n">HOLDERS</span> <span class="n">BE</span> <span class="n">LIABLE</span> <span class="n">FOR</span> <span class="n">ANY</span> <span class="n">CLAIM</span><span class="p">,</span> <span class="n">DAMAGES</span> <span class="n">OR</span> <span class="n">OTHER</span>
+<span class="n">LIABILITY</span><span class="p">,</span> <span class="n">WHETHER</span> <span class="n">IN</span> <span class="n">AN</span> <span class="n">ACTION</span> <span class="n">OF</span> <span class="n">CONTRACT</span><span class="p">,</span> <span class="n">TORT</span> <span class="n">OR</span> <span class="n">OTHERWISE</span><span class="p">,</span> <span class="n">ARISING</span> <span class="n">FROM</span><span class="p">,</span>
+<span class="n">OUT</span> <span class="n">OF</span> <span class="n">OR</span> <span class="n">IN</span> <span class="n">CONNECTION</span> <span class="n">WITH</span> <span class="n">THE</span> <span class="n">SOFTWARE</span> <span class="n">OR</span> <span class="n">THE</span> <span class="n">USE</span> <span class="n">OR</span> <span class="n">OTHER</span> <span class="n">DEALINGS</span> <span class="n">IN</span>
+<span class="n">THE</span> <span class="n">SOFTWARE</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Some fragments of rstpdf are copied from ReportLab under the following license:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2000</span><span class="o">-</span><span class="mi">2008</span><span class="p">,</span> <span class="n">ReportLab</span> <span class="n">Inc</span><span class="o">.</span>
+<span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
+
+<span class="n">Redistribution</span> <span class="ow">and</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">binary</span> <span class="n">forms</span><span class="p">,</span> <span class="k">with</span> <span class="ow">or</span> <span class="n">without</span> <span class="n">modification</span><span class="p">,</span>
+<span class="n">are</span> <span class="n">permitted</span> <span class="n">provided</span> <span class="n">that</span> <span class="n">the</span> <span class="n">following</span> <span class="n">conditions</span> <span class="n">are</span> <span class="n">met</span><span class="p">:</span>
+
+        <span class="o">*</span>       <span class="n">Redistributions</span> <span class="n">of</span> <span class="n">source</span> <span class="n">code</span> <span class="n">must</span> <span class="n">retain</span> <span class="n">the</span> <span class="n">above</span> <span class="n">copyright</span> <span class="n">notice</span><span class="p">,</span>
+                <span class="n">this</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">conditions</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">following</span> <span class="n">disclaimer</span><span class="o">.</span>
+        <span class="o">*</span>       <span class="n">Redistributions</span> <span class="ow">in</span> <span class="n">binary</span> <span class="n">form</span> <span class="n">must</span> <span class="n">reproduce</span> <span class="n">the</span> <span class="n">above</span> <span class="n">copyright</span> <span class="n">notice</span><span class="p">,</span>
+                <span class="n">this</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">conditions</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">following</span> <span class="n">disclaimer</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">documentation</span>
+                <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">other</span> <span class="n">materials</span> <span class="n">provided</span> <span class="k">with</span> <span class="n">the</span> <span class="n">distribution</span><span class="o">.</span>
+        <span class="o">*</span>       <span class="n">Neither</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">company</span> <span class="n">nor</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">its</span> <span class="n">contributors</span> <span class="n">may</span> <span class="n">be</span>
+                <span class="n">used</span> <span class="n">to</span> <span class="n">endorse</span> <span class="ow">or</span> <span class="n">promote</span> <span class="n">products</span> <span class="n">derived</span> <span class="kn">from</span> <span class="nn">this</span> <span class="n">software</span> <span class="n">without</span>
+                <span class="n">specific</span> <span class="n">prior</span> <span class="n">written</span> <span class="n">permission</span><span class="o">.</span>
+
+<span class="n">THIS</span> <span class="n">SOFTWARE</span> <span class="n">IS</span> <span class="n">PROVIDED</span> <span class="n">BY</span> <span class="n">THE</span> <span class="n">COPYRIGHT</span> <span class="n">HOLDERS</span> <span class="n">AND</span> <span class="n">CONTRIBUTORS</span> <span class="s2">&quot;AS IS&quot;</span> <span class="n">AND</span>
+<span class="n">ANY</span> <span class="n">EXPRESS</span> <span class="n">OR</span> <span class="n">IMPLIED</span> <span class="n">WARRANTIES</span><span class="p">,</span> <span class="n">INCLUDING</span><span class="p">,</span> <span class="n">BUT</span> <span class="n">NOT</span> <span class="n">LIMITED</span> <span class="n">TO</span><span class="p">,</span> <span class="n">THE</span> <span class="n">IMPLIED</span>
+<span class="n">WARRANTIES</span> <span class="n">OF</span> <span class="n">MERCHANTABILITY</span> <span class="n">AND</span> <span class="n">FITNESS</span> <span class="n">FOR</span> <span class="n">A</span> <span class="n">PARTICULAR</span> <span class="n">PURPOSE</span> <span class="n">ARE</span> <span class="n">DISCLAIMED</span><span class="o">.</span>
+<span class="n">IN</span> <span class="n">NO</span> <span class="n">EVENT</span> <span class="n">SHALL</span> <span class="n">THE</span> <span class="n">OFFICERS</span> <span class="n">OR</span> <span class="n">CONTRIBUTORS</span> <span class="n">BE</span> <span class="n">LIABLE</span> <span class="n">FOR</span> <span class="n">ANY</span> <span class="n">DIRECT</span><span class="p">,</span> <span class="n">INDIRECT</span><span class="p">,</span>
+<span class="n">INCIDENTAL</span><span class="p">,</span> <span class="n">SPECIAL</span><span class="p">,</span> <span class="n">EXEMPLARY</span><span class="p">,</span> <span class="n">OR</span> <span class="n">CONSEQUENTIAL</span> <span class="n">DAMAGES</span> <span class="p">(</span><span class="n">INCLUDING</span><span class="p">,</span> <span class="n">BUT</span> <span class="n">NOT</span> <span class="n">LIMITED</span>
+<span class="n">TO</span><span class="p">,</span> <span class="n">PROCUREMENT</span> <span class="n">OF</span> <span class="n">SUBSTITUTE</span> <span class="n">GOODS</span> <span class="n">OR</span> <span class="n">SERVICES</span><span class="p">;</span> <span class="n">LOSS</span> <span class="n">OF</span> <span class="n">USE</span><span class="p">,</span> <span class="n">DATA</span><span class="p">,</span> <span class="n">OR</span> <span class="n">PROFITS</span><span class="p">;</span>
+<span class="n">OR</span> <span class="n">BUSINESS</span> <span class="n">INTERRUPTION</span><span class="p">)</span> <span class="n">HOWEVER</span> <span class="n">CAUSED</span> <span class="n">AND</span> <span class="n">ON</span> <span class="n">ANY</span> <span class="n">THEORY</span> <span class="n">OF</span> <span class="n">LIABILITY</span><span class="p">,</span> <span class="n">WHETHER</span>
+<span class="n">IN</span> <span class="n">CONTRACT</span><span class="p">,</span> <span class="n">STRICT</span> <span class="n">LIABILITY</span><span class="p">,</span> <span class="n">OR</span> <span class="n">TORT</span> <span class="p">(</span><span class="n">INCLUDING</span> <span class="n">NEGLIGENCE</span> <span class="n">OR</span> <span class="n">OTHERWISE</span><span class="p">)</span> <span class="n">ARISING</span>
+<span class="n">IN</span> <span class="n">ANY</span> <span class="n">WAY</span> <span class="n">OUT</span> <span class="n">OF</span> <span class="n">THE</span> <span class="n">USE</span> <span class="n">OF</span> <span class="n">THIS</span> <span class="n">SOFTWARE</span><span class="p">,</span> <span class="n">EVEN</span> <span class="n">IF</span> <span class="n">ADVISED</span> <span class="n">OF</span> <span class="n">THE</span> <span class="n">POSSIBILITY</span> <span class="n">OF</span>
+<span class="n">SUCH</span> <span class="n">DAMAGE</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, CACS &amp;&amp; Shimojo Lab
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

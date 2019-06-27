@@ -87,6 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="output.html">QXMD Simulation Quick-Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="util.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lic.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
             
@@ -155,243 +156,239 @@
 <p>QXMD is supported as part of the Computational Materials Sciences Program funded by the US Department of Energy, Office of Science, Basic Energy
 Sciences, under Award Number DE-SC0014607.</p>
 <p>This manual is organized into the following sections.</p>
-</div>
-<div class="section" id="user-documentation">
-<h1>User Documentation<a class="headerlink" href="#user-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html#installation">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#download-qxmd">2.1. Download QXMD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#set-working-directory">2.2. Set Working Directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#configure-makefiles">2.3. Configure Makefiles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#precompiler-variables">2.4. Precompiler variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#adding-new-machine-configuration-in-makefile">2.5 Adding New Machine configuration in Makefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#build-qxmd">2.6 Build QXMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#download-qxmd">Download QXMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#set-working-directory">Set Working Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#configure-makefiles">Configure Makefiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#precompiler-variables">Precompiler variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#adding-new-machine-configuration-in-makefile">Adding New Machine configuration in Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#build-qxmd">Build QXMD</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="program.html">Program Structure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="program.html#control-directory">3.1 Control Directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="program.html#data-directory">3.2 Data directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="program.html#qxmd-executable">3.3 QXMD executable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#control-directory">Control Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#data-directory">Data directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="program.html#qxmd-executable">QXMD executable</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="IOf.html">Input/Output files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="IOf.html#input-files">4.1 Input Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#filename">4.1.1 filename</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#config">4.1.2 CONFIG</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#in-param">4.1.3 IN.PARAM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#veloc">4.1.4 VELOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOf.html#input-files">Input Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#filename">filename</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#config">CONFIG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#in-param">IN.PARAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#veloc">VELOC</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="IOf.html#output-files">4.2 Output Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-box-d">4.2.1 md_box.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-cel-d">4.2.2 md_cel.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-eng-d">4.2.3 md_eng.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-log">4.2.4 md_log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-mts0">4.2.5 MD_mts0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#id1">4.2.5 MD_mts0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-spc-d">4.2.6 md_spc.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-str-d">4.2.7 md_str.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-str-diag-d">4.2.8 md_str_diag.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-tocontinue">4.2.9 MD_Tocontinue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-vel-d">4.2.10 md_vel.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-box-d">4.2.11 qm_box.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-cds">4.2.12 QM_cds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-cel-d">4.2.13 qm_cel.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-cell">4.2.14 QM_cell</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-eig">4.2.15 QM_eig</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-eig-d">4.2.16 qm_eig.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-eng-d">4.2.17 qm_eng.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-fer-d">4.2.18 qm_fer.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-frc-d">4.2.19 qm_frc.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-fsshprob-to-u-d">4.2.20 qm_fsshprob_***to***-u.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-hrt">4.2.21 QM_hrt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-ion">4.2.22 QM_ion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-ion-d">4.2.23 qm_ion.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-log">4.2.24 qm_log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-mul-d">4.2.25 qm_mul.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-ovp-d">4.2.26 qm_ovp.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-pcds">4.2.27 QM_pcds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-pds-d">4.2.28 qm_pds.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-peig">4.2.28 QM_peig</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-str-d">4.2.29 qm_str.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-tddftfssh">4.2.30 QM_tddftfssh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-td-eig-d">4.2.31 qm_td_eig.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-zan-d">4.2.32 qm_zan.d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOf.html#output-files">Output Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-box-d">md_box.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-cel-d">md_cel.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-eng-d">md_eng.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-log">md_log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-mts0">MD_mts0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#id1">MD_mts0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-spc-d">md_spc.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-str-d">md_str.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-str-diag-d">md_str_diag.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-tocontinue">MD_Tocontinue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#md-vel-d">md_vel.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-box-d">qm_box.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-cds">QM_cds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-cel-d">qm_cel.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-cell">QM_cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-eig">QM_eig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-eig-d">qm_eig.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-eng-d">qm_eng.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-fer-d">qm_fer.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-frc-d">qm_frc.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-fsshprob-to-u-d">qm_fsshprob_***to***-u.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-hrt">QM_hrt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-ion">QM_ion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-ion-d">qm_ion.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-log">qm_log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-ovp-d">qm_ovp.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-pcds">QM_pcds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-pds-d">qm_pds.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-peig">QM_peig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-str-d">qm_str.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-tddftfssh">QM_tddftfssh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-td-eig-d">qm_td_eig.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOf.html#qm-zan-d">qm_zan.d</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="param.html">Input Parameters: IN.PARAM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="param.html#parallel-section-parallel">5.1 Parallel Section: *parallel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#qm-nodes">5.1.1 (QM-Nodes)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#k-points">5.1.2 (k-points)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#md-nodes">5.1.3 (MD-nodes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#parallel-section-parallel">Parallel Section: *parallel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#qm-nodes">(QM-Nodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#k-points">(k-points)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#md-nodes">(MD-nodes)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#start-on-off-section">5.2 Start(on/off) Section</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#on-off">5.2.1 (On/Off)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#start-on-off-section">Start(on/off) Section</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#on-off">(On/Off)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#tddft-md">5.3 TDDFT-MD</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id7">5.3.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#fssh">5.3.2 (FSSH)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#fssh-switch">5.3.3 (FSSH-switch)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#fssh-ground-state-scf">5.3.4 (FSSH-ground-state-SCF)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#fssh-charge-mixing">5.3.5 (FSSH-charge mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#fssh-random-initialize">5.3.6 (FSSH-random-initialize)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#boltzmann-factor-for-upward-transition">5.3.7 (Boltzmann factor for upward transition)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#velocity-scaling">5.3.8 (velocity scaling)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#time-step">5.3.9 (time step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#parallel-calculation">5.3.10 (parallel calculation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#restart">5.3.11 (restart)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#initial-exciton">5.3.12 (initial exciton)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#ground-state-force">5.3.13 (ground state force)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#nsc-force">5.3.14 (NSC force)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#occupations">5.3.15 (occupations)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#broadening">5.3.16 (broadening)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#dish">5.3.17 (DISH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#tddft-md">TDDFT-MD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id7">(On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#fssh">(FSSH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#fssh-switch">(FSSH-switch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#fssh-ground-state-scf">(FSSH-ground-state-SCF)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#fssh-charge-mixing">(FSSH-charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#fssh-random-initialize">(FSSH-random-initialize)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#boltzmann-factor-for-upward-transition">(Boltzmann factor for upward transition)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#velocity-scaling">(velocity scaling)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#time-step">(time step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#parallel-calculation">(parallel calculation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#restart">(restart)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#initial-exciton">(initial exciton)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#ground-state-force">(ground state force)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#nsc-force">(NSC force)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#occupations">(occupations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#broadening">(broadening)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#dish">(DISH)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#approximation-for-exchange">5.4 Approximation for Exchange</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#approximation">5.4.1 (approximation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#dft-d">5.4.2 (DFT-D)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#approximation-for-exchange">Approximation for Exchange</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#approximation">(approximation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#dft-d">(DFT-D)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#scf-iterations">5.5 SCF iterations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#global-iterations">5.5.1 (global iterations)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#tolerances">5.5.2 (tolerances)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#charge-mixing">5.5.3 (charge mixing)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#number-of-mixing">5.5.4 (number of mixing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#scf-iterations">SCF iterations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#global-iterations">(global iterations)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#tolerances">(tolerances)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#charge-mixing">(charge mixing)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#number-of-mixing">(number of mixing)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#kohn-sham-equation">5.6 Kohn-Sham equation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id17">5.6.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#tolerance">5.6.2 (tolerance)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#threshold-for-w-f-direction">5.6.3 (threshold for w.f. direction)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#iteration">5.6.4 (iteration)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#empty-band-iteration">5.6.5 (empty-band iteration)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#cg-method">5.6.6 (CG method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#kohn-sham-equation">Kohn-Sham equation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id17">(On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#tolerance">(tolerance)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#threshold-for-w-f-direction">(threshold for w.f. direction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#iteration">(iteration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#empty-band-iteration">(empty-band iteration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#cg-method">(CG method)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#molecular-dynamics">5.7 molecular dynamics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id18">5.7.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id23">5.7.2 (time step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#initial-step-number">5.7.3 (initial step number)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#temperature">5.7.4 (temperature)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#check-temperature">5.7.5 (check temperature)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#make-total-momentum-zero">5.7.6 (make total momentum zero)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#optimization">5.7.7 (optimization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#cell-optimization">5.7.8 (cell optimization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#cell-cg-time-step">5.7.9 (cell CG time step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#stabilizer-for-quasi-newton">5.7.10 (stabilizer for quasi-Newton)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#clear-hessian">5.7.11 (clear Hessian)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#clear-cell-hessian">5.7.12 (clear cell Hessian)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#hybrid-optimization">5.7.13 (hybrid optimization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#pressure">5.7.14 (pressure)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#barostat-parameters">5.7.15 (barostat parameters)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#shock-wave-velocity">5.7.16 (shock wave velocity)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#clear-barostat-velocity">5.7.17 (clear barostat velocity)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#initial-barostat-velocity">5.7.18 (initial barostat velocity)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#output-data">5.7.19 (output data)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#charge-estimation">5.7.20 (charge estimation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#wavefunction-estimation">5.7.21 (wavefunction estimation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#aspc-charge-estimation">5.7.22 (tolerance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#molecular-dynamics">molecular dynamics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id18">(On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id23">(time step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#initial-step-number">(initial step number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#temperature">(temperature)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#check-temperature">(check temperature)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#make-total-momentum-zero">(make total momentum zero)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#optimization">(optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#cell-optimization">(cell optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#cell-cg-time-step">(cell CG time step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#stabilizer-for-quasi-newton">(stabilizer for quasi-Newton)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#clear-hessian">(clear Hessian)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#clear-cell-hessian">(clear cell Hessian)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#hybrid-optimization">(hybrid optimization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#pressure">(pressure)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#barostat-parameters">(barostat parameters)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#shock-wave-velocity">(shock wave velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#clear-barostat-velocity">(clear barostat velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#initial-barostat-velocity">(initial barostat velocity)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#output-data">(output data)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#charge-estimation">(charge estimation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#wavefunction-estimation">(wavefunction estimation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#aspc-charge-estimation">(tolerance)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#save-data">5.8 save data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#onoff">5.8.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#data-type">5.8.2 (data type)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#save-data">save data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#onoff">(On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#data-type">(data type)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#stress-calculation-only-for-bulk-calculations">5.9 stress calculation —— only for bulk calculations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id33">5.9.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#skip-step">5.9.2 (skip step)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#stress-calculation-only-for-bulk-calculations">stress calculation —— only for bulk calculations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id33">(On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#skip-step">(skip step)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#dump-charge-density">5.10 dump charge density</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id37">5.10.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id39">5.10.2 (skip step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#output-area">5.10.3 (output area)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#dump-charge-density">dump charge density</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id37">(On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id39">(skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#output-area">(output area)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#dump-wavefunctions">5.11 dump wavefunctions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id43">5.11.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#bands">5.11.2 (bands)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id46">5.11.3 (skip step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id48">5.11.4 (output area)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#dump-wavefunctions">dump wavefunctions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id43">(On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#bands">(bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id46">(skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id48">(output area)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#dump-local-potential">5.12 dump local potential</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id51">5.12.1 (On/Off)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#average-plane">5.12.2 (average plane)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id54">5.12.3 (skip step)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id56">5.12.4 (output area)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#dump-local-potential">dump local potential</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id51">(On/Off)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#average-plane">(average plane)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id54">(skip step)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id56">(output area)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#supercell">5.13 supercell</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#unit-of-length">5.13.1 (unit of length)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#cell-vector">5.13.2 (cell vector)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#lengths-angles">5.13.3 (lengths &amp; angles)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#supercell">supercell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#unit-of-length">(unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#cell-vector">(cell vector)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#lengths-angles">(lengths &amp; angles)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#planewaves">5.14 planewaves</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#unit-of-cutoff-energy">5.14.1 (unit of cutoff energy)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#for-wavefuctions">5.14.2 (for wavefuctions)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#for-electron-density">5.14.3 (for electron density)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#for-soft-part-of-density">5.14.4 (for soft part of density)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#for-orthogonalization">5.14.5 (for orthogonalization)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#for-charge-density-mixing">5.14.5 (for charge density mixing)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#planewaves">planewaves</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#unit-of-cutoff-energy">(unit of cutoff energy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#for-wavefuctions">(for wavefuctions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#for-electron-density">(for electron density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#for-soft-part-of-density">(for soft part of density)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#for-orthogonalization">(for orthogonalization)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#for-charge-density-mixing">(for charge density mixing)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#electronic-bands">5.15 electronic bands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#occupied-bands">5.15.1 (occupied bands)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#empty-bands">5.15.2 (empty bands)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id70">5.15.3 (broadening)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#charge-number-of-ion">5.15.4 (charge number of ion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#electronic-bands">electronic bands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#occupied-bands">(occupied bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#empty-bands">(empty bands)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id70">(broadening)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#charge-number-of-ion">(charge number of ion)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="param.html#atoms">5.16 Atoms</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="param.html#species">5.16.1 (species)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#atomic-number">5.16.2 (atomic number)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#partial-core-correction">5.16.3 (partial core correction)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#the-number-of-atoms">5.16.4 (the number of atoms)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#id77">5.16.5 (unit of length)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#position-file">5.16.6 (position file)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#positions">5.16.7 (positions)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#velocity-file">5.16.8 (velocity file)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="param.html#velocities">5.16.9 (velocities)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="param.html#atoms">Atoms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="param.html#species">(species)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#atomic-number">(atomic number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#partial-core-correction">(partial core correction)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#the-number-of-atoms">(the number of atoms)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#id77">(unit of length)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#position-file">(position file)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#positions">(positions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#velocity-file">(velocity file)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="param.html#velocities">(velocities)</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="output.html">QXMD Simulation Quick-Start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="output.html#minimal-in-param-file">6.1 Minimal IN.PARAM file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="output.html#adding-parameters-to-in-param">6.2 Adding parameters to IN.PARAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#minimal-in-param-file">Minimal IN.PARAM file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#adding-parameters-to-in-param">Adding parameters to IN.PARAM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="util.html">Utilities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="util.html#creating-pdb-file-from-output">7.1 Creating PDB file from output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="util.html#creating-pdb-file-from-output">Creating PDB file from output</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="util.html#input-file">Input file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#output-file">Output file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#executing-program">Executing program</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="util.html#picking-last-configuration-from-simulation">7.2 Picking last configuration from simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="util.html#picking-last-configuration-from-simulation">Picking last configuration from simulation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="util.html#input-file-1">Input file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#output-file-1">Output file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#executing-program-1">Executing program</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="util.html#create-gaussian-cube-file-to-visualize-wave-function">7.3 Create gaussian cube file to visualize wave function</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="util.html#create-gaussian-cube-file-to-visualize-wave-function">Create gaussian cube file to visualize wave function</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="util.html#input-file-2">Input file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#output-file-2">Output file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#executing-program-2">Executing program</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="util.html#kohn-sham-eigenvalues">7.4 Kohn Sham eigenvalues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="util.html#kohn-sham-eigenvalues">Kohn Sham eigenvalues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="util.html#input-file-3">Input file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#output-file-3">Output file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#executing-program-3">Executing program</a></li>
@@ -400,6 +397,11 @@ Sciences, under Award Number DE-SC0014607.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lic.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="support.html#reporting-bug">Reporting Bug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#requesting-pseudopotential">Requesting Pseudopotential</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -422,7 +424,7 @@ Sciences, under Award Number DE-SC0014607.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Subodh Tiwari &amp;&amp; Lindsay Bassman
+        &copy; Copyright 2019, CACS &amp;&amp; Shimojo Lab
 
     </p>
   </div>

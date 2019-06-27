@@ -7,8 +7,8 @@ libraries. There are no other library requirement for the **QXMD**
 Installation
 ============
 
-2.1. Download QXMD
-~~~~~~~~~~~~~~~~~~
+Download QXMD
+~~~~~~~~~~~~~
 
 To get started, clone this repository to your computer.
 
@@ -16,8 +16,8 @@ To get started, clone this repository to your computer.
 
    ~$ git clone https://github.com/USCCACS/QXMD.git
 
-2.2. Set Working Directory
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Set Working Directory
+~~~~~~~~~~~~~~~~~~~~~
 
 First, change the working directory to **qxmd/**
 
@@ -39,8 +39,8 @@ for many input parameters, **Sources/** contains all **QXMD** source
 codes, **docs/** contains the documentation for QXMDand **util/** 
 contains helpful codes for post-processing output data from **QXMD**.
 
-2.3. Configure Makefiles
-~~~~~~~~~~~~~~~~~~~~~~~~
+Configure Makefiles
+~~~~~~~~~~~~~~~~~~~
 
 You have to choose makefile based on the configuration of your machine.
 For most of the facility supercomputers makefile is already configured.
@@ -81,8 +81,8 @@ Complete list of the preconfigured makefile can be obtain by typing
 If you are not using aforementioned machine, you might need to modify
 the **Makefile** according to your computing environment.
 
-2.4. Precompiler variables
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Precompiler variables
+~~~~~~~~~~~~~~~~~~~~~
 
 Precompiler flags are defined in CPPDEFS as:
 
@@ -104,8 +104,8 @@ There are several flags are defined for future development. Currently,
 they are not used. Several flags are specific to compiler. Please check
 compiler manual for further details.
 
-2.5 Adding New Machine configuration in Makefile
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding New Machine configuration in Makefile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Makefile** defines which compiler you will use to build the **QXMD**
 executable.There are several predefined compiler setting which must be
@@ -147,8 +147,8 @@ It is up to the user to define a new macro for better readability. Once
 you have defined all the macros you are ready to build code for new
 architecture
 
-2.6 Build QXMD
-~~~~~~~~~~~~~~
+Build QXMD
+~~~~~~~~~~
 
 After tailoring the Makefile for your computing environment, type the
 command below to build the **QXMD** executable.

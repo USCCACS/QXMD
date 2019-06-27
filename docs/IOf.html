@@ -84,48 +84,47 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="program.html">Program Structure</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Input/Output files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#input-files">4.1 Input Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#filename">4.1.1 filename</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#config">4.1.2 CONFIG</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#in-param">4.1.3 IN.PARAM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#veloc">4.1.4 VELOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-files">Input Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#filename">filename</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config">CONFIG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#in-param">IN.PARAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#veloc">VELOC</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#output-files">4.2 Output Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#md-box-d">4.2.1 md_box.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-cel-d">4.2.2 md_cel.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-eng-d">4.2.3 md_eng.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-log">4.2.4 md_log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-mts0">4.2.5 MD_mts0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">4.2.5 MD_mts0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-spc-d">4.2.6 md_spc.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-str-d">4.2.7 md_str.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-str-diag-d">4.2.8 md_str_diag.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-tocontinue">4.2.9 MD_Tocontinue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#md-vel-d">4.2.10 md_vel.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-box-d">4.2.11 qm_box.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-cds">4.2.12 QM_cds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-cel-d">4.2.13 qm_cel.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-cell">4.2.14 QM_cell</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-eig">4.2.15 QM_eig</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-eig-d">4.2.16 qm_eig.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-eng-d">4.2.17 qm_eng.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-fer-d">4.2.18 qm_fer.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-frc-d">4.2.19 qm_frc.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-fsshprob-to-u-d">4.2.20 qm_fsshprob_***to***-u.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-hrt">4.2.21 QM_hrt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-ion">4.2.22 QM_ion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-ion-d">4.2.23 qm_ion.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-log">4.2.24 qm_log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-mul-d">4.2.25 qm_mul.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-ovp-d">4.2.26 qm_ovp.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-pcds">4.2.27 QM_pcds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-pds-d">4.2.28 qm_pds.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-peig">4.2.28 QM_peig</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-str-d">4.2.29 qm_str.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-tddftfssh">4.2.30 QM_tddftfssh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-td-eig-d">4.2.31 qm_td_eig.d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#qm-zan-d">4.2.32 qm_zan.d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-files">Output Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#md-box-d">md_box.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-cel-d">md_cel.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-eng-d">md_eng.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-log">md_log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-mts0">MD_mts0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">MD_mts0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-spc-d">md_spc.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-str-d">md_str.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-str-diag-d">md_str_diag.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-tocontinue">MD_Tocontinue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-vel-d">md_vel.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-box-d">qm_box.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-cds">QM_cds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-cel-d">qm_cel.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-cell">QM_cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-eig">QM_eig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-eig-d">qm_eig.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-eng-d">qm_eng.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-fer-d">qm_fer.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-frc-d">qm_frc.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-fsshprob-to-u-d">qm_fsshprob_***to***-u.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-hrt">QM_hrt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-ion">QM_ion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-ion-d">qm_ion.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-log">qm_log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-ovp-d">qm_ovp.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-pcds">QM_pcds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-pds-d">qm_pds.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-peig">QM_peig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-str-d">qm_str.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-tddftfssh">QM_tddftfssh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-td-eig-d">qm_td_eig.d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qm-zan-d">qm_zan.d</a></li>
 </ul>
 </li>
 </ul>
@@ -199,15 +198,15 @@
   <div class="section" id="input-output-files">
 <h1>Input/Output files<a class="headerlink" href="#input-output-files" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="input-files">
-<h2>4.1 Input Files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h2>
+<h2>Input Files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="filename">
-<h3>4.1.1 filename<a class="headerlink" href="#filename" title="Permalink to this headline">¶</a></h3>
+<h3>filename<a class="headerlink" href="#filename" title="Permalink to this headline">¶</a></h3>
 <p><strong>filename</strong> is a simple, single line text file containing the path to
 the main input file, relative to the QXMD executable, in between single
 quotes. Below shows the entire contents of a sample <strong>filename</strong></p>
 </div>
 <div class="section" id="config">
-<h3>4.1.2 CONFIG<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
+<h3>CONFIG<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
 <p>An initial configuration file must be included for any new QXMD run. It
 is best practice to name this file <strong>CONFIG</strong>. Below shows a sample
 configuration file for a water molecule.</p>
@@ -232,7 +231,7 @@ numbers are chosen for each species, as long as what you choose is used
 consistently with atomic data entered in the main input file, IN.PARAM.</p>
 </div>
 <div class="section" id="in-param">
-<h3>4.1.3 IN.PARAM<a class="headerlink" href="#in-param" title="Permalink to this headline">¶</a></h3>
+<h3>IN.PARAM<a class="headerlink" href="#in-param" title="Permalink to this headline">¶</a></h3>
 <p>A main input file is required for all QXMD runs, which contains all the
 parameters settings. It is best practice to name the main input file
 <strong>IN.PARAM</strong>. There are on the order of a few hundred input parameters
@@ -242,7 +241,7 @@ most routine QXMD simulations. Details of these parameters may be found
 in section 5.</p>
 </div>
 <div class="section" id="veloc">
-<h3>4.1.4 VELOC<a class="headerlink" href="#veloc" title="Permalink to this headline">¶</a></h3>
+<h3>VELOC<a class="headerlink" href="#veloc" title="Permalink to this headline">¶</a></h3>
 <p>A file defining the intial velocities of the atoms may optionally be
 provided. It is best practice to name this file <strong>VELOC</strong>. If this is
 not provided, random inital velocities will be assigned to each atom, in
@@ -267,7 +266,7 @@ IN.PARAM files.</p>
 </div>
 </div>
 <div class="section" id="output-files">
-<h2>4.2 Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
+<h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
 <p>All output data files are dumped to the <strong>data</strong> directory during QXMD
 runs. Output files with names beginning with a lower case letter are
 human-readable text files detailing simulation data, while output files
@@ -278,7 +277,7 @@ output files that you wish to save should be moved out of the <strong>data</stro
 directory and store elsewhere as a new QXMD run will write over all
 files present in <strong>data</strong>.</p>
 <div class="section" id="md-box-d">
-<h3>4.2.1 md_box.d<a class="headerlink" href="#md-box-d" title="Permalink to this headline">¶</a></h3>
+<h3>md_box.d<a class="headerlink" href="#md-box-d" title="Permalink to this headline">¶</a></h3>
 <p>This file gives the simulation box size for a classical MD simulation. A
 sample of output file md_box.d is shown below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># MD cell vectors</span>
@@ -298,7 +297,7 @@ dimensions.</p>
 provides the supercell size for a quantum MD simulation.</p>
 </div>
 <div class="section" id="md-cel-d">
-<h3>4.2.2 md_cel.d<a class="headerlink" href="#md-cel-d" title="Permalink to this headline">¶</a></h3>
+<h3>md_cel.d<a class="headerlink" href="#md-cel-d" title="Permalink to this headline">¶</a></h3>
 <p>Similar to <strong>md_box.d</strong>, <strong>md_cel.d</strong> holds the cell vector data for the
 simulation cell in which molecular dynamics take place, however instead
 of giving the lengths and angles of the vectors, this file gives the
@@ -318,7 +317,7 @@ with the step number in which the cell vectors were changed, followed by
 their new values.</p>
 </div>
 <div class="section" id="md-eng-d">
-<h3>4.2.3 md_eng.d<a class="headerlink" href="#md-eng-d" title="Permalink to this headline">¶</a></h3>
+<h3>md_eng.d<a class="headerlink" href="#md-eng-d" title="Permalink to this headline">¶</a></h3>
 <p>This file contains the Hamiltonian, potential, and kinetic energies
 [Hartree] of the total system, as well as the temperature [K] at every
 time step. A sample of the output is shown below.</p>
@@ -338,21 +337,21 @@ time step. A sample of the output is shown below.</p>
 </div>
 </div>
 <div class="section" id="md-log">
-<h3>4.2.4 md_log<a class="headerlink" href="#md-log" title="Permalink to this headline">¶</a></h3>
+<h3>md_log<a class="headerlink" href="#md-log" title="Permalink to this headline">¶</a></h3>
 <p>This file provides of log of the simulation, including values of input
 parameters set and lengths of computation time for force calculations
 for each time step.</p>
 </div>
 <div class="section" id="md-mts0">
-<h3>4.2.5 MD_mts0<a class="headerlink" href="#md-mts0" title="Permalink to this headline">¶</a></h3>
+<h3>MD_mts0<a class="headerlink" href="#md-mts0" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required for restarting a QXMD simulation.</p>
 </div>
 <div class="section" id="id1">
-<h3>4.2.5 MD_mts0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>MD_mts0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required for restarting a QXMD simulation.</p>
 </div>
 <div class="section" id="md-spc-d">
-<h3>4.2.6 md_spc.d<a class="headerlink" href="#md-spc-d" title="Permalink to this headline">¶</a></h3>
+<h3>md_spc.d<a class="headerlink" href="#md-spc-d" title="Permalink to this headline">¶</a></h3>
 <p>This file lists the species keyword for each atom at each time step. A
 sample of the output is shown below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Atomic species</span>
@@ -381,7 +380,7 @@ step number, followed by the total number of atoms in the system, in
 this case ‘12’.</p>
 </div>
 <div class="section" id="md-str-d">
-<h3>4.2.7 md_str.d<a class="headerlink" href="#md-str-d" title="Permalink to this headline">¶</a></h3>
+<h3>md_str.d<a class="headerlink" href="#md-str-d" title="Permalink to this headline">¶</a></h3>
 <p>This file outputs components of the stress tensor [GPa] of the system,
 computed classically, at given time steps intervals (the interval is
 defined in IN.PARAM). This file will only be written if dumping stress
@@ -402,7 +401,7 @@ contributions from the kinetic energy of the ions are included in these
 values, while in qm_str.d they are not.</p>
 </div>
 <div class="section" id="md-str-diag-d">
-<h3>4.2.8 md_str_diag.d<a class="headerlink" href="#md-str-diag-d" title="Permalink to this headline">¶</a></h3>
+<h3>md_str_diag.d<a class="headerlink" href="#md-str-diag-d" title="Permalink to this headline">¶</a></h3>
 <p>This file outputs the diagonalized stress tensor, along with the
 respective eigenvectors at given time step intervals. Below is sample
 output.</p>
@@ -422,12 +421,12 @@ that time step. Here, diagonalized stress data is dumped every 5 time
 steps.</p>
 </div>
 <div class="section" id="md-tocontinue">
-<h3>4.2.9 MD_Tocontinue<a class="headerlink" href="#md-tocontinue" title="Permalink to this headline">¶</a></h3>
+<h3>MD_Tocontinue<a class="headerlink" href="#md-tocontinue" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a QXMD simulation.</p>
 </div>
 <div class="section" id="md-vel-d">
-<h3>4.2.10 md_vel.d<a class="headerlink" href="#md-vel-d" title="Permalink to this headline">¶</a></h3>
+<h3>md_vel.d<a class="headerlink" href="#md-vel-d" title="Permalink to this headline">¶</a></h3>
 <p>This file contains scaled atomic velocities for each atom at each time
 step. Below is sample output.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Atomic scaled velocities</span>
@@ -448,7 +447,7 @@ components of velocity for the first atom, followed by those for the
 second atom, ending with those for the last atom.</p>
 </div>
 <div class="section" id="qm-box-d">
-<h3>4.2.11 qm_box.d<a class="headerlink" href="#qm-box-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_box.d<a class="headerlink" href="#qm-box-d" title="Permalink to this headline">¶</a></h3>
 <p>This file holds the cell vector data for the supercell for a quantum
 molecular dynamics simulation. A sample of output file is shown below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  supercell (FFT cell) vectors (lengths &amp; angles)</span>
@@ -475,13 +474,13 @@ defined area inside which is treted quantum mechanically. In this case,
 defines the supercell area that is to be treated with QM.</p>
 </div>
 <div class="section" id="qm-cds">
-<h3>4.2.12 QM_cds<a class="headerlink" href="#qm-cds" title="Permalink to this headline">¶</a></h3>
+<h3>QM_cds<a class="headerlink" href="#qm-cds" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a QXMD simulation, containing charge density data for the system
 at the last step of the previous run.</p>
 </div>
 <div class="section" id="qm-cel-d">
-<h3>4.2.13 qm_cel.d<a class="headerlink" href="#qm-cel-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_cel.d<a class="headerlink" href="#qm-cel-d" title="Permalink to this headline">¶</a></h3>
 <p>Similar to <strong>qm_box.d</strong>, <strong>qm_cel.d</strong> holds the cell vector data for the
 supercell, however instead of giving the lengths and angles of the
 vectors, this file gives the <strong>x</strong>, <strong>y</strong>, and <strong>z</strong> components of the
@@ -500,19 +499,19 @@ will be written beginning with the step number in which the supercell
 vectors were changed, followed by their new values.</p>
 </div>
 <div class="section" id="qm-cell">
-<h3>4.2.14 QM_cell<a class="headerlink" href="#qm-cell" title="Permalink to this headline">¶</a></h3>
+<h3>QM_cell<a class="headerlink" href="#qm-cell" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a QXMD simulation, containing simulation cell data for the
 system at the last step of the previous run.</p>
 </div>
 <div class="section" id="qm-eig">
-<h3>4.2.15 QM_eig<a class="headerlink" href="#qm-eig" title="Permalink to this headline">¶</a></h3>
+<h3>QM_eig<a class="headerlink" href="#qm-eig" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a QXMD simulation, containing energy eigenvalue data for the
 system at the last step of the previous run.</p>
 </div>
 <div class="section" id="qm-eig-d">
-<h3>4.2.16 qm_eig.d<a class="headerlink" href="#qm-eig-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_eig.d<a class="headerlink" href="#qm-eig-d" title="Permalink to this headline">¶</a></h3>
 <p>This file lists the energy eigenvalues, along with their electronic
 occupation number for each time step. Below is sample output.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Eigenvalues</span>
@@ -555,7 +554,7 @@ two time steps.) In this example, the eight electrons of the system
 occupy the four lowest energy bands in the first time two steps.</p>
 </div>
 <div class="section" id="qm-eng-d">
-<h3>4.2.17 qm_eng.d<a class="headerlink" href="#qm-eng-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_eng.d<a class="headerlink" href="#qm-eng-d" title="Permalink to this headline">¶</a></h3>
 <p>This file provides various components of the system’s energy [Rydberg]
 at each time step. Below is sample output.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Total potential energy and energy parts in [Ryd.] units</span>
@@ -574,7 +573,7 @@ followed by various components of system energy as labeled by the column
 titles.</p>
 </div>
 <div class="section" id="qm-fer-d">
-<h3>4.2.18 qm_fer.d<a class="headerlink" href="#qm-fer-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_fer.d<a class="headerlink" href="#qm-fer-d" title="Permalink to this headline">¶</a></h3>
 <p>This file gives the Fermi energy of the system at each time step. Below
 is sample output.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Fermi energy</span>
@@ -591,7 +590,7 @@ cumulative number of SCF iterations up to that step number, while the
 third column gives the Fermi energy in eV.</p>
 </div>
 <div class="section" id="qm-frc-d">
-<h3>4.2.19 qm_frc.d<a class="headerlink" href="#qm-frc-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_frc.d<a class="headerlink" href="#qm-frc-d" title="Permalink to this headline">¶</a></h3>
 <p>This file gives the three components of force on each atom at each time
 step. Below is sample output for a monolayer of MoSe2 with 12 total
 atoms.</p>
@@ -624,7 +623,7 @@ components of force on the first atom, followed by those for the second
 atom, and so on.</p>
 </div>
 <div class="section" id="qm-fsshprob-to-u-d">
-<h3>4.2.20 qm_fsshprob_***to***-u.d<a class="headerlink" href="#qm-fsshprob-to-u-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_fsshprob_***to***-u.d<a class="headerlink" href="#qm-fsshprob-to-u-d" title="Permalink to this headline">¶</a></h3>
 <p>This set of files are only written during a Non-Adiabatic QMD simulation
 (i.e. TD-DFT set to .true.). These files give the probabilities for
 electrons to hop from one band to another, where these band indices will
@@ -656,18 +655,18 @@ and 18, there were non-zero probabilities for this electronic
 transition. The accumulation column refers to ???</p>
 </div>
 <div class="section" id="qm-hrt">
-<h3>4.2.21 QM_hrt<a class="headerlink" href="#qm-hrt" title="Permalink to this headline">¶</a></h3>
+<h3>QM_hrt<a class="headerlink" href="#qm-hrt" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a QXMD simulation.</p>
 </div>
 <div class="section" id="qm-ion">
-<h3>4.2.22 QM_ion<a class="headerlink" href="#qm-ion" title="Permalink to this headline">¶</a></h3>
+<h3>QM_ion<a class="headerlink" href="#qm-ion" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a QXMD simulation, containing atomic position data for the
 system at the last step of the previous run.</p>
 </div>
 <div class="section" id="qm-ion-d">
-<h3>4.2.23 qm_ion.d<a class="headerlink" href="#qm-ion-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_ion.d<a class="headerlink" href="#qm-ion-d" title="Permalink to this headline">¶</a></h3>
 <p>This files gives the three components of the positions for all the atoms
 at each time step. It can be used for visualization of the atomic
 trajectories throughout the simulation. Below is sample output for
@@ -701,54 +700,15 @@ and <strong>z</strong> coordinates of the first atom, followed by those for the
 second atom, and so on.</p>
 </div>
 <div class="section" id="qm-log">
-<h3>4.2.24 qm_log<a class="headerlink" href="#qm-log" title="Permalink to this headline">¶</a></h3>
+<h3>qm_log<a class="headerlink" href="#qm-log" title="Permalink to this headline">¶</a></h3>
 <p>This file provides of log of simulation details, including values of
 input parameters set, time statistics and energies computed for each SCF
 iteration for every simulation time step, as well as total computation
 time. This file is the best place to look to determine why a QXMD
 simulation fails/crashes, and general debugging.</p>
 </div>
-<div class="section" id="qm-mul-d">
-<h3>4.2.25 qm_mul.d<a class="headerlink" href="#qm-mul-d" title="Permalink to this headline">¶</a></h3>
-<p>This file provides Mulliken analysis data. Note that this file will only
-be written if Mulliken analysis is set to .true. in IN.PARAM. Sample
-output for a water molecule is shown below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Mulliken analysis : s, p, &amp; d population for each atom</span>
-      <span class="mi">0</span>      <span class="mi">2</span>      <span class="mi">2</span>      <span class="mi">1</span>     <span class="o">-</span><span class="mi">1</span>
-  <span class="mi">2</span>   <span class="mi">0</span> <span class="mi">1</span>
-  <span class="mi">1</span>   <span class="mi">0</span>
-    <span class="mi">1</span>  <span class="mf">1.8974</span>  <span class="mf">5.5777</span>  <span class="mf">7.4751</span>
-    <span class="mi">2</span>  <span class="mf">0.2624</span>  <span class="mf">0.2624</span>
-    <span class="mi">3</span>  <span class="mf">0.2625</span>  <span class="mf">0.2625</span>
-</pre></div>
-</div>
-<p>After the first comment line, the second line gives the step number, the
-total number of atomic species in the system (‘2’ for hydrogen and
-oxygen), the number of atoms of the species corresponding to keyword ‘1’
-(in this case, keyword ‘1’ was used for hydrogen and there are ‘2’ H
-atoms), followed by the number of atoms of the species corresponding to
-keyword ‘2’ (in this case, keyword ‘2’ was used for oxygen and there is
-‘1’ O atom). The ‘-1’ at the end of the line may be ignored as is it
-only included for backward compatibility with older versions of the
-code. The next set of two lines gives the number of different angular
-momenta (orbital types) each species has. Since oxygen was assigned
-keyword ‘1’, the first of these lines (line 3) starts with ‘2’
-indicating that oxygen has 2 types of orbitals which are identified as
-‘0’ (meaning ‘s-type’) and ‘1’ (meaning ‘p-type’). The second of these
-line corresponds to hydrogen, which only has one orbtial, ‘0’ or
-‘s-type’. Finally, the partial charges in each orbital type, followed by
-the total partial charge around each atom is given in the last three
-lines. For example, in line 5 of the sample output, ‘1’ refers to atom
-1, in this case an oxygen atom, the next number is the partial charge in
-the s-type orbital, the next number is the partial charge in the p-type
-orbitals, while the last number is the total partial charge around the
-oxygen atom. The final two lines give the partial charge in the s-type
-orbital in atoms ‘2’ and ‘3’, the two H atoms, along with the total
-partial charge around the H atoms which is the same as the s-type
-orbital partial charge, since there is only one orbital.</p>
-</div>
 <div class="section" id="qm-ovp-d">
-<h3>4.2.26 qm_ovp.d<a class="headerlink" href="#qm-ovp-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_ovp.d<a class="headerlink" href="#qm-ovp-d" title="Permalink to this headline">¶</a></h3>
 <p>This file provides the overlap charge densities between atoms at the
 given time step intervals. Note that this file is only written if
 Mulliken analysis is set to <strong>true</strong>. Below is sample output for a
@@ -793,12 +753,12 @@ p-type(atom 9)/d-type(atom 2), d-type(atom 9)/s-type(atom 2),
 d-type(atom 9)/p-type(atom 2), d-type(atom 9)/d-type(atom 2).</p>
 </div>
 <div class="section" id="qm-pcds">
-<h3>4.2.27 QM_pcds<a class="headerlink" href="#qm-pcds" title="Permalink to this headline">¶</a></h3>
+<h3>QM_pcds<a class="headerlink" href="#qm-pcds" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a QXMD simulation.</p>
 </div>
 <div class="section" id="qm-pds-d">
-<h3>4.2.28 qm_pds.d<a class="headerlink" href="#qm-pds-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_pds.d<a class="headerlink" href="#qm-pds-d" title="Permalink to this headline">¶</a></h3>
 <p>This file gives the different angular momemta contributions to each
 energy band. Sample output for a water molecule is given below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Mulliken analysis : s, p, &amp; d contribution to each band</span>
@@ -836,12 +796,12 @@ some, even majority contribution from higher angular momenta, in which
 case the last number in the line will not be ‘1’.</p>
 </div>
 <div class="section" id="qm-peig">
-<h3>4.2.28 QM_peig<a class="headerlink" href="#qm-peig" title="Permalink to this headline">¶</a></h3>
+<h3>QM_peig<a class="headerlink" href="#qm-peig" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a QXMD simulation.</p>
 </div>
 <div class="section" id="qm-str-d">
-<h3>4.2.29 qm_str.d<a class="headerlink" href="#qm-str-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_str.d<a class="headerlink" href="#qm-str-d" title="Permalink to this headline">¶</a></h3>
 <p>This file outputs components of the stress tensor [GPa] of the system,
 computed quantum mechanically, at given time steps intervals (the
 interval is defined in IN.PARAM). This file will only be written if
@@ -863,13 +823,13 @@ varies slightly from md_str.d due since md_str.d includes contributions
 from the kinetic energy of the ions, while qm_str.d does not.</p>
 </div>
 <div class="section" id="qm-tddftfssh">
-<h3>4.2.30 QM_tddftfssh<a class="headerlink" href="#qm-tddftfssh" title="Permalink to this headline">¶</a></h3>
+<h3>QM_tddftfssh<a class="headerlink" href="#qm-tddftfssh" title="Permalink to this headline">¶</a></h3>
 <p>This is a binary file that is required in the <strong>data</strong> directory to
 restart a Non-Adiabtic QXMD simulation, containing electronic transition
 probability data for the system at the last step of the previous run.</p>
 </div>
 <div class="section" id="qm-td-eig-d">
-<h3>4.2.31 qm_td_eig.d<a class="headerlink" href="#qm-td-eig-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_td_eig.d<a class="headerlink" href="#qm-td-eig-d" title="Permalink to this headline">¶</a></h3>
 <p>This file gives the enery eigenvalues and the electron occupation
 numbers for each energy band for each time step in a Non-Adiabtic QMD
 simulation. As such, this file is only written when TD-DFT is set to
@@ -902,7 +862,7 @@ fourth band had two electrons removed and placed in the fifth band,
 simulation an electronic excitation in a NAQMD simulation.</p>
 </div>
 <div class="section" id="qm-zan-d">
-<h3>4.2.32 qm_zan.d<a class="headerlink" href="#qm-zan-d" title="Permalink to this headline">¶</a></h3>
+<h3>qm_zan.d<a class="headerlink" href="#qm-zan-d" title="Permalink to this headline">¶</a></h3>
 <p>This file gives energy differences per electron and residuals for each
 time step. Note that the word “zansa” means residual in Japanese.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Difference of tot E/el. E(HF)-E(KS) &amp; maximum &amp; average residuals</span>
@@ -945,7 +905,7 @@ equations are appoximately solved.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Subodh Tiwari &amp;&amp; Lindsay Bassman
+        &copy; Copyright 2019, CACS &amp;&amp; Shimojo Lab
 
     </p>
   </div>

@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rst2pdf &mdash; QXMD 3.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> QXMD
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../program.html">Program Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOf.html">Input/Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../param.html">Input Parameters: IN.PARAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output.html">QXMD Simulation Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../util.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lic.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">QXMD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>rst2pdf</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rst2pdf">
+<h1>rst2pdf<a class="headerlink" href="#rst2pdf" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="convert-restructuredtext-documents-to-pdf">
+<h2>Convert reStructuredText documents to PDF<a class="headerlink" href="#convert-restructuredtext-documents-to-pdf" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Chris Lamb &lt;<a class="reference external" href="mailto:chris&#37;&#52;&#48;chris-lamb&#46;co&#46;uk">chris<span>&#64;</span>chris-lamb<span>&#46;</span>co<span>&#46;</span>uk</a>&gt; for the Debian project</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Manual section:</th><td class="field-body">1</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Manual group:</th><td class="field-body">text processing</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="synopsis">
+<h3>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h3>
+<p>rst2pdf [options] [input] [-o output]</p>
+</div>
+<div class="section" id="description">
+<h3>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>The usual way of creating PDF from reStructuredText (ReST) is by going through LaTeX.
+The rst2pdf utility provides an alternative by producing PDF directly using the ReportLab
+library.</p>
+</div>
+<div class="section" id="options">
+<h3>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Show this help message and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--config=<var>FILE</var></span></kbd></td>
+<td>Config file to use. Default=~/.rst2pdf/config</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-o <var>FILE</var></span>, <span class="option">--output=<var>FILE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Write the PDF to FILE</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-s <var>STYLESHEETS</var></span>, <span class="option">--stylesheets=<var>STYLESHEETS</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>A comma-separated list of custom stylesheets.
+Default=”“</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--stylesheet-path=<var>FOLDERLIST</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>A colon-separated list of folders to search for
+stylesheets. Default=”“</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-c</span>, <span class="option">--compressed</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Create a compressed PDF. Default=False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--print-stylesheet</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Print the default stylesheet and exit</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--font-folder=<var>FOLDER</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Search this folder for fonts. (Deprecated)</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--font-path=<var>FOLDERLIST</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>A colon-separated list of folders to search for fonts.
+Default=”“</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--baseurl=<var>URL</var></span></kbd></td>
+<td>The base URL for relative URLs.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-l <var>LANG</var></span>, <span class="option">--language=<var>LANG</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Language to be used for hyphenation and docutils localization.
+Default=None</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--header=<var>HEADER</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Page header if not specified in the document.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--footer=<var>FOOTER</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Page footer if not specified in the document.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--section-header-depth=<var>N</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Sections up to this dept will be used in the header
+and footer’s replacement of ###Section###. Default=2</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--smart-quotes=<var>VALUE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Try to convert ASCII quotes, ellipsis and dashes to
+the typographically correct equivalent. Default=0</td></tr>
+</tbody>
+</table>
+<p>The possible values are:</p>
+<ol class="arabic simple" start="0">
+<li>Suppress all transformations. (Do nothing.)</li>
+<li>Performs default SmartyPants transformations: quotes (including backticks-style), em-dashes, and ellipses. “–” (dash dash) is used to signify an em-dash; there is no support for en-dashes.</li>
+<li>Same as –smart-quotes=1, except that it uses the old-school typewriter shorthand for dashes: “–” (dash dash) for en-dashes, “—” (dash dash dash) for em-dashes.</li>
+<li>Same as –smart-quotes=2, but inverts the shorthand for dashes: “–” (dash dash) for em-dashes, and “—” (dash dash dash) for en-dashes.</li>
+</ol>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--fit-literal-mode=<var>MODE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>What to do when a literal is too wide.
+One of error,overflow,shrink,truncate.
+Default=”shrink”</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--fit-background-mode=<var>MODE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>How to fit the background image to the page. One of
+scale or center. Default=”center”</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--inline-links</span></kbd></td>
+<td>Shows target between parenthesis instead of active link</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--repeat-table-rows</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Repeats header row for each splitted table</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--raw-html</span></kbd></td>
+<td>Support embeddig raw HTML. Default: False</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-q</span>, <span class="option">--quiet</span></kbd></td>
+<td>Print less information.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>Print debug information.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--very-verbose</span></kbd></td>
+<td>Print even more debug information.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--version</span></kbd></td>
+<td>Print version number and exit.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--no-footnote-backlinks</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Disable footnote backlinks. Default: False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--inline-footnotes</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Show footnotes inline. Default: True</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--default-dpi=<var>NUMBER</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>DPI for objects sized in pixels. Default=300</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--show-frame-boundary</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Show frame borders (only useful for debugging).
+Default=False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--disable-splittables</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Don’t use splittable flowables in some elements. Only
+try this if you can’t process a document any other
+way.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-b <var>LEVEL</var></span>, <span class="option">--break-level=<var>LEVEL</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Maximum section level that starts in a new page. Default: 0</td></tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>–first-page-on-right When using double sided pages, the first page will start</dt>
+<dd>on the right hand side. (Book Style)</dd>
+</dl>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--blank-first-page</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Add a blank page at the beginning of the document.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--break-side=<var>VALUE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>How section breaks work. Can be “even”, and sections
+start in an even page,”odd”, and sections start in odd
+pages, or “any” and sections start in the next page,be
+it even or odd. See also the -b option.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--date-invariant</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Don’t store the current date in the PDF. Useful mainly
+for the test suite, where we don’t want the PDFs to
+change.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e <var>EXTENSIONS</var></span></kbd></td>
+<td>Alias for –extension-module</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--extension-module=<var>EXTENSIONS</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Add a helper extension module to this invocation of
+rst2pdf (module must end in .py and be on the python
+path)</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--custom-cover=<var>FILE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Template file used for the cover page. Default:
+cover.tmpl</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--use-floating-images</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Makes images with :aling: attribute work more like in
+rst2html. Default: False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--use-numbered-links</span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>When using numbered sections, adds the numbers to all
+links referring to the section headers. Default: False</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--strip-elements-with-class=<var>CLASS</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Remove elements with this CLASS from the output. Can
+be used multiple times.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="examples">
+<h3>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>$ rst2pdf rest.txt -o out.pdf</p>
+<p>Produce an out.pdf file which is a PDF version of the ReST document rest.txt.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, CACS &amp;&amp; Shimojo Lab
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

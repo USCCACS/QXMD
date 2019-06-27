@@ -82,12 +82,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#installation">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#download-qxmd">2.1. Download QXMD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#set-working-directory">2.2. Set Working Directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configure-makefiles">2.3. Configure Makefiles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#precompiler-variables">2.4. Precompiler variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-new-machine-configuration-in-makefile">2.5 Adding New Machine configuration in Makefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-qxmd">2.6 Build QXMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download-qxmd">Download QXMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-working-directory">Set Working Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-makefiles">Configure Makefiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#precompiler-variables">Precompiler variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-new-machine-configuration-in-makefile">Adding New Machine configuration in Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-qxmd">Build QXMD</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="program.html">Program Structure</a></li>
@@ -166,14 +166,14 @@ libraries. There are no other library requirement for the <strong>QXMD</strong><
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-qxmd">
-<h2>2.1. Download QXMD<a class="headerlink" href="#download-qxmd" title="Permalink to this headline">¶</a></h2>
+<h2>Download QXMD<a class="headerlink" href="#download-qxmd" title="Permalink to this headline">¶</a></h2>
 <p>To get started, clone this repository to your computer.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ git clone https://github.com/USCCACS/QXMD.git
 </pre></div>
 </div>
 </div>
 <div class="section" id="set-working-directory">
-<h2>2.2. Set Working Directory<a class="headerlink" href="#set-working-directory" title="Permalink to this headline">¶</a></h2>
+<h2>Set Working Directory<a class="headerlink" href="#set-working-directory" title="Permalink to this headline">¶</a></h2>
 <p>First, change the working directory to <strong>qxmd/</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ cd qxmd
 </pre></div>
@@ -191,7 +191,7 @@ codes, <strong>docs/</strong> contains the documentation for QXMDand <strong>uti
 contains helpful codes for post-processing output data from <strong>QXMD</strong>.</p>
 </div>
 <div class="section" id="configure-makefiles">
-<h2>2.3. Configure Makefiles<a class="headerlink" href="#configure-makefiles" title="Permalink to this headline">¶</a></h2>
+<h2>Configure Makefiles<a class="headerlink" href="#configure-makefiles" title="Permalink to this headline">¶</a></h2>
 <p>You have to choose makefile based on the configuration of your machine.
 For most of the facility supercomputers makefile is already configured.
 Complete list of the preconfigured makefile can be obtain by typing
@@ -230,7 +230,7 @@ make sekirei    : Intel Fortran on SGI ICE XA/UV (systemB) at ISSP
 the <strong>Makefile</strong> according to your computing environment.</p>
 </div>
 <div class="section" id="precompiler-variables">
-<h2>2.4. Precompiler variables<a class="headerlink" href="#precompiler-variables" title="Permalink to this headline">¶</a></h2>
+<h2>Precompiler variables<a class="headerlink" href="#precompiler-variables" title="Permalink to this headline">¶</a></h2>
 <p>Precompiler flags are defined in CPPDEFS as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CPPDEFS</span><span class="o">=</span> <span class="o">-</span><span class="n">DFLAG1</span> <span class="o">-</span><span class="n">DFLAG2</span>
 </pre></div>
@@ -248,7 +248,7 @@ they are not used. Several flags are specific to compiler. Please check
 compiler manual for further details.</p>
 </div>
 <div class="section" id="adding-new-machine-configuration-in-makefile">
-<h2>2.5 Adding New Machine configuration in Makefile<a class="headerlink" href="#adding-new-machine-configuration-in-makefile" title="Permalink to this headline">¶</a></h2>
+<h2>Adding New Machine configuration in Makefile<a class="headerlink" href="#adding-new-machine-configuration-in-makefile" title="Permalink to this headline">¶</a></h2>
 <p><strong>Makefile</strong> defines which compiler you will use to build the <strong>QXMD</strong>
 executable.There are several predefined compiler setting which must be
 set. First, open Makefile available in QXMD directory and define the
@@ -284,7 +284,7 @@ you have defined all the macros you are ready to build code for new
 architecture</p>
 </div>
 <div class="section" id="build-qxmd">
-<h2>2.6 Build QXMD<a class="headerlink" href="#build-qxmd" title="Permalink to this headline">¶</a></h2>
+<h2>Build QXMD<a class="headerlink" href="#build-qxmd" title="Permalink to this headline">¶</a></h2>
 <p>After tailoring the Makefile for your computing environment, type the
 command below to build the <strong>QXMD</strong> executable.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>qxmd $ make $(MACHINE_NAME)
@@ -327,7 +327,7 @@ available core on the machine to build the program efficiently.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Subodh Tiwari &amp;&amp; Lindsay Bassman
+        &copy; Copyright 2019, CACS &amp;&amp; Shimojo Lab
 
     </p>
   </div>

@@ -14,8 +14,8 @@ should refer to input parameter settings in Section 5 and sample input
 files given in the **Examples** directory.
 
 
-6.1 Minimal IN.PARAM file
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Minimal IN.PARAM file
+~~~~~~~~~~~~~~~~~~~~~
 
 Given below is an sample input file for the optimization of a water
 molecule which includes all the most important input parameters for
@@ -202,8 +202,8 @@ configuration file is adjusted to the optimized geometry, the input file
 is complete for execution of a standard QMD simulation.
 
 
-6.2 Adding parameters to IN.PARAM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding parameters to IN.PARAM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here, we give an example of how to add input parameters to the basic
 IN.PARAM file given above in section 6.1. As described in the beginning

@@ -38,12 +38,12 @@ Example: To disable subsection_2 in section \*SECTION_NAME
 .. Note:: Any unnecessary sections or subsections may be removed from input.file, depending on your simulation needs (recommended only for advanced users).
 
 
-5.1 Parallel Section: \*parallel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Parallel Section: \*parallel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-5.1.1 (QM-Nodes)
-^^^^^^^^^^^^^^^^
+(QM-Nodes)
+^^^^^^^^^^
 
 **npx, npy, npz** = [1|even integer] [1|even integer] [1|even integer]
 
@@ -57,8 +57,8 @@ parallel computing, and this set of three integers multiplied together
 defines the number of MPI ranks. 
 
 
-5.1.2 (k-points)
-^^^^^^^^^^^^^^^^
+(k-points)
+^^^^^^^^^^
 
 **npk** = [integer]
 
@@ -71,8 +71,8 @@ section 5.8 for k-point sampling.
 
 
 
-5.1.3 (MD-nodes)
-^^^^^^^^^^^^^^^^
+(MD-nodes)
+^^^^^^^^^^
 
 **md_npx, md_npy, md_npz** = [1|even integer] [1|even integer] [1|even
 integer]
@@ -87,12 +87,12 @@ md_npz**.
 These variables are used only for spatial decomposition inclassical MD and divide-and-conqure QMD simulations. For linear scaling DFT please see reference. :cite:`RN19` :cite:`RN20` :cite:`RN22` :cite:`RN23` :cite:`RN24` :cite:`RN25`
 
 
-5.2 Start(on/off) Section
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Start(on/off) Section
+~~~~~~~~~~~~~~~~~~~~~
 
 
-5.2.1 (On/Off)
-^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^
 
 **lstart** = [boolean]
 
@@ -113,12 +113,12 @@ also want to set **ltddft_start** to .TRUE. in the \*TDDFT-MD section to
 properly restart a successfully completed simulation.
 
 
-5.3 TDDFT-MD
-~~~~~~~~~~~~
+TDDFT-MD
+~~~~~~~~
 
 
-5.3.1 (On/Off)
-^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^
 
 **ltddft** = [boolean]
 
@@ -137,8 +137,8 @@ in ground state equilibrium, while non-adiabatic methods simulate
 electronic excitations.
 
 
-5.3.2 (FSSH)
-^^^^^^^^^^^^
+(FSSH)
+^^^^^^
 
 **ltddft_fssh** = [boolean]
 
@@ -158,8 +158,8 @@ NAQMD. Fewest Switches surface hopping method is proposed by J. Tully :cite:`RN2
 including electronic transition. Next few flags ask for the specification of FSSH method
 
 
-5.3.3 (FSSH-switch)
-^^^^^^^^^^^^^^^^^^^
+(FSSH-switch)
+^^^^^^^^^^^^^
 
 **lfssh_switch** = [boolean]
 
@@ -175,8 +175,8 @@ Determines whether electronic occupations can change throughout the
 NAQMD simulation.
 
 
-5.3.4 (FSSH-ground-state-SCF)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(FSSH-ground-state-SCF)
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **lfssh_gsscf** = [boolean]
 
@@ -190,8 +190,8 @@ NAQMD simulation.
 
 .. note:: This parameter should always be set to  ``.TRUE.``  to obtain convergence.
 
-5.3.5 (FSSH-charge mixing)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+(FSSH-charge mixing)
+^^^^^^^^^^^^^^^^^^^^
 
 **imxchg_fssh** = 0 \| 1 \| 2 \| 3 **aslh_fssh, bslh_fssh** = [real]
 [real]
@@ -216,8 +216,8 @@ parameters. Note that this section is only considered when
 **lfssh_gsscf** is set to .TRUE.
 
 
-5.3.6 (FSSH-random-initialize)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(FSSH-random-initialize)
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 **lfssh_random** = [boolean] **rseed_fssh** = [real]
 
@@ -233,8 +233,8 @@ Determines how to specify the seed for the random number generator used
 by the FSSH method.
 
 
-5.3.7 (Boltzmann factor for upward transition)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Boltzmann factor for upward transition)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **lfssh_boltzmn** = [boolean]
 
@@ -253,8 +253,8 @@ energy increases due to the transition. This is used in order to
 approximately satisfy the detailed balance condition.
 
 
-5.3.8 (velocity scaling)
-^^^^^^^^^^^^^^^^^^^^^^^^
+(velocity scaling)
+^^^^^^^^^^^^^^^^^^
 
 **lfssh_vscale** = [boolean] **tminimum** = [real]
 
@@ -271,8 +271,8 @@ excitation. **tminimum** gives the minimum temperature in [K] and is
 used to constrain velocity scaling.
 
 
-5.3.9 (time step)
-^^^^^^^^^^^^^^^^^
+(time step)
+^^^^^^^^^^^
 
 **dttddft** = [real]
 
@@ -284,8 +284,8 @@ Gives the time step in [a.u.] for numerically integrating the TDDFT
 equations.
 
 
-5.3.10 (parallel calculation)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(parallel calculation)
+^^^^^^^^^^^^^^^^^^^^^^
 
 **lfssh_parallel** = [boolean]
 
@@ -299,8 +299,8 @@ Solves time-dependent K-S equations serially.
 Determines whether or not to perform TDDFT calculations in parallel.
 
 
-5.3.11 (restart)
-^^^^^^^^^^^^^^^^
+(restart)
+^^^^^^^^^
 
 **ltddft_start** = [boolean]
 
@@ -321,8 +321,8 @@ simulation. Note that if you are continuing a calculation by setting
 successfully completed simulation.
 
 
-5.3.12 (initial exciton)
-^^^^^^^^^^^^^^^^^^^^^^^^
+(initial exciton)
+^^^^^^^^^^^^^^^^^
 
 **nexciton** = [integer] **iband_hole, iband_electron, ldegenerate** =
 [integer] [integer] [boolean]
@@ -354,8 +354,8 @@ Example:
        10  11  .FALSE.
 
 
-5.3.13 (ground state force)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(ground state force)
+^^^^^^^^^^^^^^^^^^^^
 
 **lfssh_gsfrc** = [boolean]
 
@@ -370,8 +370,8 @@ Note that this variable is only read if **lfssh_gsscf** is set to .TRUE.
 in the (FSSH-ground-state-SCF) subsection.
 
 
-5.3.14 (NSC force)
-^^^^^^^^^^^^^^^^^^
+(NSC force)
+^^^^^^^^^^^
 
 **ltddft_nscforce** = [boolean]
 
@@ -385,8 +385,8 @@ Determines whether or not to calculate excited state forces using a
 non-self-consistent (NSC) method.
 
 
-5.3.15 (occupations)
-^^^^^^^^^^^^^^^^^^^^
+(occupations)
+^^^^^^^^^^^^^
 
 **nocc_change** = [integer] **num_band, occ_new** = [integer] [real]
 [real]
@@ -438,8 +438,8 @@ occupation). This assumes that in the ground state band indicies 10 and
    13   0.0   1.0
 
 
-5.3.16 (broadening)
-^^^^^^^^^^^^^^^^^^^
+(broadening)
+^^^^^^^^^^^^
 
 **tdbroad** = [real]
 
@@ -451,8 +451,8 @@ Determines the width of Gaussian broadening of the Fermi surface in [K].
 Note: **tdbroad** = 0.0 denotes no broadening.
 
 
-5.3.17 (DISH)
-^^^^^^^^^^^^^
+(DISH)
+^^^^^^
 
 **lfssh_dish** = [boolean] **ndishpair** = [integer] **ndishi, ndishj,
 decoherence_rate** = [integer] [integer] [real]
@@ -524,12 +524,12 @@ states
      where Eij(t) = Ei(t) - Ej(t)
 
 
-5.4 Approximation for Exchange
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Approximation for Exchange
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-5.4.1 (approximation)
-^^^^^^^^^^^^^^^^^^^^^
+(approximation)
+^^^^^^^^^^^^^^^
 
 **jgga** = 1|2|3|4|5.5
 
@@ -547,8 +547,8 @@ states
 **jgga** is used to specify the exchange correction functional.
 
 
-5.4.2 (DFT-D)
-^^^^^^^^^^^^^
+(DFT-D)
+^^^^^^^
 
 **ldftd** = [boolean]
 
@@ -564,12 +564,12 @@ interaction proposed by S. Grimme :cite:`RN37` :cite:`RN38`
 
 
 
-5.5 SCF iterations
-~~~~~~~~~~~~~~~~~~~
+SCF iterations
+~~~~~~~~~~~~~~~
 
 
-5.5.1 (global iterations)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+(global iterations)
+^^^^^^^^^^^^^^^^^^^^
 
 **iscfmx** = [integer]
 
@@ -580,8 +580,8 @@ interaction proposed by S. Grimme :cite:`RN37` :cite:`RN38`
 Gives the maximum number of global iterations of SCF to be performed.
 
 
-5.5.2 (tolerances)
-^^^^^^^^^^^^^^^^^^^
+(tolerances)
+^^^^^^^^^^^^^
 
 **tolpot** = [real] **tolres** = [real]
 
@@ -595,8 +595,8 @@ the tolerance, the SCF iterations are considered to have converged.
 **tolres** similarly gives the tolerance for average residual.
 
 
-5.5.3 (charge mixing)
-^^^^^^^^^^^^^^^^^^^^^^
+(charge mixing)
+^^^^^^^^^^^^^^^^
 
 **imxchg** = [0|1|2|3|4|5.5] **aslh, bslh** = [real] [real]
 
@@ -620,8 +620,8 @@ Determines which charge mixing method will be used, along with tuning
 parameters for that method.
 
 
-5.5.4 (number of mixing)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+(number of mixing)
+^^^^^^^^^^^^^^^^^^^
 
 **itratn** = [integer]
 
@@ -634,12 +634,12 @@ for charge mixing. Not available for imxchg = [0|3].
 
 
 
-5.6 Kohn-Sham equation
-~~~~~~~~~~~~~~~~~~~~~~~
+Kohn-Sham equation
+~~~~~~~~~~~~~~~~~~~
 
 
-5.6.1 (On/Off)
-^^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^^
 
 **ihldam** = [1|2]
 
@@ -654,8 +654,8 @@ Determines the method used in the iterative minimization of energy as a
 functional of wavefunctions.
 
 
-5.6.2 (tolerance)
-^^^^^^^^^^^^^^^^^^
+(tolerance)
+^^^^^^^^^^^^
 
 **toleig** = [real]
 
@@ -666,8 +666,8 @@ functional of wavefunctions.
 Gives the tolerance for the Kohn-Sham equations.
 
 
-5.6.3 (threshold for w.f. direction)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(threshold for w.f. direction)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **threinn** = [real]
 
@@ -678,8 +678,8 @@ Gives the tolerance for the Kohn-Sham equations.
 Gives the threshold for direction of new wavefunction
 
 
-5.6.4 (iteration)
-^^^^^^^^^^^^^^^^^^
+(iteration)
+^^^^^^^^^^^^
 
 **itermx** = [integer]
 
@@ -690,8 +690,8 @@ Gives the threshold for direction of new wavefunction
 Gives the maximum number of iterations.
 
 
-5.6.5 (empty-band iteration)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(empty-band iteration)
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **iteremx** = [integer]
 
@@ -702,8 +702,8 @@ Gives the maximum number of iterations.
 Gives the maximum number of iterations for empty bands.
 
 
-5.6.6 (CG method)
-^^^^^^^^^^^^^^^^^^
+(CG method)
+^^^^^^^^^^^^
 
 **methodcg** = [1|2]
 
@@ -717,12 +717,12 @@ Gives the method used of CG This variable is only read if **ihldam** ==
 1
 
 
-5.7 molecular dynamics
-~~~~~~~~~~~~~~~~~~~~~~~
+molecular dynamics
+~~~~~~~~~~~~~~~~~~~
 
 
-5.7.1 (On/Off)
-^^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^^
 
 **ifmd** = [0|1|2|3|4|5.7]
 
@@ -746,8 +746,8 @@ Determines the type of QMD simulation to run. Add short description of
 each type.
 
 
-5.7.2 (time step)
-^^^^^^^^^^^^^^^^^^
+(time step)
+^^^^^^^^^^^^
 
 **dtmd, nstop** = [real] [integer]
 
@@ -760,8 +760,8 @@ each type.
 total simulation time will equal (**nstop** \* **dtmd**)
 
 
-5.7.3 (initial step number)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(initial step number)
+^^^^^^^^^^^^^^^^^^^^^^
 
 **nstep_ini** = [integer]
 
@@ -773,8 +773,8 @@ Gives the initial step number. This varibale is ignored for **lstart**
 == .TRUE.
 
 
-5.7.4 (temperature)
-^^^^^^^^^^^^^^^^^^^^
+(temperature)
+^^^^^^^^^^^^^^
 
 **treq** = [real]
 
@@ -786,8 +786,8 @@ Gives the initial temperature in [K] for NVE, NVT, and NPT QMD
 simulations.
 
 
-5.7.5 (check temperature)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+(check temperature)
+^^^^^^^^^^^^^^^^^^^^
 
 **liscale** = [boolean] **iscnum** = [integer] **iscstp** = [integer]
 
@@ -803,8 +803,8 @@ Determines whether and how to scale temperature to keep it near the
 initial given temperature.
 
 
-5.7.6 (make total momentum zero)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(make total momentum zero)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **lmomzero** = [boolean]
 
@@ -813,8 +813,8 @@ Deafault: **lmomzero** = .FALSE.
 .TRUE. : Make the total momentum zero. .FALSE. : Do not
 
 
-5.7.7 (optimization)
-^^^^^^^^^^^^^^^^^^^^^
+(optimization)
+^^^^^^^^^^^^^^^
 
 **ioptmze** = [-1|0|1|2|3|10]
 
@@ -835,8 +835,8 @@ Determines method for structural optimization of atomic coordinates.
 This varibale is onlt read when **ifmd** == 1.
 
 
-5.7.8 (cell optimization)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+(cell optimization)
+^^^^^^^^^^^^^^^^^^^^
 
 **ioptmze_cell** = [-1|0|1|2]
 
@@ -858,8 +858,8 @@ read when **ifmd** == 1, and is not not read when **ioptmze** == 1 or
 10.
 
 
-5.7.9 (cell CG time step)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+(cell CG time step)
+^^^^^^^^^^^^^^^^^^^^
 
 **dtcellcg** = [real]
 
@@ -871,8 +871,8 @@ only for Conjugate gradient method (**ifmd** == 1 & **ioptmze_cell** ==
 0).
 
 
-5.7.10 (stabilizer for quasi-Newton)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(stabilizer for quasi-Newton)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **gammamin** = [real]
 
@@ -883,8 +883,8 @@ only for Conjugate gradient method (**ifmd** == 1 & **ioptmze_cell** ==
 only for quasi-Newton method (**ifmd** == 1 & **ioptmze** == 2).
 
 
-5.7.11 (clear Hessian)
-^^^^^^^^^^^^^^^^^^^^^^^
+(clear Hessian)
+^^^^^^^^^^^^^^^^
 
 **ibfgsclear** = [0|1]
 
@@ -897,8 +897,8 @@ only for quasi-Newton method (**ifmd** == 1 & **ioptmze** == 2).
 1: Clear Hessian after every ibfgsclear step 0: Hessian is not cleared
 
 
-5.7.12 (clear cell Hessian)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(clear cell Hessian)
+^^^^^^^^^^^^^^^^^^^^^
 
 **iclearcellh** = [integer]
 
@@ -910,8 +910,8 @@ Clear Hessian every **iclearcellh** step. If **iclearcellh** == 0, the
 Hessian is not cleared.
 
 
-5.7.13 (hybrid optimization)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(hybrid optimization)
+^^^^^^^^^^^^^^^^^^^^^^
 
 **lhybridopt** = [boolean] **nstep_hybrid** = [integer]
 **nstep_hybrid_cell** = [integer]
@@ -931,8 +931,8 @@ variables are only read for optimization calculations(\ **ifmd** == 1 &
 **ioptmze** >= 0 & **ioptmze_cell** >= 0 )
 
 
-5.7.14 (pressure)
-^^^^^^^^^^^^^^^^^^
+(pressure)
+^^^^^^^^^^^
 
 **hpext** = [real]
 
@@ -944,8 +944,8 @@ Defines the pressure in [GPa] for NPT-MD & MSST (**ifmd** == 4, 10) &
 **ioptmze_cell** >= 0.
 
 
-5.7.15 (barostat parameters)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(barostat parameters)
+^^^^^^^^^^^^^^^^^^^^^^
 
 **tbomega** = [real] **blkmod** = [real]
 
@@ -959,8 +959,8 @@ scale for barostat in [a.u.], and **blkmod** gives the bulk modulus in
 
 
 
-5.7.16 (shock wave velocity)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(shock wave velocity)
+^^^^^^^^^^^^^^^^^^^^^^
 
 **shockspeed** = [real] **nshockv(1:3)** = [0|1, 0|1, 0|1]
 
@@ -977,8 +977,8 @@ direction **nshockv(1:3)** = 0 0 1: L3 direction **nshockv(1:3)** = 1 1
 
 .. _51025-clear-barostat-velocity:
 
-5.7.17 (clear barostat velocity)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(clear barostat velocity)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **lmsstscale** = [boolean] **msstscnum** = [integer] **msstscstp** =
 [integer]
@@ -991,8 +991,8 @@ These variables are only read for MSST (**ifmd** == 10).
 
 .. _51026-initial-barostat-velocity:
 
-5.7.18 (initial barostat velocity)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(initial barostat velocity)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **vxmsst** = [real]
 
@@ -1005,8 +1005,8 @@ Defines the initial barostat velocity. Only read for MSST (**ifmd** ==
 
 .. _51027-output-data:
 
-5.7.19 (output data)
-^^^^^^^^^^^^^^^^^^^^^
+(output data)
+^^^^^^^^^^^^^^
 
 **ioskip** = [integer] **locoor, ioskipcoor** = [boolean, integer]
 
@@ -1014,8 +1014,8 @@ Defines what data to output for MD-nodes.
 
 .. _51028-charge-estimation:
 
-5.7.20 (charge estimation)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(charge estimation)
+^^^^^^^^^^^^^^^^^^^^
 
 **ichest** = [integer]
 
@@ -1027,8 +1027,8 @@ Number of previous steps
 
 .. _51029-wavefunction-estimation:
 
-5.7.21 (wavefunction estimation)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(wavefunction estimation)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **ihest** = [integer]
 
@@ -1037,8 +1037,8 @@ Number of previous steps
 .. _51030-aspc-charge-estimation:
 
 
-5.7.22 (tolerance)
-^^^^^^^^^^^^^^^^^^^
+(tolerance)
+^^^^^^^^^^^^
 
 **tol_energy** = [real] **tol_force** = [real]
 
@@ -1047,13 +1047,13 @@ energy/atom in [a.u.]. **tol_force** gives maximum force in [a.u.].
 
 .. _511-save-data:
 
-5.8 save data
-~~~~~~~~~~~~~~
+save data
+~~~~~~~~~~
 
 .. _5.8-onoff:
 
-5.8.1 (On/Off)
-^^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^^
 
 **lsave** = [boolean]
 
@@ -1065,8 +1065,8 @@ Whether or not to save data...which data?
 
 .. _5.9-data-type:
 
-5.8.2 (data type)
-^^^^^^^^^^^^^^^^^^
+(data type)
+^^^^^^^^^^^^
 
 **lsreal8** = [boolean]
 
@@ -1080,13 +1080,13 @@ Determines the data type for saved data
 
 
 
-5.9 stress calculation ------ only for bulk calculations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+stress calculation ------ only for bulk calculations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _5121-onoff:
 
-5.9.1 (On/Off)
-^^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^^
 
 **lstress** = [boolean]
 
@@ -1100,8 +1100,8 @@ Determines whether to estimate the stress.
 
 .. _5122-skip-step:
 
-5.9.2 (skip step)
-^^^^^^^^^^^^^^^^^^
+(skip step)
+^^^^^^^^^^^^
 
 **nskip_stress** = [integer]
 
@@ -1113,13 +1113,13 @@ Determines whether to estimate the stress.
 
 .. _513-dump-charge-density:
 
-5.10 dump charge density
-~~~~~~~~~~~~~~~~~~~~~~~~
+dump charge density
+~~~~~~~~~~~~~~~~~~~
 
 .. _5131-onoff:
 
-5.10.1 (On/Off)
-^^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^
 
 **ldpchg** = [boolean]
 
@@ -1133,8 +1133,8 @@ Determines whether to output the charge density.
 
 .. _5.102-skip-step:
 
-5.10.2 (skip step)
-^^^^^^^^^^^^^^^^^^
+(skip step)
+^^^^^^^^^^^
 
 **nskip_dpchg** = [integer]
 
@@ -1146,8 +1146,8 @@ Determines whether to output the charge density.
 
 .. _5133-output-area:
 
-5.10.3 (output area)
-^^^^^^^^^^^^^^^^^^^^
+(output area)
+^^^^^^^^^^^^^
 
 **x_min** **x_max** = [real] [real] **y_min** **y_max** = [real] [real]
 **z_min** **z_max** = [real] [real]
@@ -1163,13 +1163,13 @@ the whole space.
 
 .. _514-dump-wavefunctions:
 
-5.11 dump wavefunctions
-~~~~~~~~~~~~~~~~~~~~~~~
+dump wavefunctions
+~~~~~~~~~~~~~~~~~~
 
 .. _5141-onoff:
 
-5.11.1 (On/Off)
-^^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^
 
 **ldpwav** = [boolean]
 
@@ -1183,8 +1183,8 @@ Determines whether to output the wavefunction.
 
 .. _5142-bands:
 
-5.11.2 (bands)
-^^^^^^^^^^^^^^
+(bands)
+^^^^^^^
 
 (**ibstt1**, **ibstt2**) = [integer] [integer]
 
@@ -1198,8 +1198,8 @@ The wavefunction will be output from **ibstt1** to **ibstt2**.
 
 .. _5143-skip-step:
 
-5.11.3 (skip step)
-^^^^^^^^^^^^^^^^^^
+(skip step)
+^^^^^^^^^^^
 
 **nskip_dpwav** = [integer]
 
@@ -1211,8 +1211,8 @@ The wavefunction will be output from **ibstt1** to **ibstt2**.
 
 .. _5144-output-area:
 
-5.11.4 (output area)
-^^^^^^^^^^^^^^^^^^^^
+(output area)
+^^^^^^^^^^^^^
 
 **x_min** **x_max** = [real] [real] **y_min** **y_max** = [real] [real]
 **z_min** **z_max** = [real] [real]
@@ -1228,13 +1228,13 @@ the whole space.
 
 .. _515-dump-local-potential:
 
-5.12 dump local potential
-~~~~~~~~~~~~~~~~~~~~~~~~~
+dump local potential
+~~~~~~~~~~~~~~~~~~~~
 
 .. _5151-onoff:
 
-5.12.1 (On/Off)
-^^^^^^^^^^^^^^^
+(On/Off)
+^^^^^^^^
 
 **ldppot** = [boolean]
 
@@ -1248,8 +1248,8 @@ Determines whether to output the local potential.
 
 .. _5152-average-plane:
 
-5.12.2 (average plane)
-^^^^^^^^^^^^^^^^^^^^^^
+(average plane)
+^^^^^^^^^^^^^^^
 
 **nav_dppot** = [1|2|3]
 
@@ -1269,8 +1269,8 @@ The plane-averaged local potential will be output.
 
 .. _5153-skip-step:
 
-5.12.3 (skip step)
-^^^^^^^^^^^^^^^^^^
+(skip step)
+^^^^^^^^^^^
 
 **nskip_dppot** = [integer]
 
@@ -1282,8 +1282,8 @@ The plane-averaged local potential will be output.
 
 .. _5154-output-area:
 
-5.12.4 (output area)
-^^^^^^^^^^^^^^^^^^^^
+(output area)
+^^^^^^^^^^^^^
 
 **x_min** **x_max** = [real] [real] **y_min** **y_max** = [real] [real]
 **z_min** **z_max** = [real] [real]
@@ -1299,13 +1299,13 @@ the whole space.
 
 .. _5.5-supercell:
 
-5.13 supercell
-~~~~~~~~~~~~~~
+supercell
+~~~~~~~~~
 
 .. _5.51-unit-of-length:
 
-5.13.1 (unit of length)
-^^^^^^^^^^^^^^^^^^^^^^^
+(unit of length)
+^^^^^^^^^^^^^^^^
 
 (bohr) or (ang)
 
@@ -1320,8 +1320,8 @@ calculations, the supercell has to be ORTHORHOMBIC.
 
 .. _5.52-cell-vector:
 
-5.13.2 (cell vector)
-^^^^^^^^^^^^^^^^^^^^
+(cell vector)
+^^^^^^^^^^^^^
 
 L1 = [real] [real] [real] L2 = [real] [real] [real] L3 = [real] [real]
 [real]
@@ -1336,8 +1336,8 @@ Example:
 
 .. _5.53-lengths--angles:
 
-5.13.3 (lengths & angles)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+(lengths & angles)
+^^^^^^^^^^^^^^^^^^
 
 Example:
 
@@ -1347,13 +1347,13 @@ Example:
     90.00,  90.00,  90.00  :  angles between cell vec. in [deg.]
 
 
-5.14 planewaves
-~~~~~~~~~~~~~~~
+planewaves
+~~~~~~~~~~
 
 .. _5.61-unit-of-cutoff-energy:
 
-5.14.1 (unit of cutoff energy)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(unit of cutoff energy)
+^^^^^^^^^^^^^^^^^^^^^^^
 
 (ry) or (hr) or (ev)
 
@@ -1365,8 +1365,8 @@ Determines the unit of cutoff energy.
 
 .. _5.62-for-wavefuctions:
 
-5.14.2 (for wavefuctions)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+(for wavefuctions)
+^^^^^^^^^^^^^^^^^^
 
 **ecut** = [real]
 
@@ -1374,8 +1374,8 @@ Determines the unit of cutoff energy.
 
 .. _5.63-for-electron-density:
 
-5.14.3 (for electron density)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(for electron density)
+^^^^^^^^^^^^^^^^^^^^^^
 
 **ecutdens** = [real]
 
@@ -1389,8 +1389,8 @@ Determines the unit of cutoff energy.
 
 .. _5.64-for-soft-part-of-density:
 
-5.14.4 (for soft part of density)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(for soft part of density)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **ecutsoft** = [real]
 
@@ -1403,8 +1403,8 @@ density. It must be greater than ecut, and smaller than ecut*4.
 
 .. _5.65-for-orthogonalization:
 
-5.14.5 (for orthogonalization)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(for orthogonalization)
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **ecutorth** = [real]
 
@@ -1416,8 +1416,8 @@ density. It must be greater than ecut, and smaller than ecut*4.
 
 .. _5.66-for-charge-density-mixing:
 
-5.14.5 (for charge density mixing)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(for charge density mixing)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **ecutc** = [real]
 
@@ -1430,13 +1430,13 @@ density. It must be greater than ecut, and smaller than ecut*4.
 
 
 
-5.15 electronic bands
-~~~~~~~~~~~~~~~~~~~~~
+electronic bands
+~~~~~~~~~~~~~~~~
 
 .. _5.71-occupied-bands:
 
-5.15.1 (occupied bands)
-^^^^^^^^^^^^^^^^^^^^^^^
+(occupied bands)
+^^^^^^^^^^^^^^^^
 
 **noband** = [integer]
 
@@ -1449,8 +1449,8 @@ accommodate all the valence electrons in the simulation.
 
 .. _5.72-empty-bands:
 
-5.15.2 (empty bands)
-^^^^^^^^^^^^^^^^^^^^
+(empty bands)
+^^^^^^^^^^^^^
 
 **neband** = [integer]
 
@@ -1462,8 +1462,8 @@ A good rule of thumb is to set neband equal to 10% of occupied bands.
 
 .. _5.73-broadening:
 
-5.15.3 (broadening)
-^^^^^^^^^^^^^^^^^^^
+(broadening)
+^^^^^^^^^^^^
 
 **lfermi** = [integer] flag **tfermi** = [real]
 
@@ -1477,8 +1477,8 @@ smearing scheme of order lfermi-3
 
 .. _5.74-charge-number-of-ion:
 
-5.15.4 (charge number of ion)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(charge number of ion)
+^^^^^^^^^^^^^^^^^^^^^^
 
 **ncion** = [integer]
 
@@ -1491,13 +1491,13 @@ Charged-periodic calculations are perfomed with the uniform background.
 
 .. _5.8-atoms:
 
-5.16 Atoms
-~~~~~~~~~~
+Atoms
+~~~~~
 
 .. _5.81-species:
 
-5.16.1 (species)
-^^^^^^^^^^^^^^^^
+(species)
+^^^^^^^^^
 
 **ntype** = [integer]
 
@@ -1510,8 +1510,8 @@ Number of atom types. The subsequent sections must be duplicated
 
 .. _5.82-atomic-number:
 
-5.16.2 (atomic number)
-^^^^^^^^^^^^^^^^^^^^^^
+(atomic number)
+^^^^^^^^^^^^^^^
 
 **zatom** = [integer]
 
@@ -1524,8 +1524,8 @@ Atomic number of the current atom type
 .. _5.83-pseudopotential:
 
 
-5.16.3 (partial core correction)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(partial core correction)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **lpcc** = [boolean] **rpcc** = [real] **lpking** = [boolean] **rpking**
 = [real] **gpkgmax** = [real] **gpkgexct** = [real]
@@ -1546,8 +1546,8 @@ al.
 
 .. _5.88-the-number-of-atoms:
 
-5.16.4 (the number of atoms)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(the number of atoms)
+^^^^^^^^^^^^^^^^^^^^^
 
 **nhk** = [integer]
 
@@ -1560,8 +1560,8 @@ configuration is read from the positions file
 
 .. _5.89-unit-of-length:
 
-5.16.5 (unit of length)
-^^^^^^^^^^^^^^^^^^^^^^^
+(unit of length)
+^^^^^^^^^^^^^^^^
 
 (bohr) or (ang)
 
@@ -1571,8 +1571,8 @@ configuration is read from the positions file
 
 .. _5.810-position-file:
 
-5.16.6 (position file)
-^^^^^^^^^^^^^^^^^^^^^^^
+(position file)
+^^^^^^^^^^^^^^^^
 
 **fname** = [String] **scaledflag**\ \* = [integer] **keyword**\ \* =
 [integer]
@@ -1602,8 +1602,8 @@ The coordinates for (n_i == keyword) are selected.
 
 .. _5.811-positions:
 
-5.16.7 (positions)
-^^^^^^^^^^^^^^^^^^^
+(positions)
+^^^^^^^^^^^^
 
 **nunitcells** = [integer][integer][integer] **scaledflag**\ \* =
 [integer] ``nhk`` lines of **positions** = [real][real][real]
@@ -1632,8 +1632,8 @@ coordinates ( in a.u. ) have to be given like below.
 .. _5.812-fix-positions:
 
 
-5.16.8 (velocity file)
-^^^^^^^^^^^^^^^^^^^^^^^
+(velocity file)
+^^^^^^^^^^^^^^^^
 
 **fname** = [String] **keyword**\ \* = [integer]
 
@@ -1660,8 +1660,8 @@ The velocities for (n_i == keyword) are selected.
 
 .. _5.816-velocities:
 
-5.16.9 (velocities)
-^^^^^^^^^^^^^^^^^^^^
+(velocities)
+^^^^^^^^^^^^^
 
 **nunitcells** = [integer][integer][integer] **scalingfactor**\ \* =
 [real] ``nhk`` lines of scaled **velocities** = [real][real][real] .

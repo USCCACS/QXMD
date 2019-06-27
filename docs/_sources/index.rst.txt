@@ -13,8 +13,6 @@ Sciences, under Award Number DE-SC0014607.
 
 This manual is organized into the following sections.
 
-User Documentation
-==================
 .. toctree::
    :maxdepth: 3
     
@@ -26,4 +24,4 @@ User Documentation
    output
    util
    lic
-
+   support

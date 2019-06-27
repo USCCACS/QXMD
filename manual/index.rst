@@ -1,0 +1,29 @@
+.. QXMD documentation master file, created by
+   sphinx-quickstart on Mon Jan 28 16:46:45 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+QXMD: Nonadiabatic Quantum Molecular Dynamics
+=============================================
+
+QXMD is a scalable, parallel program for Quantum Molecular Dynamics simulations with various eXtensions. Its simulation engine is based on (time-dependent) density functional theory using pseudopotentials and plane-wave basis, while extensions include nonadiabatic electron-nuclei dynamics and multiscale shock technique. QXMD serves as a community-development platform for new methods and algorithms, a research platform on high-end parallel supercomputers, and an educational platform for hands-on training.
+
+QXMD is supported as part of the Computational Materials Sciences Program funded by the US Department of Energy, Office of Science, Basic Energy
+Sciences, under Award Number DE-SC0014607.
+
+This manual is organized into the following sections.
+
+User Documentation
+==================
+.. toctree::
+   :maxdepth: 3
+    
+   Intro
+   install
+   program
+   IOf
+   param
+   output
+   util
+   lic
+

@@ -1,0 +1,788 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>{next} &mdash; QXMD 3.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> QXMD
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../program.html">Program Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOf.html">Input/Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../param.html">Input Parameters: IN.PARAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output.html">QXMD Simulation Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../util.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lic.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QXMD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>{next}</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="next">
+<h1>{next}<a class="headerlink" href="#next" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Added: <code class="docutils literal notranslate"><span class="pre">:hl_lines:</span></code> code directive allows highlighting of specific lines (issue 623)</li>
+<li>Added: Extension metadata for Sphinx is now returned in pdfbuilder (issue 640)</li>
+<li>Added: The Sphinx <code class="docutils literal notranslate"><span class="pre">today</span></code> config setting is now used if it is set</li>
+<li>Changed: <code class="docutils literal notranslate"><span class="pre">:start-after:</span></code> will now render the next line</li>
+<li>Changed: We now use PILLOW rather than PIL</li>
+<li>Fixed: Using <code class="docutils literal notranslate"><span class="pre">:start-after:</span></code> with <code class="docutils literal notranslate"><span class="pre">linenos_offset</span></code> now displays the correct line number</li>
+<li>Fixed: Using <code class="docutils literal notranslate"><span class="pre">:start-at:</span></code> with <code class="docutils literal notranslate"><span class="pre">linenos_offset</span></code> now displays the correct line number</li>
+<li>Fixed: Inline <code class="docutils literal notranslate"><span class="pre">:math:`</span> <span class="pre">works</span> <span class="pre">again</span> <span class="pre">as</span> <span class="pre">we</span> <span class="pre">now</span> <span class="pre">use</span> <span class="pre">quoted</span> <span class="pre">attributes</span> <span class="pre">for</span> <span class="pre">HTML</span> <span class="pre">``&lt;img&gt;</span></code> tags (issue 567)</li>
+<li>Fixed: sphinx+rst2pdf now works with automodule directive Sphinx &gt;= 1.4 (issue 566)</li>
+<li>Fixed: CreationDate metadata shows correct date using Sphinx (issue 525)</li>
+<li>Fixed: <code class="docutils literal notranslate"><span class="pre">:alt:</span></code> option now works for plantuml extension</li>
+<li>Fixed: <code class="docutils literal notranslate"><span class="pre">:linenos_offset:</span></code> now works again</li>
+<li>Fixed: Removed debugging print statement when using line blocks</li>
+<li>Fixed: Removed uniconverter from setup (issue 487)</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1>0.93 (2012-12-18)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed Issue 447: Double-sided always starts on the right (By Rob Ludwick)<ul>
+<li>Removed –first-page-even as it was not used anywhere.</li>
+<li>Added –first-page-on-right</li>
+</ul>
+</li>
+<li>Fixed Issue 464: support alignment via :class: in image directives.</li>
+<li>Fixed Issue 482: Line blocks with indented parts get extraneous spacing</li>
+<li>Fixed Issue 470: Support for :target: in figures.</li>
+<li>New style “image” to be applied to image directives.</li>
+<li>Fixed Issue 485: Better styling support for figures/images (spaceBefore/After)</li>
+<li>Support rst2pdf [inf [outf]] syntax to be more compatible with rst2*</li>
+<li>Implemented Issue 389: New –strip-element-with-class option</li>
+<li>Fixed Issue 474: CellStyle1 is not there in reportlab 2.6</li>
+<li>Removed default padding from DelayedTable, which looked bad
+on headers/footers.</li>
+<li>Improvements to the math directive (font color and size)</li>
+<li>Better support for styling literals.</li>
+<li>Fixed Issue 454 (Splitting failure)</li>
+<li>Regressed Issue 374 (some literal blocks get oversplit)</li>
+<li>Switched from svglib to svg2rlg</li>
+<li>Removed uniconvertor support</li>
+<li>Fixed Issue 477: Sink footnote separator (patch by asermax)</li>
+<li>Fixed Issue 473: Support “code” directive like an alias of code-block.</li>
+<li>Fixed Issue 472: Implemented MyImage._unRestrictSize</li>
+<li>Fixed Issue 471: Respect class in lineblocks.</li>
+<li>Fixed Issue 455: New pisa/xhtml2pdf has very different imports</li>
+<li>Reopened Issue 289: Broken bullet customization.</li>
+<li>Reopened Issue 310: Line numbers in code blocks are wrong</li>
+<li>Reopened Issue 337: Bad layout with inline images in tables</li>
+<li>Marked Issue 358 as fixed.</li>
+<li>Fixed Issue 410: always include full lines in code-blocks (mmueller patch)</li>
+<li>Regression in fancytitles extension: Issue 486</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h1>0.92 (2012-06-01)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed Issue 394; missing _restrictSize method with RL 2.5</li>
+<li>Fixed Issue 452: applying missing classes to lists crashed rst2pdf</li>
+<li>Fixed Issue 427: multiple spaces collapsed on inline literals.</li>
+<li>Fixed Issue 451: roman.py was moved in docutils 0.9</li>
+<li>Fixed Issue 446: made it work again with python 2.4</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h1>0.91 (2012-03-06)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed Issue 438: sphinx support was completely broken in 0.90</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h1>0.90 (2012-03-04)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Added raw HTML support, by Dimitri Christodoulou</li>
+<li>Fixed Issue 422: Having no .afm files made font lookup slow.</li>
+<li>Fixed Issue 411: Sometimes the windows registry has the font’s abspath.</li>
+<li>Fixed Issue 430: Using –config option caused other options to
+be ignored (by charles at cstanhope dot com)</li>
+<li>Fixed Issue 436: Add pdf_style_path to sphinx (by <a class="reference external" href="mailto:tyler&#37;&#52;&#48;datastax&#46;com">tyler<span>&#64;</span>datastax<span>&#46;</span>com</a>)</li>
+<li>Fixed Issue 428: page numbers logged as errors</li>
+<li>Added support for many pygments options in code-block (by Joaquin Sorianello)</li>
+<li>Implemented Issue 404: plantuml support</li>
+<li>Issue 399: support sphinx’s template path option</li>
+<li>Fixed Issue 406: calls to the wrong logging function</li>
+<li>Implemented Issue 391: New –section-header-depth option.</li>
+<li>Fixed Issue 390: the –config option was ignored.</li>
+<li>Added support for many pygments options in code-block (by Joaquin Sorianello)</li>
+<li>Fixed Issue 379: Wrong style applied to paragraphs in definitions.</li>
+<li>Fixed Issue 378: Multiline :address: were shown collapsed.</li>
+<li>Implemented Issue 11: FrameBreak (and conditional FrameBreak)</li>
+<li>The description of frames in page templates was just wrong.</li>
+<li>Fixed Issue 374: in some cases, literal blocks were split inside
+a page, or the pagebreak came too early.</li>
+<li>Fixed Issue 370: warning about sphinx.addnodes.highlightlang not being
+handled removed.</li>
+<li>Fixed Issue 369: crash in hyphenator when specifying “en” as a language.</li>
+<li>Compatibility fix to Sphinx 0.6.x (For python 2.7 docs)</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h1>0.16 (2010-10-06)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed Issue 343: Plugged memory leak in the RSON parser.</li>
+<li>Fix for Issue 287: there is still a corner case if you have two sections
+with the same title, at the same level, in the same page, in different files
+where the links will break.</li>
+<li>Fixed Issue 367: german-localized dates are MM. DD. YYYY so when used in sphinx’s
+template cover they appeared weird, like a list item. Fixed with a minor workaround in
+the template.</li>
+<li>Fixed Issue 366: links to “#” make no sense on a PDF file</li>
+<li>Made definitions from definition lists more stylable.</li>
+<li>Moved definition lists to SplitTables, so you can have very long
+definitions.</li>
+<li>Fixed Issue 318: Implemented Domain specific indexes for Sphinx 1.0.x</li>
+<li>Fixed Index links when using Sphinx/pdfbuilder.</li>
+<li>Fixed Issue 360: Set literal.wordWrap to None by default so it doesn’t inherit
+wordWrap CJK when you use the otherwise correct japanese settings. In any case,
+literal blocks are not supposed to wrap at all.</li>
+<li>Switched pdfbuilder to use SplitTables by default (it made no sense not to do it)</li>
+<li>Fixed Issue 365: some TTF fonts don’t validate but they work anyway.</li>
+<li>Set a valid default baseurl for Sphinx (makes it much faster!)</li>
+<li>New feature: –use-numbered-links to show section numbers in links to sections, like  “See section 2.3 Termination”</li>
+<li>Added stylesheets for landscape paper sizes (i.e: a4-landscape.style)</li>
+<li>Fixed Issue 364: Some options not respected when passed in per-doc options
+in sphinx.</li>
+<li>Fixed Issue 361: multiple linebreaks in line blocks were collapsed.</li>
+<li>Fixed Issue 363: strange characters in some cases in math directive.</li>
+<li>Fixed Issue 362: Smarter auto-enclosing of equations in $…$</li>
+<li>Fixed Issue 358: –real–footnotes defaults to False, but help text indicates default is True</li>
+<li>Fixed Issue 359: Wrong –fit-background-mode help string</li>
+<li>Fixed Issue 356: missing cells if a cell spawns rows and columns.</li>
+<li>Fixed Issue 349: Work correctly with languages that are available in form  aa_bb and not aa (example: zh_cn)</li>
+<li>Fixed Issue 345: give file/line info when there is an error in a raw PDF directive.</li>
+<li>Fixed Issue 336: JPEG images should work even without PIL (but give a warning because
+sizes will probably be wrong)</li>
+<li>Fixed Issue 351: footnote/citation references were generated incorrectly, which
+caused problems if there was a citation with the same text as a heading.</li>
+<li>Fixed Issue 353: better handling of graphviz, so that it works without vectorpdf
+but gives a warning about it.</li>
+<li>Fixed Issue 354: make todo_node from sphinx customizable.</li>
+<li>Fixed bug where nested lists broke page layout if the page was small.</li>
+<li>Smarter –inline-links option</li>
+<li>New extension: fancytitles, see <a class="reference external" href="http://lateral.netmanagers.com.ar/weblog/posts/BB906.html">http://lateral.netmanagers.com.ar/weblog/posts/BB906.html</a></li>
+<li>New feature: tab-width option in code-block directive (defaults to 8).</li>
+<li>Fixed Issue 340: endnotes/footnotes were not styled.</li>
+<li>Fixed Issue 339: class names using _ were not usable.</li>
+<li>Fixed Issue 335: ugly crash when using images in some
+specific places (looks like a reportlab bug)</li>
+<li>Fixed Issue 329: make the figure alignment/class attributes
+work more like LaTeX than HTML.</li>
+<li>Fixed Issue 328: list item styles were being ignored.</li>
+<li>Fixed Issue 186: new –use-floating-images makes images with
+:align: set work like in HTML, with the next flowable flowing
+beside it.</li>
+<li>Fixed Issue 307: header/footer from stylesheet now supports inline
+rest markup and substitutions defined in the main document.</li>
+<li>New pdf_toc_depth option for Sphinx/pdfbuilder</li>
+<li>New pdf_use_toc option for Sphinx/pdfbuilder</li>
+<li>Fixed Issue 308: compatibility with reportlab from SVN</li>
+<li>Fixed Issue 323: errors in the config.sample made it work weird.</li>
+<li>Fixed Issue 322: Image substitutions didn’t work in document title.</li>
+<li>Implemented Issue 321: underline and strikethrough available
+in stylesheet.</li>
+<li>Fixed Issue 317: Ugly error message when file does not exist</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h1>0.15<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed Issue 315: crash when using an undefined class for
+a list.</li>
+<li>Implemented Issue 279: images can be specified as URLs.</li>
+<li>Fixed Issue 313: new –fit-background-mode option.</li>
+<li>Fixed Issue 110: new –real-footnotes option (buggy).</li>
+<li>Fixed Issue 176: spacers larger than a page don’t crash.</li>
+<li>Fixed Issue 65: References to Helvetica/Times when it was not used.</li>
+<li>Fixed Issue 310: added option linenos_offset to code blocks.</li>
+<li>Fixed Issue 309: style for blockquotes was not respected.</li>
+<li>Custom cover page support (related to Issue 157)</li>
+<li>Fixed Issue 305: support wildcards in image names
+and then use the best one available.</li>
+<li>Implemented Issue 298: counters</li>
+<li>Improved widow/orphan support for literal blocks</li>
+<li>Fixed Issue 304: Code blocks didn’t respect fontSize in class.</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h1>0.14.2 (2010-03-26)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Regained compatibility with reportlab 2.3</li>
+<li>Fixed regression in Issue 152: right-edege of boxes not aligned inside
+list items.</li>
+<li>Fixed Issue 301: accept padding parameters in bullet/item lists</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h1>0.14.1 (2010-03-25)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Make it compatible with Sphinx 0.6.3 again</li>
+<li>Fixed Issue 300: image-missing.jpg was not installed</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h1>0.14 (2010-03-24)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed Issue 197: Table borders were confusing.</li>
+<li>Fixed Issue 297: styles from default.json leaked onto other syntax
+highlighting stylesheets.</li>
+<li>Fixed Issue 295: keyword replacement in headers/footers didn’t work
+if ###Page### and others was inside a table.</li>
+<li>New feature: oddeven directive to display alternative content on
+odd/even pages (good for headers/footers!)</li>
+<li>Switched all stylesheets to more readable RSON format.</li>
+<li>Fixed Issue 294: Images were deformed when only height was specified.</li>
+<li>Fixed Issue 293: Accept left/center/right as alignments in stylesheets.</li>
+<li>Fixed Issue 292: separate style for line numbers in codeblocks</li>
+<li>Fixed Issue 291: support class directive for codeblocks</li>
+<li>Fixed Issue 104: total number of pages in header/footer works in
+all cases now.</li>
+<li>Fixed Issue 168: linenos and linenothreshold options in Sphinx now
+work correctly.</li>
+<li>Fixed regression in 0.12 (interaction between rst2pdf and sphinx math)</li>
+<li>Documented extensions in the manual</li>
+<li>Better styling of bullets/items (Issue 289)</li>
+<li>Fixed Issue 290: don’t fail on broken images</li>
+<li>Better font finding in windows (patch by techtonik, Issue 282).</li>
+<li>Fixed Issue 166: Implemented Sphinx’s hlist (horizontal lists)</li>
+<li>Fixed Issue 284: Implemented production lists for sphinx</li>
+<li>Fixed Issue 165: Definition lists not properly indented inside
+admonitions or tables.</li>
+<li>SVG Images work inline when using the inkscape extension.</li>
+<li>Fixed Issue 268: TOCs shifted to the left on RL 2.4</li>
+<li>Fixed Issue 281: sphinx test automation was broken</li>
+<li>Fixed Issue 280: wrong page templates used in sphinx</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h1>0.13 (2010-03-15)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>New TOC code (supports dots between title and page number)</li>
+<li>New extension framework</li>
+<li>New preprocessor extension</li>
+<li>New vectorpdf extension</li>
+<li>Support for nested stylesheets</li>
+<li>New headerSeparator/footerSeparator stylesheet options</li>
+<li>Foreground image support (useful for watermarks)</li>
+<li>Support transparency (alpha channel) when specifying colors</li>
+<li>Inkscape extension for much better SVG support</li>
+<li>Ability to show total page count in header/footer</li>
+<li>New RSON format for stylesheets (JSON superset)</li>
+<li>Fixed Issue 267: Support :align: in figures</li>
+<li>Fixed Issue 174 regression (Indented lines in line blocks)</li>
+<li>Fixed Issue 276: Load stylesheets from strings</li>
+<li>Fixed Issue 275: Extra space before lineblocks</li>
+<li>Fixed Issue 262: Full support for Reportlab 2.4</li>
+<li>Fixed Issue 264: Splitting error in some documents</li>
+<li>Fixed Issue 261: Assert error with wordaxe</li>
+<li>Fixed Issue 251: added support for rst2pdf extensions when using sphinx</li>
+<li>Fixed Issue 256: ugly crash when using SVG images without SVG support</li>
+<li>Fixed Issue 257: support aafigure when using sphinx/pdfbuilder</li>
+<li>Initial support for graphviz extension in pdfbuilder</li>
+<li>Fixed Issue 249: Images distorted when specifiying width and height</li>
+<li>Fixed Issue 252: math directive conflicted with sphinx</li>
+<li>Fixed Issue 224: Tables can be left/center/right aligned in the page.</li>
+<li>Fixed Issue 243: Wrong spacing for second paragraphs in bullet lists.</li>
+<li>Big refactoring of the code.</li>
+<li>Support for Python 2.4</li>
+<li>Fully reworked test suite, continuous integration site.</li>
+<li>Optionally use SWFtools for PDF images</li>
+<li>Fixed Issue 231 (Smarter TTF autoembed)</li>
+<li>Fixed Issue 232 (HTML tags in title metadata)</li>
+<li>Fixed Issue 247 (printing stylesheet)</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h1>0.12.3<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed Issue 230 (Admonition titles were not translated)</li>
+<li>Fixed Issue 228 (page labels and numbers match, so page ii is the
+same on-page and in the PDF TOC)</li>
+<li>Fixed Issue 227 (missing background should not be fatal error)</li>
+<li>Fixed Issue 225 (bad spacing in lineblocks)</li>
+<li>Fixed Issue 223 (non-monospaced styles used in code)</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h1>0.12.2 (2009-10-19)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fix Issue 219 (incompatibility with reportlab 2.1)</li>
+<li>Added pdf_default_dpi option for pdfbuilder</li>
+<li>More style docs in the manual</li>
+<li>Better styling of lists</li>
+<li>Fix bug reported in comments in my blog where a stylesheet with
+showHeader=True and no explicit header caused an exception.</li>
+<li>Fixed Issue 215: crashes in bookrest’s background renderer.</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h1>0.12.1 (2009-10-14)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Ship local patched copy of pypoppler-qt4</li>
+<li>Partial fix for Issue 205: KeyError: ‘format’</li>
+<li>Fixed Issue 212: XML parsing error in bookrest</li>
+<li>Fixed Issue 210: pickle error in bookrest</li>
+<li>Switched –enable-splittables to True by default</li>
+<li>Fixed Issue 204: syntax error on font importing code</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h1>0.12 (2009-10-10)<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed Issue 202: broken processing of HTML raw nodes</li>
+<li>New “options” section in stylesheets. New [“options”][“stylesheets”] subsection,
+which works similar to -s or to an include file: a list of stylesheets to be
+processed before the current one.</li>
+<li>New –config option</li>
+<li>Fix for Issue 200 (position of frames was miscalculated)</li>
+<li>Fix For Issue 188 (uniconvertor “‘unicode’ object has no attribute ‘readline’” error)</li>
+<li>New raw directive command: SetPageCounter. This enables
+page counter manipulation, and use of different styles,
+roman, lowerroman, alpha, loweralpha and arabic.</li>
+<li>New raw directive commands: EvenPageBreak and OddPageBreak</li>
+<li>New option to make sections break to odd or even pages:
+–break-side=VALUE</li>
+<li>New option to add an empty page at the beginning of the
+document: –blank-first-page.</li>
+<li>Fixed bug in authors field width calculation</li>
+<li>Support % in bullet and field lists column widths</li>
+<li>Use bullet_list or item_list styles for bullet and item lists respectively.</li>
+<li>Support % in field list column width description.</li>
+<li>Fix for Issue 184 (font metrics go crazy with TT font)</li>
+<li>New admonition code based on SplitTable (beta quality)</li>
+<li>Fix for Issue 180 (support for very very long list items. Needs testing)</li>
+<li>Fix for Issue 175 (widow/orphan titles)</li>
+<li>Fix for Issue 174 (line blocks didn’t respect indentation)</li>
+<li>Worked around Issue 173 (quotes didn’t indent inside table cells)</li>
+<li>Respect spaceBefore and spaceAfter for footnotes/endnotes</li>
+<li>Added tests for (almost) all of sphinx’s custom markup</li>
+<li>Fixed Issue 170 (Wrong font embedding)</li>
+<li>Fixed Issue 171 (Damaged xref table)</li>
+<li>Fixed Issue 159 (Admonition and table widths were miscalculated)</li>
+<li>Fixed Issue 162 (wrong highlighting using sphinx)</li>
+<li>Changed default language policy as described in Issue 53</li>
+<li>Fixed Issue 148 (Images should be looked for relative to source document)</li>
+<li>Fixed Issue 158 (Some admonitions crashed pdfbuilder)</li>
+<li>Fixed Issue 154 (incompatibility with RL 2.1)</li>
+<li>Fixed Issue 155 (crash when sidebars split in a certain way)</li>
+<li>Fixed issue 152 (padding and alignment of table styles, like
+when using literal blocks inside lists)</li>
+<li>Integrated pdfbuilder sphinx extension (more work needed)</li>
+<li>Kerning support for true type fonts (thanks to wordaxe!), added
+to the docs, added convenience stylesheet.</li>
+<li>Fixed Issue 151 and behaviour on Issue 116, about images too large
+for available space / the full frame height.</li>
+<li>Fixed problem in admonition titles.</li>
+<li>Fixed section names in headers/footers: FIRST section on the page
+is used, not LAST.</li>
+<li>Fixed Issue 145: padding of literal blocks was broken.</li>
+<li>Fixed bug: paragraphs with ids should have the matching anchors</li>
+<li>Fixed bug: internal references were not linked correctly</li>
+<li>Fixed Issue 144: PDF TOC had wrong page numbers in some cases</li>
+<li>More sphinx compatibility</li>
+<li>New table styles code, also make class directive work for tables</li>
+<li>Fixed Issue 140: html-like markup in titles was kept in the PDF TOC</li>
+<li>Fixed Issue 138: Redid figure styling. Also fixed bugs in BoxedContainer</li>
+<li>Fixed Issue 137: bugs in escaping characters in interpreted roles</li>
+<li>Make it work (in a slightly degraded mode) without PIL, as
+long as you are only using JPGs or have PythonMagick installed.
+This is good for OS X, where “installing PIL is a PITA”</li>
+<li>Fixed issue 134: entities were replaced in interpreted roles
+(not needed)</li>
+<li>Support for aafigure (<a class="reference external" href="http://launchpad.net/aafigure">http://launchpad.net/aafigure</a>)</li>
+<li>Spacers support units</li>
+<li>TOC styles now configurable in stylesheet</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h1>0.11 (2009-06-20)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Degrade more gracefully when one or more wordaxe hyphenators are
+broken (currently DWC is the broken one)</li>
+<li>Fixed issue 132: in some cases, with user-defined fontAlias, bold and
+italic would get confused (getting italic instead of bold in inline
+markup, for instance).</li>
+<li>New stylesheet no-compact-lists to make lists… less compact</li>
+<li>SVG images now handle % as a width unit correctly.</li>
+<li>Implemented issue 127: support images in PDF format. Right now they
+are rasterized, so it’s not ideal. Perhaps something better will come up
+later.</li>
+<li>Fixed issue 129: make it work around a prblem with KeepTogether in RL 2.1
+it probably makes the output look worse in some cases when using that.
+RL 2.1 is not really supported, so added a warning.</li>
+<li>Fixed issue 130: use os.pathsep instead of “:” since “:” in windows is used
+in disk names (and we still pay for DOS idiocy, in 2009)</li>
+<li>Fixed issue 128: headings level 3+ all looked the same</li>
+<li>Ugly bugfix for Issue 126: crashes when using images in header + TOC</li>
+<li>New tstyles section in the stylesheet provides more configurable list layouts
+and more powerful table styling.</li>
+<li>Better syntax highlighting (supports bold/italic)</li>
+<li>Workaround for issue 103 so you can use borderPadding as a list (but it will look wrong
+if you are using wordaxe &lt;= 0.3.2)</li>
+<li>Added fieldvalue style for field lists</li>
+<li>Added optionlist tstyle, for option lists</li>
+<li>Added collection of utility stylesheets and documented it</li>
+<li>Improved command line parsing and stylesheet loading (guess
+extension like latest rst2latex does)</li>
+<li>Fixed Issue 67: completely new list layouting code</li>
+<li>Fixed Issue 116: crashes caused by huge images</li>
+<li>Better support for %width in images, n2ow it’s % of the container frame’s
+width, not of the text area.</li>
+<li>Fixed bug in SVG scaling</li>
+<li>Better handling of missing images</li>
+<li>Added missing styles abstract, contents, dedication to the default stylesheet</li>
+<li>Tables style support spaceBefore and spaceAfter</li>
+<li>New topic-title style for topic titles (obvious ;-)</li>
+<li>Vertical alignment for inline images (:align: parameter)</li>
+<li>Issue 118: Support for :scale: in images and handle resizing of inline images</li>
+<li>Issue 119: Fix placement of headers and footers</li>
+<li>New background property for page templates (nice for presentations, for example)</li>
+<li>Default to px for image width specifications instead of pt</li>
+<li>Support all required measurement units (“em” “ex” “px” “in” “cm”
+“mm” “pt” “pc” “%” “”)</li>
+<li>New automated scripts to check test cases for “visual differences”</li>
+<li>Respect images DPI property a bit like rst2latex does.</li>
+<li>Issue 110: New –inline-footnotes option</li>
+<li>Tested with reportlab from SVN trunk</li>
+<li>Support for Dinu Gherman’s svglib. If both svglib and uniconvertor are available,
+svglib is preferred (for SVG, of course). Patch originally by rute.</li>
+<li>Issue 109: Separate styles for each kind of admonition</li>
+<li>For Issue 109: missing styles are not a fatal error</li>
+<li>Issue 117: TOCs with more than 6 levels now supported (raised limit to 9, which
+is silly deep)</li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h1>0.10.1 (2009-05-16)<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Issue 114: Fixed bug in PDF TOC for sections containing ampersands</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h1>0.10 (2009-05-15)<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Issue 87: Table headers can be repeated in each page (thanks to Yasushi Masuda)</li>
+<li>Issue 93: Line number support for code blocks (:linenos: true)</li>
+<li>Issue 111: Added –no-footnote-backlinks option</li>
+<li>Issue 107: Support localized directives/roles (example: sommaire instead of contents)</li>
+<li>Issue 112: Fixed crash when processing empty list items</li>
+<li>Issue 98: Nobreak support, and set as default for inline-literals so they don’t hyphenate.</li>
+<li>Slightly better tests</li>
+<li>Background colors in text styles work with reportlab 2.3</li>
+<li>Issue 99: Fixed hyphenation in headers/footers (requires wordaxe 0.3.2)</li>
+<li>Issue 106: Crash on demo.txt fixed (requires wordxe 0.3.2)</li>
+<li>Issue 102: Implemented styles for bulleted and numbered lists</li>
+<li>Issue 38: Default headers/footers via options, config file or stylesheet</li>
+<li>Issue 88: Implemented much better book-style TOCs</li>
+<li>Issue 100: Fixed bug with headers/footers and Reportlab 2.3</li>
+<li>Issue 95: Fixed bug with indented tables</li>
+<li>Issue 89: Implemented –version</li>
+<li>Issue 84: Fixed bug with relative include paths</li>
+<li>Issue 85: Fixed bug with table cell styles</li>
+<li>Issue 83: Fixed bug with numeric colors in backColor attribute</li>
+<li>Issue 44: Support for stdin and stdout</li>
+<li>Issue 79: Added –stylesheet-path option</li>
+<li>Issue 80: Send warnings to stderr, not stdout</li>
+<li>Issue 66: Implemented “smart quotes”</li>
+<li>Issue 77: Work around missing matplotlib</li>
+<li>Proper translation of labels (such as “Author”, “Version” etc.) using the
+docutils languages package. (r473)</li>
+<li>Fixed problems with wrong or non-existing fonts. (r484)</li>
+<li>Page transition effect support for presentations (r423)</li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h1>0.9 (2008-09-26)<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Math support via Mathplotlib</li>
+<li>Huge bug in header/footer page numbers/section names fixed</li>
+<li>Several bugs in nested lists fixed (not 100% correct yet, but better)</li>
+<li>Lists that don’t start at 1 work now</li>
+<li>Nicer definition lists</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h1>0.8.1 (2008-09-19)<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Support for more complex headers and footers
+(including image directives and tables)</li>
+<li>Optional inline links</li>
+<li>Wordaxe 0.2.6 support</li>
+<li>Several bugs fixed (issues 48,68,41,60,58,64,67)</li>
+<li>Support for system-wide config file</li>
+<li>Better author metadata</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h1>0.8 (2008-09-12)<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Support for vector graphics: SVG, EPS, PS, CDR and others (requires uniconvertor)</li>
+<li>Support for stdin and stdout, so you can use rst2pdf in pipes.</li>
+<li>Works with reportlab 2.1 and 2.2</li>
+<li>Simpler stylesheets (guess bulletFontName, leading, bulletFontSize from other parameters)</li>
+<li>Some support for sphinx</li>
+<li>Fixed the docutils Writer interface</li>
+<li>Continue processing when an image is missing</li>
+<li>Support for user config file</li>
+<li>Font sizes can be expressed in units or % of parent style’s size</li>
+<li>Larger font size in the default stylesheet</li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h1>0.7 (2008-09-05)<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Automatic Type1 and True Type font embedding. Just use the font or family name, and (with a little luck), it will be embedded for you.</li>
+<li>width attribute in styles, to create narrow paragraphs/tables</li>
+<li>Styles for table headers and table cells</li>
+<li>“Zebra tables”</li>
+<li>Improvements in the handling of overflowing literal blocks (code, for instance)</li>
+<li>Different modes to handle too-large literal blocks: overflow/truncate/shrink.</li>
+<li>Real sidebars and “floating” elements.</li>
+<li>Fixed link style (no ugly black underlining!)</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h1>0.6 (2008-08-30)<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Stylesheet-defined page layout (For example, multicolumn) and layout switching</li>
+<li>Cascading Stylesheets (change exactly what you need changed)</li>
+<li>PDF table of contents</li>
+<li>Current section names and numbers in headers/footers</li>
+<li>Support for compressed PDF files</li>
+<li>Link color is configurable</li>
+<li>Fixed bugs in color handling</li>
+<li>Multilingual hyphenation</li>
+<li>Auto-guessing image size, support for sizes in %</li>
+<li>Gutter margins</li>
+<li>Big refactoring</li>
+<li>More tolerant of minor problems</li>
+<li>Limited _raw_ directive (you can insert pagebreaks and vertical space)</li>
+<li>Implemented a “traditional” docutils writer</li>
+<li>Offer a reasonable API for use as a library</li>
+<li>Fixed copyright/licensing</li>
+<li>code-block now supports including files (whole or in part) so you can highlight external code.</li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h1>0.5 (2008-08-27)<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Support for :widths: in tables</li>
+<li>Support for captions in tables</li>
+<li>Support for multi-row headers in tables</li>
+<li>Improved definition lists</li>
+<li>Fixed bug in image directive</li>
+<li>Whitespace conforming to PEP8</li>
+<li>Fixed bug in text size on code-block</li>
+<li>Package is more setuptools compliant</li>
+<li>Fix for option groups in option lists</li>
+<li>Citations support</li>
+<li>Title reference role fix</li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h1>0.4 (2008-08-25)<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fixed bullet and item lists indentation/nesting.</li>
+<li>Implemented citations</li>
+<li>Working links between footnotes and its references</li>
+<li>Justification enabled by default</li>
+<li>Fixed table bug (demo.txt works now)</li>
+<li>Title and author support in PDF properties</li>
+<li>Support for document title in header/footer</li>
+<li>Custom page sizes and margins</li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h1>0.3 (2008-08-25)<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Font embedding (use any True Type font in your PDFs)</li>
+<li>Syntax highlighter using Pygments</li>
+<li>User’s manual</li>
+<li>External/custom stylesheets</li>
+<li>Support for page numbers in header/footer</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, CACS &amp;&amp; Shimojo Lab
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

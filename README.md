@@ -145,10 +145,10 @@ There are many example input files for various types of simulations in the Examp
 
 <div class="row">
   <div class="column">
-    <img src="docs/_images/SoftwareX_Fig2a.png" alt="Snow" style="width:100%">
+    <img src="docs/_images/SoftwareX_Fig2a.png" style="width:250">
   </div>
   <div class="column">
-    <img src="docs/_images/SoftwareX_Fig3b.png" alt="Forest" style="width:100%">
+    <img src="docs/_images/SoftwareX_Fig3b.png" style="width:250">
   </div>
 </div>
 

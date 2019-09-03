@@ -149,8 +149,11 @@ This project is licensed under the GPU 3.0 license - see the [LICENSE](https://g
 
 ## 5. Publications
 
-1) F. Shimojo, Y. Zempo, K. Hoshino, and M. Watabe, "First-principles molecular-dynamics simulation of expanded liquid rubidium," Physical Review B, vol. 52, pp. 9320-9329, Oct 1 1995. <br>
+1) [F. Shimojo, Y. Zempo, K. Hoshino, and M. Watabe, "First-principles molecular-dynamics simulation of expanded liquid rubidium," Physical Review B, vol. 52, pp. 9320-9329, Oct 1 1995.](
+https://doi.org/10.1016/S0022-3093(96)00322-5)
 
-2) F. Shimojo, S. Hattori, R. K. Kalia, M. Kunaseth, W. Mou, A. Nakano, et al., "A divide-conquer-recombine algorithmic paradigm for large spatiotemporal quantum molecular dynamics simulations," Journal of Chemical Physics, vol. 140, 18A529, May 14, 2014.
+2) [F. Shimojo, S. Hattori, R. K. Kalia, M. Kunaseth, W. Mou, A. Nakano, et al., "A divide-conquer-recombine algorithmic paradigm for large spatiotemporal quantum molecular dynamics simulations," Journal of Chemical Physics, vol. 140, 18A529, May 14, 2014.](https://doi.org/10.1063/1.4869342)
+
+3) [F. Shimojo, S. Fukushima, H. Kumazoe, M. Misawa, S. Ohmura, P. Rajak, K. Shimamura, L. Bassman, S. Tiwari, R. K. Kalia, A. Nakano, and P. Vashishta, "QXMD: an open-source program for nonadiabatic quantum molecular dynamics," SoftwareX, vol. 10, 100307, July 26 2019.](https://doi.org/10.1016/j.softx.2019.100307)
 
 

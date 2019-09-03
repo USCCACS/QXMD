@@ -144,7 +144,7 @@ There are many example input files for various types of simulations in the Examp
 <br>
 
 <div>
-    <img src="docs/_images/SoftwareX_Fig2a.png" style=”width:50%”/><img src="docs/_images/SoftwareX_Fig3b.png" style=”width:50%”/>
+    <img src="docs/_images/SoftwareX_Fig2a.png" width="200"/><img src="docs/_images/SoftwareX_Fig3b.png" width="200"/>
 </div>
 
 <br>

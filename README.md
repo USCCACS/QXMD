@@ -140,7 +140,12 @@ In order to run QXMD, there are a few mandatory directories and files that must 
 •	NCPP/ or PAW/ or USPP/: a directory containing pseudopotential files for each atomic species in the system
 ```
 
-There are many example input files for various types of simulations in the Examples/ directory, including optimization of water, adiabatic QMD of water in the canonical ensemble, non-adiabatic QMD of monolayer MoSe2 in the microcanonical ensemble, and a MSST simulation of Si.  The NAQMD and MSST examples are explained in more detail in the sections below. 
+There are many example input files for various types of simulations in the Examples/ directory, including optimization of water, adiabatic QMD of water in the canonical ensemble, non-adiabatic QMD of monolayer MoSe2 in the microcanonical ensemble, and a MSST simulation of Si.  The NAQMD and MSST examples are explained in more detail in the [QXMD manual](https://usccacs.github.io/QXMD/index.html).  Follow those tutorials to create images like the ones shown below!
+
+![SoftwareX_Fig2a.png]
+![SoftwareX_Fig3b.png]
+
+<br>
 
 To learn more about QXMD, please refer to [QXMD manual](https://usccacs.github.io/QXMD/index.html).
 

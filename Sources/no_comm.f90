@@ -43,6 +43,15 @@ end
 
 
 !-----------------------------------------------------------------------
+subroutine abort_parallel(info)
+!-----------------------------------------------------------------------
+implicit none
+integer :: info
+return
+end
+
+
+!-----------------------------------------------------------------------
 subroutine comm_rank( myid, world )
 !-----------------------------------------------------------------------
 implicit none
@@ -216,6 +225,24 @@ subroutine clrecv(mesg_tag,mesg_buff,size,pid)
 !-----------------------------------------------------------------------
 integer :: mesg_tag,size,bufid,pid
 logical :: mesg_buff(*)
+return
+end
+
+
+!-----------------------------------------------------------------------
+subroutine cdrecvs(mesg_tag,mesg_buff,size,source,pid)
+!-----------------------------------------------------------------------
+integer :: mesg_tag,size,source,pid
+real*8  :: mesg_buff(*)
+return
+end
+
+
+!-----------------------------------------------------------------------
+subroutine cirecvs(mesg_tag,mesg_buff,size,source,pid)
+!-----------------------------------------------------------------------
+integer :: mesg_tag,size,source,pid
+integer :: mesg_buff(*)
 return
 end
 

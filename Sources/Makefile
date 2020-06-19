@@ -332,13 +332,13 @@ PROGPVM		= qxmdpvm
 #
 #.F90.o:
 #	@rm -f $*.f90
-#	/lib/cpp -P -C $(CPPDEFS) $*.F90 $(SEDDEF) $*.f90
+#	cpp -P -C $(CPPDEFS) $*.F90 $(SEDDEF) $*.f90
 #	$(FC) $(FFLAGS) $*.f90
 #	rm  $*.f90
 .F90.o:
 	@rm -f $*.$(EXTF90)
-#	/lib/cpp -P -C $(CPPDEFS) $*.F90 $(SEDDEF) $*.$(EXTF90)
-	/lib/cpp -P $(CPPDEFS) $*.F90 $(SEDDEF) $*.$(EXTF90)
+#	cpp -P -C $(CPPDEFS) $*.F90 $(SEDDEF) $*.$(EXTF90)
+	cpp -P $(CPPDEFS) $*.F90 $(SEDDEF) $*.$(EXTF90)
 #GNU#	mv $*.$(EXTF90) $*.f90
 	$(FC) $(FFLAGS) $*.f90
 	rm -f $*.$(EXTF90)

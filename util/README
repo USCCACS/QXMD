@@ -1,4 +1,9 @@
-Description of utility files:
+New Python Util Library 
+qxRead still beta testing 
+see top of file for detalis. 
+
+
+Old Fortran Utils Description of utility files:
 
 eig.f: outputs a text file with one column holding Kohn-Sham eigenenergies and a second column holding electronic occupation numbers for each time step in an adiabatic MD run.
 

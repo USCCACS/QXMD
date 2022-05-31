@@ -8,7 +8,7 @@
                               :
 *start                        :
 (on/off)                      :
- .false.                      : (lstart) .true. = restart
+ .true.                      : (lstart) .true. = restart
 *end                          :
                               :
                               :
@@ -36,13 +36,19 @@
    2                          : (ifmd)
                               :   0:non, 1:optimization, 2:NVE, 3:NVT, 4:NPT
 (time step)                   :
-   10.0d0   200               : (dtmd, nstop) time step, total step
+   10.0d0  300               : (dtmd, nstop) time step, total step
 (temperature)                 : only for real dynamics (NVE-, NVT-, NPT-MD )
    300.d0                     : (treq) temperature in [K]
 (check temperature)           :
   .false.                     : (liscale) .true. = Do it !
    25                         : (iscnum)  number of temperature check
    20                         : (iscstp)  skip step
+                              :
+(output data)                 : only for MD nodes
+    1                         : (ioskip)  skip step
+ .true.                       : (locoor) .true. = output scaled coordinates
+ .true.                       : (lovelo) .true. = output scaled velocities
+ .true.                       : (loforc) .true. = output scaled forces
                               :
 *end                          :
 ------------------------------:---------------------------------------

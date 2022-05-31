@@ -43,6 +43,11 @@
                               :   0: Conjugate gradient
                               :   1: Projected velocity Verlet
                               :   2: Quasi-Newton method with BFGS formula
+(output data)                 : only for MD nodes
+    1                         : (ioskip)  skip step
+ .true.                       : (locoor) .true. = output scaled coordinates
+ .true.                       : (lovelo) .true. = output scaled velocities
+ .true.                       : (loforc) .true. = output scaled forces
                               :
 (tolerance)                   : tolerance for CG optimization (ifmd == 1 )
   1.d-07                      : (tol_energy) energy/atom in [a.u.]

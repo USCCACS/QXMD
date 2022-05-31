@@ -1,0 +1,261 @@
+t1fuv_2.lo: t1fuv_2.c /usr/include/stdc-predef.h ../common/t1fuv_2.c \
+ ../../../dft/codelet-dft.h ../../../kernel/ifftw.h ../../../config.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/sigset.h \
+ /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-float.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/stdarg.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed/limits.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h /usr/include/inttypes.h \
+ /usr/include/sys/time.h /usr/include/xlocale.h ../../../dft/simd/t1fu.h \
+ ../../../simd-support/simd-avx2.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/immintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/mmintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/xmmintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/mm_malloc.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/emmintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/pmmintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/tmmintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/smmintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/popcntintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/wmmintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avxintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx2intrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512fintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512erintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512pfintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512cdintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vlintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512bwintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512dqintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vlbwintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vldqintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512ifmaintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512ifmavlintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vbmiintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vbmivlintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx5124fmapsintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx5124vnniwintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vpopcntdqintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vbmi2intrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vbmi2vlintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vnniintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vnnivlintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vpopcntdqvlintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512bitalgintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/shaintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/lzcntintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/bmiintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/bmi2intrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/fmaintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/f16cintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/rtmintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/xtestintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/cetintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/gfniintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/vaesintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/vpclmulqdqintrin.h \
+ /spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/movdirintrin.h \
+ ../../../simd-support/simd-common.h
+
+/usr/include/stdc-predef.h:
+
+../common/t1fuv_2.c:
+
+../../../dft/codelet-dft.h:
+
+../../../kernel/ifftw.h:
+
+../../../config.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/stddef.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/bits/byteswap-16.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/stdarg.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed/limits.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/inttypes.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/xlocale.h:
+
+../../../dft/simd/t1fu.h:
+
+../../../simd-support/simd-avx2.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/immintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/mmintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/xmmintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/mm_malloc.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/emmintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/pmmintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/tmmintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/smmintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/popcntintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/wmmintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avxintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx2intrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512fintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512erintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512pfintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512cdintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vlintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512bwintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512dqintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vlbwintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vldqintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512ifmaintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512ifmavlintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vbmiintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vbmivlintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx5124fmapsintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx5124vnniwintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vpopcntdqintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vbmi2intrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vbmi2vlintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vnniintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vnnivlintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512vpopcntdqvlintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/avx512bitalgintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/shaintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/lzcntintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/bmiintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/bmi2intrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/fmaintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/f16cintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/rtmintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/xtestintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/cetintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/gfniintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/vaesintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/vpclmulqdqintrin.h:
+
+/spack/apps/gcc/8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/movdirintrin.h:
+
+../../../simd-support/simd-common.h:

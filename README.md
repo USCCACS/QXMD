@@ -152,7 +152,7 @@ There are many example input files for various types of simulations in the Examp
 To learn more about QXMD, please refer to [QXMD manual](https://usccacs.github.io/QXMD/index.html).
 
 ## 4. License
-This project is licensed under the GPU 3.0 license - see the [LICENSE](https://github.com/USCCACS/QXMD/blob/master/LICENSE) file for details
+This project is licensed under the GPL 3.0 license - see the [LICENSE](https://github.com/USCCACS/QXMD/blob/master/LICENSE) file for details
 
 ## 5. Publications
 

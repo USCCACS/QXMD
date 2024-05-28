@@ -8,7 +8,37 @@
                               :
 *start                        :
 (on/off)                      :
- .false.                      : (lstart) .true. = restart
+ .true.                      : (lstart) .true. = restart
+*end                          
+
+                              :
+*TDDFT-MD                     :
+(how of it)                   :
+ .true.                       : (ltddft) .true. = execute MD based on TDDFT
+                              :
+(FSSH)                        :
+ .true.                       : (ltddft_fssh) .true. = FSSH, .false. = Ehrenfest
+                              :
+(FSSH-ground-state-SCF)       :
+ .true.                       : (lfssh_gsscf) .true.  = SCF with the ground  state
+                              :               .false. = SCF with the excited state
+(FSSH-mixing charge)          : only for lfssh_gsscf = .true.
+   0.8d0  0.13d0              : (aslh_fssh, bslh_fssh)
+                              :
+(time step)                   :
+   0.04d0                     : (dttddft) time step in [Hartree a.u.] in TDDFT-FSSH
+                              :
+(restart)                     :
+ .false.                      : (ltddft_start) .true. = restart
+                              :
+(FSSH-random-initialize)      :
+ .true.                       : (lfssh_random) .true. = manual, .false. = automatic
+ 1119041003.0000000           : (rseed_fssh) only for lfssh_random = .true.                              :
+(occupations)                 :
+   2                          : (nocc_change) # of occupations to be changed
+    4   1.0  0.0             : (numband, occ_new) band index, occupations(up&down)
+    5   1.0  0.0             : (numband, occ_new) band index, occupations(up&down)
+                              :
 *end                          :
                               :
                               :
@@ -19,6 +49,7 @@
 (DFT-D)                       : an empirical correction for the vdW interaction
  .false.                      : (ldftd) .true. = on, .false. = off
 *end                          :
+                              :
                               :
                               :
 *SCF iterations               :
@@ -32,29 +63,24 @@
                               :
 *molecular dynamics           :
 (method)                      :
-   1                          : (ifmd)
+   2                          : (ifmd)
                               :   0:non, 1:optimization, 2:NVE, 3:NVT, 4:NPT
 (time step)                   :
-   0.1d0   100                : (dtmd, nstop) time step, total step
+   10.0d0  300               : (dtmd, nstop) time step, total step
+(temperature)                 : only for real dynamics (NVE-, NVT-, NPT-MD )
+   0.1d0                     : (treq) temperature in [K]
+(check temperature)           :
+  .false.                     : (liscale) .true. = Do it !
+   25                         : (iscnum)  number of temperature check
+   20                         : (iscstp)  skip step
                               :
-(optimization)                : only for structural optimization (ifmd == 1 )
-    2                         : (ioptmze)
-                              :  -1: do not optimize atomic coordinates
-                              :   0: Conjugate gradient
-                              :   1: Projected velocity Verlet
-                              :   2: Quasi-Newton method with BFGS formula
 (output data)                 : only for MD nodes
     1                         : (ioskip)  skip step
  .true.                       : (locoor) .true. = output scaled coordinates
  .true.                       : (lovelo) .true. = output scaled velocities
  .true.                       : (loforc) .true. = output scaled forces
                               :
-(tolerance)                   : tolerance for CG optimization (ifmd == 1 )
-  1.d-07                      : (tol_energy) energy/atom in [a.u.]
-  5.d-04                      : (tol_force ) max. force  in [a.u.]
-                              :
 *end                          :
-                              :
 ------------------------------:---------------------------------------
 *supercell                    :
 (unit of length)              :
@@ -74,7 +100,6 @@
  120.0                        : (ecutdens)
 *end                          :
                               :
-                              :
 *electronic bands             :
 (occupied bands)              :
       8                       : (noband)  No. of occupied bands
@@ -87,6 +112,14 @@
                               : (tfermi) = electronic temp.(K), if metallic
 *end                          :
                               :
+*dump wavefunctions           :
+(how of it)                   :
+  .true.                      : (ldpwav)  .true. = Do it !
+(bands)                       :
+   4, 5                   : (ibstt1,ibstt2) band index ( 0, 0 -> all bands)
+(skip step)                   : only for molecular dynamics
+   10                          : (nskip_dpwav)
+*end                          :
 ------------------------------:---------------------------------------
 *atoms                        :
 (species)                     :
@@ -96,7 +129,7 @@
   8.0                         : (zatom)
                               :
 (the number of atoms)         : No. of atoms in SUPERCELL, not in UNIT cell
-   0                          : (nhk) If zero, atomic positions are read from 
+   0                          : (nhk) If zero, atomic positions are read from
                               :       'CONFIGURATION_FILE'.
                               :
 (position file)               : Ignored, if (nhk) > 0.

@@ -95,12 +95,19 @@ EXTF90    = f90
 #IFCV64##     FFTLIB        = $(FFTWLIB)
 #IFCV64#     CPPDEFS       = -traditional $(CPPDEF) -DLIBFFTW3 -DIFC -DVECTOR
 #IFCV64#     FFTLIB        = $(FFTW3LIB)
+##########################################FOR Jupyter Notebook on Google Collab (Google Cloud Platform)
+#GCP#     FFTW3_PATH=../fftw-3.3.8/build/
+#GCP#     LINKER        = mpif90
+#GCP#     FFLAGS        = -c -fallow-argument-mismatch
+#GCP#     CPPDEFS = -traditional $(CPPDEF) -DLIBFFTW3 -DIFC -DHPC -DVECTOR
+#GCP#     LDFLAGS       = -L$(FFTW3_PATH)/lib
+#GCP#     LIBS  = -L $(FFTW3_PATH)/lib -lfftw3_mpi -lfftw3_threads -lfftw3
 ##########################################FOR PC LINUX (Intel Fortran) on x86-64 at USC-HPC
 #HPC#     LINKER        = mpif90
 #HPC#     LDFLAGS       = $(LDFLAG)
 #HPC#     FFLAGS        = -c -warn none
-#HPC##     CPPDEFS       = -traditional $(CPPDEF) -DLIBFFTW -DPOINTER64 -DIFC -DHPC -DVECTOR
-#HPC##     FFTLIB        = $(FFTWLIB)
+#HPC#     CPPDEFS       = -traditional $(CPPDEF) -DLIBFFTW -DPOINTER64 -DIFC -DHPC -DVECTOR
+#HPC#     FFTLIB        = $(FFTWLIB)
 #HPC#     CPPDEFS       = -traditional $(CPPDEF) -DLIBFFTW3 -DIFC -DHPC -DVECTOR
 #HPC#     FFTLIB        = $(FFTW3LIB)
 ########################################################FOR HP
